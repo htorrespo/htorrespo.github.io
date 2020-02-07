@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Git Cheat Sheet | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Git Cheat Sheet" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente." />
+<meta property="og:description" content="Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/03/20/git-cheat-sheet.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/03/20/git-cheat-sheet.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git Cheat Sheet" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente.","@type":"BlogPosting","headline":"Git Cheat Sheet","dateModified":"2019-03-20T00:00:00+00:00","url":"http://localhost:4000/blog/2019/03/20/git-cheat-sheet.html","datePublished":"2019-03-20T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/03/20/git-cheat-sheet.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  git-cheat-sheet">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Git Cheat Sheet
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">5 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-03-20T00:00:00+00:00"><a class="u-url" href="">March 20, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><img src="/images/post/Git-Logo-2Color.png" alt="Logo Git" style="width" class="people" /></p>
+
+<p>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora y coordinar el trabajo que varias personas realizan sobre archivos compartidos.</p>
+
+<h3 id="índice">Índice</h3>
+<ul>
+  <li><a href="#configuración">Configuración</a></li>
+  <li><a href="#archivos-de-configuración">Archivos de Configuración</a></li>
+  <li><a href="#crear">Crear</a></li>
+  <li><a href="#cambios-locales">Cambios locales</a></li>
+  <li><a href="#buscar">Buscar</a></li>
+  <li><a href="#historial-de-commits">Historial de Commits</a></li>
+  <li><a href="#ramas--etiquetas">Ramas &amp; Etiquetas</a></li>
+  <li><a href="#actualizar--publicar">Actualizar &amp; Publicar</a></li>
+  <li><a href="#fusionar--rebasar">Fusionar &amp; Rebasar</a></li>
+  <li><a href="#deshacer">Deshacer</a></li>
+</ul>
+
+<hr />
+
+<h2 id="configuración">Configuración</h2>
+
+<h5 id="mostrar-la-cofiguración-actual">Mostrar la cofiguración actual:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+</code></pre></div></div>
+
+<h5 id="mostrar-la-configuración-local">Mostrar la configuración local:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --local --list
+</code></pre></div></div>
+
+<h5 id="mostrar-la-configuración-global">Mostrar la configuración global:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global --list
+</code></pre></div></div>
+
+<h5 id="mostrar-la-configuración-del-sistema">Mostrar la configuración del sistema:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --system --list
+</code></pre></div></div>
+
+<h5 id="establecer-un-nombre-que-es-identificable-de-crédito-cuando-se-revise-el-historial-de-versiones">Establecer un nombre que es identificable de crédito cuando se revise el historial de versiones:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name “[nombre apellido]”
+</code></pre></div></div>
+
+<h5 id="establecer-una-dirección-de-email-que-será-asociada-con-cada-marca-histórica">Establecer una dirección de email que será asociada con cada marca histórica:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.email “[email-válido]”
+</code></pre></div></div>
+
+<h5 id="establecer-coloreado-automático-de-la-línea-de-comandos-de-git-para-una-fácil-revisión">Establecer coloreado automático de la línea de comandos de Git para una fácil revisión:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global color.ui auto
+</code></pre></div></div>
+
+<h5 id="establecer-el-editor-global-para-commits">Establecer el editor global para commits:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global core.editor vi
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="archivos-de-configuración">Archivos de Configuración</h2>
+
+<h5 id="archivo-de-configuración-específico-del-repositorio-local">Archivo de configuración específico del repositorio [–local]:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;repo&gt;/.git/config
+</code></pre></div></div>
+
+<h5 id="archivo-de-configuración-específico-del-usuario-global">Archivo de configuración específico del usuario [–global]:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.gitconfig
+</code></pre></div></div>
+
+<h5 id="archivo-de-configuración-del-sistema-system">Archivo de configuración del sistema [–system]:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/gitconfig
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="crear">Crear</h2>
+
+<h5 id="clonar-un-repositorio-existente">Clonar un repositorio existente:</h5>
+
+<p>Existen dos maneras:</p>
+
+<p>Vía SSH</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone ssh://usuario@dominio.com/repo.git
+</code></pre></div></div>
+
+<p>Vía HTTP</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone http://dominio.com/usuario/repo.git
+</code></pre></div></div>
+
+<h5 id="crea-un-nuevo-repositorio-local">Crea un nuevo repositorio local:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="cambios-locales">Cambios Locales</h2>
+
+<h5 id="cambios-en-el-directorio-de-trabajo">Cambios en el directorio de trabajo:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+</code></pre></div></div>
+
+<h5 id="cambios-en-archivos-rastreados">Cambios en archivos rastreados:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git diff
+</code></pre></div></div>
+
+<h5 id="agregar-todos-los-cambios-actuales-al-siguiente-commit">Agregar todos los cambios actuales al siguiente commit:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add .
+</code></pre></div></div>
+
+<h5 id="agregar-algunos-cambios-de-archivo-para-el-siguiente-commit">Agregar algunos cambios de &lt;archivo&gt; para el siguiente commit:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add -p &lt;archivo&gt;
+</code></pre></div></div>
+
+<h5 id="realizar-un-commit-de-todos-los-cambios-locales-en-los-archivos-rastreados">Realizar un commit de todos los cambios locales en los archivos rastreados:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -a
+</code></pre></div></div>
+
+<h5 id="realizar-un-commit-de-los-cambios-previamente-almacenados-en-el-área-de-pruebas-stage-area">Realizar un commit de los cambios previamente almacenados en el área de pruebas (stage area):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit
+</code></pre></div></div>
+
+<h5 id="realizar-un-commit-con-un-mensaje">Realizar un commit con un mensaje:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m 'aquí el mensaje'
+</code></pre></div></div>
+
+<h5 id="realizar-un-commit-saltándose-el-área-de-pruebas-y-agregando-un-mensaje">Realizar un commit saltándose el área de pruebas y agregando un mensaje:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -am 'aquí el mensaje'
+</code></pre></div></div>
+
+<h5 id="realizar-un-commit-a-alguna-fecha-anterior">Realizar un commit a alguna fecha anterior:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit --date="`date --date='n day ago'`" -am "Mensaje del commit"
+</code></pre></div></div>
+
+<h5 id="cambiar-último-commit">Cambiar último commit:</h5>
+<p><em><sub>¡No modificar commits ya publicados!</sub></em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -a --amend
+</code></pre></div></div>
+
+<h5 id="cambiar-fecha-del-último-commit">Cambiar fecha del último commit:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIT_COMMITTER_DATE="date" git commit --amend
+</code></pre></div></div>
+
+<h5 id="cambiar-fecha-del-autor-del-último-commit">Cambiar fecha del autor del último commit:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit --amend --date="date"
+</code></pre></div></div>
+
+<h5 id="mover-cambios-no-confirmados-uncommitted-changes-de-la-rama-actual-a-otra-rama">Mover cambios no confirmados (uncommitted changes) de la rama actual a otra rama:<br /></h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash
+git checkout branch2
+git stash pop
+</code></pre></div></div>
+
+<h5 id="restaurar-cambios-del-área-de-pruebas-stage-area-a-la-rama-actual">Restaurar cambios del área de pruebas (stage area) a la rama actual:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash apply
+</code></pre></div></div>
+
+<h5 id="eliminar-la-última-serie-de-cambios-del-área-de-pruebas-stage-area">Eliminar la última serie de cambios del área de pruebas (stage area):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash drop
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="buscar">Buscar</h2>
+
+<h5 id="un-texto-en-todos-los-archivos-del-directorio">Un texto en todos los archivos del directorio:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git grep "Hola"
+</code></pre></div></div>
+
+<h5 id="un-texto-en-cualquier-versión">Un texto en cualquier versión:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git grep "Hola" v2.5
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="historial-de-commits">Historial de Commits</h2>
+
+<h5 id="mostrar-todos-los-commits-empezando-por-los-más-recientes-se-mostrará-el-hash-información-sobre-el-autor-fecha-y-título-del-commit">Mostrar todos los commits, empezando por los más recientes (se mostrará el hash, información sobre el autor, fecha y título del commit):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
+</code></pre></div></div>
+
+<h5 id="mostrar-todos-los-commits-sólo-se-mostrará-el-hash-y-el-mensaje-del-commit">Mostrar todos los commits (sólo se mostrará el hash y el mensaje del commit):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log --oneline
+</code></pre></div></div>
+
+<h5 id="mostrar-todos-los-commits-de-un-usuario-específico">Mostrar todos los commits de un usuario específico:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log --author="usuario"
+</code></pre></div></div>
+
+<h5 id="mostrar-los-cambios-a-través-del-tiempo-de-un-archivo-específico">Mostrar los cambios a través del tiempo de un archivo específico:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log -p &lt;archivo&gt;
+</code></pre></div></div>
+
+<h5 id="mostrar-commmits-que-están-presentes-sólamente-en-remotebranch-al-lado-derecho">Mostrar commmits que están presentes sólamente en remote/branch al lado derecho:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log --oneline &lt;origin/master&gt;..&lt;remote/master&gt; --left-right
+</code></pre></div></div>
+
+<h5 id="quién-cambió-qué-y-cuándo-en-archivo">Quién cambió, qué y cuándo en &lt;archivo&gt;:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git blame &lt;archivo&gt;
+</code></pre></div></div>
+
+<h5 id="mostrar-reference-log">Mostrar reference log:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reflog show
+</code></pre></div></div>
+
+<h5 id="borrar-reference-log">Borrar reference log:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reflog delete
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ramas--etiquetas">Ramas &amp; Etiquetas</h2>
+
+<h5 id="listar-todas-las-ramas-locales">Listar todas las ramas locales:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch
+</code></pre></div></div>
+
+<h5 id="listar-todas-las-ramas-remotas">Listar todas las ramas remotas:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -r
+</code></pre></div></div>
+
+<h5 id="cambiar-rama-head">Cambiar rama HEAD:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="crear-nueva-rama-y-cambiar-a-esta">Crear nueva rama y cambiar a esta:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout -b &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="crear-nueva-rama-basada-en-la-rama-head-actual">Crear nueva rama basada en la rama HEAD actual:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch &lt;nueva-rama&gt;
+</code></pre></div></div>
+
+<h5 id="crear-nueva-rama-de-seguimiento-basada-en-una-rama-remota">Crear nueva rama de seguimiento basada en una rama remota:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch --track &lt;nueva-rama&gt; &lt;rama-remota&gt;
+</code></pre></div></div>
+
+<h5 id="eliminar-una-rama-local">Eliminar una rama local:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -d &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="forzar-eliminación-de-una-rama-local">Forzar eliminación de una rama local:</h5>
+<p><em><sub>¡Perderás los cambios sin fusionar!</sub></em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -D &lt;branch&gt;
+</code></pre></div></div>
+
+<h5 id="marcar-el-commit-actual-con-una-etiqueta">Marcar el commit actual con una etiqueta:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag &lt;tag-name&gt;
+</code></pre></div></div>
+
+<h5 id="marcar-el-commit-actual-con-una-etiqueta-que-incluye-un-mensaje">Marcar el commit actual con una etiqueta que incluye un mensaje:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -a &lt;etiqueta&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="actualizar--publicar">Actualizar &amp; Publicar</h2>
+
+<h5 id="listar-todos-los-remotos-configurados-actuales">Listar todos los remotos configurados actuales:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote -v
+</code></pre></div></div>
+
+<h5 id="mostrar-información-sobre-un-remoto">Mostrar información sobre un remoto:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote show &lt;remoto&gt;
+</code></pre></div></div>
+
+<h5 id="agregar-un-nuevo-repositorio-nombrado-remoto">Agregar un nuevo repositorio, nombrado &lt;remoto&gt;:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add &lt;remoto&gt; &lt;url&gt;
+</code></pre></div></div>
+
+<h5 id="descargar-todos-los-cambios-de-remoto-pero-no-integrarlos-al-head">Descargar todos los cambios de &lt;remoto&gt;, pero no integrarlos al HEAD:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch &lt;remoto&gt;
+</code></pre></div></div>
+
+<h5 id="descargar-cambios-y-fusionarlosintegrarlos-directamente-al-head">Descargar cambios y fusionarlos/integrarlos directamente al HEAD:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote pull &lt;remote&gt; &lt;url&gt;
+</code></pre></div></div>
+
+<h5 id="obtener-todos-los-cambios-del-head-al-repositorio-local">Obtener todos los cambios del HEAD al repositorio local:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull origin master
+</code></pre></div></div>
+
+<h5 id="obtener-todos-los-cambios-del-head-al-repositorio-local-sin-fusionar">Obtener todos los cambios del HEAD al repositorio local sin fusionar:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull --rebase &lt;remote&gt; &lt;branch&gt;
+</code></pre></div></div>
+
+<h5 id="publicar-cambios-locales-en-un-remoto">Publicar cambios locales en un remoto:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push remote &lt;remoto&gt; &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="eliminar-una-rama-en-el-remoto">Eliminar una rama en el remoto:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push &lt;remoto&gt; :&lt;rama&gt; (desde Git v1.5.0) ó $ git push &lt;remoto&gt; --delete &lt;rama&gt; (desde Git v1.7.0)
+</code></pre></div></div>
+
+<h5 id="publicar-tus-etiquetas">Publicar tus etiquetas:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push --tags
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="fusionar-y-rebasar">Fusionar y Rebasar</h2>
+
+<h5 id="fusionar--en-tu-head-actual">Fusionar <rama> en tu HEAD actual:</rama></h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="rabasar-tu-actual-head-sobre-rama">Rabasar tu actual HEAD sobre &lt;rama&gt;:<br /></h5>
+<p><em><sub>¡No rebasar commits ya publicados!</sub></em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase &lt;rama&gt;
+</code></pre></div></div>
+
+<h5 id="aborta-un-rebase">Aborta un rebase:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase --abort
+</code></pre></div></div>
+
+<h5 id="continuar-un-rebase-después-de-resolver-conflictos">Continuar un rebase después de resolver conflictos:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase --continue
+</code></pre></div></div>
+
+<h5 id="usar-tu-herramienta-de-fusión-configurada-para-resolver-conflictos">Usar tu herramienta de fusión configurada para resolver conflictos:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git mergetool
+</code></pre></div></div>
+
+<h5 id="usar-tu-editor-para-manualmente-resolver-conflictos-y-después-de-resueltos-marcar-el-archivo-como-resuelto">Usar tu editor para manualmente resolver conflictos y (después de resueltos) marcar el archivo como resuelto:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add &lt;archivo-resuelto&gt;
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rm &lt;archivo-resuelto&gt;
+</code></pre></div></div>
+
+<h5 id="aplastando-commits-squashing">Aplastando commits (squashing):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase -i &lt;commit-just-before-first&gt;
+</code></pre></div></div>
+
+<p>Ahora reemplazando esto,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pick &lt;commit_id&gt;
+pick &lt;commit_id2&gt;
+pick &lt;commit_id3&gt;
+</code></pre></div></div>
+
+<p>con esto,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pick &lt;commit_id&gt;
+squash &lt;commit_id2&gt;
+squash &lt;commit_id3&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="deshacer">Deshacer</h2>
+
+<h5 id="descartar-todos-los-cambios-locales-en-tu-directorio-de-trabajo">Descartar todos los cambios locales en tu directorio de trabajo:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD
+</code></pre></div></div>
+
+<h5 id="sacar-todos-los-archivos-del-área-de-pruebas-es-decir-deshacer-el-último-git-add">Sacar todos los archivos del área de pruebas (es decir, deshacer el último <code class="highlighter-rouge">git add</code>):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset HEAD
+</code></pre></div></div>
+
+<h5 id="descartar-cambios-locales-de-un-archivo-específico">Descartar cambios locales de un archivo específico:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout HEAD &lt;archivo&gt;
+</code></pre></div></div>
+
+<h5 id="revertir-un-commit-produciendo-un-nuevo-commit-con-los-cambios-contrarios">Revertir un commit (produciendo un nuevo commit con los cambios contrarios):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert &lt;commit&gt;
+</code></pre></div></div>
+
+<h5 id="reestablecer-tu-puntero-head-a-un-commit-anterior-y-descartar-todos-los-cambios-desde-entonces">Reestablecer tu puntero HEAD a un commit anterior y descartar todos los cambios desde entonces:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard &lt;commit&gt;
+</code></pre></div></div>
+
+<h5 id="reestablecer-tu-putero-head-al-estado-actual-de-una-rama-remota">Reestablecer tu putero HEAD al estado actual de una rama remota.</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard &lt;remote/branch&gt; es decir, upstream/master, origin/my-feature
+</code></pre></div></div>
+
+<h5 id="reestablecer-tu-puntero-head-a-un-commit-anterior-y-preservar-todos-los-cambios-en-el-área-de-pruebas-stage-area">Reestablecer tu puntero HEAD a un commit anterior y preservar todos los cambios en el área de pruebas (stage area):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset &lt;commit&gt;
+</code></pre></div></div>
+
+<h5 id="reestablecer-tu-puntero-head-a-un-commit-anterior-y-preservar-los-cambios-locales-sin-confirmar-uncommitted-changes">Reestablecer tu puntero HEAD a un commit anterior y preservar los cambios locales sin confirmar (uncommitted changes):</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --keep &lt;commit&gt;
+</code></pre></div></div>
+
+<h5 id="remover-los-archivos-que-fueron-accidentalmente-agregados-al-commit-antes-de-ser-añadidos-al-gitignore">Remover los archivos que fueron accidentalmente agregados al commit antes de ser añadidos al .gitignore:</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rm -r --cached .
+$ git add .
+$ git commit -m "remove xyz file"
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="contacto">Contacto</h4>
+
+<p>Envienos un correo a <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F03%2F20%2Fgit-cheat-sheet.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=Git+Cheat+Sheet%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F03%2F20%2Fgit-cheat-sheet.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F03%2F20%2Fgit-cheat-sheet.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=Git+Cheat+Sheet&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F03%2F20%2Fgit-cheat-sheet.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/03/01/peso-molecular-del-gas.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Peso molecular de una mezcla de gases
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/06/06/js-overview.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Javascript - Generalidades
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

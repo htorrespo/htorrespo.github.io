@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-06T20:40:38+00:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Splendidus</title><subtitle>Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</subtitle><author><name>Henry Torres</name></author><entry><title type="html">Groovy - Trucos para JavaScript</title><link href="http://localhost:4000/blog/2019/08/21/javascript-tips.html" rel="alternate" type="text/html" title="Groovy - Trucos para JavaScript" /><published>2019-08-21T00:00:00+00:00</published><updated>2019-08-21T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/21/javascript-tips</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/21/javascript-tips.html">&lt;ol&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;También existe la opción de usar &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; y &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; dependiendo del caso de uso.&lt;/p&gt;
+
+&lt;p&gt;La instrucción &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; permite crear una variable con el alcance limitado al bloque en el que se utiliza.&lt;/p&gt;
+
+&lt;p&gt;Considere el siguiente fragmento de código.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Javascript&quot;&gt;function varDeclaration(){
+    let a =10;
+    console.log(a);  // output 10
+    if(true){
+        let a=20;
+        console.log(a); // output 20
+    }
+    console.log(a);  // output 10
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es el mismo comportamiento que vemos en la mayoría de los lenguajes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
+    let a =10;
+    let a =20; //throws syntax error
+    console.log(a);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Error Message: Uncaught SyntaxError: Identifier ‘a’ has already been declared.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, con &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;, funciona bien.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Javascript&quot;&gt;function varDeclaration(){
+    var a =10;
+    var a =20;
+    console.log(a);  //output 20
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El alcance se mantendrá bien con una declaración &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; y cuando se utiliza una función interna, la declaración &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; hace que su código sea limpio y claro.&lt;/p&gt;
+
+&lt;p&gt;→ los valores de la sentencia &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; funciona de manera similar a las declaraciones &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
+    const MY_VARIABLE =10;
+    console.log(MY_VARIABLE);  //output 10
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Considere el siguiente fragmento de código.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
+    const MY_VARIABLE =10;
+    console.log(MY_VARIABLE);  //output 10
+    MY_VARIABLE =20;           //throws type error
+    console.log(MY_VARIABLE);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Error Message : Uncaught TypeError: Assignment to constant variable.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;El código arrojará un error cuando intentemos reasignar la variable &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; existente.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Utilice siempre &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; como comparador en lugar de &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; (estricto igual). Use &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; en lugar de &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; porque cuando usa &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;3 == ‘3’ // true
+3 === ‘3’ //false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esto sucede porque en &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; la comparación tiene lugar entre el valor y el tipo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;[10] == 10   // is true
+[10] === 10  // is false
+'10' == 10   // is true
+'10' === 10  // is false
+[] == 0      // is true
+[] === 0     // is false
+'' == false  // is true
+'' === false // is false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;, (cadena vacía) son todas condiciones falsas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Vaciar una matriz&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;var sampleArray = [2, 223, 54, 31];
+sampleArray.length = 0; // sampleArray becomes []
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Redondeo a N decimales&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;var n = 2.4134213123;
+n = n.toFixed(4); // computes n = &quot;2.4134&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Verifique que su cálculo produzca un resultado finito.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;isFinite(0/0);       // false
+isFinite('foo');     // true
+isFinite('10');      // true
+isFinite(10);        // true
+isFinite(undefined); // false
+isFinite();          // false  
+isFinite(null);      // true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tomemos un ejemplo para comprender el uso de esta función, supongamos que ha escrito una consulta de base de datos sobre una tabla que contiene una gran cantidad de datos y después de la ejecución de la consulta no está seguro de todos los valores de resultado posibles de esa consulta. Los datos de la consulta cambian en algo que usted pone dinámicamente en la consulta. En tal caso, no está seguro acerca de la propiedad finita del resultado y si usa ese resultado directamente, puede darle una condición infinita, lo que puede romper su código.&lt;/p&gt;
+
+&lt;p&gt;Por lo tanto, se recomienda usar &lt;code class=&quot;highlighter-rouge&quot;&gt;isFinite()&lt;/code&gt; antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use una instrucción &lt;code class=&quot;highlighter-rouge&quot;&gt;switch/case&lt;/code&gt; en lugar de una serie de &lt;code class=&quot;highlighter-rouge&quot;&gt;if/else&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Usar &lt;code class=&quot;highlighter-rouge&quot;&gt;switch/case&lt;/code&gt; es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Uso de &lt;code class=&quot;highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; dentro de su archivo. La cadena &lt;code class=&quot;highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;// This is bad, since you do create a global without having anyone to tell you
+(function () {
+   a = 42;
+   console.log(a);
+   // → 42
+})();
+console.log(a);
+// → 42
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;use strict&lt;/code&gt; lo mantendrá alejado de cometer el anterior error. Usando &lt;code class=&quot;highlighter-rouge&quot;&gt;use strict&lt;/code&gt;, puede obtener bastantes errores:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;strict&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// Error: Uncaught ReferenceError: a is not defined&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Podría preguntarse por qué no puede poner &lt;code class=&quot;highlighter-rouge&quot;&gt;use strict&lt;/code&gt;fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; y &lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt; para crear magia&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;“”&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; “foo”undefined || 42&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; 42function doSomething () {&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; { foo: “bar” }&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Además, no olvide usar un embellecedor de código al codificar. Utilice JSLint y minificación (JSMin, por ejemplo) antes de lanzarlo. Esto lo ayudará a mantener un estándar de codificación en su proyecto y hacerlo lo más estándar posible.&lt;/p&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html"></summary></entry><entry><title type="html">Groovy - Entorno</title><link href="http://localhost:4000/blog/2019/08/16/groovy-entorno.html" rel="alternate" type="text/html" title="Groovy - Entorno" /><published>2019-08-16T00:00:00+00:00</published><updated>2019-08-16T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/16/groovy-entorno</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/16/groovy-entorno.html">&lt;p&gt;Hay una variedad de formas de obtener la configuracion del entorno Groovy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Descarga e instalacion binarias&lt;/strong&gt;: vaya al enlace www.groovy-lang.org/download.html para obtener el instalador binario &lt;code class=&quot;highlighter-rouge&quot;&gt;apache-groovy-binary-2.5.8.zip&lt;/code&gt;. Haga clic en esta opcion para iniciar la descarga del instalador Groovy.&lt;/p&gt;
+
+&lt;p&gt;Despues de descargar la distribucion comprimida, debe descomprimir el archivo en un directorio de su eleccion y llevar a cabo los siguientes pasos para instalar Groovy en Windows:&lt;/p&gt;
+
+&lt;p&gt;1.Por simplicidad, asumiremos que la ruta del directorio es &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Applications\groovy-2.0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;2.Para tener el comando groovy disponible en su linea de comando, debe agregarlo a la ruta de su sistema configurando la variable de entorno llamada &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;. Tambien le recomendamos que cree una variable de entorno&lt;code class=&quot;highlighter-rouge&quot;&gt;GROOVY_HOME&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;3.Para acceder a las variables de entorno de Windows, debe presionar la combinacion de teclas Windows + Break. En Windows Vista, Windows 7 o posterior, abrira la pagina del Panel de control para la configuracion del sistema.&lt;/p&gt;
+
+&lt;p&gt;4.Haga clic en Configuracion avanzada del sistema para abrir la ventana Propiedades del sistema.&lt;/p&gt;
+
+&lt;p&gt;5.Luego debe hacer clic en el boton Variables de entorno… para llegar finalmente a la lista de variables del sistema.&lt;/p&gt;
+
+&lt;p&gt;6.Haga clic en el boton Nuevo … y agregue la variable &lt;code class=&quot;highlighter-rouge&quot;&gt;GROOVY_HOME&lt;/code&gt; que apunta a su ruta de instalacion Groovy, &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Applications\groovy-2.0&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;7.Luego busque la variable &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; en la lista de variables del sistema y agregue o inserte &lt;code class=&quot;highlighter-rouge&quot;&gt;%GROOVY_HOME%\bin;&lt;/code&gt; al final&lt;/p&gt;
+
+&lt;p&gt;8.Ahora puede abrir la linea de comandos de Windows y verificar que Groovy este instalado correctamente digitando el comando &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy --version&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;Si desea incluir los binarios groovy como parte de su construccion maven o gradle, puede agregar las siguientes lineas&lt;/p&gt;
+
+&lt;h5 id=&quot;gradle&quot;&gt;Gradle&lt;/h5&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'org.codehaus.groovy: groovy: 2.4.5'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;maven&quot;&gt;Maven&lt;/h5&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt; org.codehaus.groovy &lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt; maravilloso &lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt; 2.4.5 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Hay una variedad de formas de obtener la configuracion del entorno Groovy.</summary></entry><entry><title type="html">Groovy - Generalidades</title><link href="http://localhost:4000/blog/2019/08/16/groovy-generalidades.html" rel="alternate" type="text/html" title="Groovy - Generalidades" /><published>2019-08-16T00:00:00+00:00</published><updated>2019-08-16T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/16/groovy-generalidades</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/16/groovy-generalidades.html">&lt;h3 id=&quot;caracteristicas-de-groovy&quot;&gt;Caracteristicas de Groovy&lt;/h3&gt;
+
+&lt;p&gt;Groovy tiene las siguientes caracteristicas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Soporte tipeo estatico y dinamico.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Soporte sobrecarga del operador.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sintaxis nativa para listas y matrices asociativas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Soporte nativo para expresiones regulares.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Soporte nativo para varios lenguajes de marcado como XML y HTML.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Groovy es simple para los desarrolladores de Java ya que la sintaxis para Java y Groovy es muy similar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Puede usar bibliotecas Java existentes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Groovy extiende el objeto java.lang.Object.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El sitio web oficial de Groovy es http://www.groovy-lang.org/&lt;/p&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Caracteristicas de Groovy</summary></entry><entry><title type="html">Groovy - Sintaxis basica</title><link href="http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html" rel="alternate" type="text/html" title="Groovy - Sintaxis basica" /><published>2019-08-16T00:00:00+00:00</published><updated>2019-08-16T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html">&lt;h3 id=&quot;creando-tu-primer-programa-hello-world&quot;&gt;Creando tu primer programa Hello World&lt;/h3&gt;
+
+&lt;p&gt;Crear su primer programa &lt;code class=&quot;highlighter-rouge&quot;&gt;hello world&lt;/code&gt; es tan simple como ingresar la siguiente linea de codigo:&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Usando una declaracion println para imprimir la salida a la consola&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;declaracion-de-importacion-en-groovy&quot;&gt;Declaracion de importacion en Groovy&lt;/h3&gt;
+
+&lt;p&gt;La declaracion &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; se puede usar para importar la funcionalidad de otras bibliotecas  en su codigo. Esto se hace usando la palabra clave &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;El siguiente ejemplo muestra como usar importacion simple de la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;MarkupBuilder&lt;/code&gt;, que es probablemente una de las clases mas utilizadas para crear marcado HTML o XML.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;groovy.xml.MarkupBuilder&lt;/span&gt; 
+&lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MarkupBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;De forma predeterminada, Groovy incluye las siguientes bibliotecas en su codigo, por lo que no necesita importarlas explicitamente.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.lang.*&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.*&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.net.*&lt;/span&gt; 
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;groovy.lang.*&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;groovy.util.*&lt;/span&gt; 
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.math.BigInteger&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.math.BigDecimal&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tokens-en-groovy&quot;&gt;Tokens en Groovy&lt;/h3&gt;
+
+&lt;p&gt;Un token es una palabra clave, un identificador, una constante, un literal de cadena o un simbolo.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En la linea de codigo anterior, hay dos tokens, el primero es la palabra clave println y el siguiente es el string “Hello World”.&lt;/p&gt;
+
+&lt;h3 id=&quot;comentarios-en-groovy&quot;&gt;Comentarios en Groovy&lt;/h3&gt;
+
+&lt;p&gt;Los comentarios se utilizan para documentar codigo. Los comentarios en Groovy pueden ser de una sola linea o de varias lineas.&lt;/p&gt;
+
+&lt;p&gt;Los comentarios de una sola linea se identifican utilizando &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; en cualquier posicion de la linea. A continuacion se muestra un ejemplo:&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Usando una declaracion println para imprimir la salida a la consola&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Los comentarios multilinea se identifican con &lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt; al principio y &lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt; para identificar el final del comentario multilinea.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;cm&quot;&gt;/* Este programa es el primer programa
+       Este programa muestra como mostrar hello world */&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;punto-y-coma&quot;&gt;Punto y coma&lt;/h3&gt;
+
+&lt;p&gt;Al igual que el lenguaje de programacion Java, se requiere tener punto y coma para distinguir entre declaraciones multiples en Groovy.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Se puede ver el uso de un punto y coma despues de cada declaracion&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El ejemplo anterior muestra puntos y comas que se utilizan para distinguir entre diferentes lineas de sentencias de codigo.&lt;/p&gt;
+
+&lt;h3 id=&quot;identificadores&quot;&gt;Identificadores&lt;/h3&gt;
+
+&lt;p&gt;Los identificadores se utilizan para definir variables, funciones u otras variables definidas por el usuario. Los identificadores comienzan con una letra, un dolar o un guion bajo. No pueden comenzar con un numero. Aqui hay algunos ejemplos de identificadores validos:&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employeename&lt;/span&gt; 
+&lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student1&lt;/span&gt; 
+&lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student_name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;donde &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; es una palabra clave utilizada en Groovy para definir un identificador.&lt;/p&gt;
+
+&lt;p&gt;Aqui hay un ejemplo de codigo de como se puede usar un identificador en nuestro programa Hello World.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Se puede ver el uso de un punto y coma despues de cada declaracion&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; 
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En el ejemplo anterior, la variable x se usa como identificador.&lt;/p&gt;
+
+&lt;h3 id=&quot;palabras-clave&quot;&gt;Palabras clave&lt;/h3&gt;
+
+&lt;p&gt;Las palabras clave como su nombre indica son palabras especiales que estan reservadas en el lenguaje de programacion Groovy. La siguiente tabla enumera las palabras clave que se definen en Groovy.&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;as      assert     break       case
+catch   class     const        continue
+def     default   do           else
+enum    extends   false        Finally
+for     goto      if           implements
+import  in        instanceof   interface
+new     pull      package      return
+super   switch    this         throw
+throws  trait     true         try
+while 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;espacios-en-blanco&quot;&gt;Espacios en blanco&lt;/h3&gt;
+
+&lt;p&gt;Espacio en blanco es el termino utilizado en un lenguaje de programacion como Java y Groovy para describir espacios en blanco, tabs, caracteres de nueva linea y comentarios. El espacio en blanco separa una parte de una declaracion de otra y permite al compilador identificar donde esta un elemento en una declaracion.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, en el siguiente ejemplo, hay un espacio en blanco entre la palabra clave &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; y la variable &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;. Esto es para que el compilador sepa que &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; es la palabra clave que debe usarse y que &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; debe ser el nombre de la variable que debe definirse.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;literales&quot;&gt;Literales&lt;/h3&gt;
+
+&lt;p&gt;Un literal es una notacion empleada para representar un valor fijo en groovy. El lenguaje groovy tiene anotaciones para enteros, numeros de coma flotante, caracteres y cadenas. Estos son algunos ejemplos de literales en el lenguaje de programacion Groovy:&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; 
+&lt;span class=&quot;mf&quot;&gt;1.45&lt;/span&gt; 
+&lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; 
+&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Creando tu primer programa Hello World</summary></entry><entry><title type="html">JQuery - Generalidades</title><link href="http://localhost:4000/blog/2019/08/12/jquery-intro.html" rel="alternate" type="text/html" title="JQuery - Generalidades" /><published>2019-08-12T00:00:00+00:00</published><updated>2019-08-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/12/jquery-intro</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/12/jquery-intro.html">&lt;p&gt;jQuery es una biblioteca JavaScript rapida y concisa creada por John Resig en 2006. jQuery simplifica el desplazamiento de documentos HTML, el manejo de eventos, la animacion y las interacciones Ajax para un desarrollo web rapido.&lt;/p&gt;
+
+&lt;p&gt;Este tutorial esta diseñado para programadores de software que desean aprender los conceptos basicos de jQuery y sus conceptos de programacion de manera simple y facil. Este tutorial le dara suficiente comprension sobre los componentes de jQuery con ejemplos adecuados.&lt;/p&gt;
+
+&lt;p&gt;Antes de continuar con este tutorial, debe tener una comprension basica de HTML, CSS, JavaScript, Modelo de objetos de documento (DOM) y cualquier editor de texto. Como vamos a desarrollar aplicaciones basadas en la web utilizando jQuery, sera bueno que comprenda como funcionan las aplicaciones basadas en Internet y en la web.&lt;/p&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">jQuery es una biblioteca JavaScript rapida y concisa creada por John Resig en 2006. jQuery simplifica el desplazamiento de documentos HTML, el manejo de eventos, la animacion y las interacciones Ajax para un desarrollo web rapido.</summary></entry><entry><title type="html">DOM - Modelo XML</title><link href="http://localhost:4000/blog/2019/08/08/dom-modelo-xml.html" rel="alternate" type="text/html" title="DOM - Modelo XML" /><published>2019-08-08T00:00:00+00:00</published><updated>2019-08-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/08/dom-modelo-xml</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/08/dom-modelo-xml.html">&lt;p&gt;Ahora que sabemos lo que significa DOM, veamos que es una estructura DOM. Un documento DOM es una coleccion de nodos o piezas de informacion, organizadas en una jerarquia. Algunos tipos de nodos pueden tener nodos secundarios de varios tipos y otros son nodos hoja que no pueden tener nada debajo de ellos en la estructura del documento. A continuacion se incluye una lista de los tipos de nodos, con una lista de los tipos de nodos que pueden tener como hijos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Document&lt;/strong&gt; − Element (maximo uno), ProcessingInstruction, Comment, DocumentType (maximo uno)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DocumentFragment&lt;/strong&gt; − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;EntityReference&lt;/strong&gt; − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Element&lt;/strong&gt; − Element, Text, Comment, ProcessingInstruction, CDATASection, EntityReference&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Attr&lt;/strong&gt; − Text, EntityReference&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;ProcessingInstruction&lt;/strong&gt; − Sin hijos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; − Sin hijos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Text&lt;/strong&gt; − Sin hijos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CDATASection&lt;/strong&gt; − Sin hijos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Entity&lt;/strong&gt; − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Notation&lt;/strong&gt; − Sin hijos&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ejemplo&quot;&gt;Ejemplo&lt;/h4&gt;
+
+&lt;p&gt;Considere la representacion DOM del siguiente documento XML &lt;code class=&quot;highlighter-rouge&quot;&gt;node.xml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version = &quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Company&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;Employee&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;category =&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;technical&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;FirstName&amp;gt;&lt;/span&gt;Tanmay&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FirstName&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;LastName&amp;gt;&lt;/span&gt;Patil&lt;span class=&quot;nt&quot;&gt;&amp;lt;/LastName&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContactNo&amp;gt;&lt;/span&gt;1234567890&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContactNo&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Employee&amp;gt;&lt;/span&gt;
+   
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;Employee&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;category =&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;non-technical&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;FirstName&amp;gt;&lt;/span&gt;Taniya&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FirstName&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;LastName&amp;gt;&lt;/span&gt;Mishra&lt;span class=&quot;nt&quot;&gt;&amp;lt;/LastName&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContactNo&amp;gt;&lt;/span&gt;1234667898&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContactNo&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Employee&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Company&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;El DOM del documento XML anterior seria el siguiente:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;El objeto &lt;em&gt;node&lt;/em&gt; solo puede tener un objeto &lt;em&gt;node padre&lt;/em&gt;. Esto ocupa la posicion sobre todos los nodos. Aqui esta la &lt;em&gt;comapny&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El &lt;em&gt;node padre&lt;/em&gt; puede tener multiples nodos llamados &lt;em&gt;node child&lt;/em&gt;. Estos nodos hijos pueden tener nodos adicionales llamados nodos de &lt;em&gt;attribute&lt;/em&gt;. En el ejemplo anterior, tenemos dos nodos atributos &lt;em&gt;Technical&lt;/em&gt; y &lt;em&gt;Non-Technical&lt;/em&gt;. El nodo de atributo no es en este momento un elemento hijo del elemento &lt;em&gt;node&lt;/em&gt;, pero aun esta asociado con el.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Estos nodos hijos a su vez pueden tener multiples nodos hijos. El texto dentro de los nodos se llama nodo &lt;em&gt;text&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Los objetos de nodo en el mismo nivel se llaman hermanos.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El DOM identifica -&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;los objetos para representar la interfaz y manipular el documento.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La relacion entre los objetos y las interfaces.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Ahora que sabemos lo que significa DOM, veamos que es una estructura DOM. Un documento DOM es una coleccion de nodos o piezas de informacion, organizadas en una jerarquia. Algunos tipos de nodos pueden tener nodos secundarios de varios tipos y otros son nodos hoja que no pueden tener nada debajo de ellos en la estructura del documento. A continuacion se incluye una lista de los tipos de nodos, con una lista de los tipos de nodos que pueden tener como hijos:</summary></entry><entry><title type="html">Groovy - Introduccion</title><link href="http://localhost:4000/blog/2019/08/08/groovy-intro.html" rel="alternate" type="text/html" title="Groovy - Introduccion" /><published>2019-08-08T00:00:00+00:00</published><updated>2019-08-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/08/groovy-intro</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/08/groovy-intro.html">&lt;p&gt;Groovy es un lenguaje orientado a objetos que se basa en la plataforma Java. Groovy 1.0 se lanzo el 2 de enero de 2007 con Groovy 2.4 como la version principal actual. Groovy se distribuye a traves de la licencia Apache v 2.0. En este tutorial, explicaremos todos los fundamentos de Groovy y como ponerlo en practica.&lt;/p&gt;
+
+&lt;p&gt;Este tutorial sera extremadamente util para todos aquellos profesionales del software que deseen aprender los conceptos basicos de la programacion Groovy.&lt;/p&gt;
+
+&lt;p&gt;Antes de continuar con este tutorial, debe tener experiencia practica en Java o en cualquier otro lenguaje de programacion orientado a objetos. No se asume ninguna experiencia con Groovy.&lt;/p&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Groovy es un lenguaje orientado a objetos que se basa en la plataforma Java. Groovy 1.0 se lanzo el 2 de enero de 2007 con Groovy 2.4 como la version principal actual. Groovy se distribuye a traves de la licencia Apache v 2.0. En este tutorial, explicaremos todos los fundamentos de Groovy y como ponerlo en practica.</summary></entry><entry><title type="html">DOM - Aspectos basicos</title><link href="http://localhost:4000/blog/2019/08/07/dom-basico.html" rel="alternate" type="text/html" title="DOM - Aspectos basicos" /><published>2019-08-07T00:00:00+00:00</published><updated>2019-08-07T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/07/dom-basico</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/07/dom-basico.html">&lt;p&gt;El Document Object Model (DOM) es un estandar W3C. Define un estandar para acceder a documentos como HTML y XML. Este tutorial le enseñara los conceptos basicos de XML DOM. El tutorial esta dividido en secciones como XML DOM Basics, XML DOM Operations y XML DOM Objects. Cada una de estas secciones contiene temas relacionados con ejemplos simples y utiles.&lt;/p&gt;
+
+&lt;p&gt;Esta documentacion ha sido preparada para los principiantes para ayudarlos a comprender los conceptos basicos y avanzados relacionados con XML DOM. Este tutorial le dara una comprension suficiente sobre XML DOM desde donde puede llevarse a un nivel superior de experiencia.&lt;/p&gt;
+
+&lt;p&gt;Antes de continuar con este tutorial, debe tener conocimientos basicos de XML, HTML y Javascript.&lt;/p&gt;
+
+&lt;p&gt;El Document Object Model (DOM) es un estandar W3C. Define un estandar para acceder a documentos como HTML y XML.&lt;/p&gt;
+
+&lt;p&gt;La definicion de DOM segun la expresion del W3C es:&lt;/p&gt;
+
+&lt;p&gt;*El Document Object Model (DOM) es una interfaz de programacion de aplicaciones (API) para documentos HTML y XML. Define la estructura logica de los documentos y la forma en que se accede y se manipula un documento.&lt;/p&gt;
+
+&lt;p&gt;DOM define los objetos, propiedades y metodos (interfaz) para acceder a todos los elementos XML. Estos se divide en 3 partes / niveles diferentes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Core DOM: modelo estandar para cualquier documento estructurado&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;XML DOM: modelo estandar para documentos XML&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML DOM - modelo estandar para documentos HTML&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;XML DOM es un modelo de objeto estandar para XML. Los documentos XML tienen una jerarquia de unidades informativas llamadas nodos; DOM es una interfaz de programacion estandar para describir esos nodos y las relaciones entre ellos.&lt;/p&gt;
+
+&lt;p&gt;XML DOM tambien proporciona una API que permite a un desarrollador agregar, editar, mover o eliminar nodos en cualquier punto del arbol para crear una aplicacion.&lt;/p&gt;
+
+&lt;h3 id=&quot;ventajas-de-xml-dom&quot;&gt;Ventajas de XML DOM&lt;/h3&gt;
+
+&lt;p&gt;Las siguientes son las ventajas de XML DOM.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;XML DOM es independiente del lenguaje y la plataforma.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;XML DOM es transitable: la informacion en XML DOM esta organizada en una jerarquia que permite al desarrollador navegar por la jerarquia en busca de informacion especifica.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;XML DOM es modificable: es de naturaleza dinamica y proporciona al desarrollador un alcance para agregar, editar, mover o eliminar nodos en cualquier punto del arbol.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;desventajas-de-xml-dom&quot;&gt;Desventajas de XML DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Consume mas memoria (si la estructura XML es grande) ya que el programa escrito permanece en la memoria todo el tiempo hasta que se elimine explicitamente.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Debido al amplio uso de la memoria, su velocidad operativa, en comparacion con SAX, es mas lenta.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">El Document Object Model (DOM) es un estandar W3C. Define un estandar para acceder a documentos como HTML y XML. Este tutorial le enseñara los conceptos basicos de XML DOM. El tutorial esta dividido en secciones como XML DOM Basics, XML DOM Operations y XML DOM Objects. Cada una de estas secciones contiene temas relacionados con ejemplos simples y utiles.</summary></entry><entry><title type="html">Modernizr - Deteccion de compatibilidad de navegadores</title><link href="http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html" rel="alternate" type="text/html" title="Modernizr - Deteccion de compatibilidad de navegadores" /><published>2019-08-06T00:00:00+00:00</published><updated>2019-08-06T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/06/web-modernizr-introduction</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html">&lt;p&gt;Cuando un profesional se dedica al desarrollo de proyectos digitales hay una maxima, lo que se ve en el navegador es lo que es. Da igual que backend o que estilos tenga nuestra pagina web si a la hora de renderizarlo en el navegador se ve de forma distinta a la esperada. La libreria JavaScript Modernizr es la solucion para evitar disgustos: es el mejor testeador posible para detectar cuales son las caracteristicas del proyecto que soporta cada navegador.&lt;/p&gt;
+
+&lt;p&gt;Concretamente, Modernizr es una libreria que revisa 18 caracteristicas de estilos CSS3 y 40 mas relacionadas con el documento HTML, sobre todo su ultima version disponible, HTML5. Esto es interesante porque los navegadores mas modernos ejecutan recursos que los mas antiguos no pueden. La idea es aprovechar las ventajas de los primeros sin dejar de servir en los segundos. Asi se ajusta el diseño a la experiencia de usuario real que tendra la web para todos los navegadores. Facilita la creacion de proyectos digitales todoterreno.&lt;/p&gt;
+
+&lt;h2 id=&quot;instalacion-y-herramientas-de-modernizr&quot;&gt;Instalacion y herramientas de Modernizr&lt;/h2&gt;
+
+&lt;p&gt;1.Para realizar la deteccion de funciones con Modernizr, debe agregarel archivo &lt;code class=&quot;highlighter-rouge&quot;&gt;modernizr.js&lt;/code&gt; a su proyecto. Esto se puede hacer de 2 maneras:&lt;/p&gt;
+
+&lt;p&gt;a.Descargar &lt;a href=&quot;https://modernizr.com/download/&quot;&gt;descargar el archivo con el codigo fuente de Modernizr&lt;/a&gt;.desde: visite el sitio web oficial para crear y descargar el archivo JavaScript. Haga clic en “Add your detects” para seleccionar manualmente las caracteristicas que desee de acuerdo con las necesidades de su proyecto o haga clic en “Development build” para ser redirigido a la pagina de compilacion con todas las opciones de pruebas / detecciones preseleccionadas. Haga clic en el boton de compilacion para descargar el archivo.&lt;/p&gt;
+
+&lt;p&gt;b.Usando npm y linea de comando: Modernizr tambien se puede instalar Node Packet Manager o NPM. Puedes instalar NPM aqui. Despues de instalar npm, abra la linea de comando e ingrese:&lt;/p&gt;
+
+&lt;div class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install -g modernizr
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Modernizr para la deteccion de funcionalidades realiza 3 funciones basicas: -&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Agrega clases que indican soporte de caracteristicas que se pueden usar para aplicar condicionalmente reglas de estilo CSS a diferentes elementos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Crea un objeto javascript para verificar o validar la compatibilidad con cualquier funcion HTML o CSS en un navegador.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Permite suministrar condicionalmente scripts JS personalizados o polyfills para imitar caracteristicas que faltan.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Es importante recordar que la deteccion de funcionalidades con Modernizr es solo para funciones que son compatibles. Para esas funciones no compatibles de un navegador antiguo se logra mediante “polyfilling”.&lt;/p&gt;
+
+&lt;p&gt;2.Ahora incluya el archivo Modernizr descargado en la seccion de su pagina.&lt;/p&gt;
+
+&lt;p&gt;Para usar esta libreria JavaScript es necesario incorporar el script de Modernizr en el &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; de la web, justo despues de las declaraciones de estilos CSS del site. Primero cargan los estilos y despues la libreria. El script que habria que añadir en el &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; del proyecto es el siguiente:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;modernizr.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.Agregue la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no-js&quot;&lt;/code&gt; a la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;no-js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;modernizr-custom.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no-js&quot;&lt;/code&gt; es una alternativa necesaria si el usuario ha deshabilitado JavaScript en su navegador o si el navegador en si no admite JavaScript. Una vez que se carga la pagina y en caso de que el navegador admita JavaScript, la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no-js&quot;&lt;/code&gt; sera reemplazada por la clase “js” automaticamente por Modernizr para la deteccion de caracteristicas.&lt;/p&gt;
+
+&lt;p&gt;4.Modernizr agrega varias clases CSS en el elemento raiz &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt;. Estas clases se agregan en funcion de las capacidades del navegador: las clases se agregan para las funciones que son compatibles y las clases se agregan con un prefijo “no” para las funciones que no son compatibles.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, si el navegador admite Flexbox, la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;flexbox&quot;&lt;/code&gt; se agregara a la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt;. Si no es compatible, se agrega la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no-flexbox&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clases agregadas a la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; por Modernizr para pruebas de deteccion de caracteristicas en IE9&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js no-flexbox canvas canvastext 
+no-webgl no-touch geolocation postmessage 
+no-websqldatabase no-indexeddb hashchange 
+no-history draganddrop no-websockets rgba 
+hsla multiplebgs backgroundsize no-borderimage 
+borderradius boxshadow no-textshadow opacity 
+no-cssanimations no-csscolumns no-cssgradients 
+no-cssreflections csstransforms no-csstransforms3d no-csstransitions fontface generatedcontent 
+video audio localstorage sessionstorage 
+no-webworkers no-applicationcache svg inlinesvg 
+smil svgclippaths&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;deteccion-de-caracteristicas-javascript-con-modernizr&quot;&gt;Deteccion de caracteristicas JavaScript con Modernizr&lt;/h2&gt;
+
+&lt;p&gt;Objeto JavaScript. Modernizr ejecuta una serie de comprobaciones o pruebas basadas en JavaScript en segundo plano durante la carga de la pagina para detectar si el navegador admite o no las funciones. Una vez instalada y cargada la libreria Modernizr, el objeto JavaScript permite detectar que funcionalidades del proyecto estan soportadas en cada navegador, tanto lenguaje HTML como estilos CSS. Este tipo de deteccion de funcionalidades disponibles se produce a traves de variables booleanas de true (cierto) o false (falso). True significa que el navegador soporta la funcionalidad; false que no lo hace.&lt;/p&gt;
+
+&lt;p&gt;Podemos acceder a varias propiedades de este objeto “Modernizr” para la deteccion de caracteristicas utilizando “Modernizr.featureName”. Por ejemplo, Modernizr.video devolvera “verdadero” si el navegador admite el elemento de video, y falso si el navegador no lo hace.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (Modernizr.awesomeNewFeature) {
+    showOffAwesomeNewFeature();
+  } else {
+    getTheOldLameExperience();
+  } 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dos casos practicos a partir del ejemplo teorico de arriba. El primero prueba si el navegador usado por el usuario soporta los eventos touch de nuestro proyecto. El segundo detecta si se pueden aplicar sombras:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (Modernizr.touch){
+
+  //el navegador soporta eventos touch
+
+} else {
+
+  //el navegador no soporta eventos touch
+
+}
+
+ 
+
+if (Modernizr.boxshadow) {
+   // Podemos aplicar sombras!
+} else {
+   // La propiedad box-shadow no esta disponible
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El siguiente ejemplo muestra como probar los gradientes lineales CSS utilizando JavaScript y agregando la clase de gradiente lineal para los navegadores que lo admiten.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function () {
+
+    if (Modernizr.cssgradients) {
+        alert(&quot;This browser supports CSS Gradients&quot;);
+        $('#box').addClass('cssgradients');
+    }
+        
+    if (Modernizr.cssgradients) {
+        alert(&quot;This browser doesn't support CSS Gradients&quot;);
+        $('#box').addClass('no-cssgradients');
+    }
+
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ademas de la deteccion de funciones usando javascript para probar si un navegador admite esa tecnologia web en particular o no, Modernizr tambien se puede usar para cargar polyfills / shims para imitar las funciones que un navegador carece o no admite.&lt;/p&gt;
+
+&lt;h2 id=&quot;deteccion-de-caracteristicas-css-con-modernizr&quot;&gt;Deteccion de caracteristicas CSS con Modernizr&lt;/h2&gt;
+
+&lt;p&gt;Estas clases se agregan a la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; de Modernizr para la deteccion de caracteristicas de las propiedades de estilo CSS en funcion de si una caracteristica es compatible con un navegador determinado o no. Las clases con el prefijo &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no&quot;&lt;/code&gt; se aplicaran automaticamente en los navegadores que no admitan esas funciones correspondientes.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, si la propiedad box-shadow es compatible con un navegador, la clase Modernizr &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;boxshadow&quot;&lt;/code&gt; se agrega a la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt;. Si no es compatible, se agrega la clase Modernizr &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;no-boxshadow&quot;&lt;/code&gt;. Podemos usar solo estas 2 clases CSS para dirigir efectivamente a todos los navegadores independientemente de su soporte para esta caracteristica en particular. La clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.boxshadow&quot;&lt;/code&gt; se puede usar para diseñar una sombra de cuadro alrededor de un &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; con desplazamiento horizontal y desplazamiento vertical de 10px, desenfoque de 8px y separacion de 15px para todos los navegadores compatibles y la clase &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.no_boxshadow&quot;&lt;/code&gt; se puede usar para codificar con un ancho de borde mas grueso para compensar la falta de sombra para todos los navegadores no compatibles.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.boxshadow #box {
+    border: 2px solid black;
+    -webkit-box-shadow: 10px 10px 8px 10px #888888;
+    -moz-box-shadow: 10px 10px 8px 10px #888888;
+}
+   
+.no-boxshadow #box {
+    border: 5px solid black;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Por lo tanto, en lugar de escribir montones de codigo para dirigirse a navegadores individuales, la deteccion de caracteristicas con Modernizr reduce la tarea a codificar solo 2 bloques de codigo, uno para navegadores compatibles y el otro para no compatibles.&lt;/p&gt;
+
+&lt;p&gt;Otro ejemplo para gradientes lineales CSS:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.no-cssgradients .header {
+  background: url(&quot;https://unsplash.it/640/425?image=44&quot;);
+}
+ 
+.cssgradients .header {
+background-image: url(&quot;https://unsplash.it/640/425?image=44&quot;), linear-gradient(red, blue);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Es bastante plausible que las clases creadas por Modernizr puedan entrar en conflicto con una clase CSS preexistente que habria agregado a su hoja de estilo. Para evitar este escenario, es aconsejable agregar un &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;classPrefix&quot;&lt;/code&gt; a todas sus clases Modernizr para que sean completamente unicas. Por ejemplo, es posible que ya este utilizando una clase llamada &lt;code class=&quot;highlighter-rouge&quot;&gt;'boxshadow'&lt;/code&gt; que chocara con la clase de deteccion creada por Modernizr con el mismo nombre. Puede hacer uso de prefijos de clase para abordar facilmente este problema. Realice los siguientes cambios en su configuracion:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;classPrefix&quot;: &quot;foo-&quot;,
+  &quot;feature-detects&quot;: [&quot;dom/boxshadow&quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ahora, en lugar de &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;boxshadow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;, modernizr agregara &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;foo-boxshadow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si desea que Modernizr no agregue ninguna de sus clases a su etiqueta HTML, configure &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;enableClasses&quot;&lt;/code&gt; en falso en su archivo de configuracion. Esto todavia excluye la clase no-js. Para evitar incluso eso, establezca &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;enableJSClass&quot;&lt;/code&gt; en falso tambien.&lt;/p&gt;
+
+&lt;h3 id=&quot;librerias-polyfills-y-el-metodo-modernizrload&quot;&gt;Librerias Polyfills y el metodo Modernizr.load()&lt;/h3&gt;
+
+&lt;p&gt;Modernizr dispone de un metodo que permite a los desarrolladores la carga bajo demanda de librerias o plugins que aumentan las funcionalidades de los navegadores menos modernos. La libreria se cargaria solo si el usuario visita una pagina web con algun estilo concreto no disponible en el navegador.&lt;/p&gt;
+
+&lt;p&gt;Esto se consigue con la carga de uno de estos plugins o polyfill mediante el metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt;. Asi se mantiene la UX en navegadores antiguos.&lt;/p&gt;
+
+&lt;p&gt;El metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; es un cargador condicional basado en una biblioteca &lt;code class=&quot;highlighter-rouge&quot;&gt;yesnope.js&lt;/code&gt; extremadamente popular que carga archivos JavaScript basados en el resultado de una prueba de deteccion de caracteristicas. Por ejemplo, podemos usar el metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; para probar la disponibilidad de soporte para flexbox y cargar un polyfill si el navegador no lo admite.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Modernizr.load({
+    test: Modernizr.flexbox,
+    yep : 'flexlayout.css',
+    nope: 'matchHeight.js' });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si el navegador admite flexbox, se cargara el archivo &lt;code class=&quot;highlighter-rouge&quot;&gt;flexlayout.css&lt;/code&gt;; de lo contrario, en caso de falta de compatibilidad, se cargara polyfill de &lt;code class=&quot;highlighter-rouge&quot;&gt;matchHeight.js&lt;/code&gt;, que imita la funcion de flexbox en navegadores mas antiguos.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; toma la propiedad que define una caracteristica como argumento y realiza una prueba para verificar su compatibilidad. Si la propiedad es compatible y la prueba se realiza correctamente, se carga la secuencia de comandos de caso &lt;code class=&quot;highlighter-rouge&quot;&gt;yep&lt;/code&gt;. Si la propiedad no es compatible y la prueba falla, se carga el guion de caso &lt;code class=&quot;highlighter-rouge&quot;&gt;nope&lt;/code&gt;. Si se va a cargar una secuencia de comandos, independientemente de si la prueba falla o no, &lt;code class=&quot;highlighter-rouge&quot;&gt;both&lt;/code&gt; casos. Por ejemplo -&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Modernizr.load({
+    test: Modernizr.canvas,
+    yep:  'Canvasavailable.js',
+    nope: 'FlashCanvas.js',
+    both: 'CustomScript.js'
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Los pasos a seguir:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Con Modernizr se puede detectar si una funcionalidad esta o no disponible dentro del navegador utilizado por el usuario. En el caso de que esa propiedad no este disponible en el navegador, el metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; puede cargar el polyfill especifico para esa funcion.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Como usar el metodo &lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; para incorporar librerias? El codigo necesario es sencillo, en este caso incorpora geolocalizacion:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Modernizr.load({
+  test: Modernizr.geolocation,
+  yep : 'geo.js',
+  nope: 'geo-polyfill.js'
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En la sintaxis anterior hay tres elementos distintos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt;: hace mencion a la funcionalidad que queremos que se ejecute dentro del navegador del usuario.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yep&lt;/code&gt;: si la condicion cumple, cargamos la funcionalidad.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nope&lt;/code&gt;: si la condicion no se cumple, cargamos la alternativa, el polyfill de geolocalizacion para navegadores antiguos.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Existen algunas caracteristicas añadidas que se pueden cargar tambien:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;both&lt;/code&gt;: se cumpla o no la condicion, se carga la funcionalidad.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load&lt;/code&gt;: carga la funcionalidad independientemente del test que realice la libreria JavaScript Modernizr en el navegador.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;callback&lt;/code&gt;: carga la funcionalidad una vez esten los recursos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;complete&lt;/code&gt;: carga la funcionalidad haya o no recursos.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt;  tambien se puede utilizar en los casos en que desee crear un acceso por compatibilidad en caso de que no se pueda acceder a las redes CDN de Google o Microsoft, lo que puede arruinar toda su pagina web. Sin CDN, los scripts jquery o bootstrap no se cargaran si los incluye mediante enlaces CDN. El siguiente ejemplo muestra como crear una copia de seguridad para cargar jquery si falla CDN. Primero intentara descargar jQuery del CDN de Google, utilice la funcion correspondiente al caso &lt;code class=&quot;highlighter-rouge&quot;&gt;complete&lt;/code&gt; para verificar si jQuery esta presente o no. Si jQuery esta ausente porque no se pudo descargar de Google CDN, el caso de &lt;code class=&quot;highlighter-rouge&quot;&gt;load&lt;/code&gt; cargara la copia de seguridad jquery de su almacenamiento local&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Modernizr.load([
+    {
+        load: '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        complete: function () {
+            if (!window.jQuery) {
+                Modernizr.load('js/libs/jquery/3.3.1/jquery.min.js');
+            }
+        }
+    },
+    {
+        // execute this if jquery couldn't be loaded.
+        load: 'backup-jquery.js'
+    }
+]);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Modernizr.load()&lt;/code&gt; y &lt;code class=&quot;highlighter-rouge&quot;&gt;yesnope.js&lt;/code&gt; ahora han quedado en desuso y ya no son compatibles con la version actual de modernizr (v3.5). Todavia puedes usar esto en v2.8. Puede leer mas sobre el aviso de desaprobacion dirigido por el creador del modernizador Alex Sexton &lt;a href=&quot;https://github.com/SlexAxton/yepnope.js#deprecation-notice&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Una alternativa viable ahora es usar el metodo jquery &lt;code class=&quot;highlighter-rouge&quot;&gt;getScript()&lt;/code&gt;. El siguiente ejemplo muestra como cargar un script de polyfill si un navegador no admite la deteccion de funciones:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (Modernizr.geolocation){
+  //feature is supported by the browser
+  console.log('geolocation supported');
+} else {
+  // feature not supported - load polyfill
+  $.getScript('path/script.js')
+  .done(function() {
+    console.log('script loaded');
+  })
+  .fail(function() {
+    console.log('script failed to load');
+  });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ha pasado casi una decada desde el lanzamiento de Modernizr en 2009, pero aun hoy no ha perdido su relevancia y proposito. Para cada desarrollador al que le guste construir sus sitios web y aplicaciones web con caracteristicas modernas de vanguardia HTML5 y CSS3, Modernizr es un activo indispensable. No solo ayuda a evitar los montones de codigo necesarios para las pruebas cruzadas del navegador, sino que tambien ayuda a proporcionar una alternativa a la deteccion poco confiable de User Agent. Al igual que las consultas de caracteristicas, Modernizr con deteccion de caracteristicas para compatibilidad cruzada entre navegadores ayuda a implementar todos los retrocesos necesarios para funcionalidades y caracteristicas no compatibles que garantizan una experiencia de usuario impecable independientemente del navegador que el usuario pueda estar utilizando. Aunque las consultas de caracteristicas de CSS @supports nativas se estan poniendo al dia rapidamente en terminos de popularidad y aceptacion generalizadas entre los desarrolladores, su falta de soporte en IE (incluido IE11) significa que Modernizr con mecanismo de deteccion de caracteristicas, sigue siendo la principal herramienta de eleccion para lograr la compatibilidad entre navegadores.&lt;/p&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html"></summary></entry><entry><title type="html">JavaScript - Mapa de imagenes</title><link href="http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html" rel="alternate" type="text/html" title="JavaScript - Mapa de imagenes" /><published>2019-08-03T00:00:00+00:00</published><updated>2019-08-03T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/03/js-mapa-imagen</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html">&lt;p&gt;Puede usar JavaScript para crear un mapa de imagen del lado del cliente. Los mapas de imagenes del lado del cliente estan habilitados por el atributo &lt;code class=&quot;highlighter-rouge&quot;&gt;usemap&lt;/code&gt; para la etiqueta &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img/&amp;gt;&lt;/code&gt; y definidos por etiquetas especiales de extension &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt; y &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;area&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;La imagen que va a formar el mapa se inserta en la pagina usando el elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img/&amp;gt;&lt;/code&gt; de forma normal, excepto que lleva un atributo adicional llamado &lt;code class=&quot;highlighter-rouge&quot;&gt;usemap&lt;/code&gt;. El valor del atributo &lt;code class=&quot;highlighter-rouge&quot;&gt;usemap&lt;/code&gt; es el valor del atributo de nombre en el elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt;, que esta a punto de cumplir, precedido por una libra o un signo hash.&lt;/p&gt;
+
+&lt;p&gt;El elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt; en realidad crea el mapa para la imagen y generalmente sigue directamente despues del elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img/&amp;gt;&lt;/code&gt;. Actua como un contenedor para los elementos &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;area/&amp;gt;&lt;/code&gt; que realmente definen los puntos de acceso en los que se puede hacer clic. El elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt; lleva solo un atributo, el atributo &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;, que es el nombre que identifica el mapa. Asi es como el elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img/&amp;gt;&lt;/code&gt; sabe que elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt; usar.&lt;/p&gt;
+
+&lt;p&gt;El elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;area&amp;gt;&lt;/code&gt; especifica la forma y las coordenadas que definen los limites de cada punto de acceso en el que se puede hacer clic.&lt;/p&gt;
+
+&lt;p&gt;El siguiente codigo combina mapas de imagenes y JavaScript para producir un mensaje en un cuadro de texto cuando el mouse se mueve sobre diferentes partes de una imagen.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;   
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Using JavaScript Image Map&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+      
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showTutorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+               &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;//--&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+   
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myform&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stage&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+      
+      &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Create  Mappings --&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/usemap.gif&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;HTML Map&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;usemap = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#tutorials&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;map&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tutorials&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;area&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;shape=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;poly&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;coords = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;74,0,113,29,98,72,52,72,38,27&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;href = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/perl/index.htm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Perl Tutorial&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;target = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_self&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOver = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('perl')&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOut = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+         
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;area&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;shape = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;rect&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;coords = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;22,83,126,125&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;href = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/html/index.htm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;HTML Tutorial&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;target = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_self&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOver = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('html')&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOut = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+         
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;area&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;shape = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;circle&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;coords = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;73,168,32&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;href = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/php/index.htm&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PHP Tutorial&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;target = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_self&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOver = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('php')&quot;&lt;/span&gt; 
+            &lt;span class=&quot;na&quot;&gt;onMouseOut = &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;showTutorial('')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/map&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contacto&quot;&gt;Contacto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Envia tus comentarios al correo &lt;code class=&quot;highlighter-rouge&quot;&gt;henrytorrespo@yahoo.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Henry Torres</name></author><summary type="html">Puede usar JavaScript para crear un mapa de imagen del lado del cliente. Los mapas de imagenes del lado del cliente estan habilitados por el atributo usemap para la etiqueta &amp;lt;img/&amp;gt; y definidos por etiquetas especiales de extension &amp;lt;map&amp;gt; y &amp;lt;area&amp;gt;.</summary></entry></feed>

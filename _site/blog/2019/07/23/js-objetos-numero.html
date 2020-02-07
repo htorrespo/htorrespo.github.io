@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>JavaScript - Objeto Number | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="JavaScript - Objeto Number" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="El objeto Number es un objeto envolvente que permite trabajar con valores numericos." />
+<meta property="og:description" content="El objeto Number es un objeto envolvente que permite trabajar con valores numericos." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/07/23/js-objetos-numero.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/07/23/js-objetos-numero.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JavaScript - Objeto Number" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"El objeto Number es un objeto envolvente que permite trabajar con valores numericos.","@type":"BlogPosting","headline":"JavaScript - Objeto Number","dateModified":"2019-07-23T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/23/js-objetos-numero.html","datePublished":"2019-07-23T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/23/js-objetos-numero.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-objeto-number">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript - Objeto Number
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-07-23T00:00:00+00:00"><a class="u-url" href="">July 23, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>El objeto <code class="highlighter-rouge">Number</code> representa una fecha numerica, ya sea numeros enteros o numeros en coma flotante. En general, no tiene que preocuparse por los objetos numericos porque el navegador convierte automaticamente los literales numericos en instancias de la clase <code class="highlighter-rouge">Number</code>.</p>
+
+<p>La sintaxis para crear un objeto <code class="highlighter-rouge">Number</code> es la siguiente:</p>
+
+<pre><code class="language-JavaScript">var val = new Number(number);
+</code></pre>
+
+<p>Si en lugar de <code class="highlighter-rouge">number</code>, si proporciona un argumento que no sea un numero, el argumento no se puede convertir a un numero, en ese cas devuelve <code class="highlighter-rouge">NaN</code> (No es un numero).</p>
+
+<h3 id="propiedades-de-number">Propiedades de <code class="highlighter-rouge">Number</code></h3>
+
+<p>Aquí hay una lista de cada propiedad y su descripcion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">MAX_VALUE</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El mayor valor posible que puede tener un número en JavaScript. 1.7976931348623157E+308</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">MIN_VALUE</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El valor mas pequeño posible que puede tener un numero en JavaScript. 5E-324</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">NaN</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Igual a un valor que no es un número.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">NEGATIVE_INFINITY</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un valor que es menor que <code class="highlighter-rouge">MIN_VALUE</code>.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">POSITIVE_INFINITY</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un valor que es mayor que <code class="highlighter-rouge">MAX_VALUE</code>.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">prototype</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Una propiedad estatica del objeto <code class="highlighter-rouge">Number</code>. Use la propiedad <code class="highlighter-rouge">prototype</code> para asignar nuevas propiedades y metodos al objeto <code class="highlighter-rouge">Number</code> en el documento actual</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la funcion que creo la instancia de este objeto. Por defecto, este es el objeto <code class="highlighter-rouge">Number</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metodos-de-number">Metodos de <code class="highlighter-rouge">Number</code></h3>
+
+<p>El objeto <code class="highlighter-rouge">Number</code> solo contiene los metodos predeterminados que forman parte de la definicion de cada objeto.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">toExponential()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que un numero se muestre en notacion exponencial, incluso si el numero esta en el rango en el que JavaScript normalmente usa la notacion estandar.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">toFixed()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Formatea a un numero especifico de digitos a la derecha del decimal.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">toLocaleString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena de caracteres del numero actual en un formato que puede variar de acuerdo con la configuracion local del  navegador.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">toPrecision()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Define cuantos dígitos totales (incluidos los dígitos a la izquierda y derecha del decimal) utiliza para mostrar un numero.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la representación de cadena de caracteres del valor del numero.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">valueOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor del numero.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F23%2Fjs-objetos-numero.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+-+Objeto+Number%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F23%2Fjs-objetos-numero.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F23%2Fjs-objetos-numero.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=JavaScript+-+Objeto+Number&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F23%2Fjs-objetos-numero.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/07/23/js-objetos-generalidades.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Generalidades de los Objetos
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/07/24/js-objetos-boleanos.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript - Objeto Boolean
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>JavaScript - Objeto Date | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="JavaScript - Objeto Date" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="El objeto Date Permite trabajar con fechas y horas." />
+<meta property="og:description" content="El objeto Date Permite trabajar con fechas y horas." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/07/26/js-objetos-date.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/07/26/js-objetos-date.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JavaScript - Objeto Date" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"El objeto Date Permite trabajar con fechas y horas.","@type":"BlogPosting","headline":"JavaScript - Objeto Date","dateModified":"2019-07-26T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html","datePublished":"2019-07-26T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-objeto-date">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript - Objeto Date
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">6 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-07-26T00:00:00+00:00"><a class="u-url" href="">July 26, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>El objeto <code class="highlighter-rouge">Date</code> es un tipo de datos integrado en el lenguaje JavaScript. Los objetos de fecha se crean con la <code class="highlighter-rouge">new Date()</code> como se muestra a continuacion.</p>
+
+<p>Una vez que se crea un objeto <code class="highlighter-rouge">Date</code>, varios metodos le permiten operar en el. La mayoria de los metodos simplemente le permiten obtener y establecer los campos año, mes, dia, hora, minuto, segundo y milisegundos del objeto, utilizando la hora local o la hora UTC (universal o GMT).</p>
+
+<p>El estandar ECMAScript requiere que el objeto <code class="highlighter-rouge">Date</code> pueda representar cualquier fecha y hora, con una precision de milisegundos, dentro de los 100 millones de días antes o despues de 1/1/1970. Este es un rango de mas o menos 273,785 años, por lo que JavaScript puede representar la fecha y la hora hasta el año 275755.</p>
+
+<p>Puede usar cualquiera de las siguientes sintaxis para crear un objeto Date utilizando el constructor <code class="highlighter-rouge">Date()</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">new Date( )
+new Date(milliseconds)
+new Date(datestring)
+new Date(year,month,date[,hour,minute,second,millisecond ])
+</span></code></pre></div></div>
+
+<p><strong>Nota</strong>: los parametros entre parentesis son siempre opcionales.</p>
+
+<p>A continuacon una descripcion de los parametros:</p>
+
+<p><strong>Sin argumento</strong>: sin argumentos, el constructor <code class="highlighter-rouge">Date()</code> crea un objeto Fecha en la fecha y hora actuales.</p>
+
+<p><strong>milliseconds</strong>: cuando se pasa un argumento numerico, se toma la representación numerica interna de la fecha en milisegundos, segun lo devuelto por el método <code class="highlighter-rouge">getTime()</code>. Por ejemplo, pasar el argumento 5000 crea una fecha que representa cinco segundos después de la medianoche de 1/1/70.</p>
+
+<p><strong>datestring</strong>: cuando se pasa un argumento de cadena, es una representación de cadena de caracteres de una fecha, en el formato aceptado por el método <code class="highlighter-rouge">Date.parse()</code>.</p>
+
+<p><strong>7 argumentos</strong>: para utilizar la ultima forma del constructor que se muestra arriba. Ahora una descripción de cada argumento:</p>
+
+<h3 id="propiedades-de-date">Propiedades de <code class="highlighter-rouge">Date</code></h3>
+
+<p>Aquí hay una lista de las propiedades del objeto <code class="highlighter-rouge">Array</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica la funcion que crea el prototipo de un objeto.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">prototype</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>La propiedad prototipo le permite agregar propiedades y metodos a un objeto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="highlighter-rouge">Date</code>.</p>
+
+<h3 id="metodos-de-date">Metodos de <code class="highlighter-rouge">Date</code></h3>
+
+<p>Aquí hay una lista de los metodos del objeto <code class="highlighter-rouge">Array</code> y su descripcion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">Date()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la fecha y hora de hoy.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">getDate()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el día del mes para la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">getDay()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el día de la semana para la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">getFullYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el año de la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">getHours()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la hora en la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">getMilliseconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los milisegundos en la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">getMinutes()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los minutos en la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">getMonth()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el mes en la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">getSeconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los segundos en la fecha especificada segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">getTime()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor numerico de la fecha especificada como el numero de milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">getTimezoneOffset()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el desplazamiento de zona horaria en minutos para la configuracion regional actual.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">getUTCDate()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el día (fecha) del mes en la fecha especificada segun la hora universal.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code class="highlighter-rouge">getUTCDay()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el día de la semana en la fecha especificada segun la hora universal.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code class="highlighter-rouge">getUTCFullYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el año en la fecha especificada segun horario universal.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code class="highlighter-rouge">getUTCHours()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve las horas en la fecha especificada segun hora universal.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code class="highlighter-rouge">getUTCMilliseconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los milisegundos en la fecha especificada segun la hora universal.</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code class="highlighter-rouge">getUTCMinutes()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los minutos en la fecha especificada segun la hora universal.</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code class="highlighter-rouge">getUTCMonth()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el mes en la fecha especificada segun hora universal.</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code class="highlighter-rouge">getUTCSeconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los segundos en la fecha especificada segun la hora universal.</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><code class="highlighter-rouge">getYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>En desuso: devuelve el año en la fecha especificada segun la hora local. Use <code class="highlighter-rouge">getFullYear()</code> en su lugar.</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><code class="highlighter-rouge">setDate()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el día del mes para una fecha específica de acuerdo con la hora local.</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><code class="highlighter-rouge">setFullYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el año completo para una fecha específica de acuerdo con la hora local.</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td><code class="highlighter-rouge">setHours()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece las horas para una fecha específica de acuerdo con la hora local.</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td><code class="highlighter-rouge">setMilliseconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los milisegundos para una fecha específica de acuerdo con la hora local.</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td><code class="highlighter-rouge">setMinutes()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los minutos para una fecha específica de acuerdo con la hora local.</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td><code class="highlighter-rouge">setMonth()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el mes para una fecha específica de acuerdo a la hora local.</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td><code class="highlighter-rouge">setSeconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los segundos para una fecha específica segun la hora local.</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td><code class="highlighter-rouge">setTime()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el objeto <code class="highlighter-rouge">Date</code> a la hora representada por una cantidad de milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td><code class="highlighter-rouge">setUTCDate()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el día del mes para una fecha específica de acuerdo con la hora universal.</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td><code class="highlighter-rouge">setUTCFullYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el año completo para una fecha específica de acuerdo con la hora universal.</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td><code class="highlighter-rouge">setUTCHours()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece la hora para una fecha específica de acuerdo a la hora universal.</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td><code class="highlighter-rouge">setUTCMilliseconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los milisegundos para una fecha específica de acuerdo con la hora universal.</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td><code class="highlighter-rouge">setUTCMinutes()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los minutos para una fecha específica de acuerdo a la hora universal.</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td><code class="highlighter-rouge">setUTCMonth()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece el mes para una fecha específica de acuerdo a la hora universal.</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td><code class="highlighter-rouge">setUTCSeconds()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Establece los segundos para una fecha específica de acuerdo a la hora universal.</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td><code class="highlighter-rouge">setYear()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>En desuso: establece el año para una fecha específica de acuerdo con la hora local. Use <code class="highlighter-rouge">setFullYear()</code> en su lugar.</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td><code class="highlighter-rouge">toDateString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la porcion “date” de  <code class="highlighter-rouge">Date</code> como una cadena de caracteres legible.</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td><code class="highlighter-rouge">toGMTString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>En desuso: convierte una fecha en una cadena de caracteres, utilizando las convenciones de GMT de Internet. Utilice <code class="highlighter-rouge">toUTCString()</code> en su lugar.</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td><code class="highlighter-rouge">toLocaleDateString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la parte “date” de <code class="highlighter-rouge">Date</code> como una cadena de caracteres, usando las convenciones de la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td><code class="highlighter-rouge">toLocaleFormat()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Convierte una fecha en una cadena de caracteres, utilizando un formato.</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td><code class="highlighter-rouge">toLocaleString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Convierte una fecha en una cadena de caracteres , usando las convenciones de la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td><code class="highlighter-rouge">toLocaleTimeString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la parte “time” de <code class="highlighter-rouge">Date</code> como una cadena de caracteres, utilizando las convenciones de la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td><code class="highlighter-rouge">toSource()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena de caracteres que representa la fuente para un objeto <code class="highlighter-rouge">Date</code> equivalente; Puedes usar este valor para crear un nuevo objeto.</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena de caracteres que representa el objeto <code class="highlighter-rouge">Date</code>  especificado.</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td><code class="highlighter-rouge">toTimeString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la parte de “time” de  <code class="highlighter-rouge">Date</code> como una cadena legible por el hombre.</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td><code class="highlighter-rouge">toUTCString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Convierte una fecha en una cadena de caracteres, utilizando la convención de tiempo universal.</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td><code class="highlighter-rouge">valueOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor primitivo de un objeto <code class="highlighter-rouge">Date</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Convierte una fecha en una cadena, utilizando la convención de tiempo universal.</p>
+
+<h3 id="métodos-de-fecha-estática">Métodos de fecha estática</h3>
+
+<p>Además de los todos metodos de instancia enumerados anteriormente, el objeto <code class="highlighter-rouge">Date</code> también define dos metodos estaticos. Estos metodos se invocan a traves del propio constructor <code class="highlighter-rouge">Date</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">Date.parse( )</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Analiza una representacion de cadena de caracteres de fecha y hora y devuelve la representacion interna en milisegundos de esa fecha.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">Date.UTC( )</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la representacion en milisegundos de la fecha y hora UTC especificadas.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">Date</code>.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F26%2Fjs-objetos-date.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+-+Objeto+Date%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F26%2Fjs-objetos-date.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F26%2Fjs-objetos-date.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=JavaScript+-+Objeto+Date&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F26%2Fjs-objetos-date.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/07/25/js-objetos-arrays.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Objeto Array
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/07/27/js-objetos-math.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript - Objeto Math
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

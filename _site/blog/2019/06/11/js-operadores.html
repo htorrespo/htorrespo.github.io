@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Javascrpt - Tipos de Operadores | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Javascrpt - Tipos de Operadores" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Operadores, artimeticos, comparacion, logicos, binarios, asignacion," />
+<meta property="og:description" content="Operadores, artimeticos, comparacion, logicos, binarios, asignacion," />
+<link rel="canonical" href="http://localhost:4000/blog/2019/06/11/js-operadores.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/06/11/js-operadores.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Javascrpt - Tipos de Operadores" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"Operadores, artimeticos, comparacion, logicos, binarios, asignacion,","@type":"BlogPosting","headline":"Javascrpt - Tipos de Operadores","dateModified":"2019-06-11T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/11/js-operadores.html","datePublished":"2019-06-11T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/11/js-operadores.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascrpt-tipos-de-operadores">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Javascrpt - Tipos de Operadores
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">10 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-06-11T00:00:00+00:00"><a class="u-url" href="">June 11, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <h2 id="qué-es-un-operador">¿Qué es un operador?</h2>
+
+<p>Tomemos una expresión simple. 4 + 5 es igual a 9. Aquí 4 y 5 se llaman operandos y <code class="highlighter-rouge">+</code> se llama operador. JavaScript soporta los siguientes tipos de operadores.</p>
+
+<ul>
+  <li>
+    <p>Operadores aritméticos</p>
+  </li>
+  <li>
+    <p>Operadores de comparación</p>
+  </li>
+  <li>
+    <p>Operadores lógicos (o relacionales)</p>
+  </li>
+  <li>
+    <p>Operadores de Asignación</p>
+  </li>
+  <li>
+    <p>Operadores condicionales (o ternarios)</p>
+  </li>
+</ul>
+
+<h2 id="operadores-aritméticos">Operadores aritméticos</h2>
+
+<p>JavaScript es compatible con los siguientes operadores aritméticos:</p>
+
+<p>Supongamos que la variable A contiene 10 y la variable B tiene 20, entonces</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operador &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">+</code> (Adicion)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>agrega dos operandos</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">A + B</code> devuelve <code class="highlighter-rouge">30</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">-</code> (Substraccion)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Resta el segundo operando del primero</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">A - B</code> devuelve <code class="highlighter-rouge">-10</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">*</code> (Multiplicacion)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Multiplica ambos operandos</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">A * B</code> devuelve <code class="highlighter-rouge">200</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">/</code> (Division)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Divide el numerador sobre el denominador</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">B / A</code> devuelve <code class="highlighter-rouge">2</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">%</code> (Modulo)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el remanente de la division entera</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">B % A</code>  devuelve <code class="highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">++</code> (Incremento)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Incrementa el valor de un entero en la unidad</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">A++</code> devuelve <code class="highlighter-rouge">11</code></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">--</code> (Decremento)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Diminuye un entero en la unidad</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">A--</code> devuelve 9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nota: el operador de adición (+) funciona tanto para números como para cadenas. p.ej. “a” + 10 dará “a10”.</p>
+
+<h3 id="ejemplo">Ejemplo</h3>
+
+<p>El siguiente código muestra como usar operadores aritmeticos en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Test</span><span class="dl">"</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">a + b = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">a - b = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">a / b = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">a % b = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">a + b + c = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nx">a</span> <span class="o">=</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">++a = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nx">b</span> <span class="o">=</span> <span class="o">--</span><span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">--b = </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="o">--</span><span class="nx">b</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      Set the variables to different values and then try...
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="operadores-de-comparación">Operadores de comparación</h2>
+
+<p>JavaScript es compatible con los siguientes operadores de comparación:</p>
+
+<p>Supongamos que la variable A contiene 10 y la variable B tiene 20, entonces -</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operador &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">= =</code> (Igual)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor de dos operandos es igual o no, si es así, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A == B)</code> no es verdadero / is not true.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">!=</code> (No Igual)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor de dos operandos es igual o no, si los valores no son iguales, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A != B)</code> es verdadero.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">&gt;</code> (Mayor que)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor del operando izquierdo es mayor que el valor del operando derecho, si es así, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &gt; B)</code> no es cierto.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">&lt;</code> (Menor que)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor del operando izquierdo es menor que el valor del operando derecho, si es así, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &lt; B)</code> es verdadero.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">&gt;=</code> (Mayor que o Igual a)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor del operando izquierdo es mayor o igual que el valor del operando derecho, si es así, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &gt;= B)</code> no es cierto.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">&lt;=</code> (Menor que o igual a)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Comprueba si el valor del operando izquierdo es menor o igual que el valor del operando derecho, si es así, entonces la condición se vuelve verdadera.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &lt;= B)</code> es cierto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ejemplo-1">Ejemplo</h3>
+
+<p>El siguiente código muestra como usar operadores de comparacion en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>  
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+      
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a == b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &lt; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &gt; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a != b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &gt;= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &lt;= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      Set the variables to different values and different operators and then try...
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="operadores-logicos">Operadores logicos</h2>
+
+<p>JavaScript es compatible con los siguientes operadores lógicos:</p>
+
+<p>Supongamos que la variable A contiene 10 y la variable B tiene 20, entonces -</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operator &amp; Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">&amp;&amp;</code> (Logico AND)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Si ambos operandos son distintos de cero, la condición se cumple.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &amp;&amp; B)</code> es cierto.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">||</code> (Logico OR)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Si alguno de los dos operandos es distinto de cero, la condición se cumple.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A || B)</code> es cierto.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">!</code> (Logico NOT)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Invierte el estado lógico de su operando. Si una condición es verdadera, entonces el operador lógico NOT lo hará falso.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">! (A &amp;&amp; B)</code> es falso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ejemplo-2">Ejemplo</h3>
+
+<p>Pruebe el siguiente código para implementar operadores lógicos en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+      
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &amp;&amp; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a || b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">||</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">!(a &amp;&amp; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">));</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variables to different values and different operators and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h2 id="operadores-binarios-bit-a-bit">Operadores Binarios (bit a bit)</h2>
+
+<p>JavaScript es compatible con los siguientes operadores binarios:</p>
+
+<p>Supongamos que la variable A tiene 2 y la variable B tiene 3, entonces -</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operator &amp; Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">&amp;</code> (BitWise AND)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Realiza una operación AND booleana en cada bit de sus argumentos enteros.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &amp; B)</code> es 2.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">|</code> (BitWise OR)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Realiza una operación OR booleana en cada bit de sus argumentos enteros.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A | B)</code> es 3.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">^</code> (Bitwise XOR)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Realiza una operación OR exclusiva booleana en cada bit de sus argumentos enteros. Exclusivo XOR significa que el operando uno es verdadero o el operando dos es verdadero, pero no ambos.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ejx <code class="highlighter-rouge">(A ^ B)</code> es 1.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">~</code> (Bitwise Not)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Es un operador unario y opera invirtiendo todos los bits en el operando.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(~B)</code> es -4.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">&lt;&lt;</code> (Shift izquierdo)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Mueve todos los bits en su primer operando a la izquierda por el número de lugares especificados en el segundo operando. Los nuevos bits están llenos de ceros. Desplazar un valor dejado por una posición equivale a multiplicarlo por 2, desplazar dos posiciones equivale a multiplicar por 4, y así sucesivamente.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &lt;&lt; 1)</code> es 4.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">&gt;&gt;</code> (Shift derecho)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Operador de cambio a la derecha binario. El valor del operando izquierdo se mueve hacia la derecha por el número de bits especificado por el operando derecho.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &gt;&gt; 1)</code> es 1.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">&gt;&gt;&gt;</code> (shift derecho con cero)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este operador es igual que el operador <code class="highlighter-rouge">&gt;&gt;</code>, excepto que los bits desplazados a la izquierda siempre son cero.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">(A &gt;&gt;&gt; 1)</code> es 1.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ejemplo-3">Ejemplo</h3>
+
+<p>Pruebe el siguiente código para implementar el operador Bitwise en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Bit presentation 10</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// Bit presentation 11</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &amp; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&amp;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a | b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">|</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a ^ b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">^</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(~b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &lt;&lt; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;&lt;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">(a &gt;&gt; b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;&gt;</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variables to different values and different operators and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="operadores-de-asignación">Operadores de Asignación</h2>
+
+<p>JavaScript es compatible con los siguientes operadores de asignación:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operator &amp; Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">=</code> (Asignacion simple)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Asigna valores del operando del lado derecho al operando del lado izquierdo</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ej: <code class="highlighter-rouge">C = A + B</code> asignara el valor de A + B into C</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>+= (Add and Assignment)</p>
+
+<p>It adds the right operand to the left operand and assigns the result to the left operand.</p>
+
+<p>Ex: C += A is equivalent to C = C + A
+3</p>
+
+<p>−= (Subtract and Assignment)</p>
+
+<p>It subtracts the right operand from the left operand and assigns the result to the left operand.</p>
+
+<p>Ex: C -= A is equivalent to C = C - A
+4</p>
+
+<p>*= (Multiply and Assignment)</p>
+
+<p>It multiplies the right operand with the left operand and assigns the result to the left operand.</p>
+
+<p>Ex: C *= A is equivalent to C = C * A
+5</p>
+
+<p>/= (Divide and Assignment)</p>
+
+<p>It divides the left operand with the right operand and assigns the result to the left operand.</p>
+
+<p>Ex: C /= A is equivalent to C = C / A
+6</p>
+
+<p>%= (Modules and Assignment)</p>
+
+<p>It takes modulus using two operands and assigns the result to the left operand.</p>
+
+<p>Ex: C %= A is equivalent to C = C % A</p>
+
+<p><strong>Nota</strong> - La misma lógica se aplica a los operadores bit a bit por lo que llegarán a ser como <code class="highlighter-rouge">&lt;&lt; =</code>, <code class="highlighter-rouge">&gt;&gt; =</code>, <code class="highlighter-rouge">&gt;&gt; =</code>, Y <code class="highlighter-rouge">=</code>, <code class="highlighter-rouge">| = y ^ =</code>.</p>
+
+<h3 id="ejemplo-4">Ejemplo</h3>
+
+<p>Pruebe el siguiente código para implementar el operador de asignación en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a = b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a += b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a -= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">-=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a *= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a /= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">/=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of a =&gt; (a %= b) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%=</span> <span class="nx">b</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variables to different values and different operators and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="operador-misceláneo">Operador Misceláneo</h2>
+
+<p>Aquí discutiremos dos operadores que son bastante útiles en JavaScript: el operador condicional (? :) y el operador typeof.</p>
+
+<h3 id="operador-condicional--">Operador Condicional (? :)</h3>
+
+<p>El operador condicional primero evalúa una expresión para un valor verdadero o falso y luego ejecuta una de las dos declaraciones dadas, dependiendo del resultado de la evaluación.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Operator and Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>? : (Conditional )</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>If Condition is true? Then value X : Otherwise value Y</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ejemplo-5">Ejemplo</h3>
+
+<p>Pruebe el siguiente código para comprender cómo funciona el operador condicional en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">((a &gt; b) ? 100 : 200) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">)</span> <span class="p">?</span> <span class="mi">100</span> <span class="p">:</span> <span class="mi">200</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">((a &lt; b) ? 100 : 200) =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">)</span> <span class="p">?</span> <span class="mi">100</span> <span class="p">:</span> <span class="mi">200</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variables to different values and different operators and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h3 id="operador-typeof">operador typeof</h3>
+
+<p>El operador typeof es un operador unario que se coloca antes de su operando único, que puede ser de cualquier tipo. Su valor es una cadena que indica el tipo de datos del operando.</p>
+
+<p>El operador typeof se evalúa como “número”, “cadena” o “booleano” si su operando es un número, cadena o valor booleano y devuelve verdadero o falso según la evaluación.</p>
+
+<p>Aquí hay una lista de los valores de retorno para el tipo de Operador.</p>
+
+<p>|Type | String Returned by typeof|
+|—–|————————–|
+Number 	“number”
+String 	“string”
+Boolean 	“boolean”
+Object 	“object”
+Function 	“function”
+Undefined 	“undefined”
+Null 	“object”</p>
+
+<h3 id="ejemplo-6">Ejemplo</h3>
+
+<p>El siguiente código muestra cómo implementar el operador typeof.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">String</span><span class="dl">"</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">linebreak</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">;</span>
+         
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">b</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">B is String</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">B is Numeric</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Result =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         
+            <span class="nx">result</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">A is String</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">A is Numeric</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Result =&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">linebreak</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variables to different values and different operators and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F11%2Fjs-operadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=Javascrpt+-+Tipos+de+Operadores%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F11%2Fjs-operadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F11%2Fjs-operadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=Javascrpt+-+Tipos+de+Operadores&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F11%2Fjs-operadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/06/11/js-navegadores.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Javascript - Navegadores
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/06/19/inventario-emisiones.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Como elaborar un inventario de emisiones?
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

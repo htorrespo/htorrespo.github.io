@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>DOM - Aspectos basicos | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="DOM - Aspectos basicos" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="El Document Object Model (DOM) es un estandar W3C." />
+<meta property="og:description" content="El Document Object Model (DOM) es un estandar W3C." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/08/07/dom-basico.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/08/07/dom-basico.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DOM - Aspectos basicos" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"El Document Object Model (DOM) es un estandar W3C.","@type":"BlogPosting","headline":"DOM - Aspectos basicos","dateModified":"2019-08-07T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/07/dom-basico.html","datePublished":"2019-08-07T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/07/dom-basico.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  dom-aspectos-basicos">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">DOM - Aspectos basicos
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">2 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-08-07T00:00:00+00:00"><a class="u-url" href="">August 7, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>El Document Object Model (DOM) es un estandar W3C. Define un estandar para acceder a documentos como HTML y XML. Este tutorial le enseñara los conceptos basicos de XML DOM. El tutorial esta dividido en secciones como XML DOM Basics, XML DOM Operations y XML DOM Objects. Cada una de estas secciones contiene temas relacionados con ejemplos simples y utiles.</p>
+
+<p>Esta documentacion ha sido preparada para los principiantes para ayudarlos a comprender los conceptos basicos y avanzados relacionados con XML DOM. Este tutorial le dara una comprension suficiente sobre XML DOM desde donde puede llevarse a un nivel superior de experiencia.</p>
+
+<p>Antes de continuar con este tutorial, debe tener conocimientos basicos de XML, HTML y Javascript.</p>
+
+<p>El Document Object Model (DOM) es un estandar W3C. Define un estandar para acceder a documentos como HTML y XML.</p>
+
+<p>La definicion de DOM segun la expresion del W3C es:</p>
+
+<p>*El Document Object Model (DOM) es una interfaz de programacion de aplicaciones (API) para documentos HTML y XML. Define la estructura logica de los documentos y la forma en que se accede y se manipula un documento.</p>
+
+<p>DOM define los objetos, propiedades y metodos (interfaz) para acceder a todos los elementos XML. Estos se divide en 3 partes / niveles diferentes:</p>
+
+<ul>
+  <li>
+    <p>Core DOM: modelo estandar para cualquier documento estructurado</p>
+  </li>
+  <li>
+    <p>XML DOM: modelo estandar para documentos XML</p>
+  </li>
+  <li>
+    <p>HTML DOM - modelo estandar para documentos HTML</p>
+  </li>
+</ul>
+
+<p>XML DOM es un modelo de objeto estandar para XML. Los documentos XML tienen una jerarquia de unidades informativas llamadas nodos; DOM es una interfaz de programacion estandar para describir esos nodos y las relaciones entre ellos.</p>
+
+<p>XML DOM tambien proporciona una API que permite a un desarrollador agregar, editar, mover o eliminar nodos en cualquier punto del arbol para crear una aplicacion.</p>
+
+<h3 id="ventajas-de-xml-dom">Ventajas de XML DOM</h3>
+
+<p>Las siguientes son las ventajas de XML DOM.</p>
+
+<ul>
+  <li>
+    <p>XML DOM es independiente del lenguaje y la plataforma.</p>
+  </li>
+  <li>
+    <p>XML DOM es transitable: la informacion en XML DOM esta organizada en una jerarquia que permite al desarrollador navegar por la jerarquia en busca de informacion especifica.</p>
+  </li>
+  <li>
+    <p>XML DOM es modificable: es de naturaleza dinamica y proporciona al desarrollador un alcance para agregar, editar, mover o eliminar nodos en cualquier punto del arbol.</p>
+  </li>
+</ul>
+
+<h3 id="desventajas-de-xml-dom">Desventajas de XML DOM</h3>
+
+<ul>
+  <li>
+    <p>Consume mas memoria (si la estructura XML es grande) ya que el programa escrito permanece en la memoria todo el tiempo hasta que se elimine explicitamente.</p>
+  </li>
+  <li>
+    <p>Debido al amplio uso de la memoria, su velocidad operativa, en comparacion con SAX, es mas lenta.</p>
+  </li>
+</ul>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F07%2Fdom-basico.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=DOM+-+Aspectos+basicos%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F07%2Fdom-basico.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F07%2Fdom-basico.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=DOM+-+Aspectos+basicos&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F07%2Fdom-basico.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/08/06/web-modernizr-introduction.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Modernizr - Deteccion de compatibilidad de navegadores
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/08/08/dom-modelo-xml.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        DOM - Modelo XML
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

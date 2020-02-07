@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>JavaScript - Objeto String | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="JavaScript - Objeto String" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="El objeto String es un objeto envolvente / Wrapper que permite trabajar con cadenas de caracteres." />
+<meta property="og:description" content="El objeto String es un objeto envolvente / Wrapper que permite trabajar con cadenas de caracteres." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/07/24/js-objetos-string.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/07/24/js-objetos-string.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JavaScript - Objeto String" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"El objeto String es un objeto envolvente / Wrapper que permite trabajar con cadenas de caracteres.","@type":"BlogPosting","headline":"JavaScript - Objeto String","dateModified":"2019-07-24T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/24/js-objetos-string.html","datePublished":"2019-07-24T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/24/js-objetos-string.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-objeto-string">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript - Objeto String
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">4 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-07-24T00:00:00+00:00"><a class="u-url" href="">July 24, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>El objeto <code class="highlighter-rouge">String</code> le permite trabajar con una serie de caracteres; envuelve el tipo de datos primitivos de cadena de caracteres en Javascript con varios metodos de ayuda.</p>
+
+<p>Como JavaScript convierte automaticamente entre primitivas de cadena de caracteres y objetos <code class="highlighter-rouge">String</code>, puede llamar a cualquiera de los metodos auxiliares del objeto <code class="highlighter-rouge">String</code> desde una primitiva de cadena de caracteres.</p>
+
+<p>Utilice la siguiente sintaxis para crear un objeto <code class="highlighter-rouge">String</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var val = new String(string);</span><span class="w">
+</span></code></pre></div></div>
+
+<p>El parametro <code class="highlighter-rouge">string</code> es una cadena de caracteres.</p>
+
+<h3 id="propiedades-de-string">Propiedades de <code class="highlighter-rouge">String</code></h3>
+
+<p>Aquí hay una lista de las propiedades del objeto <code class="highlighter-rouge">String</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una referencia a la funcion <code class="highlighter-rouge">String</code> que creó el objeto.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">length</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la longitud de la cadena de caracteres.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">prototype</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>La propiedad <code class="highlighter-rouge">prototype</code> permite agregar propiedades y metodos a un objeto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="metodos-de-string">Metodos de <code class="highlighter-rouge">String</code></h3>
+
+<p>Aquí hay una lista de los metodos del objeto <code class="highlighter-rouge">String</code> y su descripción.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">charAt()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el caracter en el índice especificado.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">charCodeAt()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un numero que indica el valor Unicode del caracter en el índice dado.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">concat()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Combina el texto de dos cadenas de caracteres y devuelve una nueva cadena.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">indexOf )</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el índice dentro del objeto <code class="highlighter-rouge">String</code> de llamada de la primera aparición del valor especificado, o -1 si no se encuentra.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">lastIndexOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el índice dentro del objeto <code class="highlighter-rouge">String</code> de llamada de la ultima aparicion del valor especificado, o -1 si no se encuentra.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">localeCompare()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un numero que indica si una cadena de referencia aparece antes o despues o si es igual a la cadena dada en orden de clasificacion.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">match()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Se utiliza para hacer coincidir una expresion regular con una cadena.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">replace()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Se utiliza para encontrar una coincidencia entre una expresión regular y una cadena, y para reemplazar la subcadena coincidente con una nueva subcadena.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">search()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ejecuta la busqueda de una coincidencia entre una expresion regular y una cadena especificada.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">slice()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Extrae una seccion de una cadena y devuelve una nueva cadena.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">split()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Divide un objeto <code class="highlighter-rouge">String</code> en una matriz de cadenas separando la cadena en subcadenas.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">substr()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los caracteres en una cadena que comienza en la ubicacion especificada a traves del numero especificado de caracteres.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code class="highlighter-rouge">substring()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los caracteres en una cadena entre dos índices en la cadena.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code class="highlighter-rouge">toLocaleLowerCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Los caracteres dentro de una cadena se convierten a minusculas respetando la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code class="highlighter-rouge">toLocaleUpperCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Los caracteres dentro de una cadena se convierten a mayusculas respetando la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code class="highlighter-rouge">toLowerCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor de la cadena de llamada convertido a minusculas.</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena que representa el objeto especificado.</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code class="highlighter-rouge">toUpperCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor de la cadena de llamada convertido a mayusculas.</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code class="highlighter-rouge">valueOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor primitivo del objeto especificado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="envoltorios--wrappers-de-string-html">Envoltorios / Wrappers de String HTML</h3>
+
+<p>Aquí hay una lista de los metodos que devuelven una copia de la cadena envuelta dentro de una etiqueta HTML apropiada.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">anchor()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea un ancla HTML que se utiliza como un hipertexto objetivo.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">big()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena que se mostrara en una fuente grande como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;big&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">blink()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena para parpadear como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;blink&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">bold()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena que se mostrara en negrita como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;b&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">fixed()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en una fuente de tono fijo como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;tt&gt;</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">fontcolor()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en el color especificado como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;font color = "color"&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">fontsize()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en el tamaño de fuente especificado como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;font size = "size"&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">italics()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena este en cursiva, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;i&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">link()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea un enlace hipertexto HTML que solicita otra URL.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">small()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en una fuente pequeña, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;small&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">strike()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como texto tachado, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;strike&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">sub()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como un subíndice, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;sub&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code class="highlighter-rouge">sup()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como un superíndice, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;sup&gt;</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F24%2Fjs-objetos-string.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+-+Objeto+String%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F24%2Fjs-objetos-string.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F24%2Fjs-objetos-string.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=JavaScript+-+Objeto+String&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F07%2F24%2Fjs-objetos-string.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/07/24/js-objetos-boleanos.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Objeto Boolean
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/07/25/js-objetos-arrays.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript - Objeto Array
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

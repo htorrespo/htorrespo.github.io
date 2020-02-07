@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>JavaScript - Compatibilidad de Navegadores | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="JavaScript - Compatibilidad de Navegadores" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Los desarrolladores deben tener claro desde el principio que a pesar de la supuesta compatibilidad entre navegadores, JavaScript es interpretado de modo diferente segun sea el navegador utilizado." />
+<meta property="og:description" content="Los desarrolladores deben tener claro desde el principio que a pesar de la supuesta compatibilidad entre navegadores, JavaScript es interpretado de modo diferente segun sea el navegador utilizado." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/08/01/js-compatibilidad-navegadores.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/08/01/js-compatibilidad-navegadores.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JavaScript - Compatibilidad de Navegadores" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"Los desarrolladores deben tener claro desde el principio que a pesar de la supuesta compatibilidad entre navegadores, JavaScript es interpretado de modo diferente segun sea el navegador utilizado.","@type":"BlogPosting","headline":"JavaScript - Compatibilidad de Navegadores","dateModified":"2019-08-01T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/01/js-compatibilidad-navegadores.html","datePublished":"2019-08-01T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/01/js-compatibilidad-navegadores.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-compatibilidad-de-navegadores">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript - Compatibilidad de Navegadores
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">2 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-08-01T00:00:00+00:00"><a class="u-url" href="">August 1, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Es importante comprender las diferencias entre los diferentes navegadores para manejar cada uno de la forma en que se espera. Por lo tanto, es importante saber en que navegador se esta ejecutando su pagina web.</p>
+
+<p>Para obtener informacion sobre el navegador en el que se ejecuta actualmente su pagina web, use el objeto incorporado <code class="highlighter-rouge">navegator</code>.</p>
+
+<h3 id="propiedades-del-navegador">Propiedades del navegador</h3>
+
+<p>Existen varias propiedades relacionadas con el navegador que puede usar en su pagina web. La siguiente es una lista de los nombres y descripciones de cada uno.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">appCodeName</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene el nombre navegador, Netscape para Netscape y Microsoft Internet Explorer para Internet Explorer.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">appVersion</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena cadena de caracteres que contiene la version del navegador, su idioma y compatibilidad.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">language</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad contiene la abreviatura de dos letras para el idioma que utiliza el navegador. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">mimTypes[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una matriz que contiene todos los tipos MIME admitidos por el cliente. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">platform[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene la plataforma para la cual se compilo el navegador.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">plugins[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una matriz que contiene todos los complementos que se han instalado en el cliente. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">userAgent[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene el nombre del codigo y la version del navegador. Este valor se envia al servidor de origen para identificar al cliente.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metodos-de-navegador">Metodos de navegador</h3>
+
+<p>Existen varios metodos especificos del navegador. Aqui hay una lista de sus nombres y descripciones.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">javaEnabled()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo determina si JavaScript esta habilitado en el cliente. Si JavaScript esta habilitado, este metodo devuelve verdadero; de lo contrario, devuelve falso.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">plugings.refresh</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo hace que los complementos recien instalados esten disponibles y llena la matriz de complementos con todos los nuevos nombres de complementos. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">preference(name,value)</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo permite que un script firmado obtenga y establezca algunas preferencias de Netscape. Si se omite el segundo parametro, este metodo devolvera el valor de la preferencia especificada; de lo contrario, establece el valor. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">taintEnabled()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo devuelve verdadero si la contaminacion de datos esta habilitada; de lo contrario falso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="deteccion-de-navegador">Deteccion de navegador</h3>
+
+<p>Hay un JavaScript simple que se puede utilizar para averiguar el nombre de un navegador y, en consecuencia, se puede servir una pagina HTML al usuario.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Browser Detection Example<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">userAgent</span>   <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">opera</span>       <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Opera</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">ie</span>          <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">MSIE</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">gecko</span>       <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Gecko</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nb">netscape</span>    <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mozilla</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">version</span>     <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">;</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="nx">opera</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Opera based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your opera specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">gecko</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mozilla based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your gecko specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">IE based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your IE specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">netscape</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Netscape based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your Netscape specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown browser</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+            
+            <span class="c1">// You can include version to along with any above condition.</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br /&gt; Browser version info : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">version</span> <span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F01%2Fjs-compatibilidad-navegadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+-+Compatibilidad+de+Navegadores%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F01%2Fjs-compatibilidad-navegadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F01%2Fjs-compatibilidad-navegadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=JavaScript+-+Compatibilidad+de+Navegadores&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F01%2Fjs-compatibilidad-navegadores.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/07/31/js-depuracion.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Depuracion
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/08/02/js-animacion.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript - Animacion
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

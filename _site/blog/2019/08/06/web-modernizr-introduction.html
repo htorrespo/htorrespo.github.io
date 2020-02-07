@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Modernizr - Deteccion de compatibilidad de navegadores | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Modernizr - Deteccion de compatibilidad de navegadores" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Modernizr es una biblioteca de JavaScript que estaiseñada para detectar caracteristicas de HTML5 y CSS3 en varios navegadores, lo que le permite a JavaScript evitar el uso de funciones no implementadas o usar una solucion alternativa como un shim para emularlas" />
+<meta property="og:description" content="Modernizr es una biblioteca de JavaScript que estaiseñada para detectar caracteristicas de HTML5 y CSS3 en varios navegadores, lo que le permite a JavaScript evitar el uso de funciones no implementadas o usar una solucion alternativa como un shim para emularlas" />
+<link rel="canonical" href="http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Modernizr - Deteccion de compatibilidad de navegadores" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"Modernizr es una biblioteca de JavaScript que estaiseñada para detectar caracteristicas de HTML5 y CSS3 en varios navegadores, lo que le permite a JavaScript evitar el uso de funciones no implementadas o usar una solucion alternativa como un shim para emularlas","@type":"BlogPosting","headline":"Modernizr - Deteccion de compatibilidad de navegadores","dateModified":"2019-08-06T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html","datePublished":"2019-08-06T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/06/web-modernizr-introduction.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  modernizr-deteccion-de-compatibilidad-de-navegadores">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Modernizr - Deteccion de compatibilidad de navegadores
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">11 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-08-06T00:00:00+00:00"><a class="u-url" href="">August 6, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          
+<p>Cuando un profesional se dedica al desarrollo de proyectos digitales hay una maxima, lo que se ve en el navegador es lo que es. Da igual que backend o que estilos tenga nuestra pagina web si a la hora de renderizarlo en el navegador se ve de forma distinta a la esperada. La libreria JavaScript Modernizr es la solucion para evitar disgustos: es el mejor testeador posible para detectar cuales son las caracteristicas del proyecto que soporta cada navegador.</p>
+
+<p>Concretamente, Modernizr es una libreria que revisa 18 caracteristicas de estilos CSS3 y 40 mas relacionadas con el documento HTML, sobre todo su ultima version disponible, HTML5. Esto es interesante porque los navegadores mas modernos ejecutan recursos que los mas antiguos no pueden. La idea es aprovechar las ventajas de los primeros sin dejar de servir en los segundos. Asi se ajusta el diseño a la experiencia de usuario real que tendra la web para todos los navegadores. Facilita la creacion de proyectos digitales todoterreno.</p>
+
+<h2 id="instalacion-y-herramientas-de-modernizr">Instalacion y herramientas de Modernizr</h2>
+
+<p>1.Para realizar la deteccion de funciones con Modernizr, debe agregarel archivo <code class="highlighter-rouge">modernizr.js</code> a su proyecto. Esto se puede hacer de 2 maneras:</p>
+
+<p>a.Descargar <a href="https://modernizr.com/download/">descargar el archivo con el codigo fuente de Modernizr</a>.desde: visite el sitio web oficial para crear y descargar el archivo JavaScript. Haga clic en “Add your detects” para seleccionar manualmente las caracteristicas que desee de acuerdo con las necesidades de su proyecto o haga clic en “Development build” para ser redirigido a la pagina de compilacion con todas las opciones de pruebas / detecciones preseleccionadas. Haga clic en el boton de compilacion para descargar el archivo.</p>
+
+<p>b.Usando npm y linea de comando: Modernizr tambien se puede instalar Node Packet Manager o NPM. Puedes instalar NPM aqui. Despues de instalar npm, abra la linea de comando e ingrese:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install -g modernizr
+</span></code></pre></div></div>
+<p>Modernizr para la deteccion de funcionalidades realiza 3 funciones basicas: -</p>
+
+<ul>
+  <li>
+    <p>Agrega clases que indican soporte de caracteristicas que se pueden usar para aplicar condicionalmente reglas de estilo CSS a diferentes elementos.</p>
+  </li>
+  <li>
+    <p>Crea un objeto javascript para verificar o validar la compatibilidad con cualquier funcion HTML o CSS en un navegador.</p>
+  </li>
+  <li>
+    <p>Permite suministrar condicionalmente scripts JS personalizados o polyfills para imitar caracteristicas que faltan.</p>
+  </li>
+</ul>
+
+<p>Es importante recordar que la deteccion de funcionalidades con Modernizr es solo para funciones que son compatibles. Para esas funciones no compatibles de un navegador antiguo se logra mediante “polyfilling”.</p>
+
+<p>2.Ahora incluya el archivo Modernizr descargado en la seccion de su pagina.</p>
+
+<p>Para usar esta libreria JavaScript es necesario incorporar el script de Modernizr en el <code class="highlighter-rouge">&lt;head&gt;</code> de la web, justo despues de las declaraciones de estilos CSS del site. Primero cargan los estilos y despues la libreria. El script que habria que añadir en el <code class="highlighter-rouge">&lt;head&gt;</code> del proyecto es el siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"modernizr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>3.Agregue la clase <code class="highlighter-rouge">"no-js"</code> a la etiqueta <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">"no-js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"modernizr-custom.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>Esta clase <code class="highlighter-rouge">"no-js"</code> es una alternativa necesaria si el usuario ha deshabilitado JavaScript en su navegador o si el navegador en si no admite JavaScript. Una vez que se carga la pagina y en caso de que el navegador admita JavaScript, la clase <code class="highlighter-rouge">"no-js"</code> sera reemplazada por la clase “js” automaticamente por Modernizr para la deteccion de caracteristicas.</p>
+
+<p>4.Modernizr agrega varias clases CSS en el elemento raiz <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>. Estas clases se agregan en funcion de las capacidades del navegador: las clases se agregan para las funciones que son compatibles y las clases se agregan con un prefijo “no” para las funciones que no son compatibles.</p>
+
+<p>Por ejemplo, si el navegador admite Flexbox, la clase <code class="highlighter-rouge">"flexbox"</code> se agregara a la etiqueta <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>. Si no es compatible, se agrega la clase <code class="highlighter-rouge">"no-flexbox"</code>.</p>
+
+<p>Clases agregadas a la etiqueta <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> por Modernizr para pruebas de deteccion de caracteristicas en IE9</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">"js no-flexbox canvas canvastext 
+no-webgl no-touch geolocation postmessage 
+no-websqldatabase no-indexeddb hashchange 
+no-history draganddrop no-websockets rgba 
+hsla multiplebgs backgroundsize no-borderimage 
+borderradius boxshadow no-textshadow opacity 
+no-cssanimations no-csscolumns no-cssgradients 
+no-cssreflections csstransforms no-csstransforms3d no-csstransitions fontface generatedcontent 
+video audio localstorage sessionstorage 
+no-webworkers no-applicationcache svg inlinesvg 
+smil svgclippaths"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<h2 id="deteccion-de-caracteristicas-javascript-con-modernizr">Deteccion de caracteristicas JavaScript con Modernizr</h2>
+
+<p>Objeto JavaScript. Modernizr ejecuta una serie de comprobaciones o pruebas basadas en JavaScript en segundo plano durante la carga de la pagina para detectar si el navegador admite o no las funciones. Una vez instalada y cargada la libreria Modernizr, el objeto JavaScript permite detectar que funcionalidades del proyecto estan soportadas en cada navegador, tanto lenguaje HTML como estilos CSS. Este tipo de deteccion de funcionalidades disponibles se produce a traves de variables booleanas de true (cierto) o false (falso). True significa que el navegador soporta la funcionalidad; false que no lo hace.</p>
+
+<p>Podemos acceder a varias propiedades de este objeto “Modernizr” para la deteccion de caracteristicas utilizando “Modernizr.featureName”. Por ejemplo, Modernizr.video devolvera “verdadero” si el navegador admite el elemento de video, y falso si el navegador no lo hace.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (Modernizr.awesomeNewFeature) {
+    showOffAwesomeNewFeature();
+  } else {
+    getTheOldLameExperience();
+  } 
+</code></pre></div></div>
+
+<p>Dos casos practicos a partir del ejemplo teorico de arriba. El primero prueba si el navegador usado por el usuario soporta los eventos touch de nuestro proyecto. El segundo detecta si se pueden aplicar sombras:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (Modernizr.touch){
+
+  //el navegador soporta eventos touch
+
+} else {
+
+  //el navegador no soporta eventos touch
+
+}
+
+ 
+
+if (Modernizr.boxshadow) {
+   // Podemos aplicar sombras!
+} else {
+   // La propiedad box-shadow no esta disponible
+}
+</code></pre></div></div>
+
+<p>El siguiente ejemplo muestra como probar los gradientes lineales CSS utilizando JavaScript y agregando la clase de gradiente lineal para los navegadores que lo admiten.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(document).ready(function () {
+
+    if (Modernizr.cssgradients) {
+        alert("This browser supports CSS Gradients");
+        $('#box').addClass('cssgradients');
+    }
+        
+    if (Modernizr.cssgradients) {
+        alert("This browser doesn't support CSS Gradients");
+        $('#box').addClass('no-cssgradients');
+    }
+
+});
+</code></pre></div></div>
+
+<p>Ademas de la deteccion de funciones usando javascript para probar si un navegador admite esa tecnologia web en particular o no, Modernizr tambien se puede usar para cargar polyfills / shims para imitar las funciones que un navegador carece o no admite.</p>
+
+<h2 id="deteccion-de-caracteristicas-css-con-modernizr">Deteccion de caracteristicas CSS con Modernizr</h2>
+
+<p>Estas clases se agregan a la etiqueta <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> de Modernizr para la deteccion de caracteristicas de las propiedades de estilo CSS en funcion de si una caracteristica es compatible con un navegador determinado o no. Las clases con el prefijo <code class="highlighter-rouge">"no"</code> se aplicaran automaticamente en los navegadores que no admitan esas funciones correspondientes.</p>
+
+<p>Por ejemplo, si la propiedad box-shadow es compatible con un navegador, la clase Modernizr <code class="highlighter-rouge">"boxshadow"</code> se agrega a la etiqueta <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>. Si no es compatible, se agrega la clase Modernizr <code class="highlighter-rouge">"no-boxshadow"</code>. Podemos usar solo estas 2 clases CSS para dirigir efectivamente a todos los navegadores independientemente de su soporte para esta caracteristica en particular. La clase <code class="highlighter-rouge">".boxshadow"</code> se puede usar para diseñar una sombra de cuadro alrededor de un <code class="highlighter-rouge">div</code> con desplazamiento horizontal y desplazamiento vertical de 10px, desenfoque de 8px y separacion de 15px para todos los navegadores compatibles y la clase <code class="highlighter-rouge">".no_boxshadow"</code> se puede usar para codificar con un ancho de borde mas grueso para compensar la falta de sombra para todos los navegadores no compatibles.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.boxshadow #box {
+    border: 2px solid black;
+    -webkit-box-shadow: 10px 10px 8px 10px #888888;
+    -moz-box-shadow: 10px 10px 8px 10px #888888;
+}
+   
+.no-boxshadow #box {
+    border: 5px solid black;
+}
+</code></pre></div></div>
+
+<p>Por lo tanto, en lugar de escribir montones de codigo para dirigirse a navegadores individuales, la deteccion de caracteristicas con Modernizr reduce la tarea a codificar solo 2 bloques de codigo, uno para navegadores compatibles y el otro para no compatibles.</p>
+
+<p>Otro ejemplo para gradientes lineales CSS:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.no-cssgradients .header {
+  background: url("https://unsplash.it/640/425?image=44");
+}
+ 
+.cssgradients .header {
+background-image: url("https://unsplash.it/640/425?image=44"), linear-gradient(red, blue);
+}
+</code></pre></div></div>
+
+<p>Es bastante plausible que las clases creadas por Modernizr puedan entrar en conflicto con una clase CSS preexistente que habria agregado a su hoja de estilo. Para evitar este escenario, es aconsejable agregar un <code class="highlighter-rouge">"classPrefix"</code> a todas sus clases Modernizr para que sean completamente unicas. Por ejemplo, es posible que ya este utilizando una clase llamada <code class="highlighter-rouge">'boxshadow'</code> que chocara con la clase de deteccion creada por Modernizr con el mismo nombre. Puede hacer uso de prefijos de clase para abordar facilmente este problema. Realice los siguientes cambios en su configuracion:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "classPrefix": "foo-",
+  "feature-detects": ["dom/boxshadow"]
+}
+</code></pre></div></div>
+
+<p>Ahora, en lugar de <code class="highlighter-rouge"><span class="nt">&lt;html</span> <span class="na">class = </span><span class="s">"boxshadow"</span><span class="nt">&gt;</span>, modernizr agregara <span class="nt">&lt;html</span> <span class="na">class = </span><span class="s">"foo-boxshadow"</span><span class="nt">&gt;</span></code>.</p>
+
+<p>Si desea que Modernizr no agregue ninguna de sus clases a su etiqueta HTML, configure <code class="highlighter-rouge">"enableClasses"</code> en falso en su archivo de configuracion. Esto todavia excluye la clase no-js. Para evitar incluso eso, establezca <code class="highlighter-rouge">"enableJSClass"</code> en falso tambien.</p>
+
+<h3 id="librerias-polyfills-y-el-metodo-modernizrload">Librerias Polyfills y el metodo Modernizr.load()</h3>
+
+<p>Modernizr dispone de un metodo que permite a los desarrolladores la carga bajo demanda de librerias o plugins que aumentan las funcionalidades de los navegadores menos modernos. La libreria se cargaria solo si el usuario visita una pagina web con algun estilo concreto no disponible en el navegador.</p>
+
+<p>Esto se consigue con la carga de uno de estos plugins o polyfill mediante el metodo <code class="highlighter-rouge">Modernizr.load()</code>. Asi se mantiene la UX en navegadores antiguos.</p>
+
+<p>El metodo <code class="highlighter-rouge">Modernizr.load()</code> es un cargador condicional basado en una biblioteca <code class="highlighter-rouge">yesnope.js</code> extremadamente popular que carga archivos JavaScript basados en el resultado de una prueba de deteccion de caracteristicas. Por ejemplo, podemos usar el metodo <code class="highlighter-rouge">Modernizr.load()</code> para probar la disponibilidad de soporte para flexbox y cargar un polyfill si el navegador no lo admite.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Modernizr.load({
+    test: Modernizr.flexbox,
+    yep : 'flexlayout.css',
+    nope: 'matchHeight.js' });
+</code></pre></div></div>
+
+<p>Si el navegador admite flexbox, se cargara el archivo <code class="highlighter-rouge">flexlayout.css</code>; de lo contrario, en caso de falta de compatibilidad, se cargara polyfill de <code class="highlighter-rouge">matchHeight.js</code>, que imita la funcion de flexbox en navegadores mas antiguos.</p>
+
+<p><code class="highlighter-rouge">Modernizr.load()</code> toma la propiedad que define una caracteristica como argumento y realiza una prueba para verificar su compatibilidad. Si la propiedad es compatible y la prueba se realiza correctamente, se carga la secuencia de comandos de caso <code class="highlighter-rouge">yep</code>. Si la propiedad no es compatible y la prueba falla, se carga el guion de caso <code class="highlighter-rouge">nope</code>. Si se va a cargar una secuencia de comandos, independientemente de si la prueba falla o no, <code class="highlighter-rouge">both</code> casos. Por ejemplo -</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Modernizr.load({
+    test: Modernizr.canvas,
+    yep:  'Canvasavailable.js',
+    nope: 'FlashCanvas.js',
+    both: 'CustomScript.js'
+});
+</code></pre></div></div>
+
+<p>Los pasos a seguir:</p>
+
+<ul>
+  <li>
+    <p>Con Modernizr se puede detectar si una funcionalidad esta o no disponible dentro del navegador utilizado por el usuario. En el caso de que esa propiedad no este disponible en el navegador, el metodo <code class="highlighter-rouge">Modernizr.load()</code> puede cargar el polyfill especifico para esa funcion.</p>
+  </li>
+  <li>
+    <p>Como usar el metodo <code class="highlighter-rouge">Modernizr.load()</code> para incorporar librerias? El codigo necesario es sencillo, en este caso incorpora geolocalizacion:</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Modernizr.load({
+  test: Modernizr.geolocation,
+  yep : 'geo.js',
+  nope: 'geo-polyfill.js'
+});
+</code></pre></div></div>
+
+<p>En la sintaxis anterior hay tres elementos distintos:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">test</code>: hace mencion a la funcionalidad que queremos que se ejecute dentro del navegador del usuario.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">yep</code>: si la condicion cumple, cargamos la funcionalidad.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">nope</code>: si la condicion no se cumple, cargamos la alternativa, el polyfill de geolocalizacion para navegadores antiguos.</p>
+  </li>
+</ul>
+
+<p>Existen algunas caracteristicas añadidas que se pueden cargar tambien:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">both</code>: se cumpla o no la condicion, se carga la funcionalidad.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">load</code>: carga la funcionalidad independientemente del test que realice la libreria JavaScript Modernizr en el navegador.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">callback</code>: carga la funcionalidad una vez esten los recursos.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">complete</code>: carga la funcionalidad haya o no recursos.</p>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">Modernizr.load()</code>  tambien se puede utilizar en los casos en que desee crear un acceso por compatibilidad en caso de que no se pueda acceder a las redes CDN de Google o Microsoft, lo que puede arruinar toda su pagina web. Sin CDN, los scripts jquery o bootstrap no se cargaran si los incluye mediante enlaces CDN. El siguiente ejemplo muestra como crear una copia de seguridad para cargar jquery si falla CDN. Primero intentara descargar jQuery del CDN de Google, utilice la funcion correspondiente al caso <code class="highlighter-rouge">complete</code> para verificar si jQuery esta presente o no. Si jQuery esta ausente porque no se pudo descargar de Google CDN, el caso de <code class="highlighter-rouge">load</code> cargara la copia de seguridad jquery de su almacenamiento local</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Modernizr.load([
+    {
+        load: '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        complete: function () {
+            if (!window.jQuery) {
+                Modernizr.load('js/libs/jquery/3.3.1/jquery.min.js');
+            }
+        }
+    },
+    {
+        // execute this if jquery couldn't be loaded.
+        load: 'backup-jquery.js'
+    }
+]);
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Modernizr.load()</code> y <code class="highlighter-rouge">yesnope.js</code> ahora han quedado en desuso y ya no son compatibles con la version actual de modernizr (v3.5). Todavia puedes usar esto en v2.8. Puede leer mas sobre el aviso de desaprobacion dirigido por el creador del modernizador Alex Sexton <a href="https://github.com/SlexAxton/yepnope.js#deprecation-notice">aqui</a>.</p>
+
+<p>Una alternativa viable ahora es usar el metodo jquery <code class="highlighter-rouge">getScript()</code>. El siguiente ejemplo muestra como cargar un script de polyfill si un navegador no admite la deteccion de funciones:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (Modernizr.geolocation){
+  //feature is supported by the browser
+  console.log('geolocation supported');
+} else {
+  // feature not supported - load polyfill
+  $.getScript('path/script.js')
+  .done(function() {
+    console.log('script loaded');
+  })
+  .fail(function() {
+    console.log('script failed to load');
+  });
+}
+</code></pre></div></div>
+
+<p>Ha pasado casi una decada desde el lanzamiento de Modernizr en 2009, pero aun hoy no ha perdido su relevancia y proposito. Para cada desarrollador al que le guste construir sus sitios web y aplicaciones web con caracteristicas modernas de vanguardia HTML5 y CSS3, Modernizr es un activo indispensable. No solo ayuda a evitar los montones de codigo necesarios para las pruebas cruzadas del navegador, sino que tambien ayuda a proporcionar una alternativa a la deteccion poco confiable de User Agent. Al igual que las consultas de caracteristicas, Modernizr con deteccion de caracteristicas para compatibilidad cruzada entre navegadores ayuda a implementar todos los retrocesos necesarios para funcionalidades y caracteristicas no compatibles que garantizan una experiencia de usuario impecable independientemente del navegador que el usuario pueda estar utilizando. Aunque las consultas de caracteristicas de CSS @supports nativas se estan poniendo al dia rapidamente en terminos de popularidad y aceptacion generalizadas entre los desarrolladores, su falta de soporte en IE (incluido IE11) significa que Modernizr con mecanismo de deteccion de caracteristicas, sigue siendo la principal herramienta de eleccion para lograr la compatibilidad entre navegadores.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F06%2Fweb-modernizr-introduction.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=Modernizr+-+Deteccion+de+compatibilidad+de+navegadores%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F06%2Fweb-modernizr-introduction.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F06%2Fweb-modernizr-introduction.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=Modernizr+-+Deteccion+de+compatibilidad+de+navegadores&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F08%2F06%2Fweb-modernizr-introduction.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/08/03/js-mapa-imagen.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Mapa de imagenes
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/08/07/dom-basico.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        DOM - Aspectos basicos
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

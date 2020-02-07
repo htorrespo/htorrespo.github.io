@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Uso de sass en proyectos Jekyll | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Uso de sass en proyectos Jekyll" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jekyll y Sass" />
+<meta property="og:description" content="Jekyll y Sass" />
+<link rel="canonical" href="http://localhost:4000/blog/2019/06/08/jekyll-sass.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/06/08/jekyll-sass.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-08T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Uso de sass en proyectos Jekyll" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"Jekyll y Sass","@type":"BlogPosting","headline":"Uso de sass en proyectos Jekyll","dateModified":"2019-06-08T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html","datePublished":"2019-06-08T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  uso-de-sass-en-proyectos-jekyll">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Uso de sass en proyectos Jekyll
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">3 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-06-08T00:00:00+00:00"><a class="u-url" href="">June 8, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Una de las particularidades de Jekyll es que permite al diseñador, realmente diseñar. Jekyll no impone ningún tipo de estructura o restriccion, ni clases, convenciones de diseño o codificacion predeterminadas. Eres libre de estructurar y diseñar tu contenido como mejor te parezca. Así es que, la planeacion y construccion de estilos dependen totalmente de ti. Sin embargo, hay algunas cosas que debes tener en cuenta al escribir CSS para un sitio Jekyll.</p>
+
+<h2 id="ubicacion">Ubicacion</h2>
+
+<p>Normalmente me gusta mantener los estilos en un directorio titulado _css. Esta convención no funciona para Jekyll, ya que un subrayado al principio de un directorio le indica a Jekyll que procese el contenido del directorio y no lo incluya en la estructura final del directorio. Como tal, para asegurarse de que su CSS se copie al sitio final, asegúrese de nombrarlo css o un nombre similar que no comience con un guión bajo</p>
+
+<h2 id="linking">Linking</h2>
+
+<p>Basicamente, hay dos formas de vincular a recursos externos como CSS dentro de las páginas y plantillas de Jekyll. Una sería usar el sitio <code class="highlighter-rouge">baseURL</code> para prefijar tus archivos CSS:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/main.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Si tu sitio siempre se publica desde la carpeta raíz, puede eliminar el objeto <code class="highlighter-rouge">site.url</code> y simplemente usar un enlace relativo del sitio:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/main.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Es importante tener en cuenta que los enlaces relativos para assets como CSS pueden ser difíciles cuando se alojan sitios en Github Pages. Esencialmente, hay dos formas de alojar páginas en Github Pages, como páginas <code class="highlighter-rouge">user/organization</code> o páginas <code class="highlighter-rouge">project</code>.</p>
+
+<p>Las páginas de usuarios y organizaciones viven en un repositorio de GitHub dedicado solo a los archivos de las páginas de GitHub y se almacenan en la rama <code class="highlighter-rouge">master</code>. Este repositorio debe tener el nombre de la cuenta, que será <code class="highlighter-rouge">username.github.io</code>.</p>
+
+<p>Las páginas del proyecto se almacenan en el mismo repositorio que el proyecto, excepto que el contenido del sitio web se almacena en una rama <code class="highlighter-rouge">gh-pages</code>. La rama maestra puede contener el proyecto en sí, o incluso estar vacía.</p>
+
+<p>Si el sitio se sirve a través de una página proyecto, su <code class="highlighter-rouge">baseURL</code> cambia a medida que el sitio se sirve a través de una sub-ruta de su dominio de usuario en <code class="highlighter-rouge">username.github.io/project</code>. Esto significa que en estos casos, deberá configurar su baseURL a <code class="highlighter-rouge">/project-name</code>. Tenga en cuenta hay una barra diagonal inicial y ninguna barra diagonal final. Esto también puede ocasionar problemas al probar los archivos localmente, así que asegúrese de leer la documentación de Jekyll sobre el hospedaje con Github Pages para obtener una cuenta completa.</p>
+
+<h2 id="jekyll-y-sass">Jekyll y SASS</h2>
+
+<p>Jekyll viene con soporte incorporado para SASS, por lo que no es necesario instalar o modificar su configuración para que funcione. Sin embargo, hay una o dos cosas que debe tener en cuenta al trabajar con SASS en Jekyll.</p>
+
+<p>Primero, para garantizar que Jekyll procese los archivos SASS, debe introducir una cadena de caracteres <code class="highlighter-rouge">front matter</code> al principio en la parte superior de la página. Puedes incluir un comentario si lo deseas, pero en realidad no importa. Así que incluye esto en la parte superior de cada archivo SASS:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+# Front matter added to ensure Jekyll processes file.
+---
+
+// write styles after front matter
+</code></pre></div></div>
+
+<p>Si observa la estructura de directorios predeterminada de Jekyll, sin duda verá el directorio <code class="highlighter-rouge">_sass</code>, lo que puede llevar a cierta confusión sobre dónde colocar los archivos SASS. Jekyll copia sobre cualquier archivo SASS procesado en la misma ubicación en la que se procesó. Por lo tanto, si tiene el archivo <code class="highlighter-rouge">css/styles.scss</code>, se procesará y colocará en <code class="highlighter-rouge">css/styles.css</code> en el sitio generado. El directorio <code class="highlighter-rouge">_sass</code> es para archivos de importación SASS. Si pone los archivos <code class="highlighter-rouge">.scss</code> parciales que está importando y usa <code class="highlighter-rouge">@import</code> para ensamblarlos en su hoja de estilo principal, Jekyll los procesará y los reunirá en tiempo de ejecución.</p>
+
+<p>Así que si haces algo como esto en tu archivo <code class="highlighter-rouge">.scss</code> principal:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+# Front matter added to ensure Jekyll processes file.
+---
+
+// Imports
+@import "type";
+@import "layout";
+@import "components";
+
+//styles
+</code></pre></div></div>
+
+<p>Ponga los archivos <code class="highlighter-rouge">type.scss</code>, <code class="highlighter-rouge">layout.scss</code> y <code class="highlighter-rouge">components.scss</code> en el directorio <code class="highlighter-rouge">_sass</code> y Jekyll hará el resto.</p>
+
+<p>Además, deberá asegurarse de que <code class="highlighter-rouge">sass_dir</code> esté configurado en el directorio base que contiene archivos Sass de otros frameworks como Bootstrap, Maximize u otros:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass:
+    sass_dir: _sass
+</code></pre></div></div>
+
+<p>El convertidor Sass predeterminará la opción de configuración <code class="highlighter-rouge">sass_dir</code> a <code class="highlighter-rouge">_sass</code>.</p>
+
+<p>También puede especificar el estilo de salida con la opción de estilo en su archivo <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass:
+    sass_dir: _sass
+    style: compressed
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F08%2Fjekyll-sass.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=Uso+de+sass+en+proyectos+Jekyll%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F08%2Fjekyll-sass.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F08%2Fjekyll-sass.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=Uso+de+sass+en+proyectos+Jekyll&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F08%2Fjekyll-sass.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/06/07/js-syntax.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Javascript - Sintaxis
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/06/10/js-ubicacion.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Javascript - Codigo javaScript en documento HTML
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

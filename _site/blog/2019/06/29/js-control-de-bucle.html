@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>JavaScript - Control de bucle | Splendidus</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="JavaScript - Control de bucle" />
+<meta name="author" content="Henry Torres" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="JavaScript proporciona un control total para manejar bucles y sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle." />
+<meta property="og:description" content="JavaScript proporciona un control total para manejar bucles y sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle." />
+<link rel="canonical" href="http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html" />
+<meta property="og:site_name" content="Splendidus" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JavaScript - Control de bucle" />
+<meta name="twitter:site" content="@htorrespo" />
+<meta name="twitter:creator" content="@htorrespo" />
+<script type="application/ld+json">
+{"description":"JavaScript proporciona un control total para manejar bucles y sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle.","@type":"BlogPosting","headline":"JavaScript - Control de bucle","dateModified":"2019-06-29T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html","datePublished":"2019-06-29T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/default.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Splendidus" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-control-de-bucle">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/posts/">Posts</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Splendidus">
+        <img src="/images/mandarin.jpg" class="site-logo-img animated fadeInDown" alt="Splendidus">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Splendidus</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript - Control de bucle
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/logo/106-v2-15.jpg" class="author-avatar u-photo" alt="Henry Torres"><div class="author-info"><div class="author-name">
+        <span class="p-name">Henry Torres</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-lg" title="Instagram"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">3 min read</span>
+
+    <time class="page-date dt-published" datetime="2019-06-29T00:00:00+00:00"><a class="u-url" href="">June 29, 2019</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#blog" title="Pages filed under Blog">Blog</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>JavaScript proporciona un control total para manejar bucles y  sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle.</p>
+
+<p>Para manejar todas estas situaciones, JavaScript proporciona declaraciones de ruptura y continuación. Estas declaraciones se utilizan para salir inmediatamente de cualquier bucle o para iniciar la siguiente iteracion de cualquier bucle, respectivamente.</p>
+
+<h3 id="la-sentencia-break">La sentencia <code class="highlighter-rouge">break</code></h3>
+
+<p>La instruccion <code class="highlighter-rouge">break</code>, que se introdujo brevemente con la instrucción <code class="highlighter-rouge">switch</code>, se utiliza para salir de un bucle de manera temprana.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>El siguiente ejemplo ilustra el uso de una instruccion <code class="highlighter-rouge">break</code> con un bucle <code class="highlighter-rouge">while</code>. Observe como el bucle se rompe de forma  temprana una vez que x llega a 5 y llega a la declaracion <code class="highlighter-rouge">document.write(..)</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>     
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+         <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering the loop&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         
+         <span class="k">while</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+               <span class="k">break</span><span class="p">;</span>   <span class="c1">// breaks out of loop completely</span>
+            <span class="p">}</span>
+            <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span> <span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+         <span class="p">}</span>         
+         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Ya hemos visto el uso de la instruccion <code class="highlighter-rouge">break</code> dentro de una instruccion <code class="highlighter-rouge">switch</code>.</p>
+
+<h3 id="la-sentencia-continue">La sentencia <code class="highlighter-rouge">continue</code></h3>
+
+<p>La instruccion <code class="highlighter-rouge">continue</code> le indica al interprete que inicie inmediatamente la siguiente iteracion del bucle y que omita el bloque de codigo restante. Cuando se encuentra una declaración <code class="highlighter-rouge">continue</code>, el flujo del programa se mueve a la expresion de comprobacion de bucle inmediatamente y, si la condicion sigue siendo verdadera, comienza la siguiente iteracion, de lo contrario, el control sale del bucle.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Este ejemplo ilustra el uso de una instruccion <code class="highlighter-rouge">continue</code> con un bucle <code class="highlighter-rouge">while</code>. Observe como se usa la instruccion para omitir la impresion cuando el indice que se mantiene en la variable x alcanza 5.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering the loop&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         
+            <span class="k">while</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+               
+               <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">continue</span><span class="p">;</span>   <span class="c1">// skip rest of the loop body</span>
+               <span class="p">}</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span> <span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h3 id="uso-de-etiquetas-para-control-de-flujo">Uso de etiquetas para control de flujo</h3>
+
+<p>A partir de JavaScript 1.2, se puede utilizar una etiqueta con <code class="highlighter-rouge">break</code> y <code class="highlighter-rouge">continue</code> para controlar el flujo con mayor precision. Una etiqueta es simplemente un identificador seguido de dos puntos (:) que se aplica a una declaracion o un bloque de codigo. Veremos dos ejemplos para entender como usar las etiquetas con <code class="highlighter-rouge">break</code> y <code class="highlighter-rouge">continue</code>.</p>
+
+<p>Nota: no se permiten saltos de línea entre la declaracion <code class="highlighter-rouge">break</code> o <code class="highlighter-rouge">continue</code> y su nombre de etiqueta. Ademas, no debe haber ninguna otra declaracion entre un nombre de etiqueta y un bucle asociado.</p>
+
+<p>Pruebe los siguientes ejemplos para una mejor comprensióo de las etiquetas.</p>
+
+<h4 id="ejemplos">Ejemplos</h4>
+
+<p>El siguiente ejemplo muestra cómo implementar Label con una instrucción <code class="highlighter-rouge">break</code>.</p>
+
+<p>Ejemplo 1</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+            <span class="nl">outerloop</span><span class="p">:</span>        <span class="c1">// This is the label name         </span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Outerloop: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nl">innerloop</span><span class="p">:</span>
+               <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="p">)</span> <span class="k">break</span> <span class="p">;</span>           <span class="c1">// Quit the innermost loop</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">break</span> <span class="nx">innerloop</span><span class="p">;</span>  <span class="c1">// Do the same thing</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="k">break</span> <span class="nx">outerloop</span><span class="p">;</span>  <span class="c1">// Quit the outer loop</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Innerloop: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> &lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="p">}</span>
+            <span class="p">}</span>        
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Ejemplo 2</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         <span class="nl">outerloop</span><span class="p">:</span>     <span class="c1">// This is the label name</span>
+         
+         <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Outerloop: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">continue</span> <span class="nx">outerloop</span><span class="p">;</span>
+               <span class="p">}</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Innerloop: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+         
+         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting the loop!&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+        </div>
+
+        
+          <div class="page-share">
+  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F29%2Fjs-control-de-bucle.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a> -->
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+-+Control+de+bucle%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F29%2Fjs-control-de-bucle.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F29%2Fjs-control-de-bucle.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <!-- <a href="https://reddit.com/submit?title=JavaScript+-+Control+de+bucle&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2F2019%2F06%2F29%2Fjs-control-de-bucle.html" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a> -->
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/blog/2019/06/29/js-condicional-while.html">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript - Sentencia while
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/blog/2019/06/29/js-sentencia-for-in.html">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript - Sentencia for…in
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://twitter.com/htorrespo"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/htorrespo"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://github.com/htorrespo"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2020 Splendidus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
