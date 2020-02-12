@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Groovy - Trucos para JavaScript | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Groovy - Trucos para JavaScript" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Consejos para usar JavaScript de manera limpia","@type":"BlogPosting","headline":"Groovy - Trucos para JavaScript","dateModified":"2019-08-21T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/21/javascript-tips.html","datePublished":"2019-08-21T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/21/javascript-tips.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Consejos para usar JavaScript de manera limpia","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/21/javascript-tips.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/08/21/javascript-tips.html","headline":"Groovy - Trucos para JavaScript","dateModified":"2019-08-21T00:00:00+00:00","datePublished":"2019-08-21T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -144,12 +144,12 @@
         <div class="e-content">
           
 <ol>
-  <li>Use <code class="highlighter-rouge">var</code> al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de <code class="highlighter-rouge">var</code> delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar <code class="highlighter-rouge">var</code>, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">var</code> al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de <code class="language-plaintext highlighter-rouge">var</code> delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar <code class="language-plaintext highlighter-rouge">var</code>, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.</li>
 </ol>
 
-<p>También existe la opción de usar <code class="highlighter-rouge">let</code> y <code class="highlighter-rouge">const</code> dependiendo del caso de uso.</p>
+<p>También existe la opción de usar <code class="language-plaintext highlighter-rouge">let</code> y <code class="language-plaintext highlighter-rouge">const</code> dependiendo del caso de uso.</p>
 
-<p>La instrucción <code class="highlighter-rouge">let</code> permite crear una variable con el alcance limitado al bloque en el que se utiliza.</p>
+<p>La instrucción <code class="language-plaintext highlighter-rouge">let</code> permite crear una variable con el alcance limitado al bloque en el que se utiliza.</p>
 
 <p>Considere el siguiente fragmento de código.</p>
 
@@ -174,7 +174,7 @@
 </code></pre>
 <p><strong>Error Message: Uncaught SyntaxError: Identifier ‘a’ has already been declared.</strong></p>
 
-<p>Sin embargo, con <code class="highlighter-rouge">var</code>, funciona bien.</p>
+<p>Sin embargo, con <code class="language-plaintext highlighter-rouge">var</code>, funciona bien.</p>
 
 <pre><code class="language-Javascript">function varDeclaration(){
     var a =10;
@@ -183,9 +183,9 @@
 }
 </code></pre>
 
-<p>El alcance se mantendrá bien con una declaración <code class="highlighter-rouge">let</code> y cuando se utiliza una función interna, la declaración <code class="highlighter-rouge">let</code> hace que su código sea limpio y claro.</p>
+<p>El alcance se mantendrá bien con una declaración <code class="language-plaintext highlighter-rouge">let</code> y cuando se utiliza una función interna, la declaración <code class="language-plaintext highlighter-rouge">let</code> hace que su código sea limpio y claro.</p>
 
-<p>→ los valores de la sentencia <code class="highlighter-rouge">const</code> pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración <code class="highlighter-rouge">const</code> funciona de manera similar a las declaraciones <code class="highlighter-rouge">let</code>.</p>
+<p>→ los valores de la sentencia <code class="language-plaintext highlighter-rouge">const</code> pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración <code class="language-plaintext highlighter-rouge">const</code> funciona de manera similar a las declaraciones <code class="language-plaintext highlighter-rouge">let</code>.</p>
 
 <pre><code class="language-JavaScript">function varDeclaration(){
     const MY_VARIABLE =10;
@@ -193,7 +193,7 @@
 }
 </code></pre>
 
-<p>Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable <code class="highlighter-rouge">const</code>?</p>
+<p>Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable <code class="language-plaintext highlighter-rouge">const</code>?</p>
 
 <p>Considere el siguiente fragmento de código.</p>
 
@@ -207,17 +207,17 @@
 
 <p><strong>Error Message : Uncaught TypeError: Assignment to constant variable.</strong></p>
 
-<p>El código arrojará un error cuando intentemos reasignar la variable <code class="highlighter-rouge">const</code> existente.</p>
+<p>El código arrojará un error cuando intentemos reasignar la variable <code class="language-plaintext highlighter-rouge">const</code> existente.</p>
 
 <ol>
-  <li>Utilice siempre <code class="highlighter-rouge">===</code> como comparador en lugar de <code class="highlighter-rouge">==</code> (estricto igual). Use <code class="highlighter-rouge">===</code> en lugar de <code class="highlighter-rouge">==</code> porque cuando usa <code class="highlighter-rouge">==</code> hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.</li>
+  <li>Utilice siempre <code class="language-plaintext highlighter-rouge">===</code> como comparador en lugar de <code class="language-plaintext highlighter-rouge">==</code> (estricto igual). Use <code class="language-plaintext highlighter-rouge">===</code> en lugar de <code class="language-plaintext highlighter-rouge">==</code> porque cuando usa <code class="language-plaintext highlighter-rouge">==</code> hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.</li>
 </ol>
 
 <pre><code class="language-JavaScript">3 == ‘3’ // true
 3 === ‘3’ //false
 </code></pre>
 
-<p>Esto sucede porque en <code class="highlighter-rouge">===</code> la comparación tiene lugar entre el valor y el tipo.</p>
+<p>Esto sucede porque en <code class="language-plaintext highlighter-rouge">===</code> la comparación tiene lugar entre el valor y el tipo.</p>
 
 <pre><code class="language-JavaScript">[10] == 10   // is true
 [10] === 10  // is false
@@ -231,7 +231,7 @@
 
 <ol>
   <li>
-    <p><code class="highlighter-rouge">undefined</code>, <code class="highlighter-rouge">null</code>, <code class="highlighter-rouge">0</code>, <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">NaN</code>, (cadena vacía) son todas condiciones falsas.</p>
+    <p><code class="language-plaintext highlighter-rouge">undefined</code>, <code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">false</code>, <code class="language-plaintext highlighter-rouge">NaN</code>, (cadena vacía) son todas condiciones falsas.</p>
   </li>
   <li>
     <p>Vaciar una matriz</p>
@@ -265,16 +265,16 @@ isFinite(null);      // true
 
 <p>Tomemos un ejemplo para comprender el uso de esta función, supongamos que ha escrito una consulta de base de datos sobre una tabla que contiene una gran cantidad de datos y después de la ejecución de la consulta no está seguro de todos los valores de resultado posibles de esa consulta. Los datos de la consulta cambian en algo que usted pone dinámicamente en la consulta. En tal caso, no está seguro acerca de la propiedad finita del resultado y si usa ese resultado directamente, puede darle una condición infinita, lo que puede romper su código.</p>
 
-<p>Por lo tanto, se recomienda usar <code class="highlighter-rouge">isFinite()</code> antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.</p>
+<p>Por lo tanto, se recomienda usar <code class="language-plaintext highlighter-rouge">isFinite()</code> antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.</p>
 
 <ol>
-  <li>Use una instrucción <code class="highlighter-rouge">switch/case</code> en lugar de una serie de <code class="highlighter-rouge">if/else</code></li>
+  <li>Use una instrucción <code class="language-plaintext highlighter-rouge">switch/case</code> en lugar de una serie de <code class="language-plaintext highlighter-rouge">if/else</code></li>
 </ol>
 
-<p>Usar <code class="highlighter-rouge">switch/case</code> es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.</p>
+<p>Usar <code class="language-plaintext highlighter-rouge">switch/case</code> es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.</p>
 
 <ol>
-  <li>Uso de <code class="highlighter-rouge">use strict”</code> dentro de su archivo. La cadena <code class="highlighter-rouge">use strict”</code> evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.</li>
+  <li>Uso de <code class="language-plaintext highlighter-rouge">use strict”</code> dentro de su archivo. La cadena <code class="language-plaintext highlighter-rouge">use strict”</code> evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.</li>
 </ol>
 
 <pre><code class="language-JavaScript">// This is bad, since you do create a global without having anyone to tell you
@@ -287,7 +287,7 @@ console.log(a);
 // → 42
 </code></pre>
 
-<p><code class="highlighter-rouge">use strict</code> lo mantendrá alejado de cometer el anterior error. Usando <code class="highlighter-rouge">use strict</code>, puede obtener bastantes errores:</p>
+<p><code class="language-plaintext highlighter-rouge">use strict</code> lo mantendrá alejado de cometer el anterior error. Usando <code class="language-plaintext highlighter-rouge">use strict</code>, puede obtener bastantes errores:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
    <span class="err">“</span><span class="nx">use</span> <span class="nx">strict</span><span class="err">”</span><span class="p">;</span>
@@ -296,10 +296,10 @@ console.log(a);
 <span class="p">})();</span>
 </code></pre></div></div>
 
-<p>Podría preguntarse por qué no puede poner <code class="highlighter-rouge">use strict</code>fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.</p>
+<p>Podría preguntarse por qué no puede poner <code class="language-plaintext highlighter-rouge">use strict</code>fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.</p>
 
 <ol>
-  <li>Use <code class="highlighter-rouge">&amp;&amp;</code> y <code class="highlighter-rouge">||</code> para crear magia</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> y <code class="language-plaintext highlighter-rouge">||</code> para crear magia</li>
 </ol>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">“”</span> <span class="o">||</span> <span class="err">“</span><span class="nx">foo</span><span class="err">”</span>
@@ -318,7 +318,7 @@ console.log(a);
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

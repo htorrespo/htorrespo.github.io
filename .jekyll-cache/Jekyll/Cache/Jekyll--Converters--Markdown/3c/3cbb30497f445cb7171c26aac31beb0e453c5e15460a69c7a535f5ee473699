@@ -1,0 +1,301 @@
+I"�g<p>Hoy en dia, la mayoria de ofertas de alojamiento web son para el servidor web Apache. Es una solucion mucho mas barata en comparación con la plataforma IIS en Windows. Apache es bien conocido por su capacidad para usar <code class="highlighter-rouge">.htaccess</code>, donde podemos controlar determinados aspectos de nuestro sitio web, incluyendo el rendimiento.</p>
+
+<h3 id="redirección-con-htaccess">Redirección con .htaccess</h3>
+
+<p>Inserta el siguiente codigo en el archivo <code class="highlighter-rouge">.htaccess</code> ubicado en el directorio publico <code class="highlighter-rouge">/public_html</code> de tu plan de alojamiento web. Puedes editar el contenido del archivo <code class="highlighter-rouge">.htaccess</code> accediendo por ftp o haciendo uso de la utilidad <strong>Administrador de Archivos</strong> del Panel de Control de tu plan de alojamiento.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{HTTPS} off
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>https://%<span class="o">{</span>HTTP_HOST<span class="o">}</span>%<span class="o">{</span>REQUEST_URI<span class="o">}</span> <span class="o">[</span>L,R<span class="o">=</span>301]
+</code></pre></div></div>
+<p><strong>Nota</strong>: Es posible que el archivo <code class="highlighter-rouge">.htaccess</code> contenga otras directivas imprescindibles para el correcto funcionameinto de tu página web, haz una copia de seguridad antes de realizar modificaciones.</p>
+
+<p>Antes de avanzar, seguramente te habras preguntado ¿donde localizo el archivo .htaccess? El archivo <code class="highlighter-rouge">.htaccess</code> es un archivo <em>oculto</em> (el . delante del nombre indica que se trata de archivo oculto).</p>
+
+<p>Para poder visualizarlo debes:</p>
+
+<ol>
+  <li>
+    <p>Accede a tu cPanel.</p>
+  </li>
+  <li>
+    <p>Ingrese al <strong>Administrador de Archivos</strong>, navegue hasta encontrar la carpeta <code class="highlighter-rouge">/public_html</code>.</p>
+  </li>
+  <li>
+    <p>En la parte superior derecha seleccione <strong>Configuracion</strong>. Se un cuadro de dialogo con varias opciones, seleccione <em>Mostrar archivos ocultos (dotfiles)</em>.</p>
+  </li>
+  <li>
+    <p>Abrir la carpeta <code class="highlighter-rouge">/public_html</code>. Ahora podras ver el archivo <code class="highlighter-rouge">.htaccess</code> (no confundir con <code class="highlighter-rouge">htaccess.txt</code> que si es visible).</p>
+  </li>
+  <li>
+    <p>Click <strong>Editar</strong> en el menu del <strong>Administrador de Archivos</strong> (se sugiere hacer una copia del archivo original)</p>
+  </li>
+  <li>
+    <p>Inserte el codigo de redireccion</p>
+  </li>
+</ol>
+
+<p>Ahora que ya lo tienes claro, seguiremos conociendo otros codigos que puedes utilizar en tu archivo <code class="highlighter-rouge">.htaccess</code>.</p>
+
+<h3 id="como-cambiar-de-la-url-con-alias-www-a-la-url-sin-alias-www">Como cambiar de la URL con alias www a la URL sin alias www</h3>
+
+<p>El siguiente codigo debe redirigir al usuario de la dirección URL de tu dominio con www a la dirección URL sin www.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.tuempresa.com [NC]
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>http://tuempresa.com/<span class="nv">$1</span> <span class="o">[</span>L,R<span class="o">=</span>301]
+</code></pre></div></div>
+
+<h3 id="redirigir-siempre-al-alias-www-cualquier-dominio-apuntado">Redirigir siempre al alias www cualquier dominio apuntado</h3>
+
+<p>Este codigo es util para redirigir uno o varios dominios para que trabajen con el alias www usando comodines <code class="highlighter-rouge">www.*.*</code>:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">RewriteCond %{REQUEST_URI} !^/robots\.txt$</span><span class="w"> </span><span class="o">[</span>NC]
+<span class="go">RewriteCond  %{HTTP_HOST} !^www\.[a-z-]+\.[a-z]{2,6} [NC]
+</span><span class="gp">RewriteCond %{HTTP_HOST} ([a-z-]+\.[a-z]{2,6})$</span><span class="w">   </span><span class="o">[</span>NC]
+<span class="gp">RewriteRule  ^/(.*)$</span><span class="w"> </span>http://%1/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+</code></pre></div></div>
+
+<p>Si tenemos varios dominios gestionando en la cuenta de Hosting, para no tener que crear una redireccion <code class="highlighter-rouge">301</code> de uno en uno cada dominio, otra forma de hacerlo es redirigiendo todos los <code class="highlighter-rouge">.tld</code> de los dominios utilizados <em>sin alias www</em> a dominios <em>con alias www</em>:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>http://www.%<span class="o">{</span>HTTP_HOST<span class="o">}</span>/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+</code></pre></div></div>
+
+<h3 id="redirigir-url-de-una-carpeta-a-otra-carpeta-del-mismo-dominio">Redirigir url de una carpeta a otra carpeta del mismo dominio</h3>
+
+<p>Una Redireccion <code class="highlighter-rouge">301</code> es util cuando cometemos el error de indicar una carpeta nombrada de forma incorrecta o que fue renombrada posteriormente, de forma que podamos redireccionar peticiones que vayan a <code class="highlighter-rouge">/carpeta1/</code> para que aterricen en <code class="highlighter-rouge">/carpeta2/</code>.</p>
+
+<p>Se deben añadir este tipo de redirecciones en la parte más alta del archivo <code class="highlighter-rouge">.htaccess</code>,  :</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Options +FollowSymLinks
+RewriteEngine On
+</span><span class="gp">RewriteRule ^carpeta1/(.*)$</span><span class="w"> </span>http://dominio.com/carpeta2/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+</code></pre></div></div>
+
+<h3 id="redirigir-un-dominio-a-otro-dominio">Redirigir un dominio a otro dominio</h3>
+
+<p>Para evitar que las urls se vean afectadas por cambio de un dominio a otro es conveniente que hacer la siguiente redireccion en <code class="highlighter-rouge">.htaccess</code> de forma que quienes vengan de enlaces de la antigua url aterricen en la nueva url de forma correcta, lo contrario afectaría al posicionamiento y habria un aumento de pérdida de tráfico.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&lt;IfModule mod_rewrite.c&gt;</span><span class="w">
+</span><span class="go">  RewriteEngine On
+</span><span class="gp">  RewriteCond %{HTTP_HOST} ^anteriordominio.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">  RewriteCond %{HTTP_HOST} ^www.anteriordominio.com$</span><span class="w">
+</span><span class="gp">  RewriteRule (.*)$</span><span class="w"> </span>http://www.nuevodominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+<span class="gp">&lt;/IfModule&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="redirigir-del-localhost-tu-pc-a-un-dominio-remoto">Redirigir del localhost (tu PC) a un dominio remoto</h3>
+
+<p>Con esta regla puedes redireccionar de localhost (tu ordenador) a tu sitio web remoto (Hosting):</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^localhost$</span><span class="w">
+</span><span class="gp">RewriteRule (.*)$</span><span class="w"> </span>http://www.dominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+</code></pre></div></div>
+
+<p>Si solo quieres redireccionar un subdominio concreto puedes crear la siguiente regla en tu <code class="highlighter-rouge">.htaccess</code>:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^subdominio.dominio.com$</span><span class="w">
+</span><span class="gp">RewriteRule (.*)$</span><span class="w"> </span>http://www.nuevodominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+</code></pre></div></div>
+
+<p>Una forma mas sencilla de hacer esto con comodines, creando una regla en <code class="highlighter-rouge">.htaccess</code> como la siguiente:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">Redirect 301 (.*)$</span><span class="w"> </span>http://www.nuevodominio.com/<span class="nv">$1</span>
+</code></pre></div></div>
+
+<h3 id="impedir-listar-el-directorio">Impedir listar el directorio</h3>
+
+<p>Si tienes una carpeta en el servidor web utilizada para almacenar archivos como eBooks, software legal, etc., si la carpeta no tiene archivo index.html, los visitantes pueden ver todos los archivos dentro de la carpeta sin problemas. En este caso puedes utilizar el siguiente codigo para evitar que esto suceda.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Options -Indexes
+</span></code></pre></div></div>
+
+<h3 id="orden-de-ejecucion-de-archivos">Orden de ejecucion de archivos</h3>
+
+<p>Si tienes tanto el archivo <code class="highlighter-rouge">index.html</code> como el archivo <code class="highlighter-rouge">index.php</code> en la carpeta <code class="highlighter-rouge">/public_html</code>, el archivo <code class="highlighter-rouge">index.html</code> tiene mayor prioridad y se ejecutara en primer lugar. Aunque la mayoria de scripts web utilizan el archivo <code class="highlighter-rouge">index.php</code> como punto de partida. Si se elimina el archivo <code class="highlighter-rouge">index.html</code>, se soluciona el problema, aunque no siempre es asi y en estos casos hay una mejor solucion que es utilizar el siguiente codigo para dar prioridad al archivo <code class="highlighter-rouge">index.php</code> en lugar de <code class="highlighter-rouge">index.html</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">DirectoryIndex index.php index.html
+</span></code></pre></div></div>
+
+<h3 id="comprimir-archivos-css-javascript-xml-y-texto">Comprimir archivos CSS, JavaScript, XML y texto</h3>
+
+<p>El siguiente codigo esta diseñado para comprimir el codigo de salida CSS, JavaScript, XML y de texto antes de ser mostrado en el navegador. La idea basica es ahorrar tiempo en la carga y no consumir tanto ancho de banda.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&lt;ifmodule&gt;</span><span class="w">
+</span><span class="go"> AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript
+</span><span class="gp">&lt;/ifmodule&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="almacenamiento-de-imágenes-en-cache">Almacenamiento de imágenes en cache</h3>
+
+<p>Cada vez que recibimos visitas en la web, el servidor web obtiene todos los archivos necesarios, tales como archivos CSS y JavaScript, así como fotos e imagenes para poder mostrarla. Podemos usar el codigo de abajo para gestionar los archivos cache, y que cuando un visitante vuelva a visitarnos por segunda vez, el servidor cargue el archivo de la cache lo que acelerara el tiempo de carga sitio web.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&lt;IfModule mod_expires.c&gt;</span><span class="w">
+</span><span class="go">ExpiresActive On
+ExpiresByType image/gif A432000
+ExpiresByType image/jpg A432000
+ExpiresByType image/jpeg A432000
+ExpiresByType image/png A432000
+ExpiresByType image/ico A432000
+ExpiresByType image/bmp A432000
+ExpiresByType text/css A432000
+ExpiresByType text/javascript A432000
+ExpiresByType application/javascript A432000
+ExpiresByType application/x-javascript A432000
+</span><span class="gp">&lt;/ifmodule&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>El anterior codigo guarda cache de los archivos durante cinco días o 432.000 segundos. Puedes cambiar el periodo de almacenamiento en cache, asegurándote de utilizar el valor expresado en segundos.</p>
+
+<h3 id="proteger-el-archivo-htaccess">Proteger el archivo <code class="highlighter-rouge">.htaccess</code></h3>
+
+<p>El siguiente codigo evita que tu archivo <code class="highlighter-rouge">.htaccess</code> puedan ser leído directamente desde el navegador web.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&lt;Files .htaccess&gt;</span><span class="w">
+</span><span class="go">Order allow,deny
+Deny from all
+</span><span class="gp">&lt;/Files&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="prevenir-el-hotlinking">Prevenir el hotlinking</h3>
+
+<p>A veces, otros webmasters, hacen suyas las imagenes de nuestras webs, articulos, etc., afectando con ello el ancho de banda que disponemos en nuestro Hosting. Si ademas ellos tienen una gran cantidad de visitantes al día, estos van a utilizar nuestro ancho de banda del servidor para visualizar nuestras imagenes en la web ajena a nosotros.</p>
+
+<p>Se puede utilizar el codigo que se muestra a continuacion para evitar el hotlinking, y de esta forma reemplazar la imagen original por otra con algun aviso para hacerles saber que la imagen es nuestra o que el hotlinking es una mala practica.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^http://(.+\.)?webempresa\.com/ [NC]
+</span><span class="gp">RewriteCond %{HTTP_REFERER} !^$</span><span class="w">
+</span><span class="gp">RewriteRule .*\.(jpg|gif|bmp|png)$</span><span class="w"> </span>http://hotlink.webempresa.com/no_se_permite_hotlinking.jpg <span class="o">[</span>L]
+</code></pre></div></div>
+
+<p>Puedes subir la imagen a un sitio de alojamiento de imagenes como ImageShack para evitar que tu ancho de banda se vea afectado.</p>
+
+<h3 id="cambiar-la-ubicacion-de-la-carpeta-de-dominio-a-otra-carpeta-de-public_html">Cambiar la ubicacion de la carpeta de dominio a otra carpeta de <code class="highlighter-rouge">/public_html</code></h3>
+
+<p>Si ya tienes un sitio web en <code class="highlighter-rouge">/public_html</code>, y quieres actualizar la pagina web, pero no quieres que los demas lo vean, pero tampoco quieres afectar al sitio web en produccion existente, la forma mas facil es la construccion de la nueva pagina web en una subcarpeta de <code class="highlighter-rouge">/public_html</code>, por ejemplo, <code class="highlighter-rouge">/public_html/web2</code>.</p>
+
+<p>Al finalizar todas las pruebas y mejoras, necesitas reemplazar el antiguo sitio web con el nuevo, pero transferir archivos y carpetas a la carpeta /public_html es bastante molesto. La mejor solucion es usar <code class="highlighter-rouge">.htaccess</code> para decirle a Apache que utilice la carpeta <code class="highlighter-rouge">/public_html/web2</code> en lugar de <code class="highlighter-rouge">/public_html</code> para el dominio.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^tuempresa\.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">RewriteCond %{HTTP_HOST} ^www\.tuempresa\.com$</span><span class="w">
+</span><span class="go">RewriteCond %{REQUEST_URI} !^/web2/
+</span><span class="gp">RewriteRule (.*) /web2/$</span>1 <span class="o">[</span>L]
+</code></pre></div></div>
+
+<h3 id="crear-urls-de-uso-facil-o-amigables">Crear URLs de uso facil o <em>amigables</em></h3>
+
+<p>¿Cual de las dos URL a continuación parece más amigable?</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">http://tusitio.com/acercade
+http://tusitio.com/paginas/acercade.html
+</span></code></pre></div></div>
+
+<p>Cuando se trata de direcciones URL, siempre y cuando el significado sea claro, cuanto mas corto mejor. <code class="highlighter-rouge">htaccess</code> con una llamada al modulo de Apache <code class="highlighter-rouge">mod_rewrite</code> permite configurar las direcciones URL como quieras. El servidor puede mostrar el contenido de <code class="highlighter-rouge">/paginas/acercade.html</code> cada vez que alguien visita <code class="highlighter-rouge">http://tusitio.com/acercade</code>.</p>
+
+<p>A continuación algunos ejemplos:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine on
+</span><span class="gp">RewriteRule ^acercade/$</span><span class="w">    </span>/paginas/acercade.html <span class="o">[</span>L]
+<span class="gp">RewriteRule ^caracteristicas/$</span><span class="w"> </span>/caracteristicas.php <span class="o">[</span>L]
+<span class="gp">RewriteRule ^comprar/$</span><span class="w">      </span>/comprar.html <span class="o">[</span>L]
+<span class="gp">RewriteRule ^contacto/$</span><span class="w">  </span>/paginas/contacto.htm <span class="o">[</span>L]
+</code></pre></div></div>
+
+<h3 id="forzar-el-uso-de-ssl">Forzar el uso de SSL</h3>
+
+<p>Este codigo fuerza a utilizar SSL, no permitiendo conexiones http. Para evitar escuchas en <code class="highlighter-rouge">http://</code> utilizamos por debajo la directiva <code class="highlighter-rouge">ErrorDocument</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">SSLOptions + StrictRequire
+SSLRequireSSL
+</span></code></pre></div></div>
+
+<p>Cuando una línea comienza por <code class="highlighter-rouge">#</code> es un comentario que no tiene efecto alguno.</p>
+
+<p>Si alguien visita tu sitio el servidor web Apache verifica si tiene un archivo <code class="highlighter-rouge">.htaccess</code> en algun lugar de su espacio web a partir de la carpeta raiz o la carpeta principal y rastrea todas las carpetas hasta llegar al archivo solicitado. Si encuentra un archivo <code class="highlighter-rouge">.htaccess</code>, sus directivas se aplican a la solicitud actual.</p>
+
+<p>Es importante saber que el archivo <code class="highlighter-rouge">.htaccess</code> debe ser legible por el servidor Apache. Por tanto es importante consultar con su Hosting si se requiere algun permiso especial que hayan establecido para los archivos <code class="highlighter-rouge">.htaccess</code>. En general los permisos correctos para este archivo son <code class="highlighter-rouge">644</code>.</p>
+
+<h3 id="redireccionar-de-http-a-https">Redireccionar de HTTP a HTTPS</h3>
+
+<p>Cabe decir que es necesario disponer de un Certificado SSL instalado en el Hosting para poder hacer uso de este protocolo mas seguro.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on [NC]
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^tu_dominio\.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">RewriteCond %{HTTP_HOST} ^www\.tu_dominio\.com$</span><span class="w">
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>https://tudominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L,NE]
+</code></pre></div></div>
+<p>Pueden existir casos en los que queramos añadir excepciones en el forzado de la redireccion de HTTP a HTTPS (por ejemplo, la pagina de notificacion de Redsys). Esto lo podemos hacer añadiendo una linea de codigo adicional. Si por ejemplo, queremos añadir una excepcion para la url <code class="highlighter-rouge">https://tudominio.com/?wc-api=WC_redsys</code> habría que dejar el codigo anterior de la siguiente forma:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on [NC]
+RewriteCond %{QUERY_STRING} !wc-api [NC]
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^tu_dominio\.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">RewriteCond %{HTTP_HOST} ^www\.tu_dominio\.com$</span><span class="w">
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>https://tudominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L,NE]
+</code></pre></div></div>
+
+<p>Redsys es una compañia que ofrece sus servicios a entidades financieras, siendo estas las que formalizan los contratos con los comercios y quienes, en consecuencia, se encargan de todos los aspectos relacionados con su gestion.</p>
+
+<p>Otro ejemplo: si no queremos forzar el uso del HTTPS para la url <code class="highlighter-rouge">https://tudominio.com/blog/entrada1.html</code> tendremos que poner un codigo como el siguiente:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on [NC]
+</span><span class="gp">RewriteCond %{REQUEST_URI} !\/blog\/entrada1\.html$</span><span class="w"> </span><span class="o">[</span>NC]
+<span class="gp">RewriteCond %{HTTP_HOST} ^tu_dominio\.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">RewriteCond %{HTTP_HOST} ^www\.tu_dominio\.com$</span><span class="w">
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>https://tudominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L,NE]
+</code></pre></div></div>
+
+<h3 id="redireccionar-de-https-a-http">Redireccionar de HTTPS a HTTP</h3>
+
+<p>Puede darse el caso que aun teniendo un Certificado SSL instalado (Comodo, Let’s Encrypt, etc) quieras forzar el trafico encriptado SSL para que se sirva con HTTP por diversas razones (pruebas con plugins conflictivos, configuracion de una pasarela pago que no trabaja bien por HTTPS, etc), en cuyo caso codigos como el siguiente te permitiran pasar de HTTPS a HTTP sin desinstalar el Certificado SSL de tu Hosting.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine On
+RewriteCond %{ENV:HTTPS} on [NC]
+</span><span class="gp">RewriteCond %{HTTP_HOST} ^tu_dominio\.com$</span><span class="w"> </span><span class="o">[</span>OR]
+<span class="gp">RewriteCond %{HTTP_HOST} ^www\.tu_dominio\.com$</span><span class="w">
+</span><span class="gp">RewriteRule ^(.*)$</span><span class="w"> </span>http://tudominio.com/<span class="nv">$1</span> <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L,NE]
+</code></pre></div></div>
+
+<p>Este codigo debes colocarlo por encima de cualquier otro codigo de redireccionamiento, al principio del archivo <code class="highlighter-rouge">.htaccess</code>.</p>
+
+<h3 id="forzar-la-carga-de-contenido-mixto-bajo-https-en-lugar-de-http">Forzar la carga de contenido mixto bajo HTTPS en lugar de HTTP</h3>
+
+<p>Si tenemos instalado un Certificado SSL para servir la web bajo protocolo https pero por alguna razon estamos entregando contenido bajo protocolo http como contenido mixto, podemos añadir la siguiente directiva en el archivo <code class="highlighter-rouge">.htaccess</code> para forzar que los contenidos <em>no seguros</em> sean forzados a cargar bajo protocolo HTTPS.</p>
+
+<p>Esta directiva es compatible con la mayoría de navegadores actuales.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">&lt;ifModule mod_headers.c&gt;</span><span class="w">
+</span><span class="gp">Header always set Content-Security-Policy "upgrade-insecure-requests;</span><span class="s2">"
+</span><span class="gp">&lt;/IfModule&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="forzar-la-carga-de-indexhtml">Forzar la carga de <code class="highlighter-rouge">index.html</code></h3>
+
+<p>Para que un sitio HTML funcione sin añadir <code class="highlighter-rouge">index.html</code> deberas apuntar un dominio o un subdominio directamente a la carpeta que contenga la web, de modo que solo llamando a <code class="highlighter-rouge">http://dominio.com</code> o <code class="highlighter-rouge">subdominio.dominio.com</code> por ejemplo, cargue la web HMTL sin necesidad de añadir el archivo <code class="highlighter-rouge">index.html</code>.</p>
+
+<p>Si una web se llama desde una ruta como <code class="highlighter-rouge">http://domino.com/otra_carpeta/</code> es normal que tengas que añadir el archivo <code class="highlighter-rouge">index.html</code> para que el navegador sepa que debe cargar.</p>
+
+<p>No obstante puedes forzar mediante <code class="highlighter-rouge">.htaccess</code> para que cargue el archivo <code class="highlighter-rouge">index.html</code> sin tener que escribirlo en el navegador.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">RewriteEngine on
+</span><span class="gp">RewriteRule ^(.*)\.php$</span><span class="w"> </span><span class="nv">$1</span>.html%<span class="o">{</span>QUERY_STRING<span class="o">}</span> <span class="o">[</span>L]
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+
+<p>Códigos útiles .htaccess para sitios web
+https://www.webempresa.com/blog/codigos-utiles-htaccess-para-sitios-web.html</p>
+
+:ET

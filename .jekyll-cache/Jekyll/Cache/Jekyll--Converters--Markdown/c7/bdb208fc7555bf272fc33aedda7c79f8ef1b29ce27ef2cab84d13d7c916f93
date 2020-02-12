@@ -1,0 +1,39 @@
+I"Ð<h3 id="caracteristicas-de-groovy">Caracteristicas de Groovy</h3>
+
+<p>Groovy tiene las siguientes caracteristicas:</p>
+
+<ul>
+  <li>
+    <p>Soporte tipeo estatico y dinamico.</p>
+  </li>
+  <li>
+    <p>Soporte sobrecarga del operador.</p>
+  </li>
+  <li>
+    <p>Sintaxis nativa para listas y matrices asociativas.</p>
+  </li>
+  <li>
+    <p>Soporte nativo para expresiones regulares.</p>
+  </li>
+  <li>
+    <p>Soporte nativo para varios lenguajes de marcado como XML y HTML.</p>
+  </li>
+  <li>
+    <p>Groovy es simple para los desarrolladores de Java ya que la sintaxis para Java y Groovy es muy similar.</p>
+  </li>
+  <li>
+    <p>Puede usar bibliotecas Java existentes.</p>
+  </li>
+  <li>
+    <p>Groovy extiende el objeto java.lang.Object.</p>
+  </li>
+</ul>
+
+<p>El sitio web oficial de Groovy es http://www.groovy-lang.org/</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

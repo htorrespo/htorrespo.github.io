@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Uso de sass en proyectos Jekyll | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Uso de sass en proyectos Jekyll" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Jekyll y Sass","@type":"BlogPosting","headline":"Uso de sass en proyectos Jekyll","dateModified":"2019-06-08T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html","datePublished":"2019-06-08T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Jekyll y Sass","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/06/08/jekyll-sass.html","headline":"Uso de sass en proyectos Jekyll","dateModified":"2019-06-08T00:00:00+00:00","datePublished":"2019-06-08T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -150,29 +150,29 @@
 
 <h2 id="linking">Linking</h2>
 
-<p>Basicamente, hay dos formas de vincular a recursos externos como CSS dentro de las páginas y plantillas de Jekyll. Una sería usar el sitio <code class="highlighter-rouge">baseURL</code> para prefijar tus archivos CSS:</p>
+<p>Basicamente, hay dos formas de vincular a recursos externos como CSS dentro de las páginas y plantillas de Jekyll. Una sería usar el sitio <code class="language-plaintext highlighter-rouge">baseURL</code> para prefijar tus archivos CSS:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/main.css"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>Si tu sitio siempre se publica desde la carpeta raíz, puede eliminar el objeto <code class="highlighter-rouge">site.url</code> y simplemente usar un enlace relativo del sitio:</p>
+<p>Si tu sitio siempre se publica desde la carpeta raíz, puede eliminar el objeto <code class="language-plaintext highlighter-rouge">site.url</code> y simplemente usar un enlace relativo del sitio:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/main.css"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>Es importante tener en cuenta que los enlaces relativos para assets como CSS pueden ser difíciles cuando se alojan sitios en Github Pages. Esencialmente, hay dos formas de alojar páginas en Github Pages, como páginas <code class="highlighter-rouge">user/organization</code> o páginas <code class="highlighter-rouge">project</code>.</p>
+<p>Es importante tener en cuenta que los enlaces relativos para assets como CSS pueden ser difíciles cuando se alojan sitios en Github Pages. Esencialmente, hay dos formas de alojar páginas en Github Pages, como páginas <code class="language-plaintext highlighter-rouge">user/organization</code> o páginas <code class="language-plaintext highlighter-rouge">project</code>.</p>
 
-<p>Las páginas de usuarios y organizaciones viven en un repositorio de GitHub dedicado solo a los archivos de las páginas de GitHub y se almacenan en la rama <code class="highlighter-rouge">master</code>. Este repositorio debe tener el nombre de la cuenta, que será <code class="highlighter-rouge">username.github.io</code>.</p>
+<p>Las páginas de usuarios y organizaciones viven en un repositorio de GitHub dedicado solo a los archivos de las páginas de GitHub y se almacenan en la rama <code class="language-plaintext highlighter-rouge">master</code>. Este repositorio debe tener el nombre de la cuenta, que será <code class="language-plaintext highlighter-rouge">username.github.io</code>.</p>
 
-<p>Las páginas del proyecto se almacenan en el mismo repositorio que el proyecto, excepto que el contenido del sitio web se almacena en una rama <code class="highlighter-rouge">gh-pages</code>. La rama maestra puede contener el proyecto en sí, o incluso estar vacía.</p>
+<p>Las páginas del proyecto se almacenan en el mismo repositorio que el proyecto, excepto que el contenido del sitio web se almacena en una rama <code class="language-plaintext highlighter-rouge">gh-pages</code>. La rama maestra puede contener el proyecto en sí, o incluso estar vacía.</p>
 
-<p>Si el sitio se sirve a través de una página proyecto, su <code class="highlighter-rouge">baseURL</code> cambia a medida que el sitio se sirve a través de una sub-ruta de su dominio de usuario en <code class="highlighter-rouge">username.github.io/project</code>. Esto significa que en estos casos, deberá configurar su baseURL a <code class="highlighter-rouge">/project-name</code>. Tenga en cuenta hay una barra diagonal inicial y ninguna barra diagonal final. Esto también puede ocasionar problemas al probar los archivos localmente, así que asegúrese de leer la documentación de Jekyll sobre el hospedaje con Github Pages para obtener una cuenta completa.</p>
+<p>Si el sitio se sirve a través de una página proyecto, su <code class="language-plaintext highlighter-rouge">baseURL</code> cambia a medida que el sitio se sirve a través de una sub-ruta de su dominio de usuario en <code class="language-plaintext highlighter-rouge">username.github.io/project</code>. Esto significa que en estos casos, deberá configurar su baseURL a <code class="language-plaintext highlighter-rouge">/project-name</code>. Tenga en cuenta hay una barra diagonal inicial y ninguna barra diagonal final. Esto también puede ocasionar problemas al probar los archivos localmente, así que asegúrese de leer la documentación de Jekyll sobre el hospedaje con Github Pages para obtener una cuenta completa.</p>
 
 <h2 id="jekyll-y-sass">Jekyll y SASS</h2>
 
 <p>Jekyll viene con soporte incorporado para SASS, por lo que no es necesario instalar o modificar su configuración para que funcione. Sin embargo, hay una o dos cosas que debe tener en cuenta al trabajar con SASS en Jekyll.</p>
 
-<p>Primero, para garantizar que Jekyll procese los archivos SASS, debe introducir una cadena de caracteres <code class="highlighter-rouge">front matter</code> al principio en la parte superior de la página. Puedes incluir un comentario si lo deseas, pero en realidad no importa. Así que incluye esto en la parte superior de cada archivo SASS:</p>
+<p>Primero, para garantizar que Jekyll procese los archivos SASS, debe introducir una cadena de caracteres <code class="language-plaintext highlighter-rouge">front matter</code> al principio en la parte superior de la página. Puedes incluir un comentario si lo deseas, pero en realidad no importa. Así que incluye esto en la parte superior de cada archivo SASS:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 # Front matter added to ensure Jekyll processes file.
@@ -181,9 +181,9 @@
 // write styles after front matter
 </code></pre></div></div>
 
-<p>Si observa la estructura de directorios predeterminada de Jekyll, sin duda verá el directorio <code class="highlighter-rouge">_sass</code>, lo que puede llevar a cierta confusión sobre dónde colocar los archivos SASS. Jekyll copia sobre cualquier archivo SASS procesado en la misma ubicación en la que se procesó. Por lo tanto, si tiene el archivo <code class="highlighter-rouge">css/styles.scss</code>, se procesará y colocará en <code class="highlighter-rouge">css/styles.css</code> en el sitio generado. El directorio <code class="highlighter-rouge">_sass</code> es para archivos de importación SASS. Si pone los archivos <code class="highlighter-rouge">.scss</code> parciales que está importando y usa <code class="highlighter-rouge">@import</code> para ensamblarlos en su hoja de estilo principal, Jekyll los procesará y los reunirá en tiempo de ejecución.</p>
+<p>Si observa la estructura de directorios predeterminada de Jekyll, sin duda verá el directorio <code class="language-plaintext highlighter-rouge">_sass</code>, lo que puede llevar a cierta confusión sobre dónde colocar los archivos SASS. Jekyll copia sobre cualquier archivo SASS procesado en la misma ubicación en la que se procesó. Por lo tanto, si tiene el archivo <code class="language-plaintext highlighter-rouge">css/styles.scss</code>, se procesará y colocará en <code class="language-plaintext highlighter-rouge">css/styles.css</code> en el sitio generado. El directorio <code class="language-plaintext highlighter-rouge">_sass</code> es para archivos de importación SASS. Si pone los archivos <code class="language-plaintext highlighter-rouge">.scss</code> parciales que está importando y usa <code class="language-plaintext highlighter-rouge">@import</code> para ensamblarlos en su hoja de estilo principal, Jekyll los procesará y los reunirá en tiempo de ejecución.</p>
 
-<p>Así que si haces algo como esto en tu archivo <code class="highlighter-rouge">.scss</code> principal:</p>
+<p>Así que si haces algo como esto en tu archivo <code class="language-plaintext highlighter-rouge">.scss</code> principal:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 # Front matter added to ensure Jekyll processes file.
@@ -197,17 +197,17 @@
 //styles
 </code></pre></div></div>
 
-<p>Ponga los archivos <code class="highlighter-rouge">type.scss</code>, <code class="highlighter-rouge">layout.scss</code> y <code class="highlighter-rouge">components.scss</code> en el directorio <code class="highlighter-rouge">_sass</code> y Jekyll hará el resto.</p>
+<p>Ponga los archivos <code class="language-plaintext highlighter-rouge">type.scss</code>, <code class="language-plaintext highlighter-rouge">layout.scss</code> y <code class="language-plaintext highlighter-rouge">components.scss</code> en el directorio <code class="language-plaintext highlighter-rouge">_sass</code> y Jekyll hará el resto.</p>
 
-<p>Además, deberá asegurarse de que <code class="highlighter-rouge">sass_dir</code> esté configurado en el directorio base que contiene archivos Sass de otros frameworks como Bootstrap, Maximize u otros:</p>
+<p>Además, deberá asegurarse de que <code class="language-plaintext highlighter-rouge">sass_dir</code> esté configurado en el directorio base que contiene archivos Sass de otros frameworks como Bootstrap, Maximize u otros:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass:
     sass_dir: _sass
 </code></pre></div></div>
 
-<p>El convertidor Sass predeterminará la opción de configuración <code class="highlighter-rouge">sass_dir</code> a <code class="highlighter-rouge">_sass</code>.</p>
+<p>El convertidor Sass predeterminará la opción de configuración <code class="language-plaintext highlighter-rouge">sass_dir</code> a <code class="language-plaintext highlighter-rouge">_sass</code>.</p>
 
-<p>También puede especificar el estilo de salida con la opción de estilo en su archivo <code class="highlighter-rouge">_config.yml</code>:</p>
+<p>También puede especificar el estilo de salida con la opción de estilo en su archivo <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sass:
     sass_dir: _sass
@@ -217,7 +217,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envienos sus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

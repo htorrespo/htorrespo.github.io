@@ -1,0 +1,129 @@
+I"ú/<p>El objeto <code class="highlighter-rouge">navigator</code> de JavaScript incluye un objeto hijo llamado <code class="highlighter-rouge">plugins</code>. Este objeto es una matriz, con una entrada para cada complemento  o plugin instalado en el navegador. El objeto <code class="highlighter-rouge">navigator.plugins</code> solo es compatible con Netscape, Firefox y Mozilla unicamente.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Aqui hay un ejemplo que muestra como enumerar todos los complementos instalados en su navegador:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>List of Plug-Ins<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;table</span> <span class="na">border = </span><span class="s">"1"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Plug-in Name<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Filename<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Description<span class="nt">&lt;/th&gt;</span>
+         <span class="nt">&lt;/tr&gt;</span>
+         
+         <span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"JavaScript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;tr&gt;&lt;td&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">plugins</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;/td&gt;&lt;td&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">plugins</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">filename</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;/td&gt;&lt;td&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">plugins</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">description</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;/td&gt;&lt;/tr&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="nt">&lt;/script&gt;</span>
+      <span class="nt">&lt;/table&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="comprobacion-de-complementos">Comprobacion de complementos</h3>
+
+<p>Cada complemento tiene una entrada en la matriz. Cada entrada tiene las siguientes propiedades:</p>
+
+<ul>
+  <li>
+    <p><strong>name</strong>: es el nombre del complemento.</p>
+  </li>
+  <li>
+    <p><strong>filename</strong>: es el archivo ejecutable que se cargo para instalar el complemento.</p>
+  </li>
+  <li>
+    <p><strong>description</strong>: es una descripcion del complemento, suministrado por el desarrollador.</p>
+  </li>
+  <li>
+    <p><strong>mimeTypes</strong>: es una matriz con una entrada para cada tipo MIME admitido por el complemento.</p>
+  </li>
+</ul>
+
+<p>Puede usar estas propiedades en una secuencia de comandos para descubrir los complementos instalados, y luego, usando JavaScript, puede reproducir el archivo multimedia apropiado. Eche un vistazo al siguiente ejemplo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Using Plug-Ins<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"JavaScript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="nx">media</span> <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">mimeTypes</span><span class="p">[</span><span class="dl">"</span><span class="s2">video/quicktime</span><span class="dl">"</span><span class="p">];</span>
+         
+         <span class="k">if</span> <span class="p">(</span><span class="nx">media</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;embed src = 'quick.mov' height = 100 width = 100&gt;</span><span class="dl">"</span><span class="p">);</span>
+         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;img src = 'quick.gif' height = 100 width = 100&gt;</span><span class="dl">"</span><span class="p">);</span>
+         <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>NOTA - Aqui estamos usando la etiqueta HTML <code class="highlighter-rouge">&lt;embed&gt;</code> para insertar un archivo multimedia.</p>
+
+<h3 id="control-de-multimedia">Control de multimedia</h3>
+
+<p>Tomemos un ejemplo real que funciona en casi todos los navegadores:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Using Embeded Object<span class="nt">&lt;/title&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">play</span><span class="p">()</span> <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">IsPlaying</span><span class="p">())</span> <span class="p">{</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">Play</span><span class="p">();</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">stop</span><span class="p">()</span> <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">IsPlaying</span><span class="p">())</span> <span class="p">{</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">StopPlay</span><span class="p">();</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">rewind</span><span class="p">()</span> <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">IsPlaying</span><span class="p">())</span> <span class="p">{</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">StopPlay</span><span class="p">();</span>
+               <span class="p">}</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">demo</span><span class="p">.</span><span class="nx">Rewind</span><span class="p">();</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;embed</span> <span class="na">id = </span><span class="s">"demo"</span> <span class="na">name = </span><span class="s">"demo"</span>
+         <span class="na">src = </span><span class="s">"http://www.amrood.com/games/kumite.swf"</span>
+         <span class="na">width = </span><span class="s">"318"</span> <span class="na">height = </span><span class="s">"300"</span> <span class="na">play = </span><span class="s">"false"</span> <span class="na">loop = </span><span class="s">"false"</span>
+         <span class="na">pluginspage = </span><span class="s">"http://www.macromedia.com/go/getflashplayer"</span>
+         <span class="na">swliveconnect = </span><span class="s">"true"</span><span class="nt">&gt;</span>
+      
+      <span class="nt">&lt;form</span> <span class="na">name = </span><span class="s">"form"</span> <span class="na">id = </span><span class="s">"form"</span> <span class="na">action = </span><span class="s">"#"</span> <span class="na">method = </span><span class="s">"get"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Start"</span> <span class="na">onclick = </span><span class="s">"play();"</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Stop"</span> <span class="na">onclick = </span><span class="s">"stop();"</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Rewind"</span> <span class="na">onclick = </span><span class="s">"rewind();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

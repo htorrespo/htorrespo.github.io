@@ -1,0 +1,101 @@
+I"{ <h3 id="que-es-la-redireccion-de-paginas">¿Que es la redireccion de paginas?</h3>
+
+<p>Es posible que haya encontrado una situacion en la que hizo clic en una URL para llegar a una página X, pero internamente fue dirigido a otra pagina Y. Esto ocurre por la redireccion de pagina. Este concepto es diferente a la actualizacion de pagina JavaScript.</p>
+
+<p>Puede haber varias razones por las que le gustaria redirigir a un usuario desde la pagina original. Estas son algunas de las razones</p>
+
+<ul>
+  <li>
+    <p>No le gusto el nombre del dominio y se esta mudando a uno nuevo. En tal caso, es posible que desee direccionar a todos sus visitantes al nuevo sitio. Aqui puede mantener su dominio anterior, pero coloque una sola pagina con una redireccion de pagina para que todos sus visitantes del dominio anterior puedan acceder a su nuevo dominio.</p>
+  </li>
+  <li>
+    <p>Ha creado varias paginas basadas en las versiones del navegador o sus nombres o puede basarse en diferentes paises, entonces, en lugar de usar la redireccion de pagina del lado del servidor, puede usar la redireccion de  pagina del lado del cliente para que sus usuarios lleguen a la pagina correspondiente.</p>
+  </li>
+  <li>
+    <p>Es posible que los motores de busqueda ya hayan indexado sus paginas. Pero al pasar a otro dominio, no le gustaria perder a sus visitantes que llegan a traves de los motores de busqueda. Asi que puede usar la redireccion de la pagina del lado del cliente. Pero tenga en cuenta que esto no se debe hacer para engañar al motor de busqueda, ya que podria hacer que su sitio sea prohibido.</p>
+  </li>
+</ul>
+
+<h3 id="como-funciona-la-redireccion-de-pagina">¿Como funciona la redireccion de pagina?</h3>
+
+<p>Las implementaciones de redireccion de pagina son las siguientes.</p>
+
+<h4 id="ejemplo-1">Ejemplo 1</h4>
+
+<p>Es bastante simple hacer una redireccion de pagina usando JavaScript en el lado del cliente. Para redireccionar a los visitantes de su sitio a una nueva pagina, solo necesita agregar una linea en la seccion principal de la siguiente manera.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">Redirect</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.tutorialspoint.com</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button, you will be redirected to home page.<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Redirect Me"</span> <span class="na">onclick = </span><span class="s">"Redirect();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo-2">Ejemplo 2</h4>
+
+<p>Puede mostrar un mensaje apropiado a los visitantes de su sitio antes de redireccionarlos a una nueva pagina. Esto tendria un tiempo de retraso para cargar la pagina. El siguiente ejemplo muestra como implementar el mismo. Aqui <code class="highlighter-rouge">setTimeout()</code> es una funcion de JavaScript que se puede utilizar para ejecutar otra funcion despues de un intervalo de tiempo determinado.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">Redirect</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://www.tutorialspoint.com</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span>            
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">You will be redirected to main page in 10 sec.</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="dl">'</span><span class="s1">Redirect()</span><span class="dl">'</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo-3">Ejemplo 3</h4>
+
+<p>El siguiente ejemplo muestra como redireccionar a los visitantes de su sitio a una pagina diferente segun sus navegadores.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>     
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">browsername</span> <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appName</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span> <span class="nx">browsername</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">Netscape</span><span class="dl">"</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://www.location.com/ns.htm</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">browsername</span> <span class="o">==</span><span class="dl">"</span><span class="s2">Microsoft Internet Explorer</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://www.location.com/ie.htm</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://www.location.com/other.htm</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

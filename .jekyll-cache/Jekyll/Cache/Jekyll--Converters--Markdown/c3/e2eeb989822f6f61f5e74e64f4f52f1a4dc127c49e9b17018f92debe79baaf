@@ -1,0 +1,139 @@
+I"�9<p>La validacion de formularios normalmente se realizaba en el servidor, despues de que el cliente ingresa todos los datos requeridos y luego presiono el boton Enviar. Si los datos ingresados ​​por un cliente eran incorrectos o simplemente faltaban, el servidor tendria que enviar todos los datos al cliente y solicitar que el formulario se vuelva a enviar con la informacion correcta. Este fue realmente un proceso largo que solia poner mucha carga en el servidor.</p>
+
+<p>JavaScript proporciona una forma de validar los datos del formulario en la computadora del cliente antes de enviarlo al servidor web. La validacion de formularios generalmente realiza dos funciones.</p>
+
+<ul>
+  <li>
+    <p><strong>Validacion basica</strong>: en primer lugar, se debe verificar que completen todos los campos obligatorios. Se requeriria solo un ciclo a traves de cada campo en el formulario y verificar los datos.</p>
+  </li>
+  <li>
+    <p><strong>Validacion de formato de datos</strong>: en segundo lugar, se debe verificar la forma y el valor correctos de los datos ingresados. Su codigo debe incluir la logica apropiada para probar la exactitud de los datos.</p>
+  </li>
+</ul>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Tomaremos un ejemplo para comprender el proceso de validacion. Aqui hay una forma simple en formato html.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Form Validation<span class="nt">&lt;/title&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="c1">// Form validation code will come here.</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">action = </span><span class="s">"/cgi-bin/test.cgi"</span> <span class="na">name = </span><span class="s">"myForm"</span> <span class="na">onsubmit = </span><span class="s">"return(validate());"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;table</span> <span class="na">cellspacing = </span><span class="s">"2"</span> <span class="na">cellpadding = </span><span class="s">"2"</span> <span class="na">border = </span><span class="s">"1"</span><span class="nt">&gt;</span>
+            
+            <span class="nt">&lt;tr&gt;</span>
+               <span class="nt">&lt;td</span> <span class="na">align = </span><span class="s">"right"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/td&gt;</span>
+               <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type = </span><span class="s">"text"</span> <span class="na">name = </span><span class="s">"Name"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            
+            <span class="nt">&lt;tr&gt;</span>
+               <span class="nt">&lt;td</span> <span class="na">align = </span><span class="s">"right"</span><span class="nt">&gt;</span>EMail<span class="nt">&lt;/td&gt;</span>
+               <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type = </span><span class="s">"text"</span> <span class="na">name = </span><span class="s">"EMail"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            
+            <span class="nt">&lt;tr&gt;</span>
+               <span class="nt">&lt;td</span> <span class="na">align = </span><span class="s">"right"</span><span class="nt">&gt;</span>Zip Code<span class="nt">&lt;/td&gt;</span>
+               <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type = </span><span class="s">"text"</span> <span class="na">name = </span><span class="s">"Zip"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            
+            <span class="nt">&lt;tr&gt;</span>
+               <span class="nt">&lt;td</span> <span class="na">align = </span><span class="s">"right"</span><span class="nt">&gt;</span>Country<span class="nt">&lt;/td&gt;</span>
+               <span class="nt">&lt;td&gt;</span>
+                  <span class="nt">&lt;select</span> <span class="na">name = </span><span class="s">"Country"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;option</span> <span class="na">value = </span><span class="s">"-1"</span> <span class="na">selected</span><span class="nt">&gt;</span>[choose yours]<span class="nt">&lt;/option&gt;</span>
+                     <span class="nt">&lt;option</span> <span class="na">value = </span><span class="s">"1"</span><span class="nt">&gt;</span>USA<span class="nt">&lt;/option&gt;</span>
+                     <span class="nt">&lt;option</span> <span class="na">value = </span><span class="s">"2"</span><span class="nt">&gt;</span>UK<span class="nt">&lt;/option&gt;</span>
+                     <span class="nt">&lt;option</span> <span class="na">value = </span><span class="s">"3"</span><span class="nt">&gt;</span>INDIA<span class="nt">&lt;/option&gt;</span>
+                  <span class="nt">&lt;/select&gt;</span>
+               <span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            
+            <span class="nt">&lt;tr&gt;</span>
+               <span class="nt">&lt;td</span> <span class="na">align = </span><span class="s">"right"</span><span class="nt">&gt;&lt;/td&gt;</span>
+               <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type = </span><span class="s">"submit"</span> <span class="na">value = </span><span class="s">"Submit"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            
+         <span class="nt">&lt;/table&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="validacion-basica-de-formularios">Validacion basica de formularios</h3>
+
+<p>Primero veamos como hacer una validacion basica. En el formulario anterior, estamos llamando a <code class="highlighter-rouge">validate()</code> para validar datos cuando se produce un evento de envio. El siguiente codigo muestra la implementacion de esta funcion.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="c1">// Form validation code will come here.</span>
+      <span class="kd">function</span> <span class="nx">validate</span><span class="p">()</span> <span class="p">{</span>
+      
+         <span class="k">if</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Name</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">""</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">Please provide your name!</span><span class="dl">"</span> <span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Name</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span> <span class="p">;</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">if</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">EMail</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">""</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">Please provide your Email!</span><span class="dl">"</span> <span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">EMail</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span> <span class="p">;</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">if</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Zip</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">""</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Zip</span><span class="p">.</span><span class="nx">value</span> <span class="p">)</span> <span class="o">||</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Zip</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="mi">5</span> <span class="p">)</span> <span class="p">{</span>
+            
+            <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">Please provide a zip in the format #####.</span><span class="dl">"</span> <span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Zip</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span> <span class="p">;</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">if</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">Country</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">-1</span><span class="dl">"</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">Please provide your country!</span><span class="dl">"</span> <span class="p">);</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">return</span><span class="p">(</span> <span class="kc">true</span> <span class="p">);</span>
+      <span class="p">}</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="validacion-de-formato-de-datos">Validacion de formato de datos</h3>
+
+<p>Ahora veremos como podemos validar nuestros datos ingresados sl formulario ​​antes de enviarlos al servidor web.</p>
+
+<p>El siguiente ejemplo muestra como validar una direccion de correo electronico ingresada. Una direccion de correo electronico debe contener al menos un signo <code class="highlighter-rouge">@</code>  y un punto (.). Ademas, la <code class="highlighter-rouge">@</code> no debe ser el primer caracter de la direccion de correo electronico, y el ultimo punto debe ser al menos un caracter despues del signo <code class="highlighter-rouge">@</code>.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Pruebe el siguiente codigo para la validacion de correo electronico.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">function</span> <span class="nx">validateEmail</span><span class="p">()</span> <span class="p">{</span>
+         <span class="kd">var</span> <span class="nx">emailID</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">EMail</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+         <span class="nx">atpos</span> <span class="o">=</span> <span class="nx">emailID</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">@</span><span class="dl">"</span><span class="p">);</span>
+         <span class="nx">dotpos</span> <span class="o">=</span> <span class="nx">emailID</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">);</span>
+         
+         <span class="k">if</span> <span class="p">(</span><span class="nx">atpos</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="p">(</span> <span class="nx">dotpos</span> <span class="o">-</span> <span class="nx">atpos</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">))</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please enter correct email ID</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span><span class="p">.</span><span class="nx">EMail</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span> <span class="p">;</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">return</span><span class="p">(</span> <span class="kc">true</span> <span class="p">);</span>
+      <span class="p">}</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

@@ -1,0 +1,266 @@
+I"�<p>El objeto <code class="highlighter-rouge">Math</code> le proporciona propiedades y metodos para  constantes y funciones matematicas. A diferencia de otros objetos globales, <code class="highlighter-rouge">Math</code> no es un constructor. Todas las propiedades y metodos de <code class="highlighter-rouge">Math</code> son estaticos y pueden invocarse utilizando <code class="highlighter-rouge">Math</code> como un objeto sin crearlo.</p>
+
+<p>Así, te refieres a la constante pi como <code class="highlighter-rouge">Math.PI</code> y llamas a la funcion seno como <code class="highlighter-rouge">Math.sin(x)</code>, donde x es el argumento del metodo.</p>
+
+<p>La sintaxis para llamar a las propiedades y metodos de <code class="highlighter-rouge">Math</code> son las siguientes</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var pi_val = Math.PI;</span><span class="w">
+</span><span class="gp">var sine_val = Math.sin(30);</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="propiedades-de-math">Propiedades de <code class="highlighter-rouge">Math</code></h3>
+
+<p>Aquí hay una lista de las propiedades del objeto <code class="highlighter-rouge">Math</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">E \</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Constante de Euler y base de los logaritmos naturales, aproximadamente 2.718.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">LN2</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Logaritmo natural de 2, aproximadamente 0.693.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">LN10</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Logaritmo natural de 10, aproximadamente 2.302.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">LOG2E</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Base 2 del logaritmo de E, aproximadamente 1.442.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">LOG10E</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Representa el logaritmo base 10 de E, aproximadamente 0.434.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">PI</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Relacion / cociente de la circunferencia de un círculo a su diametro, aproximadamente 3.14159.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">SQRT1_2</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Raiz cuadrada de 1/2; equivalentemente, 1 sobre la raíz cuadrada de 2, aproximadamente 0.707.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">SQRT2</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Raiz cuadrada de 2, aproximadamente 1.414.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="highlighter-rouge">Math</code>.</p>
+
+<h3 id="metodos-de-math">Metodos de <code class="highlighter-rouge">Math</code></h3>
+
+<p>Aquí hay una lista de los metodos del objeto <code class="highlighter-rouge">Math</code> y su descripcion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">abs()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor absoluto de un numero.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">acos()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el arco coseno (en radianes) de un numero.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">asin()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el arcoseno (en radianes) de un numero.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">atan()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el arctangente (en radianes) de un numero.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">atan2()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el arctangente del cociente de sus argumentos.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">ceil()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>devuelve el entero mayor o igual más proximo a un numero dado.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">cos()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el coseno de un numero dado.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">exp()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve $E^N$, donde N es el argumento y E es la constante de Euler, la base del logaritmo natural.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">floor()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el maximo entero menor o igual a un numero dado.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">log()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el logaritmo natural (base E) de un numero.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">max()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el mayor valor de uno o mas numeros.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">min()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el menor de cero o mas numeros.</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">pow()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la base a la potencia del exponente, es decir, el exponente base.</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">random()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un numero pseudoaleatorio entre 0 y 1.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code class="highlighter-rouge">round()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor de un numero redondeado al entero mas cercano.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code class="highlighter-rouge">sin()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el seno de un numero.</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code class="highlighter-rouge">sqrt()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la raiz cuadrada de un numero.</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code class="highlighter-rouge">tan()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la tangente de un numero.</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code class="highlighter-rouge">toSource()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la cadena “Math”.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Convierte una fecha en una cadena, utilizando la convención de tiempo universal.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

@@ -1,0 +1,491 @@
+I"*�<p>La clase es un bloque de código fundamental en Python. Es la base de muchos programas y bibliotecas, incluso también de la biblioteca estándar de Python. Entender qué son las clases, cuándo usarlas y cómo pueden ser útiles es esencial y el objetivo de este artículo. En el proceso, explicaremos qué significa el término Programación orientada a objetos y cómo se relaciona con las clases de Python.</p>
+
+<p><strong>Todo es un objeto …</strong></p>
+
+<p>¿Para qué se utiliza exactamente la palabra clave <code class="highlighter-rouge">class</code>? Al igual que la función <code class="highlighter-rouge">def</code>, se refiere a la definición de cosas. Mientras que <code class="highlighter-rouge">def</code> se usa para definir una función, <code class="highlighter-rouge">class</code> se usa para definir una clase. Y que es una clase? Simplemente una agrupación lógica de datos y funciones (los últimos a menudo se denominan “métodos” cuando se definen dentro de una clase).</p>
+
+<p>¿Qué entendemos por “agrupación lógica”? Bueno, una clase puede contener cualquier información que nos gustaría, y puede tener cualquier función (método) adjunta que nos plazca. En lugar de simplemente juntar cosas aleatorias bajo el nombre de “clase”, tratamos de crear clases donde hay una conexión lógica entre las cosas. Muchas veces, las clases se basan en objetos que existen en el mundo real (como ‘Cliente’ o ‘Producto’). Otras veces, las clases se basan en conceptos de nuestro sistema, como <code class="highlighter-rouge">HTTPRequest</code> o <code class="highlighter-rouge">Owner</code>.</p>
+
+<p>En cualquier caso, las clases son una técnica de modelado; Una forma de pensar sobre los programas. Cuando piensa en implementar su sistema de esta manera, se dice que está realizando una programación orientada a objetos. “Clases” y “objetos” son palabras que a menudo se usan indistintamente, pero en realidad no son lo mismo. Comprender qué los hace diferentes es la clave para entender qué son y cómo funcionan.</p>
+
+<p><strong>..Así que todo es una clase?</strong></p>
+
+<p>Las clases se pueden considerar como planos para crear objetos. Cuando defino una clase <code class="highlighter-rouge">Customer</code> utilizando la palabra clave <code class="highlighter-rouge">class</code>, en realidad no he creado un cliente. En su lugar, lo que he creado es una especie de manual de instrucciones para construir objetos <code class="highlighter-rouge">Customer</code>. Veamos el siguiente código de ejemplo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A customer of ABC Bank with a checking account. Customers have the
+    following properties:
+
+    Attributes:
+        name: A string representing the customer's name.
+        balance: A float tracking the current balance of the customer's account.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="s">"""Return a Customer object whose name is *name* and starting
+        balance is *balance*."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="s">"""Return the balance remaining after withdrawing *amount*
+        dollars."""</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">'Amount greater than available balance.'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="s">"""Return the balance remaining after depositing *amount*
+        dollars."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+</code></pre></div></div>
+
+<p>La clase <code class="highlighter-rouge">Customer(object)</code> no crea un nuevo cliente. Es decir, solo porque hemos definido un <code class="highlighter-rouge">Customer</code> o Cliente no significa que hayamos creado uno; Simplemente hemos delineado el plano para crear un objeto <code class="highlighter-rouge">Customer</code>. Para hacerlo, llamamos al método <code class="highlighter-rouge">__init__</code> de la clase con el número adecuado de argumentos (menos <code class="highlighter-rouge">self</code>, que veremos en un momento).</p>
+
+<p>Entonces, para usar el “plano” que creamos al definir la clase <code class="highlighter-rouge">Customer</code> (que se usa para crear objetos <code class="highlighter-rouge">Customer</code>), llamamos al nombre de la clase casi como si fuera una función: <code class="highlighter-rouge">jeff = Customer ('Jeff Knupp', 1000.0)</code> . Esta línea simplemente dice “use el modelo <code class="highlighter-rouge">Customer</code> para crear un nuevo objeto, al que me referiré como <code class="highlighter-rouge">jeff</code>”.</p>
+
+<p>El objeto <code class="highlighter-rouge">jeff</code>, conocido como instancia, es la versión realizada de la clase <code class="highlighter-rouge">Customer</code>. Antes de llamar a <code class="highlighter-rouge">Customer()</code>, no existía ningún objeto <code class="highlighter-rouge">Customer</code>. Podemos, por supuesto, crear tantos objetos de <code class="highlighter-rouge">Customer</code> como se desee. Sin embargo, todavía hay una sola clase <code class="highlighter-rouge">Customer</code>, independientemente de la cantidad de instancias de clase que hemos creado.</p>
+
+<p><strong>self?</strong></p>
+
+<p>Entonces, ¿qué pasa con ese parámetro <code class="highlighter-rouge">self</code> para todos los métodos de <code class="highlighter-rouge">Customer</code>? ¿Qué es? ¡Por qué, es la instancia, por supuesto! Dicho de otra manera, un método como el retiro o <code class="highlighter-rouge">withdraw</code> define las instrucciones para retirar dinero de la cuenta de algún cliente abstracto. Al llamar a <code class="highlighter-rouge">jeff.withdraw (100.0)</code>, esas instrucciones se utilizarán en la instancia de <code class="highlighter-rouge">jeff</code>.</p>
+
+<p>Entonces, cuando decimos def <code class="highlighter-rouge">withdraw(self, amount):</code> “aquí decimos cómo retirar dinero de un objeto Cliente (al que llamaremos <code class="highlighter-rouge">self</code>) y una cifra en dólares (a la que llamaremos <code class="highlighter-rouge">amount</code>). <code class="highlighter-rouge">self</code> es la instancia del Cliente que está solicitando el retiro. Tampoco estoy haciendo analogías. <code class="highlighter-rouge">jeff.withdraw (100.0)</code> es solo una abreviatura para <code class="highlighter-rouge">Customer.withdraw (jeff, 100.0)</code>, que es un código perfectamente válido (si no se ve a menudo).</p>
+
+<p><strong>__init__</strong></p>
+
+<p><code class="highlighter-rouge">self</code> puede tener sentido para otros métodos, pero ¿qué pasa con <code class="highlighter-rouge">__init__</code>? Cuando llamamos <code class="highlighter-rouge">__init__</code>, estamos en el proceso de crear un objeto, entonces, ¿cómo puede haber ya un <code class="highlighter-rouge">self</code>? Python nos permite extender el patrón <code class="highlighter-rouge">self</code> cuando los objetos también se construyen, aunque no se ajuste exactamente. Solo imagine que <code class="highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code> es lo mismo que llamar a <code class="highlighter-rouge">jeff = Customer (jeff, 'Jeff Knupp', 1000.0)</code>; El <code class="highlighter-rouge">jeff</code> que se pasa también se hace el resultado.</p>
+
+<p>Es por eso que cuando llamamos <code class="highlighter-rouge">__init__</code>, inicializamos objetos diciendo cosas como <code class="highlighter-rouge">self.name = name</code>. Recuerda, dado que <code class="highlighter-rouge">self</code> es la instancia, esto es equivalente a decir <code class="highlighter-rouge">jeff.name = name</code>, que es lo mismo que <code class="highlighter-rouge">jeff.name = 'Jeff Knupp'</code>. Del mismo modo, <code class="highlighter-rouge">self.balance = balance</code> es lo mismo que <code class="highlighter-rouge">jeff.balance = 1000.0.</code> Después de estas dos líneas, consideramos que el objeto <code class="highlighter-rouge">Customer</code> está “inicializado” y listo para usar.</p>
+
+<p><strong>Tenga cuidado con <code class="highlighter-rouge">__init__</code></strong></p>
+
+<p>Después de que <code class="highlighter-rouge">__init__</code> haya terminado, la persona que llama el objeto puede asumir correctamente que ya está listo para usar. Es decir, después de <code class="highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code>, podemos comenzar a hacer llamadas de depósitos y retiros en <code class="highlighter-rouge">jeff</code>; <code class="highlighter-rouge">jeff</code> es un objeto completamente inicializado.</p>
+
+<p>Imagine por un momento que habíamos definido la clase <code class="highlighter-rouge">Customer</code> de manera ligeramente diferente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A customer of ABC Bank with a checking account. Customers have the
+    following properties:
+
+    Attributes:
+        name: A string representing the customer's name.
+        balance: A float tracking the current balance of the customer's account.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="s">"""Return a Customer object whose name is *name*."""</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">set_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="s">"""Set the customer's starting balance."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="s">"""Return the balance remaining after withdrawing *amount*
+        dollars."""</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">'Amount greater than available balance.'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="s">"""Return the balance remaining after depositing *amount*
+        dollars."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
+</code></pre></div></div>
+<p>Esto puede parecer una alternativa razonable; simplemente necesitamos llamar a <code class="highlighter-rouge">set_balance</code> antes de comenzar a usar la instancia. Sin embargo, no hay forma de comunicárselo al que llama. Incluso si lo documentamos ampliamente, no podemos obligar al que llama a llamar a <code class="highlighter-rouge">jeff.set_balance (1000.0)</code> antes de llamar a <code class="highlighter-rouge">jeff.withdraw (100.0)</code>. Dado que la instancia de <code class="highlighter-rouge">jeff</code> ni siquiera tiene un atributo balance hasta que se llama a <code class="highlighter-rouge">jeff.set_balance</code>, esto significa que el objeto no se ha inicializado “completamente”.</p>
+
+<p>La regla de oro es, no introduzca un nuevo atributo fuera del método <code class="highlighter-rouge">__init__</code>, de lo contrario estaría entregando un objeto que no está completamente inicializado. Hay excepciones, por supuesto, pero es un buen principio a tener en cuenta. Esto es parte de un concepto más amplio de consistencia de objeto: no debería haber ninguna serie de llamadas a métodos que puedan hacer que el objeto entre en un estado que no tiene sentido.</p>
+
+<p>Las consistencias (por ejemplo, “el saldo siempre debe ser un número no negativo”) deben mantenerse tanto cuando se ingresa un método como cuando se sale de él. Debería ser imposible para un objeto entrar en un estado no válido simplemente llamando a sus métodos. No hace falta decir, entonces, que un objeto debe comenzar también en un estado válido, por lo que es importante inicializar todo en el método <code class="highlighter-rouge">__init__</code>.</p>
+
+<p><strong>Atributos y métodos de instancia</strong></p>
+
+<p>Una función definida en una clase se llama “método”. Los métodos tienen acceso a todos los datos contenidos en la instancia del objeto; Pueden acceder y modificar cualquier cosa previamente establecida en uno mismo. Como se usan a sí mismos, requieren una instancia de la clase para poder usarlos. Por esta razón, a menudo se les llama “métodos de instancia”.</p>
+
+<p>Si hay “métodos de instancia”, entonces seguramente hay otros tipos de métodos, ¿verdad? Sí, los hay, pero estos métodos son un poco más esotéricos. Los cubriremos brevemente aquí, pero siéntase libre de investigar estos temas con mayor profundidad.</p>
+
+<p><strong>Métodos estáticos</strong></p>
+
+<p>Los atributos de clase son atributos que se establecen en el nivel de clase, a diferencia del nivel de instancia. Los atributos normales se introducen en el método <code class="highlighter-rouge">__init__</code>, pero algunos atributos de una clase se mantienen para todas las instancias en todos los casos. Por ejemplo, considere la siguiente definición de un objeto <code class="highlighter-rouge">Car</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+<span class="n">mustang</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s">'Ford'</span><span class="p">,</span> <span class="s">'Mustang'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">mustang</span><span class="o">.</span><span class="n">wheels</span>
+<span class="c1"># 4
+</span><span class="k">print</span> <span class="n">Car</span><span class="o">.</span><span class="n">wheels</span>
+<span class="c1"># 4
+</span></code></pre></div></div>
+
+<p>Un <code class="highlighter-rouge">Car</code> siempre tiene cuatro ruedas, independientemente de la marca o modelo. Los métodos de instancia pueden acceder a estos atributos de la misma manera que acceden a los atributos regulares: a través de <code class="highlighter-rouge">self</code> (es decir, <code class="highlighter-rouge">self.wheels</code>).</p>
+
+<p>Sin embargo, existe una clase de métodos, llamados métodos estáticos, que no tienen acceso a <code class="highlighter-rouge">self</code>. Al igual que los atributos de clase, son métodos que funcionan sin requerir que una instancia esté presente. Dado que las instancias siempre se referencian a través de <code class="highlighter-rouge">self</code>, los métodos estáticos no tienen un parámetro propio.</p>
+
+<p>Lo siguiente sería un método estático válido en la clase <code class="highlighter-rouge">Car</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">make_car_sound</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">'VRooooommmm!'</span>
+</code></pre></div></div>
+
+<p>No importa qué tipo de automóvil tengamos, siempre hace el mismo sonido. Para dejar en claro que este método no debe recibir la instancia como primer parámetro (es decir, <code class="highlighter-rouge">self</code> en los métodos “normales”), se utiliza el decorador <code class="highlighter-rouge">@staticmethod</code>, convirtiendo nuestra definición en:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="o">@</span><span class="nb">staticmethod</span>
+    <span class="k">def</span> <span class="nf">make_car_sound</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">'VRooooommmm!'</span>
+</code></pre></div></div>
+
+<p><strong>Métodos de clase</strong></p>
+
+<p>Una variante del método estático es el método de clase. En lugar de recibir la instancia como primer parámetro, se pasa la clase. También se define utilizando un decorador:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="o">@</span><span class="nb">classmethod</span>
+    <span class="k">def</span> <span class="nf">is_motorcycle</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">wheels</span> <span class="o">==</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>Es posible que los métodos de clase no tengan mucho sentido ahora, pero eso se debe a que se usan con más frecuencia en relación con nuestro siguiente tema: la herencia.</p>
+
+<p><strong>Herencia</strong></p>
+
+<p>Si bien la programación orientada a objetos es útil como herramienta de modelado, realmente gana poder cuando se introduce el concepto de herencia. Herencia es el proceso por el cual una clase “secundaria” deriva los datos y el comportamiento de una clase “primaria”. Un ejemplo definitivamente nos ayudará aquí.</p>
+
+<p>Imagina que tenemos un concesionario de coches. Vendemos todo tipo de vehículos, desde motocicletas hasta camiones. Nos diferenciamos de la competencia por nuestros precios. Específicamente, cómo determinamos el precio de un vehículo en nuestro lote: 5,000 x número de ruedas que tiene un vehículo. Nos encanta comprar nuestros vehículos también. Ofrecemos una tarifa plana: 10 porciento de las millas recorridas en el vehículo. Para camiones, esa tasa es de 10,000. Para autos, 8,000. Para motocicletas, 4,000.</p>
+
+<p>Si quisiéramos crear un sistema de ventas para nuestro concesionario utilizando técnicas orientadas a objetos, ¿cómo lo haríamos? ¿Cuáles serían los objetos? Es posible que tengamos una clase <code class="highlighter-rouge">Sale</code>, una clase <code class="highlighter-rouge">Customer</code>, una clase <code class="highlighter-rouge">Inventory</code>, etc., pero es casi seguro que tendremos una clase <code class="highlighter-rouge">Car</code>, <code class="highlighter-rouge">Truck</code> y <code class="highlighter-rouge">Motorcycle</code>.</p>
+
+<p>¿Cómo serían estas clases? Usando lo que hemos aprendido, aquí hay una posible implementación de la clase <code class="highlighter-rouge">Car</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A car for sale by Jeffco Car Dealership.
+
+    Attributes:
+        wheels: An integer representing the number of wheels the car has.
+        miles: The integral number of miles driven on the car.
+        make: The make of the car as a string.
+        model: The model of the car as a string.
+        year: The integral year the car was built.
+        sold_on: The date the vehicle was sold.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wheels</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="s">"""Return a new Car object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+
+    <span class="k">def</span> <span class="nf">sale_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the sale price for this car as a float amount."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Already sold
+</span>        <span class="k">return</span> <span class="mf">5000.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span>
+
+    <span class="k">def</span> <span class="nf">purchase_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the price for which we would pay to purchase the car."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Not yet sold
+</span>        <span class="k">return</span> <span class="mi">8000</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">miles</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</code></pre></div></div>
+
+<p>Entendido, eso parece bastante razonable. Por supuesto, es probable que tengamos un número de otros métodos en la clase, pero he mostrado dos de particular interés para nosotros: <code class="highlighter-rouge">sale_price</code> y <code class="highlighter-rouge">purchase_price</code>. Veremos por qué estos son importantes en un momento.</p>
+
+<p>Ahora que tenemos la clase <code class="highlighter-rouge">Car</code>, ¿quizás deberíamos crear una clase <code class="highlighter-rouge">Truck</code>? Sigamos el mismo patrón que hicimos para <code class="highlighter-rouge">Car</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Truck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A truck for sale by Jeffco Car Dealership.
+
+    Attributes:
+        wheels: An integer representing the number of wheels the truck has.
+        miles: The integral number of miles driven on the truck.
+        make: The make of the truck as a string.
+        model: The model of the truck as a string.
+        year: The integral year the truck was built.
+        sold_on: The date the vehicle was sold.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wheels</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="s">"""Return a new Truck object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+
+    <span class="k">def</span> <span class="nf">sale_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the sale price for this truck as a float amount."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Already sold
+</span>        <span class="k">return</span> <span class="mf">5000.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span>
+
+    <span class="k">def</span> <span class="nf">purchase_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the price for which we would pay to purchase the truck."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Not yet sold
+</span>        <span class="k">return</span> <span class="mi">10000</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">miles</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</code></pre></div></div>
+<p>Excelente. Eso es casi idéntico a la clase <code class="highlighter-rouge">Car</code>. Una de las reglas más importantes de la programación (en general, no solo cuando se trata de objetos) es “DRY” o “Don’t Repeat Yourself”. Definitivamente nos hemos repetido aquí. De hecho, las clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> difieren solo en Un solo caracter (aparte de los comentarios).</p>
+
+<p>Entonces, ¿Donde nos equivocamos? Nuestro principal problema es: <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> son cosas reales, objetos tangibles que tienen sentido intuitivo como clases. Sin embargo, comparten tantos datos y funcionalidad en común que parece que debe haber una abstracción que podamos presentar aquí. De hecho existe: la noción de Vehículos.</p>
+
+<p><strong>Clases abstractas</strong></p>
+
+<p>Un vehículo no es un objeto del mundo real. Más bien, es un concepto que encarnan algunos objetos del mundo real (como automóviles, camiones y motocicletas). Nos gustaría aprovechar el hecho de que cada uno de estos objetos puede considerarse un vehículo para eliminar códigos repetidos. Podemos hacer eso creando una clase de Vehículo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A vehicle for sale by Jeffco Car Dealership.
+
+    Attributes:
+        wheels: An integer representing the number of wheels the vehicle has.
+        miles: The integral number of miles driven on the vehicle.
+        make: The make of the vehicle as a string.
+        model: The model of the vehicle as a string.
+        year: The integral year the vehicle was built.
+        sold_on: The date the vehicle was sold.
+    """</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wheels</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="s">"""Return a new Vehicle object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+
+
+    <span class="k">def</span> <span class="nf">sale_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the sale price for this vehicle as a float amount."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Already sold
+</span>        <span class="k">return</span> <span class="mf">5000.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span>
+
+    <span class="k">def</span> <span class="nf">purchase_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the price for which we would pay to purchase the vehicle."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Not yet sold
+</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">miles</span><span class="p">)</span>
+		
+    <span class="o">...</span>
+</code></pre></div></div>
+
+<p>Ahora podemos hacer que la clase <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck </code>se herede de la clase <code class="highlighter-rouge">Vehicle</code> reemplazando el objeto en la clase <code class="highlighter-rouge">Car(object)</code>. La clase entre paréntesis es la clase de la cual se hereda (objeto esencialmente significa “sin herencia”. Discutiremos exactamente por qué escribimos eso en un momento).</p>
+
+<p>Ahora podemos definir <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> de una manera muy sencilla:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wheels</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="s">"""Return a new Car object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">8000</span>
+
+
+<span class="k">class</span> <span class="nc">Truck</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wheels</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="s">"""Return a new Truck object."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span> <span class="o">=</span> <span class="n">wheels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">10000</span>
+</code></pre></div></div>
+
+<p>Esto funciona, pero tiene algunos problemas. Primero, todavía estamos repitiendo un montón de código. En última instancia, nos gustaría deshacernos de toda repetición. Segundo, y más problemático, hemos introducido la clase <code class="highlighter-rouge">Vehicle</code>, pero ¿deberíamos realmente permitir que las personas creen objetos <code class="highlighter-rouge">Vehicle</code> (en lugar de <code class="highlighter-rouge">Car</code> o <code class="highlighter-rouge">Truck</code>)? Un <code class="highlighter-rouge">Vehicle</code> es solo un concepto, no una cosa real, entonces, ¿qué significa decir lo siguiente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'Honda'</span><span class="p">,</span> <span class="s">'Accord'</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">v</span><span class="o">.</span><span class="n">purchase_price</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Un <code class="highlighter-rouge">Vehicle</code> no tiene una <code class="highlighter-rouge">base_sale_price</code>, solo lo hacen las clases individuales hijos como <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code>. El problema es que <code class="highlighter-rouge">Vehicle</code> debería ser realmente una clase base abstracta. Las clases base abstractas son clases que solo deben ser heredadas de; No puedes crear una instancia de un ABC. Eso significa que, si <code class="highlighter-rouge">Vehicle</code> es un ABC, lo siguiente es ilegal:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'Honda'</span><span class="p">,</span> <span class="s">'Accord'</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Tiene sentido rechazar esto, ya que nunca pretendemos que  <code class="highlighter-rouge">Vehicle</code> se utilice directamente. Solo queríamos usarlo para abstraer algunos datos y comportamientos comunes. Entonces, ¿cómo hacemos una clase de ABC? ¡Sencillo! El módulo abc contiene una metaclase llamada ABCMeta (las metaclases están un poco fuera del alcance de este artículo). Establecer la metaclase de una clase en ABCMeta y hacer que uno de sus métodos sea virtual lo convierte en un ABC. Un método virtual es uno que el ABC dice que debe existir en clases secundarias, pero que no necesariamente se implementa realmente. Por ejemplo, la clase <code class="highlighter-rouge">Vehicle</code> se puede definir de la siguiente manera:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A vehicle for sale by Jeffco Car Dealership.
+
+
+    Attributes:
+        wheels: An integer representing the number of wheels the vehicle has.
+        miles: The integral number of miles driven on the vehicle.
+        make: The make of the vehicle as a string.
+        model: The model of the vehicle as a string.
+        year: The integral year the vehicle was built.
+        sold_on: The date the vehicle was sold.
+    """</span>
+
+    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">sale_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the sale price for this vehicle as a float amount."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Already sold
+</span>        <span class="k">return</span> <span class="mf">5000.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span>
+
+    <span class="k">def</span> <span class="nf">purchase_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the price for which we would pay to purchase the vehicle."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Not yet sold
+</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">miles</span><span class="p">)</span>
+
+    <span class="o">@</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">vehicle_type</span><span class="p">():</span>
+        <span class="s">""""Return a string representing the type of vehicle this is."""</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Ahora, ya que <code class="highlighter-rouge">vehicle_type</code> es un método abstracto, no podemos crear directamente una instancia de <code class="highlighter-rouge">Vehicle</code>. Siempre y cuando <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> se hereden de <code class="highlighter-rouge">Vehicle</code> y definan <code class="highlighter-rouge">vehicle_type</code>, podemos instanciar esas clases muy bien.</p>
+
+<p>Volviendo a la repetición en nuestras clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code>, veamos si podemos eliminar eso al elevar la funcionalidad común a la clase base, <code class="highlighter-rouge">Vehicle</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A vehicle for sale by Jeffco Car Dealership.
+
+
+    Attributes:
+        wheels: An integer representing the number of wheels the vehicle has.
+        miles: The integral number of miles driven on the vehicle.
+        make: The make of the vehicle as a string.
+        model: The model of the vehicle as a string.
+        year: The integral year the vehicle was built.
+        sold_on: The date the vehicle was sold.
+    """</span>
+
+    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sold_on</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">miles</span> <span class="o">=</span> <span class="n">miles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="o">=</span> <span class="n">sold_on</span>
+
+    <span class="k">def</span> <span class="nf">sale_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the sale price for this vehicle as a float amount."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Already sold
+</span>        <span class="k">return</span> <span class="mf">5000.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheels</span>
+
+    <span class="k">def</span> <span class="nf">purchase_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return the price for which we would pay to purchase the vehicle."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sold_on</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>  <span class="c1"># Not yet sold
+</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">miles</span><span class="p">)</span>
+
+    <span class="o">@</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">vehicle_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">""""Return a string representing the type of vehicle this is."""</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Ahora las clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> se convierten en:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="s">"""A car for sale by Jeffco Car Dealership."""</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">8000</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="k">def</span> <span class="nf">vehicle_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">""""Return a string representing the type of vehicle this is."""</span>
+        <span class="k">return</span> <span class="s">'car'</span>
+
+<span class="k">class</span> <span class="nc">Truck</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="s">"""A truck for sale by Jeffco Car Dealership."""</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="k">def</span> <span class="nf">vehicle_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">""""Return a string representing the type of vehicle this is."""</span>
+        <span class="k">return</span> <span class="s">'truck'</span>
+</code></pre></div></div>
+
+<p>Esto encaja perfectamente con nuestra intuición: en lo que respecta a nuestro sistema, la única diferencia entre <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> es el precio base de venta. Definir una clase <code class="highlighter-rouge">Motorcyle</code>, entonces, es igualmente simple:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Motorcycle</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="s">"""A motorcycle for sale by Jeffco Car Dealership."""</span>
+
+    <span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">4000</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">vehicle_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">""""Return a string representing the type of vehicle this is."""</span>
+        <span class="k">return</span> <span class="s">'motorcycle'</span>
+</code></pre></div></div>
+
+<p><strong>Herencia y el LSP</strong></p>
+
+<p>Aunque parezca que usamos herencia para eliminar la duplicación, lo que realmente estábamos haciendo era simplemente proporcionar el nivel adecuado de abstracción. Y la abstracción es la clave para entender la herencia. Hemos visto cómo un efecto secundario del uso de la herencia es que reducimos el código duplicado, pero ¿qué ocurre desde la perspectiva de quien llama? ¿Cómo el uso de la herencia cambia ese código?</p>
+
+<p>Un poco. Imagina que tenemos dos clases, <code class="highlighter-rouge">Dog</code> y <code class="highlighter-rouge">Person</code>, y queremos escribir una función que tome cualquier tipo de objeto e imprima si la instancia en cuestión puede hablar o no (un perro no puede, una persona puede). Podríamos escribir código como el siguiente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">can_speak</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">Dog</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">'Unknown animal!'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Eso funciona cuando solo tenemos dos tipos de animales, pero ¿y si tenemos veinte o doscientos? Eso si … la cadena elif va a ser bastante larga.</p>
+
+<p>La idea clave aquí es que a <code class="highlighter-rouge">can_speak</code> no debería importarle con qué tipo de animal está tratando, la clase animal en sí misma debería decirnos si puede hablar. Al introducir una clase base común, <code class="highlighter-rouge">Animal</code>, que define <code class="highlighter-rouge">can_speak</code>, aliviamos la función de su carga de comprobación de tipos. Ahora, siempre que sepa que fue un animal que se paso, determinar si puede hablar es trivial:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">can_speak</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">animal</span><span class="o">.</span><span class="n">can_speak</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Esto funciona porque <code class="highlighter-rouge">Person</code> y <code class="highlighter-rouge">Dog</code> (y cualquier otra clase que creamos para derivar de <code class="highlighter-rouge">Animal</code>) siguen el Principio de Sustitución de Liskov LSP. Esto indica que deberíamos poder usar una clase hija (como <code class="highlighter-rouge">Person</code> o <code class="highlighter-rouge">Dog</code>) donde se espera que una clase padre (<code class="highlighter-rouge">Animal</code>) funcione bien. Esto suena simple, pero es la base de un concepto poderoso que discutiremos en un artículo futuro: interfaces.</p>
+
+<h4 id="resumen">Resumen</h4>
+
+<p>Con suerte, has aprendido mucho sobre qué son las clases de Python, por qué son útiles y cómo usarlas. El tema de las clases y la programación orientada a objetos son increíblemente profundos. De hecho, llegan al núcleo de la informática. Este artículo no pretende ser un estudio exhaustivo de clases, ni debe ser su única referencia. Hay literalmente miles de explicaciones de OOP y clases disponibles en línea, por lo que si no encuentra esta adecuada, ciertamente un poco de búsqueda revelará una más adecuada para usted.</p>
+
+<p>Las correcciones y argumentos son bienvenidos en los comentarios.</p>
+:ET

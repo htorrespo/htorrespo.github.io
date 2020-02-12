@@ -1,0 +1,2 @@
+I"_<p>El objeto booleano representa dos valores, <em>verdadero / true</em> o <em>falso / false</em>. Si se omite el parametro de valor o es <code class="highlighter-rouge">0, -0, null, false, NaN, undefined</code> o la cadena de caracteres vacía (<code class="highlighter-rouge">" "</code>), el objeto tiene un valor inicial <em>falso / false</em>.</p>
+:ET

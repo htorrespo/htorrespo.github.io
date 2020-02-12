@@ -1,0 +1,576 @@
+I"�A<p>Una expresion regular es un objeto que describe un patron de caracteres.</p>
+
+<p>La clase <code class="highlighter-rouge">RegExp</code> de JavaScript representa expresiones regulares, y tanto <code class="highlighter-rouge">String</code> como <code class="highlighter-rouge">RegExp</code> definen metodos que usan expresiones regulares para realizar potentes funciones de comparacion de patrones y busqueda y reemplazo en el texto.</p>
+
+<p>Una expresión regular podría definirse con el constructor <code class="highlighter-rouge">RegExp()</code>, de la siguiente manera:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var pattern = new RegExp(pattern, attributes);</span><span class="w">
+</span><span class="go">or simply
+</span><span class="gp">var pattern = /pattern/attributes;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Aqui esta la descripcion de los parametros:</p>
+
+<ul>
+  <li>
+    <p><strong>patron</strong>: una cadena que especifica el patron de la expresion regular u otra expresion regular.</p>
+  </li>
+  <li>
+    <p><strong>atributos</strong>: una cadena opcional que contiene cualquiera de los atributos “g”, “i” y “m” que especifican coincidencias globales, sin distincion de mayusculas y minusculas, respectivamente.</p>
+  </li>
+</ul>
+
+<h3 id="corchetes">Corchetes</h3>
+
+<p>Los corchetes (<code class="highlighter-rouge">[]</code>) tienen un significado especial cuando se usan en el contexto de expresiones regulares. Se utilizan para encontrar un rango de caracteres.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Expresion &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">[...]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Cualquier caracter entre los parentesis.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">[^...]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Cualquier caracter no presente entre los parentesis.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">[0-9]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier digito decimal de 0 a 9.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">[a-z]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">a</code> minuscula a una <code class="highlighter-rouge">z</code> minuscula.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">[A-Z]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">A</code> mayuscula a una <code class="highlighter-rouge">Z</code> mayuscula.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">[a-Z]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">a</code> minuscula a  una <code class="highlighter-rouge">z</code> mayuscula.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Los rangos mostrados antes son generales; tambien puede usar el rango <code class="highlighter-rouge">[0-3]</code> para hacer coincidir cualquier dígito decimal que oscile entre 0 y 3, o el rango <code class="highlighter-rouge">[b-v]</code> para hacer coincidir cualquier caracter en minuscula que vaya desde b hasta v.</p>
+
+<h3 id="cuantificadores">Cuantificadores</h3>
+
+<p>La frecuencia o posición de las secuencias de caracteres entre corchetes y los caracteres individuales se pueden denotar con un caracter especial. Cada caracter especial tiene una connotacion específica. Las banderas <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">*</code>,<code class="highlighter-rouge">?</code> Y <code class="highlighter-rouge">$</code> siguen una secuencia de caracteres.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Expresion &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">p+</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contiene una o mas p.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">p*</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga cero o mas p.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">p?</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga como máximo una p.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">p{N}</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga una secuencia de N p.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">p{2,3}</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga una secuencia de dos o tres p.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">p{2, }</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga una secuencia de al menos dos p.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">p$</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena con p al final de ella.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">^p</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena con p al principio de ella.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Los siguientes ejemplos explican mas acerca de los caracteres coincidentes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Expresion &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">[^a-zA-Z]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que no contenga ninguno de los caracteres que van desde la a a la z y de la A a la Z.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">p.p</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga p, seguida de cualquier caracter, seguida de otra p.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">^.{2}$</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contiene exactamente dos caracteres.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">&lt;b&gt;(.*)&lt;/b&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena encerrada entre <code class="highlighter-rouge">&lt;b&gt;</code> y <code class="highlighter-rouge">&lt;/b&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">p(hp)*</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Coincide con cualquier cadena que contenga una p seguida de cero o mas instancias de la secuencia hp.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="caracteres-literals">Caracteres Literals</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Caracter &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">Alphanumeric</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Itself</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">\0</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El caracter NUL  (\u0000)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">\t</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Tab (\u0009</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Newline (\u000A)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">\v</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Tab vertical (\u000B)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">\f</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Form feed (\u000C)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">\r</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Carro de retorno (\u000D)</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">\xnn</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El caracter latino especificado por el numero hexadecimal nn; por ejemplo, <code class="highlighter-rouge">\x0A</code> es lo mismo que <code class="highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">\uxxxx</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El caracter Unicode especificado por el numero hexadecimal xxxx; por ejemplo, <code class="highlighter-rouge">\u0009</code> es lo mismo que <code class="highlighter-rouge">\t</code>.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">\cX</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El caracter de control <code class="highlighter-rouge">^X</code>; por ejemplo, <code class="highlighter-rouge">\cJ</code> es equivalente al caracter de nueva línea <code class="highlighter-rouge">\n</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metacaracteres">Metacaracteres</h3>
+
+<p>Un metacaracter es simplemente un caracter alfabetico precedido por una barra invertida que actua para darle a la combinación un significado especial.</p>
+
+<p>Por ejemplo, puede buscar una gran suma de dinero utilizando el metacaracter <code class="highlighter-rouge">\ d</code>: <code class="highlighter-rouge">/ ([\ d] +) 000 /</code>, Aqui <code class="highlighter-rouge">\ d</code> buscara cualquier cadena de caracteres numericos.</p>
+
+<p>La siguiente tabla enumera un conjunto de metacaracteres que se pueden usar en las expresiones regulares al estilo PERL.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Caracter &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">.</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un unico caracter.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">\s</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un caracter espacio (space, tab, newline).</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">\S</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un caracter que no es espacio.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">\d</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un digito (0-9)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">\D</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un no digito</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">\w</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un caracter(a-z, A-Z, 0-9, <code class="highlighter-rouge">_</code>).</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">\W</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un no caracter</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">[\b]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un literal de retroceso (caso especial).</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">[aeiou]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>coincide con un solo caracter en el conjunto dado.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">[^aeiou]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>coincide con un solo caracter diferente del conjunto dado.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">(foo|bar|baz)</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>coincide con cualquiera de las alternativas especificadas.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="modificadores">Modificadores</h3>
+
+<p>Hay varios modificadores disponibles que pueden simplificar la forma en que trabaja con expresiones regulares, como la sensibilidad a las mayusculas y minusculas, la busqueda en varias líneas, etc.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Modificador &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">i</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Realiza el emparejamiento insensible.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">m</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica que si la cadena tiene caracteres de nueva línea o de carro de retorno, los operadores <code class="highlighter-rouge">^</code> y <code class="highlighter-rouge">$</code> ahora coincidirán con un límite de nueva línea, en lugar de limite de cadena.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">g</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Realiza una coincidencia global, es decir, encuentra todas las coincidencias en lugar de detenerte despues de la primera.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="propiedades-regexp">Propiedades RegExp</h3>
+
+<p>Aqui hay una lista de las propiedades asociadas con <code class="highlighter-rouge">RegExp</code> y su descripcion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica la funcion que crea el prototipo de un objeto.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">global</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica si el modificador “g” esta configurado..</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">ignoreCase</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica si el modificador “i” esta configurado..</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">lastIndex</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El índice en el que se empieza la proxima partida.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">multiline</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Especifica si el modificador “m” esta configurado.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">source</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El texto del patron.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metodos-de-regexp">Metodos de <code class="highlighter-rouge">RegExp</code></h3>
+
+<p>Aquí hay una lista de las metodos del objeto <code class="highlighter-rouge">RegExp</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">exec()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ejecuta la busqueda de una coincidencia en su parametro <code class="highlighter-rouge">String</code>.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">test()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Prueba de una coincidencia en su parametro <code class="highlighter-rouge">String</code>.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">toSource()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un objeto literal que representa el objeto especificado; Puedes usar este valor para crear un nuevo objeto.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena que representa el objeto especificado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

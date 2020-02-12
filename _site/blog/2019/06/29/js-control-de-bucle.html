@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Control de bucle | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Control de bucle" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"JavaScript proporciona un control total para manejar bucles y sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle.","@type":"BlogPosting","headline":"JavaScript - Control de bucle","dateModified":"2019-06-29T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html","datePublished":"2019-06-29T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"JavaScript proporciona un control total para manejar bucles y sentencias switch. Puede haber una situacion en la que necesite salir de un bucle sin llegar al fondo. Tambien puede haber una situacion en la que desee omitir parte de un bloque de codigo y comenzar la siguiente iteracion del bucle.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/06/29/js-control-de-bucle.html","headline":"JavaScript - Control de bucle","dateModified":"2019-06-29T00:00:00+00:00","datePublished":"2019-06-29T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -146,13 +146,13 @@
 
 <p>Para manejar todas estas situaciones, JavaScript proporciona declaraciones de ruptura y continuación. Estas declaraciones se utilizan para salir inmediatamente de cualquier bucle o para iniciar la siguiente iteracion de cualquier bucle, respectivamente.</p>
 
-<h3 id="la-sentencia-break">La sentencia <code class="highlighter-rouge">break</code></h3>
+<h3 id="la-sentencia-break">La sentencia <code class="language-plaintext highlighter-rouge">break</code></h3>
 
-<p>La instruccion <code class="highlighter-rouge">break</code>, que se introdujo brevemente con la instrucción <code class="highlighter-rouge">switch</code>, se utiliza para salir de un bucle de manera temprana.</p>
+<p>La instruccion <code class="language-plaintext highlighter-rouge">break</code>, que se introdujo brevemente con la instrucción <code class="language-plaintext highlighter-rouge">switch</code>, se utiliza para salir de un bucle de manera temprana.</p>
 
 <h4 id="ejemplo">Ejemplo</h4>
 
-<p>El siguiente ejemplo ilustra el uso de una instruccion <code class="highlighter-rouge">break</code> con un bucle <code class="highlighter-rouge">while</code>. Observe como el bucle se rompe de forma  temprana una vez que x llega a 5 y llega a la declaracion <code class="highlighter-rouge">document.write(..)</code>.</p>
+<p>El siguiente ejemplo ilustra el uso de una instruccion <code class="language-plaintext highlighter-rouge">break</code> con un bucle <code class="language-plaintext highlighter-rouge">while</code>. Observe como el bucle se rompe de forma  temprana una vez que x llega a 5 y llega a la declaracion <code class="language-plaintext highlighter-rouge">document.write(..)</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;body&gt;</span>     
@@ -177,15 +177,15 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Ya hemos visto el uso de la instruccion <code class="highlighter-rouge">break</code> dentro de una instruccion <code class="highlighter-rouge">switch</code>.</p>
+<p>Ya hemos visto el uso de la instruccion <code class="language-plaintext highlighter-rouge">break</code> dentro de una instruccion <code class="language-plaintext highlighter-rouge">switch</code>.</p>
 
-<h3 id="la-sentencia-continue">La sentencia <code class="highlighter-rouge">continue</code></h3>
+<h3 id="la-sentencia-continue">La sentencia <code class="language-plaintext highlighter-rouge">continue</code></h3>
 
-<p>La instruccion <code class="highlighter-rouge">continue</code> le indica al interprete que inicie inmediatamente la siguiente iteracion del bucle y que omita el bloque de codigo restante. Cuando se encuentra una declaración <code class="highlighter-rouge">continue</code>, el flujo del programa se mueve a la expresion de comprobacion de bucle inmediatamente y, si la condicion sigue siendo verdadera, comienza la siguiente iteracion, de lo contrario, el control sale del bucle.</p>
+<p>La instruccion <code class="language-plaintext highlighter-rouge">continue</code> le indica al interprete que inicie inmediatamente la siguiente iteracion del bucle y que omita el bloque de codigo restante. Cuando se encuentra una declaración <code class="language-plaintext highlighter-rouge">continue</code>, el flujo del programa se mueve a la expresion de comprobacion de bucle inmediatamente y, si la condicion sigue siendo verdadera, comienza la siguiente iteracion, de lo contrario, el control sale del bucle.</p>
 
 <h4 id="ejemplo-1">Ejemplo</h4>
 
-<p>Este ejemplo ilustra el uso de una instruccion <code class="highlighter-rouge">continue</code> con un bucle <code class="highlighter-rouge">while</code>. Observe como se usa la instruccion para omitir la impresion cuando el indice que se mantiene en la variable x alcanza 5.</p>
+<p>Este ejemplo ilustra el uso de una instruccion <code class="language-plaintext highlighter-rouge">continue</code> con un bucle <code class="language-plaintext highlighter-rouge">while</code>. Observe como se usa la instruccion para omitir la impresion cuando el indice que se mantiene en la variable x alcanza 5.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;body&gt;</span>      
@@ -211,15 +211,15 @@
 </code></pre></div></div>
 <h3 id="uso-de-etiquetas-para-control-de-flujo">Uso de etiquetas para control de flujo</h3>
 
-<p>A partir de JavaScript 1.2, se puede utilizar una etiqueta con <code class="highlighter-rouge">break</code> y <code class="highlighter-rouge">continue</code> para controlar el flujo con mayor precision. Una etiqueta es simplemente un identificador seguido de dos puntos (:) que se aplica a una declaracion o un bloque de codigo. Veremos dos ejemplos para entender como usar las etiquetas con <code class="highlighter-rouge">break</code> y <code class="highlighter-rouge">continue</code>.</p>
+<p>A partir de JavaScript 1.2, se puede utilizar una etiqueta con <code class="language-plaintext highlighter-rouge">break</code> y <code class="language-plaintext highlighter-rouge">continue</code> para controlar el flujo con mayor precision. Una etiqueta es simplemente un identificador seguido de dos puntos (:) que se aplica a una declaracion o un bloque de codigo. Veremos dos ejemplos para entender como usar las etiquetas con <code class="language-plaintext highlighter-rouge">break</code> y <code class="language-plaintext highlighter-rouge">continue</code>.</p>
 
-<p>Nota: no se permiten saltos de línea entre la declaracion <code class="highlighter-rouge">break</code> o <code class="highlighter-rouge">continue</code> y su nombre de etiqueta. Ademas, no debe haber ninguna otra declaracion entre un nombre de etiqueta y un bucle asociado.</p>
+<p>Nota: no se permiten saltos de línea entre la declaracion <code class="language-plaintext highlighter-rouge">break</code> o <code class="language-plaintext highlighter-rouge">continue</code> y su nombre de etiqueta. Ademas, no debe haber ninguna otra declaracion entre un nombre de etiqueta y un bucle asociado.</p>
 
 <p>Pruebe los siguientes ejemplos para una mejor comprensióo de las etiquetas.</p>
 
 <h4 id="ejemplos">Ejemplos</h4>
 
-<p>El siguiente ejemplo muestra cómo implementar Label con una instrucción <code class="highlighter-rouge">break</code>.</p>
+<p>El siguiente ejemplo muestra cómo implementar Label con una instrucción <code class="language-plaintext highlighter-rouge">break</code>.</p>
 
 <p>Ejemplo 1</p>
 
@@ -277,7 +277,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envienos sus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

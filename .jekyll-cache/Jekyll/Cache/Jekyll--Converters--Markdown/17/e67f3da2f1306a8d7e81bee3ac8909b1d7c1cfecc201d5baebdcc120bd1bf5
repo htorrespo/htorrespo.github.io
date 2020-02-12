@@ -1,0 +1,54 @@
+I"8<p>El bucle <code class="highlighter-rouge">for</code> es la forma más compacta de bucle. Incluye las siguientes tres partes importantes:</p>
+
+<ul>
+  <li>
+    <p>La <strong>inicializacion</strong> del bucle donde empezamos con nuestro contador a un valor de inicio. La instruccion de inicializacion se ejecuta antes de que comience el bucle.</p>
+  </li>
+  <li>
+    <p>La <strong>declaracion</strong> de prueba que verificara si una condicion dada es verdadera o no. Si la condicion es verdadera, entonces el codigo dado dentro del bucle se ejecutara, de lo contrario, el control saldra del bucle.</p>
+  </li>
+  <li>
+    <p>La instruccion de <strong>iteracion</strong> donde puede aumentar o disminuir su contador.</p>
+  </li>
+</ul>
+
+<p>Puede poner las tres partes en una sola línea separadas por punto y coma.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de una instruccion <code class="highlighter-rouge">for</code> basica es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">initialization</span><span class="p">;</span> <span class="nx">test</span> <span class="nx">condition</span><span class="p">;</span> <span class="nx">iteration</span> <span class="nx">statement</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">test</span> <span class="nx">condition</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para comprender como funciona la instruccion <code class="highlighter-rouge">for</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">count</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Starting Loop</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+         
+            <span class="k">for</span><span class="p">(</span><span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">count</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Current Count : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">count</span> <span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Loop stopped!</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

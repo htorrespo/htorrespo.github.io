@@ -1,0 +1,91 @@
+I"V<p>Ahora que sabemos lo que significa DOM, veamos que es una estructura DOM. Un documento DOM es una coleccion de nodos o piezas de informacion, organizadas en una jerarquia. Algunos tipos de nodos pueden tener nodos secundarios de varios tipos y otros son nodos hoja que no pueden tener nada debajo de ellos en la estructura del documento. A continuacion se incluye una lista de los tipos de nodos, con una lista de los tipos de nodos que pueden tener como hijos:</p>
+
+<ul>
+  <li>
+    <p><strong>Document</strong> − Element (maximo uno), ProcessingInstruction, Comment, DocumentType (maximo uno)</p>
+  </li>
+  <li>
+    <p><strong>DocumentFragment</strong> − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference</p>
+  </li>
+  <li>
+    <p><strong>EntityReference</strong> − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference</p>
+  </li>
+  <li>
+    <p><strong>Element</strong> − Element, Text, Comment, ProcessingInstruction, CDATASection, EntityReference</p>
+  </li>
+  <li>
+    <p><strong>Attr</strong> − Text, EntityReference</p>
+  </li>
+  <li>
+    <p><strong>ProcessingInstruction</strong> − Sin hijos</p>
+  </li>
+  <li>
+    <p><strong>Comment</strong> − Sin hijos</p>
+  </li>
+  <li>
+    <p><strong>Text</strong> − Sin hijos</p>
+  </li>
+  <li>
+    <p><strong>CDATASection</strong> − Sin hijos</p>
+  </li>
+  <li>
+    <p><strong>Entity</strong> − Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference</p>
+  </li>
+  <li>
+    <p><strong>Notation</strong> − Sin hijos</p>
+  </li>
+</ul>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Considere la representacion DOM del siguiente documento XML <code class="highlighter-rouge">node.xml</code>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version = "1.0"?&gt;</span>
+<span class="nt">&lt;Company&gt;</span>
+   <span class="nt">&lt;Employee</span> <span class="na">category =</span> <span class="s">"technical"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;FirstName&gt;</span>Tanmay<span class="nt">&lt;/FirstName&gt;</span>
+      <span class="nt">&lt;LastName&gt;</span>Patil<span class="nt">&lt;/LastName&gt;</span>
+      <span class="nt">&lt;ContactNo&gt;</span>1234567890<span class="nt">&lt;/ContactNo&gt;</span>
+   <span class="nt">&lt;/Employee&gt;</span>
+   
+   <span class="nt">&lt;Employee</span> <span class="na">category =</span> <span class="s">"non-technical"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;FirstName&gt;</span>Taniya<span class="nt">&lt;/FirstName&gt;</span>
+      <span class="nt">&lt;LastName&gt;</span>Mishra<span class="nt">&lt;/LastName&gt;</span>
+      <span class="nt">&lt;ContactNo&gt;</span>1234667898<span class="nt">&lt;/ContactNo&gt;</span>
+   <span class="nt">&lt;/Employee&gt;</span>
+<span class="nt">&lt;/Company&gt;</span>
+</code></pre></div></div>
+<p>El DOM del documento XML anterior seria el siguiente:</p>
+
+<ul>
+  <li>
+    <p>El objeto <em>node</em> solo puede tener un objeto <em>node padre</em>. Esto ocupa la posicion sobre todos los nodos. Aqui esta la <em>comapny</em>.</p>
+  </li>
+  <li>
+    <p>El <em>node padre</em> puede tener multiples nodos llamados <em>node child</em>. Estos nodos hijos pueden tener nodos adicionales llamados nodos de <em>attribute</em>. En el ejemplo anterior, tenemos dos nodos atributos <em>Technical</em> y <em>Non-Technical</em>. El nodo de atributo no es en este momento un elemento hijo del elemento <em>node</em>, pero aun esta asociado con el.</p>
+  </li>
+  <li>
+    <p>Estos nodos hijos a su vez pueden tener multiples nodos hijos. El texto dentro de los nodos se llama nodo <em>text</em>.</p>
+  </li>
+  <li>
+    <p>Los objetos de nodo en el mismo nivel se llaman hermanos.</p>
+  </li>
+</ul>
+
+<p>El DOM identifica -</p>
+
+<ul>
+  <li>
+    <p>los objetos para representar la interfaz y manipular el documento.</p>
+  </li>
+  <li>
+    <p>La relacion entre los objetos y las interfaces.</p>
+  </li>
+</ul>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

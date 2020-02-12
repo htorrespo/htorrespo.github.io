@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Groovy - Sintaxis basica | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Groovy - Sintaxis basica" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Para comprender la sintaxis basica de Groovy, veamos primero un programa simple de Hello World.","@type":"BlogPosting","headline":"Groovy - Sintaxis basica","dateModified":"2019-08-16T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html","datePublished":"2019-08-16T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Para comprender la sintaxis basica de Groovy, veamos primero un programa simple de Hello World.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html","headline":"Groovy - Sintaxis basica","dateModified":"2019-08-16T00:00:00+00:00","datePublished":"2019-08-16T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -144,7 +144,7 @@
         <div class="e-content">
           <h3 id="creando-tu-primer-programa-hello-world">Creando tu primer programa Hello World</h3>
 
-<p>Crear su primer programa <code class="highlighter-rouge">hello world</code> es tan simple como ingresar la siguiente linea de codigo:</p>
+<p>Crear su primer programa <code class="language-plaintext highlighter-rouge">hello world</code> es tan simple como ingresar la siguiente linea de codigo:</p>
 
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -156,9 +156,9 @@
 
 <h3 id="declaracion-de-importacion-en-groovy">Declaracion de importacion en Groovy</h3>
 
-<p>La declaracion <code class="highlighter-rouge">import</code> se puede usar para importar la funcionalidad de otras bibliotecas  en su codigo. Esto se hace usando la palabra clave <code class="highlighter-rouge">import</code>.</p>
+<p>La declaracion <code class="language-plaintext highlighter-rouge">import</code> se puede usar para importar la funcionalidad de otras bibliotecas  en su codigo. Esto se hace usando la palabra clave <code class="language-plaintext highlighter-rouge">import</code>.</p>
 
-<p>El siguiente ejemplo muestra como usar importacion simple de la clase <code class="highlighter-rouge">MarkupBuilder</code>, que es probablemente una de las clases mas utilizadas para crear marcado HTML o XML.</p>
+<p>El siguiente ejemplo muestra como usar importacion simple de la clase <code class="language-plaintext highlighter-rouge">MarkupBuilder</code>, que es probablemente una de las clases mas utilizadas para crear marcado HTML o XML.</p>
 
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">groovy.xml.MarkupBuilder</span> 
 <span class="kt">def</span> <span class="n">xml</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MarkupBuilder</span><span class="o">()</span> 
@@ -191,7 +191,7 @@
 
 <p>Los comentarios se utilizan para documentar codigo. Los comentarios en Groovy pueden ser de una sola linea o de varias lineas.</p>
 
-<p>Los comentarios de una sola linea se identifican utilizando <code class="highlighter-rouge">//</code> en cualquier posicion de la linea. A continuacion se muestra un ejemplo:</p>
+<p>Los comentarios de una sola linea se identifican utilizando <code class="language-plaintext highlighter-rouge">//</code> en cualquier posicion de la linea. A continuacion se muestra un ejemplo:</p>
 
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -201,7 +201,7 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Los comentarios multilinea se identifican con <code class="highlighter-rouge">/*</code> al principio y <code class="highlighter-rouge">*/</code> para identificar el final del comentario multilinea.</p>
+<p>Los comentarios multilinea se identifican con <code class="language-plaintext highlighter-rouge">/*</code> al principio y <code class="language-plaintext highlighter-rouge">*/</code> para identificar el final del comentario multilinea.</p>
 
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -236,7 +236,7 @@
 <span class="kt">def</span> <span class="n">student_name</span>
 </code></pre></div></div>
 
-<p>donde <code class="highlighter-rouge">def</code> es una palabra clave utilizada en Groovy para definir un identificador.</p>
+<p>donde <code class="language-plaintext highlighter-rouge">def</code> es una palabra clave utilizada en Groovy para definir un identificador.</p>
 
 <p>Aqui hay un ejemplo de codigo de como se puede usar un identificador en nuestro programa Hello World.</p>
 
@@ -271,7 +271,7 @@ while
 
 <p>Espacio en blanco es el termino utilizado en un lenguaje de programacion como Java y Groovy para describir espacios en blanco, tabs, caracteres de nueva linea y comentarios. El espacio en blanco separa una parte de una declaracion de otra y permite al compilador identificar donde esta un elemento en una declaracion.</p>
 
-<p>Por ejemplo, en el siguiente ejemplo, hay un espacio en blanco entre la palabra clave <code class="highlighter-rouge">def</code> y la variable <code class="highlighter-rouge">x</code>. Esto es para que el compilador sepa que <code class="highlighter-rouge">def</code> es la palabra clave que debe usarse y que <code class="highlighter-rouge">x</code> debe ser el nombre de la variable que debe definirse.</p>
+<p>Por ejemplo, en el siguiente ejemplo, hay un espacio en blanco entre la palabra clave <code class="language-plaintext highlighter-rouge">def</code> y la variable <code class="language-plaintext highlighter-rouge">x</code>. Esto es para que el compilador sepa que <code class="language-plaintext highlighter-rouge">def</code> es la palabra clave que debe usarse y que <code class="language-plaintext highlighter-rouge">x</code> debe ser el nombre de la variable que debe definirse.</p>
 
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
 </code></pre></div></div>
@@ -289,7 +289,7 @@ while
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

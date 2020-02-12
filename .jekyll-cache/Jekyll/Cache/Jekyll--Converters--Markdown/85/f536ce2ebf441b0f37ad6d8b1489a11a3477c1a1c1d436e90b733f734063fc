@@ -1,0 +1,239 @@
+I"�(<p>JavaScript es un lenguaje de programacion orientada a objetos (OOP). Un lenguaje de programacion puede denominarse orientado a objetos si proporciona cuatro capacidades basicas a los desarrolladores:</p>
+
+<ul>
+  <li>
+    <p><strong>Encapsulacion</strong>: la capacidad de almacenar informacion relacionada, ya sea en datos o metodos, ambos en un objeto.</p>
+  </li>
+  <li>
+    <p><strong>Agregacion</strong>: la capacidad de almacenar un objeto dentro de otro objeto.</p>
+  </li>
+  <li>
+    <p><strong>Herencia</strong>: la capacidad de una clase de confiar en otra clase (o numero de clases) para algunas de sus propiedades y metodos.</p>
+  </li>
+  <li>
+    <p><strong>Polimorfismo</strong>: la capacidad de escribir una funcion o metodo que funciona de diferentes maneras.</p>
+  </li>
+</ul>
+
+<p>Los objetos estan compuestos de atributos. Si un atributo contiene una funcion, se considera un metodo del objeto, de lo contrario el atributo se considera una propiedad.</p>
+
+<h3 id="propiedades-de-los-objetos">Propiedades de los objetos</h3>
+
+<p>Las propiedades de los objetos pueden ser cualquiera de los tres tipos de datos primitivos, o cualquiera de los tipos de datos abstractos, como otro objeto. Las propiedades de los objetos suelen ser variables que se utilizan internamente en los metodos del objeto, pero tambien pueden ser variables visibles a nivel global que se utilizan en toda la pagina.</p>
+
+<p>La sintaxis para agregar una propiedad a un objeto es:</p>
+
+<pre><code class="language-JavaScript">objectName.objectProperty = propertyValue;
+</code></pre>
+
+<p>Por ejemplo: el siguiente codigo obtiene el titulo del documento usando la propiedad <code class="highlighter-rouge">title</code> del objeto del documento.</p>
+
+<pre><code class="language-JavaScript">var str = document.title;
+</code></pre>
+
+<h3 id="metodos-de-los-objetos">Metodos de los objetos</h3>
+
+<p>Los métodos son funciones que permiten que el objeto haga algo o que se le haga algo. Hay una pequeña diferencia entre una funcion y un metodo: una funcion es una unidad independiente de sentencias y un metodo esta ligado a objeto al que se puede hacer referencia con la palabra clave.</p>
+
+<p>Los metodos son utiles para todo, desde mostrar el contenido del objeto a la pantalla hasta realizar operaciones matematicas complejas a un grupo de propiedades y parametros locales.</p>
+
+<p>Por ejemplo, el siguiente es un ejemplo simple para mostrar como usar el metodo <code class="highlighter-rouge">write()</code> del objeto <code class="highlighter-rouge">document</code> para escribir cualquier contenido en el documento.</p>
+
+<pre><code class="language-JavaScript">document.write("This is test");
+</code></pre>
+
+<h3 id="objetos-definidos-por-el-usuario">Objetos definidos por el usuario</h3>
+
+<p>Todos los objetos definidos por el usuario y los objetos incorporados son descendientes de un objeto llamado <code class="highlighter-rouge">Object</code>.</p>
+
+<h4 id="el-operador-new">El operador <code class="highlighter-rouge">new</code></h4>
+
+<p>El operador <code class="highlighter-rouge">new</code> se utiliza para crear una instancia (objeto) de un objeto. Para crear un objeto, el operador <code class="highlighter-rouge">new</code> es seguido por el metodo del constructor.</p>
+
+<p>En el siguiente ejemplo, los metodos del constructor son <code class="highlighter-rouge">Object()</code>, <code class="highlighter-rouge">Array()</code> y <code class="highlighter-rouge">Date()</code>. Estos constructores estan incorporados en las funciones de JavaScript.</p>
+
+<pre><code class="language-JavaScript">var employee = new Object();
+var books = new Array("C++", "Perl", "Java");
+var day = new Date("August 15, 1947");
+</code></pre>
+
+<h4 id="el-constructor-object">El Constructor <code class="highlighter-rouge">Object()</code></h4>
+
+<p>Un constructor es una funcion que crea e inicializa un objeto. JavaScript proporciona una funcion constructora especial llamada <code class="highlighter-rouge">Object()</code> para construir el objeto. El valor de retorno del constructor<code class="highlighter-rouge">Object()</code> se asigna a una variable.</p>
+
+<p>La variable contiene una referencia al nuevo objeto. Las propiedades asignadas al objeto no son variables y no se definen con la palabra clave <code class="highlighter-rouge">var</code>.</p>
+
+<h4 id="ejemplo-1">Ejemplo 1</h4>
+
+<p>Pruebe el siguiente ejemplo; Demuestra como crear un objeto.</p>
+
+<pre><code class="language-JavaScript">&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;User-defined objects&lt;/title&gt;     
+      &lt;script type = "text/javascript"&gt;
+         var book = new Object();   // Create the object
+         book.subject = "Perl";     // Assign properties to the object
+         book.author  = "Mohtashim";
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;  
+      &lt;script type = "text/javascript"&gt;
+         document.write("Book name is : " + book.subject + "&lt;br&gt;");
+         document.write("Book author is : " + book.author + "&lt;br&gt;");
+      &lt;/script&gt;   
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4 id="ejemplo-2">Ejemplo 2</h4>
+
+<p>Este ejemplo muestra como crear un objeto con una funcion definida por el usuario. Aqui esta palabra clave se utiliza para referirse al objeto que se ha pasado a una funcion.</p>
+
+<pre><code class="language-JavaScript">&lt;html&gt;
+   &lt;head&gt;   
+   &lt;title&gt;User-defined objects&lt;/title&gt;
+      &lt;script type = "text/javascript"&gt;
+         function book(title, author) {
+            this.title = title; 
+            this.author  = author;
+         }
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;script type = "text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+      &lt;/script&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="definiendo-metodos-para-un-objeto">Definiendo metodos para un objeto</h3>
+
+<p>Los ejemplos anteriores demuestran como el constructor crea el objeto y asigna propiedades. Pero necesitamos completar la definicion de un objeto asignandole matodos.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo; muestra como agregar una funcion a un objeto.</p>
+
+<pre><code class="language-JavaScript">&lt;html&gt;
+   
+   &lt;head&gt;
+   &lt;title&gt;User-defined objects&lt;/title&gt;
+      &lt;script type = "text/javascript"&gt;
+         // Define a function which will work as a method
+         function addPrice(amount) {
+            this.price = amount; 
+         }
+         
+         function book(title, author) {
+            this.title = title;
+            this.author  = author;
+            this.addPrice = addPrice;  // Assign that method as property.
+         }
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;script type = "text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         myBook.addPrice(100);
+         
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+         document.write("Book price is : " + myBook.price + "&lt;br&gt;");
+      &lt;/script&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="la-palabra-clave-with">La palabra clave <code class="highlighter-rouge">with</code></h3>
+
+<p>La palabra clave <code class="highlighter-rouge">with</code>se utiliza como una forma abreviada para hacer referencia a las propiedades o métodos de un objeto.</p>
+
+<p>El objeto especificado como argumento <code class="highlighter-rouge">with</code> se convierte en el objeto predeterminado para el bloque siguiente. Las propiedades y los metodos para el objeto se pueden usar sin nombrar el objeto.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis para con objeto es la siguiente:</p>
+
+<pre><code class="language-JavaScript">with (object) {
+   properties used without the object name and dot
+}
+</code></pre>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Prueba el siguiente ejemplo.</p>
+
+<pre><code class="language-JavaScript">&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;User-defined objects&lt;/title&gt;   
+      &lt;script type = "text/javascript"&gt;
+         // Define a function which will work as a method
+         function addPrice(amount) {
+            with(this) {
+               price = amount;
+            }
+         }
+         function book(title, author) {
+            this.title = title;
+            this.author = author;
+            this.price = 0;
+            this.addPrice = addPrice;  // Assign that method as property.
+         }
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;script type = "text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         myBook.addPrice(100);
+         
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+         document.write("Book price is : " + myBook.price + "&lt;br&gt;");
+      &lt;/script&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="objetos-nativos-de-javascript">Objetos nativos de JavaScript</h3>
+
+<p>JavaScript tiene varios objetos incorporados o nativos. Estos objetos son accesibles en cualquier parte de su programa y funcionaran de la misma manera en cualquier navegador que se ejecute en cualquier sistema operativo.</p>
+
+<p>Aqui esta la lista de todos los objetos nativos de JavaScript importantes:</p>
+
+<ul>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">Number</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">Boolean</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">String</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">Array</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">Date</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">Math</code> de JavaScript</p>
+  </li>
+  <li>
+    <p>Objeto <code class="highlighter-rouge">RegExp</code> de JavaScript</p>
+  </li>
+</ul>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

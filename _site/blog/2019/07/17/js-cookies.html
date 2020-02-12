@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Cookies | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Cookies" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Una cookie es un archivo creado por un sitio web que contiene pequeñas cantidades de datos y que se envian entre un emisor y un receptor.","@type":"BlogPosting","headline":"JavaScript - Cookies","dateModified":"2019-07-17T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/17/js-cookies.html","datePublished":"2019-07-17T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/17/js-cookies.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Una cookie es un archivo creado por un sitio web que contiene pequeñas cantidades de datos y que se envian entre un emisor y un receptor.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/17/js-cookies.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/07/17/js-cookies.html","headline":"JavaScript - Cookies","dateModified":"2019-07-17T00:00:00+00:00","datePublished":"2019-07-17T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -156,36 +156,36 @@
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">Expires</code>: fecha en que caducara la cookie. Si esta en blanco, la cookie caducara cuando el visitante salga del navegador.</p>
+    <p><code class="language-plaintext highlighter-rouge">Expires</code>: fecha en que caducara la cookie. Si esta en blanco, la cookie caducara cuando el visitante salga del navegador.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Domain</code>: nombre de dominio de su sitio.</p>
+    <p><code class="language-plaintext highlighter-rouge">Domain</code>: nombre de dominio de su sitio.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Path</code>: ruta al directorio o pagina web que establece la cookie. Puede estar en blanco si desea recuperar la cookie de cualquier directorio o pagina.</p>
+    <p><code class="language-plaintext highlighter-rouge">Path</code>: ruta al directorio o pagina web que establece la cookie. Puede estar en blanco si desea recuperar la cookie de cualquier directorio o pagina.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Secure</code>: si este campo contiene la palabra <code class="highlighter-rouge">secure</code>, la cookie solo se puede recuperar con un servidor seguro. Si este campo esta en blanco, no existe tal restriccion.</p>
+    <p><code class="language-plaintext highlighter-rouge">Secure</code>: si este campo contiene la palabra <code class="language-plaintext highlighter-rouge">secure</code>, la cookie solo se puede recuperar con un servidor seguro. Si este campo esta en blanco, no existe tal restriccion.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Name = Value</code>: las cookies se configuran y recuperan en forma de pares clave-valor</p>
+    <p><code class="language-plaintext highlighter-rouge">Name = Value</code>: las cookies se configuran y recuperan en forma de pares clave-valor</p>
   </li>
 </ul>
 
 <p>Las cookies fueron diseñadas originalmente para programacion CGI. Los datos contenidos en una cookie se transmiten automaticamente entre el navegador web y el servidor web, por lo que los scripts CGI en el servidor pueden leer y escribir los valores de las cookies que se almacenan en el cliente.</p>
 
-<p>JavaScript tambien puede manipular las cookies utilizando la propiedad <code class="highlighter-rouge">cookie</code> del objeto <code class="highlighter-rouge">Document</code>. JavaScript puede leer, crear, modificar y eliminar las cookies que se aplican a la pagina web actual.</p>
+<p>JavaScript tambien puede manipular las cookies utilizando la propiedad <code class="language-plaintext highlighter-rouge">cookie</code> del objeto <code class="language-plaintext highlighter-rouge">Document</code>. JavaScript puede leer, crear, modificar y eliminar las cookies que se aplican a la pagina web actual.</p>
 
 <h3 id="almacenamiento-de-cookies">Almacenamiento de cookies</h3>
 
-<p>La forma mas sencilla de crear una cookie es asignar un valor de cadena de caracteres al objeto <code class="highlighter-rouge">document.cookie</code>, que se ve asi.</p>
+<p>La forma mas sencilla de crear una cookie es asignar un valor de cadena de caracteres al objeto <code class="language-plaintext highlighter-rouge">document.cookie</code>, que se ve asi.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">key1 = value1;key2 = value2;expires = date</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Aqui el atributo <code class="highlighter-rouge">expires</code> es opcional. Si entrega este atributo con una fecha u hora validas, la cookie caducara en una fecha u hora determinada y, posteriormente, el valor de las cookies no sera accesible.</p>
+<p>Aqui el atributo <code class="language-plaintext highlighter-rouge">expires</code> es opcional. Si entrega este atributo con una fecha u hora validas, la cookie caducara en una fecha u hora determinada y, posteriormente, el valor de las cookies no sera accesible.</p>
 
-<p>Nota: los valores de las cookies no pueden incluir puntos y comas, ni espacios en blanco. Por este motivo, es posible que desee utilizar la funcion <code class="highlighter-rouge">escape()</code> de JavaScript para codificar el valor antes de almacenarlo en la cookie. Si lo hace, tambien tendra que usar la funcion <code class="highlighter-rouge">unescape()</code> correspondiente cuando lea el valor de la cookie.</p>
+<p>Nota: los valores de las cookies no pueden incluir puntos y comas, ni espacios en blanco. Por este motivo, es posible que desee utilizar la funcion <code class="language-plaintext highlighter-rouge">escape()</code> de JavaScript para codificar el valor antes de almacenarlo en la cookie. Si lo hace, tambien tendra que usar la funcion <code class="language-plaintext highlighter-rouge">unescape()</code> correspondiente cuando lea el valor de la cookie.</p>
 
 <h4 id="ejemplo">Ejemplo</h4>
 
@@ -217,13 +217,13 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Ahora su maquina tiene una cookie llamada <code class="highlighter-rouge">name</code>. Puede configurar varias cookies utilizando varios pares <code class="highlighter-rouge">key = value</code> separados por comas.</p>
+<p>Ahora su maquina tiene una cookie llamada <code class="language-plaintext highlighter-rouge">name</code>. Puede configurar varias cookies utilizando varios pares <code class="language-plaintext highlighter-rouge">key = value</code> separados por comas.</p>
 
 <h3 id="cookies-de-lectura">Cookies de lectura</h3>
 
-<p>Leer una cookie es tan simple como escribir una, porque el valor del objeto <code class="highlighter-rouge">document.cookie</code> es la cookie. Por lo tanto, puede utilizar esta cadena de caracteres cada vez que desee acceder a la cookie. La cadena <code class="highlighter-rouge">document.cookie</code> mantendra una lista de pares <code class="highlighter-rouge">name = value</code> separados por punto y coma, donde <code class="highlighter-rouge">name</code> es el nombre de una cookie y <code class="highlighter-rouge">value</code> es su valor.</p>
+<p>Leer una cookie es tan simple como escribir una, porque el valor del objeto <code class="language-plaintext highlighter-rouge">document.cookie</code> es la cookie. Por lo tanto, puede utilizar esta cadena de caracteres cada vez que desee acceder a la cookie. La cadena <code class="language-plaintext highlighter-rouge">document.cookie</code> mantendra una lista de pares <code class="language-plaintext highlighter-rouge">name = value</code> separados por punto y coma, donde <code class="language-plaintext highlighter-rouge">name</code> es el nombre de una cookie y <code class="language-plaintext highlighter-rouge">value</code> es su valor.</p>
 
-<p>Puede usar la funcion <code class="highlighter-rouge">split()</code> para dividir una cadena de caracteres en <code class="highlighter-rouge">key</code> y <code class="highlighter-rouge">values</code> de la siguiente manera:</p>
+<p>Puede usar la funcion <code class="language-plaintext highlighter-rouge">split()</code> para dividir una cadena de caracteres en <code class="language-plaintext highlighter-rouge">key</code> y <code class="language-plaintext highlighter-rouge">values</code> de la siguiente manera:</p>
 
 <h4 id="ejemplo-1">Ejemplo</h4>
 
@@ -260,11 +260,11 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>Nota: aqui <code class="highlighter-rouge">length</code> es un metodo de la clase <code class="highlighter-rouge">Array</code> que devuelve la longitud de una matriz. Discutiremos Arrays mas adelante. Por el momento, por favor trate de digerirlo. Puede que ya existan otras cookies configuradas en su maquina. El codigo anterior mostrara todas las cookies asignadas en su maquina.</p>
+<p>Nota: aqui <code class="language-plaintext highlighter-rouge">length</code> es un metodo de la clase <code class="language-plaintext highlighter-rouge">Array</code> que devuelve la longitud de una matriz. Discutiremos Arrays mas adelante. Por el momento, por favor trate de digerirlo. Puede que ya existan otras cookies configuradas en su maquina. El codigo anterior mostrara todas las cookies asignadas en su maquina.</p>
 
 <h3 id="configuracion-de-fecha-de-caducidad-a-las-cookies">Configuracion de fecha de caducidad a las cookies</h3>
 
-<p>Puede extender la vida util de una cookie mas alla de la sesion actual del navegador configurando una fecha de vencimiento y guardandola en su interior. Esto se puede hacer configurando el atributo <code class="highlighter-rouge">expires</code> con una fecha y hora.</p>
+<p>Puede extender la vida util de una cookie mas alla de la sesion actual del navegador configurando una fecha de vencimiento y guardandola en su interior. Esto se puede hacer configurando el atributo <code class="language-plaintext highlighter-rouge">expires</code> con una fecha y hora.</p>
 
 <h4 id="ejemplo-2">Ejemplo</h4>
 
@@ -332,7 +332,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia Tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

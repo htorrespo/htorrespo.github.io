@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Generalidades de los Objetos | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Generalidades de los Objetos" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"JavaScript es un lenguaje de programacion orientada a objetos (OOP).","@type":"BlogPosting","headline":"JavaScript - Generalidades de los Objetos","dateModified":"2019-07-23T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/23/js-objetos-generalidades.html","datePublished":"2019-07-23T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/23/js-objetos-generalidades.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"JavaScript es un lenguaje de programacion orientada a objetos (OOP).","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/23/js-objetos-generalidades.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/07/23/js-objetos-generalidades.html","headline":"JavaScript - Generalidades de los Objetos","dateModified":"2019-07-23T00:00:00+00:00","datePublished":"2019-07-23T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -170,7 +170,7 @@
 <pre><code class="language-JavaScript">objectName.objectProperty = propertyValue;
 </code></pre>
 
-<p>Por ejemplo: el siguiente codigo obtiene el titulo del documento usando la propiedad <code class="highlighter-rouge">title</code> del objeto del documento.</p>
+<p>Por ejemplo: el siguiente codigo obtiene el titulo del documento usando la propiedad <code class="language-plaintext highlighter-rouge">title</code> del objeto del documento.</p>
 
 <pre><code class="language-JavaScript">var str = document.title;
 </code></pre>
@@ -181,31 +181,31 @@
 
 <p>Los metodos son utiles para todo, desde mostrar el contenido del objeto a la pantalla hasta realizar operaciones matematicas complejas a un grupo de propiedades y parametros locales.</p>
 
-<p>Por ejemplo, el siguiente es un ejemplo simple para mostrar como usar el metodo <code class="highlighter-rouge">write()</code> del objeto <code class="highlighter-rouge">document</code> para escribir cualquier contenido en el documento.</p>
+<p>Por ejemplo, el siguiente es un ejemplo simple para mostrar como usar el metodo <code class="language-plaintext highlighter-rouge">write()</code> del objeto <code class="language-plaintext highlighter-rouge">document</code> para escribir cualquier contenido en el documento.</p>
 
 <pre><code class="language-JavaScript">document.write("This is test");
 </code></pre>
 
 <h3 id="objetos-definidos-por-el-usuario">Objetos definidos por el usuario</h3>
 
-<p>Todos los objetos definidos por el usuario y los objetos incorporados son descendientes de un objeto llamado <code class="highlighter-rouge">Object</code>.</p>
+<p>Todos los objetos definidos por el usuario y los objetos incorporados son descendientes de un objeto llamado <code class="language-plaintext highlighter-rouge">Object</code>.</p>
 
-<h4 id="el-operador-new">El operador <code class="highlighter-rouge">new</code></h4>
+<h4 id="el-operador-new">El operador <code class="language-plaintext highlighter-rouge">new</code></h4>
 
-<p>El operador <code class="highlighter-rouge">new</code> se utiliza para crear una instancia (objeto) de un objeto. Para crear un objeto, el operador <code class="highlighter-rouge">new</code> es seguido por el metodo del constructor.</p>
+<p>El operador <code class="language-plaintext highlighter-rouge">new</code> se utiliza para crear una instancia (objeto) de un objeto. Para crear un objeto, el operador <code class="language-plaintext highlighter-rouge">new</code> es seguido por el metodo del constructor.</p>
 
-<p>En el siguiente ejemplo, los metodos del constructor son <code class="highlighter-rouge">Object()</code>, <code class="highlighter-rouge">Array()</code> y <code class="highlighter-rouge">Date()</code>. Estos constructores estan incorporados en las funciones de JavaScript.</p>
+<p>En el siguiente ejemplo, los metodos del constructor son <code class="language-plaintext highlighter-rouge">Object()</code>, <code class="language-plaintext highlighter-rouge">Array()</code> y <code class="language-plaintext highlighter-rouge">Date()</code>. Estos constructores estan incorporados en las funciones de JavaScript.</p>
 
 <pre><code class="language-JavaScript">var employee = new Object();
 var books = new Array("C++", "Perl", "Java");
 var day = new Date("August 15, 1947");
 </code></pre>
 
-<h4 id="el-constructor-object">El Constructor <code class="highlighter-rouge">Object()</code></h4>
+<h4 id="el-constructor-object">El Constructor <code class="language-plaintext highlighter-rouge">Object()</code></h4>
 
-<p>Un constructor es una funcion que crea e inicializa un objeto. JavaScript proporciona una funcion constructora especial llamada <code class="highlighter-rouge">Object()</code> para construir el objeto. El valor de retorno del constructor<code class="highlighter-rouge">Object()</code> se asigna a una variable.</p>
+<p>Un constructor es una funcion que crea e inicializa un objeto. JavaScript proporciona una funcion constructora especial llamada <code class="language-plaintext highlighter-rouge">Object()</code> para construir el objeto. El valor de retorno del constructor<code class="language-plaintext highlighter-rouge">Object()</code> se asigna a una variable.</p>
 
-<p>La variable contiene una referencia al nuevo objeto. Las propiedades asignadas al objeto no son variables y no se definen con la palabra clave <code class="highlighter-rouge">var</code>.</p>
+<p>La variable contiene una referencia al nuevo objeto. Las propiedades asignadas al objeto no son variables y no se definen con la palabra clave <code class="language-plaintext highlighter-rouge">var</code>.</p>
 
 <h4 id="ejemplo-1">Ejemplo 1</h4>
 
@@ -294,11 +294,11 @@ var day = new Date("August 15, 1947");
 &lt;/html&gt;
 </code></pre>
 
-<h3 id="la-palabra-clave-with">La palabra clave <code class="highlighter-rouge">with</code></h3>
+<h3 id="la-palabra-clave-with">La palabra clave <code class="language-plaintext highlighter-rouge">with</code></h3>
 
-<p>La palabra clave <code class="highlighter-rouge">with</code>se utiliza como una forma abreviada para hacer referencia a las propiedades o métodos de un objeto.</p>
+<p>La palabra clave <code class="language-plaintext highlighter-rouge">with</code>se utiliza como una forma abreviada para hacer referencia a las propiedades o métodos de un objeto.</p>
 
-<p>El objeto especificado como argumento <code class="highlighter-rouge">with</code> se convierte en el objeto predeterminado para el bloque siguiente. Las propiedades y los metodos para el objeto se pueden usar sin nombrar el objeto.</p>
+<p>El objeto especificado como argumento <code class="language-plaintext highlighter-rouge">with</code> se convierte en el objeto predeterminado para el bloque siguiente. Las propiedades y los metodos para el objeto se pueden usar sin nombrar el objeto.</p>
 
 <h4 id="sintaxis">Sintaxis</h4>
 
@@ -353,32 +353,32 @@ var day = new Date("August 15, 1947");
 
 <ul>
   <li>
-    <p>Objeto <code class="highlighter-rouge">Number</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">Number</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">Boolean</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">Boolean</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">String</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">String</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">Array</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">Array</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">Date</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">Date</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">Math</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">Math</code> de JavaScript</p>
   </li>
   <li>
-    <p>Objeto <code class="highlighter-rouge">RegExp</code> de JavaScript</p>
+    <p>Objeto <code class="language-plaintext highlighter-rouge">RegExp</code> de JavaScript</p>
   </li>
 </ul>
 
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia Tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

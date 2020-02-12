@@ -1,0 +1,42 @@
+I"�<p>Hay una variedad de formas de obtener la configuracion del entorno Groovy.</p>
+
+<p><strong>Descarga e instalacion binarias</strong>: vaya al enlace www.groovy-lang.org/download.html para obtener el instalador binario <code class="highlighter-rouge">apache-groovy-binary-2.5.8.zip</code>. Haga clic en esta opcion para iniciar la descarga del instalador Groovy.</p>
+
+<p>Despues de descargar la distribucion comprimida, debe descomprimir el archivo en un directorio de su eleccion y llevar a cabo los siguientes pasos para instalar Groovy en Windows:</p>
+
+<p>1.Por simplicidad, asumiremos que la ruta del directorio es <code class="highlighter-rouge">C:\Applications\groovy-2.0</code>.</p>
+
+<p>2.Para tener el comando groovy disponible en su linea de comando, debe agregarlo a la ruta de su sistema configurando la variable de entorno llamada <code class="highlighter-rouge">PATH</code>. Tambien le recomendamos que cree una variable de entorno<code class="highlighter-rouge">GROOVY_HOME</code>.</p>
+
+<p>3.Para acceder a las variables de entorno de Windows, debe presionar la combinacion de teclas Windows + Break. En Windows Vista, Windows 7 o posterior, abrira la pagina del Panel de control para la configuracion del sistema.</p>
+
+<p>4.Haga clic en Configuracion avanzada del sistema para abrir la ventana Propiedades del sistema.</p>
+
+<p>5.Luego debe hacer clic en el boton Variables de entorno… para llegar finalmente a la lista de variables del sistema.</p>
+
+<p>6.Haga clic en el boton Nuevo … y agregue la variable <code class="highlighter-rouge">GROOVY_HOME</code> que apunta a su ruta de instalacion Groovy, <code class="highlighter-rouge">C:\Applications\groovy-2.0</code>:</p>
+
+<p>7.Luego busque la variable <code class="highlighter-rouge">PATH</code> en la lista de variables del sistema y agregue o inserte <code class="highlighter-rouge">%GROOVY_HOME%\bin;</code> al final</p>
+
+<p>8.Ahora puede abrir la linea de comandos de Windows y verificar que Groovy este instalado correctamente digitando el comando <code class="highlighter-rouge">groovy --version</code>:</p>
+
+<p>Si desea incluir los binarios groovy como parte de su construccion maven o gradle, puede agregar las siguientes lineas</p>
+
+<h5 id="gradle">Gradle</h5>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'org.codehaus.groovy: groovy: 2.4.5'
+</code></pre></div></div>
+
+<h5 id="maven">Maven</h5>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;groupId&gt;</span> org.codehaus.groovy <span class="nt">&lt;/groupId&gt;</span>
+<span class="nt">&lt;artifactId&gt;</span> maravilloso <span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;version&gt;</span> 2.4.5 <span class="nt">&lt;/version&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

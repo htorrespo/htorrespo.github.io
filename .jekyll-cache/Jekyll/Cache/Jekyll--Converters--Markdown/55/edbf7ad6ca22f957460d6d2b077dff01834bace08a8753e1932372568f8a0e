@@ -1,0 +1,2 @@
+I"æ<p>Antes de JavaScript 1.2, la definicion de funcion solo estaba permitida en el ambito global, pero JavaScript 1.2 permite que las definiciones de funcion se aniden tambien dentro de otras funciones. Aun hay restriccion en cuanto a que la definicion de funciones no pueden aparecer dentro de bucles o condicionales. Estas restricciones en la definicion de las funciones se aplican solo a declaraciones de funciones con la sentencia <code class="highlighter-rouge">function</code>.</p>
+:ET

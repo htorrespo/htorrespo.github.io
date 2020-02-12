@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Animacion | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Animacion" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Existen dos metodos principales para crear animaciones en la web, CSS y JavaScript. Puede usar JavaScript para crear una animacion compleja.","@type":"BlogPosting","headline":"JavaScript - Animacion","dateModified":"2019-08-02T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/02/js-animacion.html","datePublished":"2019-08-02T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/02/js-animacion.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Existen dos metodos principales para crear animaciones en la web, CSS y JavaScript. Puede usar JavaScript para crear una animacion compleja.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/02/js-animacion.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/08/02/js-animacion.html","headline":"JavaScript - Animacion","dateModified":"2019-08-02T00:00:00+00:00","datePublished":"2019-08-02T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -164,19 +164,19 @@
 
 <p>Este tutorial proporciona una comprension basica de como usar JavaScript para crear una animacion.</p>
 
-<p>JavaScript se puede usar para mover varios elementos DOM (<code class="highlighter-rouge">&lt;img/&gt;</code>, <code class="highlighter-rouge">&lt;div&gt;</code> o cualquier otro elemento HTML) alrededor de la pagina de acuerdo con algun tipo de patron determinado por una ecuacion o funcion logica.</p>
+<p>JavaScript se puede usar para mover varios elementos DOM (<code class="language-plaintext highlighter-rouge">&lt;img/&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> o cualquier otro elemento HTML) alrededor de la pagina de acuerdo con algun tipo de patron determinado por una ecuacion o funcion logica.</p>
 
 <p>JavaScript proporciona las siguientes funciones para ser utilizadas con frecuencia en programas de animacion.</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">setTimeout(function, duration)</code>: esta funcion llama a <code class="highlighter-rouge">function</code> despues de <code class="highlighter-rouge">duration</code> en milisegundos a partir de ahora.</p>
+    <p><code class="language-plaintext highlighter-rouge">setTimeout(function, duration)</code>: esta funcion llama a <code class="language-plaintext highlighter-rouge">function</code> despues de <code class="language-plaintext highlighter-rouge">duration</code> en milisegundos a partir de ahora.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">setInterval(funcion, duracion)</code>: esta funcion llama a <code class="highlighter-rouge">function</code> despues de cada <code class="highlighter-rouge">duration</code> en milisegundos.</p>
+    <p><code class="language-plaintext highlighter-rouge">setInterval(funcion, duracion)</code>: esta funcion llama a <code class="language-plaintext highlighter-rouge">function</code> despues de cada <code class="language-plaintext highlighter-rouge">duration</code> en milisegundos.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">clearTimeout(setTimeout_variable)</code>: esta funcion llama a cualquier temporizador establecido por las funciones <code class="highlighter-rouge">setTimeout()</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">clearTimeout(setTimeout_variable)</code>: esta funcion llama a cualquier temporizador establecido por las funciones <code class="language-plaintext highlighter-rouge">setTimeout()</code>.</p>
   </li>
 </ul>
 
@@ -197,16 +197,16 @@ object.style.top = distance in pixels or points;
 
 <ul>
   <li>
-    <p>Estamos utilizando la funcion de JavaScript <code class="highlighter-rouge">getElementById()</code> para obtener un objeto DOM y luego asignarlo a una variable global <code class="highlighter-rouge">imgObj</code>.</p>
+    <p>Estamos utilizando la funcion de JavaScript <code class="language-plaintext highlighter-rouge">getElementById()</code> para obtener un objeto DOM y luego asignarlo a una variable global <code class="language-plaintext highlighter-rouge">imgObj</code>.</p>
   </li>
   <li>
-    <p>Hemos definido una funcion de inicializacion <code class="highlighter-rouge">init()</code> para inicializar <code class="highlighter-rouge">imgObj</code> donde hemos establecido sus atributos <code class="highlighter-rouge">position</code> y <code class="highlighter-rouge">left</code>.</p>
+    <p>Hemos definido una funcion de inicializacion <code class="language-plaintext highlighter-rouge">init()</code> para inicializar <code class="language-plaintext highlighter-rouge">imgObj</code> donde hemos establecido sus atributos <code class="language-plaintext highlighter-rouge">position</code> y <code class="language-plaintext highlighter-rouge">left</code>.</p>
   </li>
   <li>
     <p>Estamos llamando a la funcion de inicializacion en el momento de la  carga de la ventana.</p>
   </li>
   <li>
-    <p>Finalmente, estamos llamando a la funcion <code class="highlighter-rouge">moveRight()</code> para aumentar la distancia izquierda en 10 pixeles. Tambien puede establecerlo en un valor negativo para moverlo hacia el lado izquierdo.</p>
+    <p>Finalmente, estamos llamando a la funcion <code class="language-plaintext highlighter-rouge">moveRight()</code> para aumentar la distancia izquierda en 10 pixeles. Tambien puede establecerlo en un valor negativo para moverlo hacia el lado izquierdo.</p>
   </li>
 </ul>
 
@@ -247,16 +247,16 @@ object.style.top = distance in pixels or points;
 
 <h3 id="animacion-automatizada">Animacion automatizada</h3>
 
-<p>En el ejemplo anterior, vimos como una imagen se mueve hacia la derecha con cada clic. Podemos automatizar este proceso utilizando la funcion de JavaScript <code class="highlighter-rouge">setTimeout()</code> de la siguiente manera:</p>
+<p>En el ejemplo anterior, vimos como una imagen se mueve hacia la derecha con cada clic. Podemos automatizar este proceso utilizando la funcion de JavaScript <code class="language-plaintext highlighter-rouge">setTimeout()</code> de la siguiente manera:</p>
 
 <p>Aqui hemos agregado mas metodos. Asi que veamos que hay de nuevo aqui:</p>
 
 <ul>
   <li>
-    <p>La funcion <code class="highlighter-rouge">moveRight()</code> esta llamando a la funcion <code class="highlighter-rouge">setTimeout()</code> para establecer la posicion de <code class="highlighter-rouge">imgObj</code>.</p>
+    <p>La funcion <code class="language-plaintext highlighter-rouge">moveRight()</code> esta llamando a la funcion <code class="language-plaintext highlighter-rouge">setTimeout()</code> para establecer la posicion de <code class="language-plaintext highlighter-rouge">imgObj</code>.</p>
   </li>
   <li>
-    <p>Hemos agregado una nueva funcion <code class="highlighter-rouge">stop()</code> para borrar el temporizador establecido por la funcion <code class="highlighter-rouge">setTimeout()</code> y para llevar el objeto en su posicion inicial.</p>
+    <p>Hemos agregado una nueva funcion <code class="language-plaintext highlighter-rouge">stop()</code> para borrar el temporizador establecido por la funcion <code class="language-plaintext highlighter-rouge">setTimeout()</code> y para llevar el objeto en su posicion inicial.</p>
   </li>
 </ul>
 
@@ -310,28 +310,28 @@ object.style.top = distance in pixels or points;
 
 <ul>
   <li>
-    <p>En el momento de cargar esta pagina, la instruccion <code class="highlighter-rouge">if</code> verifica la existencia del objeto <code class="highlighter-rouge">image</code>. Si el objeto <code class="highlighter-rouge">image</code> no esta disponible, este bloque no se ejecutara.</p>
+    <p>En el momento de cargar esta pagina, la instruccion <code class="language-plaintext highlighter-rouge">if</code> verifica la existencia del objeto <code class="language-plaintext highlighter-rouge">image</code>. Si el objeto <code class="language-plaintext highlighter-rouge">image</code> no esta disponible, este bloque no se ejecutara.</p>
   </li>
   <li>
-    <p>El constructor <code class="highlighter-rouge">Image()</code> crea y precarga un nuevo objeto <code class="highlighter-rouge">image</code> llamado <code class="highlighter-rouge">image1</code>.</p>
+    <p>El constructor <code class="language-plaintext highlighter-rouge">Image()</code> crea y precarga un nuevo objeto <code class="language-plaintext highlighter-rouge">image</code> llamado <code class="language-plaintext highlighter-rouge">image1</code>.</p>
   </li>
   <li>
-    <p>A la propiedad src se le asigna el nombre del archivo imagen externo llamado <code class="highlighter-rouge">/images/html.gif</code>.</p>
+    <p>A la propiedad src se le asigna el nombre del archivo imagen externo llamado <code class="language-plaintext highlighter-rouge">/images/html.gif</code>.</p>
   </li>
   <li>
-    <p>Del mismo modo, hemos creado el objeto <code class="highlighter-rouge">image2</code> y asignado <code class="highlighter-rouge">/images/http.gif</code>.</p>
+    <p>Del mismo modo, hemos creado el objeto <code class="language-plaintext highlighter-rouge">image2</code> y asignado <code class="language-plaintext highlighter-rouge">/images/http.gif</code>.</p>
   </li>
   <li>
-    <p>El <code class="highlighter-rouge">#</code> (marca hash) deshabilita el enlace para que el navegador no intente ir a una URL cuando se hace clic. Este enlace es una imagen.</p>
+    <p>El <code class="language-plaintext highlighter-rouge">#</code> (marca hash) deshabilita el enlace para que el navegador no intente ir a una URL cuando se hace clic. Este enlace es una imagen.</p>
   </li>
   <li>
-    <p>El controlador de eventos <code class="highlighter-rouge">onMouseOver</code> se activa cuando el mouse del usuario se mueve hacia el enlace, y el controlador de eventos <code class="highlighter-rouge">onMouseOut</code> se activa cuando el mouse del usuario se aleja del enlace (<code class="highlighter-rouge">image</code>).</p>
+    <p>El controlador de eventos <code class="language-plaintext highlighter-rouge">onMouseOver</code> se activa cuando el mouse del usuario se mueve hacia el enlace, y el controlador de eventos <code class="language-plaintext highlighter-rouge">onMouseOut</code> se activa cuando el mouse del usuario se aleja del enlace (<code class="language-plaintext highlighter-rouge">image</code>).</p>
   </li>
   <li>
-    <p>Cuando el mouse se mueve sobre <code class="highlighter-rouge">image</code>, la imagen HTTP cambia de la primera imagen a la segunda. Cuando el mouse se aleja de la imagen, se muestra la imagen original.</p>
+    <p>Cuando el mouse se mueve sobre <code class="language-plaintext highlighter-rouge">image</code>, la imagen HTTP cambia de la primera imagen a la segunda. Cuando el mouse se aleja de la imagen, se muestra la imagen original.</p>
   </li>
   <li>
-    <p>Cuando el mouse se aleja del enlace, la imagen inicial <code class="highlighter-rouge">html.gif</code> volvera a aparecer en la pantalla.</p>
+    <p>Cuando el mouse se aleja del enlace, la imagen inicial <code class="language-plaintext highlighter-rouge">html.gif</code> volvera a aparecer en la pantalla.</p>
   </li>
 </ul>
 
@@ -366,7 +366,7 @@ object.style.top = distance in pixels or points;
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

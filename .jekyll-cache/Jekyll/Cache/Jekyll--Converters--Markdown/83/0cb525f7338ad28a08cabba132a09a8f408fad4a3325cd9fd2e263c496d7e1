@@ -1,0 +1,2 @@
+I"¹<p>El objeto <code class="highlighter-rouge">Math</code> le proporciona propiedades y metodos para  constantes y funciones matematicas. A diferencia de otros objetos globales, <code class="highlighter-rouge">Math</code> no es un constructor. Todas las propiedades y metodos de <code class="highlighter-rouge">Math</code> son estaticos y pueden invocarse utilizando <code class="highlighter-rouge">Math</code> como un objeto sin crearlo.</p>
+:ET

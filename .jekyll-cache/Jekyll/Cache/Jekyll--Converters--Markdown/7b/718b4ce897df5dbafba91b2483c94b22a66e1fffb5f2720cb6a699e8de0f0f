@@ -1,0 +1,92 @@
+I"R<p>void es una palabra clave importante en JavaScript que se puede usar como un operador unario que aparece antes de su unico operando, que puede ser de cualquier tipo. Este operador especifica una expresion para ser evaluada sin devolver un valor.</p>
+
+<h3 id="sintaxis">Sintaxis</h3>
+
+<p>La sintaxis de <code class="highlighter-rouge">void</code> puede ser cualquiera de los dos siguientes:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="o">&lt;!--</span>
+         <span class="k">void</span> <span class="nx">func</span><span class="p">()</span>
+         <span class="nx">javascript</span><span class="p">:</span><span class="k">void</span> <span class="nx">func</span><span class="p">()</span>
+         <span class="nx">or</span><span class="p">:</span>
+         <span class="k">void</span><span class="p">(</span><span class="nx">func</span><span class="p">())</span>
+         <span class="nx">javascript</span><span class="p">:</span><span class="k">void</span><span class="p">(</span><span class="nx">func</span><span class="p">())</span>
+      <span class="c1">//--&gt;</span>
+   <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo-1">Ejemplo 1</h4>
+
+<p>El uso mas comun de este operador es en el codigo javascript:URL del lado del cliente, donde le permite evaluar una expresion por sus efectos secundarios sin que el navegador muestre el valor de la expresión evaluada.</p>
+
+<p>Aquí se evalua la expresion alerta (‘¡Warning!’) Pero no se vuelve a cargar en el documento actual -</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>   
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;p&gt;</span>Click the following, This won't react at all...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href = </span><span class="s">"javascript:void(alert('Warning!!!'))"</span><span class="nt">&gt;</span>Click me!<span class="nt">&lt;/a&gt;</span>     
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo-2">Ejemplo 2</h4>
+
+<p>Echa un vistazo al siguiente ejemplo. El siguiente enlace no hace nada porque la expresión “0” no tiene efecto en JavaScript. Aqui se evalua la expresión “0”, pero no se vuelve a cargar en el documento actual.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;p&gt;</span>Click the following, This won't react at all...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href = </span><span class="s">"javascript:void(0)"</span><span class="nt">&gt;</span>Click me!<span class="nt">&lt;/a&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo-3">Ejemplo 3</h4>
+
+<p>Otro uso de <code class="highlighter-rouge">void</code> es generar deliberadamente el valor indefinido de la siguiente manera.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">getValue</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">;</span>
+               
+               <span class="nx">a</span> <span class="o">=</span> <span class="k">void</span> <span class="p">(</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">7</span> <span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">a = </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> b = </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span><span class="dl">'</span><span class="s1"> c = </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">c</span> <span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"getValue();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>     
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

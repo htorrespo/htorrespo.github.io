@@ -1,0 +1,76 @@
+I"<p>Generalidades del lenguaje de programacion JavaScript</p>
+
+<h2 id="qué-es-javascript">¿Qué es JavaScript?</h2>
+
+<p>JavaScript es un lenguaje dinámico de programación. Es liviano y se usa usualmente en páginas web, que permiten que los scripts o codigo fuente del lado del cliente (neavegador) interactúen con el usuario y generen páginas dinámicas. En otras álabras, es un lenguaje de programación interpretado que tiene capacidades orientadas a objetos.</p>
+
+<p>JavaScript fue conocido por primera vez como LiveScript, pero Netscape cambió su nombre a JavaScript, posiblemente debido a la emoción generada por Java. JavaScript hizo su primera aparición en Netscape 2.0 en 1995 con el nombre LiveScript.</p>
+
+<p>La especificación ECMA-262 definió el lenguaje JavaScript de la siguiente manera.</p>
+
+<ul>
+  <li>JavaScript es un lenguaje de programación ligero e interpretado.</li>
+  <li>Diseñado para crear aplicaciones centradas en la red.</li>
+  <li>Complementario e integrado con Java.</li>
+  <li>Complementario e integrado con HTML.</li>
+  <li>Abierto y multiplataforma.</li>
+</ul>
+
+<h2 id="javascript-del-lado-del-cliente">JavaScript del lado del cliente</h2>
+
+<p>JavaScript del lado del cliente es la forma más común del lenguaje. El script debe incluirse en un documento HTML o hacer referencia a él para que el navegador interprete el código.</p>
+
+<p>Esto significa que una página web no necesita ser un HTML estático, sino que puede incluir programas que interactúan con el usuario, controlan el navegador y crean dinámicamente contenido HTML.</p>
+
+<p>El mecanismo del lado del cliente de JavaScript ofrece muchas ventajas sobre los scripts tradicionales del lado del servidor CGI. Por ejemplo, puede usar JavaScript para verificar si el usuario ha ingresado una dirección de correo electrónico válida en el campo de un formulario.</p>
+
+<p>El código JavaScript se ejecuta cuando el usuario envía el formulario, y si todas las entradas son válidas se enviarán al servidor web.</p>
+
+<p>JavaScript se puede usar para atrapar eventos iniciados por el usuario, como clics de botones, navegación de enlaces y otras acciones que el usuario inicia explícita o implícitamente.</p>
+
+<h2 id="ventajas-de-javascript">Ventajas de JavaScript</h2>
+
+<p>Las ventajas de usar JavaScript son:</p>
+
+<p><strong>1. Menos interacción con el servidor</strong>: puede validar la entrada del usuario antes de enviar la página al servidor. Esto ahorra tráfico del servidor, lo que significa menos carga en su servidor.</p>
+
+<p><strong>2. Comentarios inmediatos a los visitantes</strong>: no tiene que esperar a cargar la página nuevamente para ver si ha olvidado ingresar algo al formulario.</p>
+
+<p><strong>3. Mayor interactividad</strong>: puede crear interfaces que reaccionan cuando el usuario se desplaza sobre ellas con un mouse o las activa mediante el teclado.</p>
+
+<p><strong>4. Interfaces más avanzadas</strong>: puede utilizar JavaScript para incluir elementos como,  componentes de arrastrar y soltar y controles deslizantes para proporcionar una Interfaz enriquecida a los visitantes de su sitio.</p>
+
+<h2 id="limitaciones-de-javascript">Limitaciones de JavaScript</h2>
+
+<p>Carece de las siguientes características importantes:</p>
+
+<ol>
+  <li>
+    <p>El lado del cliente de JavaScript no permite la lectura o escritura de archivos. Esto se ha mantenido por razones de seguridad.</p>
+  </li>
+  <li>
+    <p>JavaScript no se puede usar para aplicaciones de red porque no hay tal soporte disponible.</p>
+  </li>
+  <li>
+    <p>JavaScript no tiene ninguna capacidad de subprocesos múltiples o multiprocesador.</p>
+  </li>
+</ol>
+
+<p>Una vez más, JavaScript es un lenguaje de programación liviano e interpretado que permite construir interactividad en páginas HTML estáticas.</p>
+
+<h2 id="herramientas-de-desarrollo-de-javascript">Herramientas de desarrollo de JavaScript</h2>
+
+<p>Una de las principales fortalezas de JavaScript es que no requiere herramientas de desarrollo costosas. Puede comenzar con un editor de texto simple como el Bloc de notas. Como es un lenguaje interpretado dentro del contexto de un navegador web, ni siquiera necesita comprar un compilador.</p>
+
+<h2 id="dónde-está-javascript-hoy">¿Dónde está JavaScript hoy?</h2>
+
+<p>ECMA-26 en su novena edición, oficialmente conocida como ECMAScript 2018, se finalizó en junio de 2018. Las nuevas funciones incluyen cuatro nuevas características de expresiones regulares: el indicador dotAll, grupos de captura, escapes a propiedades Unicode y aserciones de búsqueda.</p>
+
+<p>La especificación para JavaScript 2.0 se puede encontrar en el siguiente sitio: https://www.ecma-international.org/ecma-262/9.0/index.html</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Clases y objetos en Python | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Clases y objetos en Python" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Clases y objetos en Python","@type":"BlogPosting","headline":"Clases y objetos en Python","dateModified":"2019-01-16T00:00:00+00:00","url":"http://localhost:4000/blog/2019/01/16/classes-python.html","datePublished":"2019-01-16T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/01/16/classes-python.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Clases y objetos en Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/01/16/classes-python.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/01/16/classes-python.html","headline":"Clases y objetos en Python","dateModified":"2019-01-16T00:00:00+00:00","datePublished":"2019-01-16T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -146,15 +146,15 @@
 
 <p><strong>Todo es un objeto …</strong></p>
 
-<p>¿Para qué se utiliza exactamente la palabra clave <code class="highlighter-rouge">class</code>? Al igual que la función <code class="highlighter-rouge">def</code>, se refiere a la definición de cosas. Mientras que <code class="highlighter-rouge">def</code> se usa para definir una función, <code class="highlighter-rouge">class</code> se usa para definir una clase. Y que es una clase? Simplemente una agrupación lógica de datos y funciones (los últimos a menudo se denominan “métodos” cuando se definen dentro de una clase).</p>
+<p>¿Para qué se utiliza exactamente la palabra clave <code class="language-plaintext highlighter-rouge">class</code>? Al igual que la función <code class="language-plaintext highlighter-rouge">def</code>, se refiere a la definición de cosas. Mientras que <code class="language-plaintext highlighter-rouge">def</code> se usa para definir una función, <code class="language-plaintext highlighter-rouge">class</code> se usa para definir una clase. Y que es una clase? Simplemente una agrupación lógica de datos y funciones (los últimos a menudo se denominan “métodos” cuando se definen dentro de una clase).</p>
 
-<p>¿Qué entendemos por “agrupación lógica”? Bueno, una clase puede contener cualquier información que nos gustaría, y puede tener cualquier función (método) adjunta que nos plazca. En lugar de simplemente juntar cosas aleatorias bajo el nombre de “clase”, tratamos de crear clases donde hay una conexión lógica entre las cosas. Muchas veces, las clases se basan en objetos que existen en el mundo real (como ‘Cliente’ o ‘Producto’). Otras veces, las clases se basan en conceptos de nuestro sistema, como <code class="highlighter-rouge">HTTPRequest</code> o <code class="highlighter-rouge">Owner</code>.</p>
+<p>¿Qué entendemos por “agrupación lógica”? Bueno, una clase puede contener cualquier información que nos gustaría, y puede tener cualquier función (método) adjunta que nos plazca. En lugar de simplemente juntar cosas aleatorias bajo el nombre de “clase”, tratamos de crear clases donde hay una conexión lógica entre las cosas. Muchas veces, las clases se basan en objetos que existen en el mundo real (como ‘Cliente’ o ‘Producto’). Otras veces, las clases se basan en conceptos de nuestro sistema, como <code class="language-plaintext highlighter-rouge">HTTPRequest</code> o <code class="language-plaintext highlighter-rouge">Owner</code>.</p>
 
 <p>En cualquier caso, las clases son una técnica de modelado; Una forma de pensar sobre los programas. Cuando piensa en implementar su sistema de esta manera, se dice que está realizando una programación orientada a objetos. “Clases” y “objetos” son palabras que a menudo se usan indistintamente, pero en realidad no son lo mismo. Comprender qué los hace diferentes es la clave para entender qué son y cómo funcionan.</p>
 
 <p><strong>..Así que todo es una clase?</strong></p>
 
-<p>Las clases se pueden considerar como planos para crear objetos. Cuando defino una clase <code class="highlighter-rouge">Customer</code> utilizando la palabra clave <code class="highlighter-rouge">class</code>, en realidad no he creado un cliente. En su lugar, lo que he creado es una especie de manual de instrucciones para construir objetos <code class="highlighter-rouge">Customer</code>. Veamos el siguiente código de ejemplo:</p>
+<p>Las clases se pueden considerar como planos para crear objetos. Cuando defino una clase <code class="language-plaintext highlighter-rouge">Customer</code> utilizando la palabra clave <code class="language-plaintext highlighter-rouge">class</code>, en realidad no he creado un cliente. En su lugar, lo que he creado es una especie de manual de instrucciones para construir objetos <code class="language-plaintext highlighter-rouge">Customer</code>. Veamos el siguiente código de ejemplo:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""A customer of ABC Bank with a checking account. Customers have the
@@ -186,29 +186,29 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
 </code></pre></div></div>
 
-<p>La clase <code class="highlighter-rouge">Customer(object)</code> no crea un nuevo cliente. Es decir, solo porque hemos definido un <code class="highlighter-rouge">Customer</code> o Cliente no significa que hayamos creado uno; Simplemente hemos delineado el plano para crear un objeto <code class="highlighter-rouge">Customer</code>. Para hacerlo, llamamos al método <code class="highlighter-rouge">__init__</code> de la clase con el número adecuado de argumentos (menos <code class="highlighter-rouge">self</code>, que veremos en un momento).</p>
+<p>La clase <code class="language-plaintext highlighter-rouge">Customer(object)</code> no crea un nuevo cliente. Es decir, solo porque hemos definido un <code class="language-plaintext highlighter-rouge">Customer</code> o Cliente no significa que hayamos creado uno; Simplemente hemos delineado el plano para crear un objeto <code class="language-plaintext highlighter-rouge">Customer</code>. Para hacerlo, llamamos al método <code class="language-plaintext highlighter-rouge">__init__</code> de la clase con el número adecuado de argumentos (menos <code class="language-plaintext highlighter-rouge">self</code>, que veremos en un momento).</p>
 
-<p>Entonces, para usar el “plano” que creamos al definir la clase <code class="highlighter-rouge">Customer</code> (que se usa para crear objetos <code class="highlighter-rouge">Customer</code>), llamamos al nombre de la clase casi como si fuera una función: <code class="highlighter-rouge">jeff = Customer ('Jeff Knupp', 1000.0)</code> . Esta línea simplemente dice “use el modelo <code class="highlighter-rouge">Customer</code> para crear un nuevo objeto, al que me referiré como <code class="highlighter-rouge">jeff</code>”.</p>
+<p>Entonces, para usar el “plano” que creamos al definir la clase <code class="language-plaintext highlighter-rouge">Customer</code> (que se usa para crear objetos <code class="language-plaintext highlighter-rouge">Customer</code>), llamamos al nombre de la clase casi como si fuera una función: <code class="language-plaintext highlighter-rouge">jeff = Customer ('Jeff Knupp', 1000.0)</code> . Esta línea simplemente dice “use el modelo <code class="language-plaintext highlighter-rouge">Customer</code> para crear un nuevo objeto, al que me referiré como <code class="language-plaintext highlighter-rouge">jeff</code>”.</p>
 
-<p>El objeto <code class="highlighter-rouge">jeff</code>, conocido como instancia, es la versión realizada de la clase <code class="highlighter-rouge">Customer</code>. Antes de llamar a <code class="highlighter-rouge">Customer()</code>, no existía ningún objeto <code class="highlighter-rouge">Customer</code>. Podemos, por supuesto, crear tantos objetos de <code class="highlighter-rouge">Customer</code> como se desee. Sin embargo, todavía hay una sola clase <code class="highlighter-rouge">Customer</code>, independientemente de la cantidad de instancias de clase que hemos creado.</p>
+<p>El objeto <code class="language-plaintext highlighter-rouge">jeff</code>, conocido como instancia, es la versión realizada de la clase <code class="language-plaintext highlighter-rouge">Customer</code>. Antes de llamar a <code class="language-plaintext highlighter-rouge">Customer()</code>, no existía ningún objeto <code class="language-plaintext highlighter-rouge">Customer</code>. Podemos, por supuesto, crear tantos objetos de <code class="language-plaintext highlighter-rouge">Customer</code> como se desee. Sin embargo, todavía hay una sola clase <code class="language-plaintext highlighter-rouge">Customer</code>, independientemente de la cantidad de instancias de clase que hemos creado.</p>
 
 <p><strong>self?</strong></p>
 
-<p>Entonces, ¿qué pasa con ese parámetro <code class="highlighter-rouge">self</code> para todos los métodos de <code class="highlighter-rouge">Customer</code>? ¿Qué es? ¡Por qué, es la instancia, por supuesto! Dicho de otra manera, un método como el retiro o <code class="highlighter-rouge">withdraw</code> define las instrucciones para retirar dinero de la cuenta de algún cliente abstracto. Al llamar a <code class="highlighter-rouge">jeff.withdraw (100.0)</code>, esas instrucciones se utilizarán en la instancia de <code class="highlighter-rouge">jeff</code>.</p>
+<p>Entonces, ¿qué pasa con ese parámetro <code class="language-plaintext highlighter-rouge">self</code> para todos los métodos de <code class="language-plaintext highlighter-rouge">Customer</code>? ¿Qué es? ¡Por qué, es la instancia, por supuesto! Dicho de otra manera, un método como el retiro o <code class="language-plaintext highlighter-rouge">withdraw</code> define las instrucciones para retirar dinero de la cuenta de algún cliente abstracto. Al llamar a <code class="language-plaintext highlighter-rouge">jeff.withdraw (100.0)</code>, esas instrucciones se utilizarán en la instancia de <code class="language-plaintext highlighter-rouge">jeff</code>.</p>
 
-<p>Entonces, cuando decimos def <code class="highlighter-rouge">withdraw(self, amount):</code> “aquí decimos cómo retirar dinero de un objeto Cliente (al que llamaremos <code class="highlighter-rouge">self</code>) y una cifra en dólares (a la que llamaremos <code class="highlighter-rouge">amount</code>). <code class="highlighter-rouge">self</code> es la instancia del Cliente que está solicitando el retiro. Tampoco estoy haciendo analogías. <code class="highlighter-rouge">jeff.withdraw (100.0)</code> es solo una abreviatura para <code class="highlighter-rouge">Customer.withdraw (jeff, 100.0)</code>, que es un código perfectamente válido (si no se ve a menudo).</p>
+<p>Entonces, cuando decimos def <code class="language-plaintext highlighter-rouge">withdraw(self, amount):</code> “aquí decimos cómo retirar dinero de un objeto Cliente (al que llamaremos <code class="language-plaintext highlighter-rouge">self</code>) y una cifra en dólares (a la que llamaremos <code class="language-plaintext highlighter-rouge">amount</code>). <code class="language-plaintext highlighter-rouge">self</code> es la instancia del Cliente que está solicitando el retiro. Tampoco estoy haciendo analogías. <code class="language-plaintext highlighter-rouge">jeff.withdraw (100.0)</code> es solo una abreviatura para <code class="language-plaintext highlighter-rouge">Customer.withdraw (jeff, 100.0)</code>, que es un código perfectamente válido (si no se ve a menudo).</p>
 
 <p><strong>__init__</strong></p>
 
-<p><code class="highlighter-rouge">self</code> puede tener sentido para otros métodos, pero ¿qué pasa con <code class="highlighter-rouge">__init__</code>? Cuando llamamos <code class="highlighter-rouge">__init__</code>, estamos en el proceso de crear un objeto, entonces, ¿cómo puede haber ya un <code class="highlighter-rouge">self</code>? Python nos permite extender el patrón <code class="highlighter-rouge">self</code> cuando los objetos también se construyen, aunque no se ajuste exactamente. Solo imagine que <code class="highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code> es lo mismo que llamar a <code class="highlighter-rouge">jeff = Customer (jeff, 'Jeff Knupp', 1000.0)</code>; El <code class="highlighter-rouge">jeff</code> que se pasa también se hace el resultado.</p>
+<p><code class="language-plaintext highlighter-rouge">self</code> puede tener sentido para otros métodos, pero ¿qué pasa con <code class="language-plaintext highlighter-rouge">__init__</code>? Cuando llamamos <code class="language-plaintext highlighter-rouge">__init__</code>, estamos en el proceso de crear un objeto, entonces, ¿cómo puede haber ya un <code class="language-plaintext highlighter-rouge">self</code>? Python nos permite extender el patrón <code class="language-plaintext highlighter-rouge">self</code> cuando los objetos también se construyen, aunque no se ajuste exactamente. Solo imagine que <code class="language-plaintext highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code> es lo mismo que llamar a <code class="language-plaintext highlighter-rouge">jeff = Customer (jeff, 'Jeff Knupp', 1000.0)</code>; El <code class="language-plaintext highlighter-rouge">jeff</code> que se pasa también se hace el resultado.</p>
 
-<p>Es por eso que cuando llamamos <code class="highlighter-rouge">__init__</code>, inicializamos objetos diciendo cosas como <code class="highlighter-rouge">self.name = name</code>. Recuerda, dado que <code class="highlighter-rouge">self</code> es la instancia, esto es equivalente a decir <code class="highlighter-rouge">jeff.name = name</code>, que es lo mismo que <code class="highlighter-rouge">jeff.name = 'Jeff Knupp'</code>. Del mismo modo, <code class="highlighter-rouge">self.balance = balance</code> es lo mismo que <code class="highlighter-rouge">jeff.balance = 1000.0.</code> Después de estas dos líneas, consideramos que el objeto <code class="highlighter-rouge">Customer</code> está “inicializado” y listo para usar.</p>
+<p>Es por eso que cuando llamamos <code class="language-plaintext highlighter-rouge">__init__</code>, inicializamos objetos diciendo cosas como <code class="language-plaintext highlighter-rouge">self.name = name</code>. Recuerda, dado que <code class="language-plaintext highlighter-rouge">self</code> es la instancia, esto es equivalente a decir <code class="language-plaintext highlighter-rouge">jeff.name = name</code>, que es lo mismo que <code class="language-plaintext highlighter-rouge">jeff.name = 'Jeff Knupp'</code>. Del mismo modo, <code class="language-plaintext highlighter-rouge">self.balance = balance</code> es lo mismo que <code class="language-plaintext highlighter-rouge">jeff.balance = 1000.0.</code> Después de estas dos líneas, consideramos que el objeto <code class="language-plaintext highlighter-rouge">Customer</code> está “inicializado” y listo para usar.</p>
 
-<p><strong>Tenga cuidado con <code class="highlighter-rouge">__init__</code></strong></p>
+<p><strong>Tenga cuidado con <code class="language-plaintext highlighter-rouge">__init__</code></strong></p>
 
-<p>Después de que <code class="highlighter-rouge">__init__</code> haya terminado, la persona que llama el objeto puede asumir correctamente que ya está listo para usar. Es decir, después de <code class="highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code>, podemos comenzar a hacer llamadas de depósitos y retiros en <code class="highlighter-rouge">jeff</code>; <code class="highlighter-rouge">jeff</code> es un objeto completamente inicializado.</p>
+<p>Después de que <code class="language-plaintext highlighter-rouge">__init__</code> haya terminado, la persona que llama el objeto puede asumir correctamente que ya está listo para usar. Es decir, después de <code class="language-plaintext highlighter-rouge">jeff = Customer('Jeff Knupp', 1000.0)</code>, podemos comenzar a hacer llamadas de depósitos y retiros en <code class="language-plaintext highlighter-rouge">jeff</code>; <code class="language-plaintext highlighter-rouge">jeff</code> es un objeto completamente inicializado.</p>
 
-<p>Imagine por un momento que habíamos definido la clase <code class="highlighter-rouge">Customer</code> de manera ligeramente diferente:</p>
+<p>Imagine por un momento que habíamos definido la clase <code class="language-plaintext highlighter-rouge">Customer</code> de manera ligeramente diferente:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""A customer of ABC Bank with a checking account. Customers have the
@@ -241,11 +241,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
 </code></pre></div></div>
-<p>Esto puede parecer una alternativa razonable; simplemente necesitamos llamar a <code class="highlighter-rouge">set_balance</code> antes de comenzar a usar la instancia. Sin embargo, no hay forma de comunicárselo al que llama. Incluso si lo documentamos ampliamente, no podemos obligar al que llama a llamar a <code class="highlighter-rouge">jeff.set_balance (1000.0)</code> antes de llamar a <code class="highlighter-rouge">jeff.withdraw (100.0)</code>. Dado que la instancia de <code class="highlighter-rouge">jeff</code> ni siquiera tiene un atributo balance hasta que se llama a <code class="highlighter-rouge">jeff.set_balance</code>, esto significa que el objeto no se ha inicializado “completamente”.</p>
+<p>Esto puede parecer una alternativa razonable; simplemente necesitamos llamar a <code class="language-plaintext highlighter-rouge">set_balance</code> antes de comenzar a usar la instancia. Sin embargo, no hay forma de comunicárselo al que llama. Incluso si lo documentamos ampliamente, no podemos obligar al que llama a llamar a <code class="language-plaintext highlighter-rouge">jeff.set_balance (1000.0)</code> antes de llamar a <code class="language-plaintext highlighter-rouge">jeff.withdraw (100.0)</code>. Dado que la instancia de <code class="language-plaintext highlighter-rouge">jeff</code> ni siquiera tiene un atributo balance hasta que se llama a <code class="language-plaintext highlighter-rouge">jeff.set_balance</code>, esto significa que el objeto no se ha inicializado “completamente”.</p>
 
-<p>La regla de oro es, no introduzca un nuevo atributo fuera del método <code class="highlighter-rouge">__init__</code>, de lo contrario estaría entregando un objeto que no está completamente inicializado. Hay excepciones, por supuesto, pero es un buen principio a tener en cuenta. Esto es parte de un concepto más amplio de consistencia de objeto: no debería haber ninguna serie de llamadas a métodos que puedan hacer que el objeto entre en un estado que no tiene sentido.</p>
+<p>La regla de oro es, no introduzca un nuevo atributo fuera del método <code class="language-plaintext highlighter-rouge">__init__</code>, de lo contrario estaría entregando un objeto que no está completamente inicializado. Hay excepciones, por supuesto, pero es un buen principio a tener en cuenta. Esto es parte de un concepto más amplio de consistencia de objeto: no debería haber ninguna serie de llamadas a métodos que puedan hacer que el objeto entre en un estado que no tiene sentido.</p>
 
-<p>Las consistencias (por ejemplo, “el saldo siempre debe ser un número no negativo”) deben mantenerse tanto cuando se ingresa un método como cuando se sale de él. Debería ser imposible para un objeto entrar en un estado no válido simplemente llamando a sus métodos. No hace falta decir, entonces, que un objeto debe comenzar también en un estado válido, por lo que es importante inicializar todo en el método <code class="highlighter-rouge">__init__</code>.</p>
+<p>Las consistencias (por ejemplo, “el saldo siempre debe ser un número no negativo”) deben mantenerse tanto cuando se ingresa un método como cuando se sale de él. Debería ser imposible para un objeto entrar en un estado no válido simplemente llamando a sus métodos. No hace falta decir, entonces, que un objeto debe comenzar también en un estado válido, por lo que es importante inicializar todo en el método <code class="language-plaintext highlighter-rouge">__init__</code>.</p>
 
 <p><strong>Atributos y métodos de instancia</strong></p>
 
@@ -255,7 +255,7 @@
 
 <p><strong>Métodos estáticos</strong></p>
 
-<p>Los atributos de clase son atributos que se establecen en el nivel de clase, a diferencia del nivel de instancia. Los atributos normales se introducen en el método <code class="highlighter-rouge">__init__</code>, pero algunos atributos de una clase se mantienen para todas las instancias en todos los casos. Por ejemplo, considere la siguiente definición de un objeto <code class="highlighter-rouge">Car</code>:</p>
+<p>Los atributos de clase son atributos que se establecen en el nivel de clase, a diferencia del nivel de instancia. Los atributos normales se introducen en el método <code class="language-plaintext highlighter-rouge">__init__</code>, pero algunos atributos de una clase se mantienen para todas las instancias en todos los casos. Por ejemplo, considere la siguiente definición de un objeto <code class="language-plaintext highlighter-rouge">Car</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
@@ -272,11 +272,11 @@
 <span class="c1"># 4
 </span></code></pre></div></div>
 
-<p>Un <code class="highlighter-rouge">Car</code> siempre tiene cuatro ruedas, independientemente de la marca o modelo. Los métodos de instancia pueden acceder a estos atributos de la misma manera que acceden a los atributos regulares: a través de <code class="highlighter-rouge">self</code> (es decir, <code class="highlighter-rouge">self.wheels</code>).</p>
+<p>Un <code class="language-plaintext highlighter-rouge">Car</code> siempre tiene cuatro ruedas, independientemente de la marca o modelo. Los métodos de instancia pueden acceder a estos atributos de la misma manera que acceden a los atributos regulares: a través de <code class="language-plaintext highlighter-rouge">self</code> (es decir, <code class="language-plaintext highlighter-rouge">self.wheels</code>).</p>
 
-<p>Sin embargo, existe una clase de métodos, llamados métodos estáticos, que no tienen acceso a <code class="highlighter-rouge">self</code>. Al igual que los atributos de clase, son métodos que funcionan sin requerir que una instancia esté presente. Dado que las instancias siempre se referencian a través de <code class="highlighter-rouge">self</code>, los métodos estáticos no tienen un parámetro propio.</p>
+<p>Sin embargo, existe una clase de métodos, llamados métodos estáticos, que no tienen acceso a <code class="language-plaintext highlighter-rouge">self</code>. Al igual que los atributos de clase, son métodos que funcionan sin requerir que una instancia esté presente. Dado que las instancias siempre se referencian a través de <code class="language-plaintext highlighter-rouge">self</code>, los métodos estáticos no tienen un parámetro propio.</p>
 
-<p>Lo siguiente sería un método estático válido en la clase <code class="highlighter-rouge">Car</code>:</p>
+<p>Lo siguiente sería un método estático válido en la clase <code class="language-plaintext highlighter-rouge">Car</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="o">...</span>
@@ -284,7 +284,7 @@
         <span class="k">print</span> <span class="s">'VRooooommmm!'</span>
 </code></pre></div></div>
 
-<p>No importa qué tipo de automóvil tengamos, siempre hace el mismo sonido. Para dejar en claro que este método no debe recibir la instancia como primer parámetro (es decir, <code class="highlighter-rouge">self</code> en los métodos “normales”), se utiliza el decorador <code class="highlighter-rouge">@staticmethod</code>, convirtiendo nuestra definición en:</p>
+<p>No importa qué tipo de automóvil tengamos, siempre hace el mismo sonido. Para dejar en claro que este método no debe recibir la instancia como primer parámetro (es decir, <code class="language-plaintext highlighter-rouge">self</code> en los métodos “normales”), se utiliza el decorador <code class="language-plaintext highlighter-rouge">@staticmethod</code>, convirtiendo nuestra definición en:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="o">...</span>
@@ -312,9 +312,9 @@
 
 <p>Imagina que tenemos un concesionario de coches. Vendemos todo tipo de vehículos, desde motocicletas hasta camiones. Nos diferenciamos de la competencia por nuestros precios. Específicamente, cómo determinamos el precio de un vehículo en nuestro lote: 5,000 x número de ruedas que tiene un vehículo. Nos encanta comprar nuestros vehículos también. Ofrecemos una tarifa plana: 10 porciento de las millas recorridas en el vehículo. Para camiones, esa tasa es de 10,000. Para autos, 8,000. Para motocicletas, 4,000.</p>
 
-<p>Si quisiéramos crear un sistema de ventas para nuestro concesionario utilizando técnicas orientadas a objetos, ¿cómo lo haríamos? ¿Cuáles serían los objetos? Es posible que tengamos una clase <code class="highlighter-rouge">Sale</code>, una clase <code class="highlighter-rouge">Customer</code>, una clase <code class="highlighter-rouge">Inventory</code>, etc., pero es casi seguro que tendremos una clase <code class="highlighter-rouge">Car</code>, <code class="highlighter-rouge">Truck</code> y <code class="highlighter-rouge">Motorcycle</code>.</p>
+<p>Si quisiéramos crear un sistema de ventas para nuestro concesionario utilizando técnicas orientadas a objetos, ¿cómo lo haríamos? ¿Cuáles serían los objetos? Es posible que tengamos una clase <code class="language-plaintext highlighter-rouge">Sale</code>, una clase <code class="language-plaintext highlighter-rouge">Customer</code>, una clase <code class="language-plaintext highlighter-rouge">Inventory</code>, etc., pero es casi seguro que tendremos una clase <code class="language-plaintext highlighter-rouge">Car</code>, <code class="language-plaintext highlighter-rouge">Truck</code> y <code class="language-plaintext highlighter-rouge">Motorcycle</code>.</p>
 
-<p>¿Cómo serían estas clases? Usando lo que hemos aprendido, aquí hay una posible implementación de la clase <code class="highlighter-rouge">Car</code>:</p>
+<p>¿Cómo serían estas clases? Usando lo que hemos aprendido, aquí hay una posible implementación de la clase <code class="language-plaintext highlighter-rouge">Car</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""A car for sale by Jeffco Car Dealership.
@@ -352,9 +352,9 @@
     <span class="o">...</span>
 </code></pre></div></div>
 
-<p>Entendido, eso parece bastante razonable. Por supuesto, es probable que tengamos un número de otros métodos en la clase, pero he mostrado dos de particular interés para nosotros: <code class="highlighter-rouge">sale_price</code> y <code class="highlighter-rouge">purchase_price</code>. Veremos por qué estos son importantes en un momento.</p>
+<p>Entendido, eso parece bastante razonable. Por supuesto, es probable que tengamos un número de otros métodos en la clase, pero he mostrado dos de particular interés para nosotros: <code class="language-plaintext highlighter-rouge">sale_price</code> y <code class="language-plaintext highlighter-rouge">purchase_price</code>. Veremos por qué estos son importantes en un momento.</p>
 
-<p>Ahora que tenemos la clase <code class="highlighter-rouge">Car</code>, ¿quizás deberíamos crear una clase <code class="highlighter-rouge">Truck</code>? Sigamos el mismo patrón que hicimos para <code class="highlighter-rouge">Car</code>:</p>
+<p>Ahora que tenemos la clase <code class="language-plaintext highlighter-rouge">Car</code>, ¿quizás deberíamos crear una clase <code class="language-plaintext highlighter-rouge">Truck</code>? Sigamos el mismo patrón que hicimos para <code class="language-plaintext highlighter-rouge">Car</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Truck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""A truck for sale by Jeffco Car Dealership.
@@ -391,9 +391,9 @@
 
     <span class="o">...</span>
 </code></pre></div></div>
-<p>Excelente. Eso es casi idéntico a la clase <code class="highlighter-rouge">Car</code>. Una de las reglas más importantes de la programación (en general, no solo cuando se trata de objetos) es “DRY” o “Don’t Repeat Yourself”. Definitivamente nos hemos repetido aquí. De hecho, las clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> difieren solo en Un solo caracter (aparte de los comentarios).</p>
+<p>Excelente. Eso es casi idéntico a la clase <code class="language-plaintext highlighter-rouge">Car</code>. Una de las reglas más importantes de la programación (en general, no solo cuando se trata de objetos) es “DRY” o “Don’t Repeat Yourself”. Definitivamente nos hemos repetido aquí. De hecho, las clases <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> difieren solo en Un solo caracter (aparte de los comentarios).</p>
 
-<p>Entonces, ¿Donde nos equivocamos? Nuestro principal problema es: <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> son cosas reales, objetos tangibles que tienen sentido intuitivo como clases. Sin embargo, comparten tantos datos y funcionalidad en común que parece que debe haber una abstracción que podamos presentar aquí. De hecho existe: la noción de Vehículos.</p>
+<p>Entonces, ¿Donde nos equivocamos? Nuestro principal problema es: <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> son cosas reales, objetos tangibles que tienen sentido intuitivo como clases. Sin embargo, comparten tantos datos y funcionalidad en común que parece que debe haber una abstracción que podamos presentar aquí. De hecho existe: la noción de Vehículos.</p>
 
 <p><strong>Clases abstractas</strong></p>
 
@@ -438,9 +438,9 @@
     <span class="o">...</span>
 </code></pre></div></div>
 
-<p>Ahora podemos hacer que la clase <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck </code>se herede de la clase <code class="highlighter-rouge">Vehicle</code> reemplazando el objeto en la clase <code class="highlighter-rouge">Car(object)</code>. La clase entre paréntesis es la clase de la cual se hereda (objeto esencialmente significa “sin herencia”. Discutiremos exactamente por qué escribimos eso en un momento).</p>
+<p>Ahora podemos hacer que la clase <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck </code>se herede de la clase <code class="language-plaintext highlighter-rouge">Vehicle</code> reemplazando el objeto en la clase <code class="language-plaintext highlighter-rouge">Car(object)</code>. La clase entre paréntesis es la clase de la cual se hereda (objeto esencialmente significa “sin herencia”. Discutiremos exactamente por qué escribimos eso en un momento).</p>
 
-<p>Ahora podemos definir <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> de una manera muy sencilla:</p>
+<p>Ahora podemos definir <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> de una manera muy sencilla:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
 
@@ -468,18 +468,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">base_sale_price</span> <span class="o">=</span> <span class="mi">10000</span>
 </code></pre></div></div>
 
-<p>Esto funciona, pero tiene algunos problemas. Primero, todavía estamos repitiendo un montón de código. En última instancia, nos gustaría deshacernos de toda repetición. Segundo, y más problemático, hemos introducido la clase <code class="highlighter-rouge">Vehicle</code>, pero ¿deberíamos realmente permitir que las personas creen objetos <code class="highlighter-rouge">Vehicle</code> (en lugar de <code class="highlighter-rouge">Car</code> o <code class="highlighter-rouge">Truck</code>)? Un <code class="highlighter-rouge">Vehicle</code> es solo un concepto, no una cosa real, entonces, ¿qué significa decir lo siguiente:</p>
+<p>Esto funciona, pero tiene algunos problemas. Primero, todavía estamos repitiendo un montón de código. En última instancia, nos gustaría deshacernos de toda repetición. Segundo, y más problemático, hemos introducido la clase <code class="language-plaintext highlighter-rouge">Vehicle</code>, pero ¿deberíamos realmente permitir que las personas creen objetos <code class="language-plaintext highlighter-rouge">Vehicle</code> (en lugar de <code class="language-plaintext highlighter-rouge">Car</code> o <code class="language-plaintext highlighter-rouge">Truck</code>)? Un <code class="language-plaintext highlighter-rouge">Vehicle</code> es solo un concepto, no una cosa real, entonces, ¿qué significa decir lo siguiente:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'Honda'</span><span class="p">,</span> <span class="s">'Accord'</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">v</span><span class="o">.</span><span class="n">purchase_price</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Un <code class="highlighter-rouge">Vehicle</code> no tiene una <code class="highlighter-rouge">base_sale_price</code>, solo lo hacen las clases individuales hijos como <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code>. El problema es que <code class="highlighter-rouge">Vehicle</code> debería ser realmente una clase base abstracta. Las clases base abstractas son clases que solo deben ser heredadas de; No puedes crear una instancia de un ABC. Eso significa que, si <code class="highlighter-rouge">Vehicle</code> es un ABC, lo siguiente es ilegal:</p>
+<p>Un <code class="language-plaintext highlighter-rouge">Vehicle</code> no tiene una <code class="language-plaintext highlighter-rouge">base_sale_price</code>, solo lo hacen las clases individuales hijos como <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code>. El problema es que <code class="language-plaintext highlighter-rouge">Vehicle</code> debería ser realmente una clase base abstracta. Las clases base abstractas son clases que solo deben ser heredadas de; No puedes crear una instancia de un ABC. Eso significa que, si <code class="language-plaintext highlighter-rouge">Vehicle</code> es un ABC, lo siguiente es ilegal:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'Honda'</span><span class="p">,</span> <span class="s">'Accord'</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Tiene sentido rechazar esto, ya que nunca pretendemos que  <code class="highlighter-rouge">Vehicle</code> se utilice directamente. Solo queríamos usarlo para abstraer algunos datos y comportamientos comunes. Entonces, ¿cómo hacemos una clase de ABC? ¡Sencillo! El módulo abc contiene una metaclase llamada ABCMeta (las metaclases están un poco fuera del alcance de este artículo). Establecer la metaclase de una clase en ABCMeta y hacer que uno de sus métodos sea virtual lo convierte en un ABC. Un método virtual es uno que el ABC dice que debe existir en clases secundarias, pero que no necesariamente se implementa realmente. Por ejemplo, la clase <code class="highlighter-rouge">Vehicle</code> se puede definir de la siguiente manera:</p>
+<p>Tiene sentido rechazar esto, ya que nunca pretendemos que  <code class="language-plaintext highlighter-rouge">Vehicle</code> se utilice directamente. Solo queríamos usarlo para abstraer algunos datos y comportamientos comunes. Entonces, ¿cómo hacemos una clase de ABC? ¡Sencillo! El módulo abc contiene una metaclase llamada ABCMeta (las metaclases están un poco fuera del alcance de este artículo). Establecer la metaclase de una clase en ABCMeta y hacer que uno de sus métodos sea virtual lo convierte en un ABC. Un método virtual es uno que el ABC dice que debe existir en clases secundarias, pero que no necesariamente se implementa realmente. Por ejemplo, la clase <code class="language-plaintext highlighter-rouge">Vehicle</code> se puede definir de la siguiente manera:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
@@ -518,9 +518,9 @@
         <span class="k">pass</span>
 </code></pre></div></div>
 
-<p>Ahora, ya que <code class="highlighter-rouge">vehicle_type</code> es un método abstracto, no podemos crear directamente una instancia de <code class="highlighter-rouge">Vehicle</code>. Siempre y cuando <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> se hereden de <code class="highlighter-rouge">Vehicle</code> y definan <code class="highlighter-rouge">vehicle_type</code>, podemos instanciar esas clases muy bien.</p>
+<p>Ahora, ya que <code class="language-plaintext highlighter-rouge">vehicle_type</code> es un método abstracto, no podemos crear directamente una instancia de <code class="language-plaintext highlighter-rouge">Vehicle</code>. Siempre y cuando <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> se hereden de <code class="language-plaintext highlighter-rouge">Vehicle</code> y definan <code class="language-plaintext highlighter-rouge">vehicle_type</code>, podemos instanciar esas clases muy bien.</p>
 
-<p>Volviendo a la repetición en nuestras clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code>, veamos si podemos eliminar eso al elevar la funcionalidad común a la clase base, <code class="highlighter-rouge">Vehicle</code>:</p>
+<p>Volviendo a la repetición en nuestras clases <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code>, veamos si podemos eliminar eso al elevar la funcionalidad común a la clase base, <code class="language-plaintext highlighter-rouge">Vehicle</code>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -566,7 +566,7 @@
         <span class="k">pass</span>
 </code></pre></div></div>
 
-<p>Ahora las clases <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> se convierten en:</p>
+<p>Ahora las clases <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> se convierten en:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
     <span class="s">"""A car for sale by Jeffco Car Dealership."""</span>
@@ -589,7 +589,7 @@
         <span class="k">return</span> <span class="s">'truck'</span>
 </code></pre></div></div>
 
-<p>Esto encaja perfectamente con nuestra intuición: en lo que respecta a nuestro sistema, la única diferencia entre <code class="highlighter-rouge">Car</code> y <code class="highlighter-rouge">Truck</code> es el precio base de venta. Definir una clase <code class="highlighter-rouge">Motorcyle</code>, entonces, es igualmente simple:</p>
+<p>Esto encaja perfectamente con nuestra intuición: en lo que respecta a nuestro sistema, la única diferencia entre <code class="language-plaintext highlighter-rouge">Car</code> y <code class="language-plaintext highlighter-rouge">Truck</code> es el precio base de venta. Definir una clase <code class="language-plaintext highlighter-rouge">Motorcyle</code>, entonces, es igualmente simple:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Motorcycle</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
     <span class="s">"""A motorcycle for sale by Jeffco Car Dealership."""</span>
@@ -606,7 +606,7 @@
 
 <p>Aunque parezca que usamos herencia para eliminar la duplicación, lo que realmente estábamos haciendo era simplemente proporcionar el nivel adecuado de abstracción. Y la abstracción es la clave para entender la herencia. Hemos visto cómo un efecto secundario del uso de la herencia es que reducimos el código duplicado, pero ¿qué ocurre desde la perspectiva de quien llama? ¿Cómo el uso de la herencia cambia ese código?</p>
 
-<p>Un poco. Imagina que tenemos dos clases, <code class="highlighter-rouge">Dog</code> y <code class="highlighter-rouge">Person</code>, y queremos escribir una función que tome cualquier tipo de objeto e imprima si la instancia en cuestión puede hablar o no (un perro no puede, una persona puede). Podríamos escribir código como el siguiente:</p>
+<p>Un poco. Imagina que tenemos dos clases, <code class="language-plaintext highlighter-rouge">Dog</code> y <code class="language-plaintext highlighter-rouge">Person</code>, y queremos escribir una función que tome cualquier tipo de objeto e imprima si la instancia en cuestión puede hablar o no (un perro no puede, una persona puede). Podríamos escribir código como el siguiente:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">can_speak</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
@@ -619,13 +619,13 @@
 
 <p>Eso funciona cuando solo tenemos dos tipos de animales, pero ¿y si tenemos veinte o doscientos? Eso si … la cadena elif va a ser bastante larga.</p>
 
-<p>La idea clave aquí es que a <code class="highlighter-rouge">can_speak</code> no debería importarle con qué tipo de animal está tratando, la clase animal en sí misma debería decirnos si puede hablar. Al introducir una clase base común, <code class="highlighter-rouge">Animal</code>, que define <code class="highlighter-rouge">can_speak</code>, aliviamos la función de su carga de comprobación de tipos. Ahora, siempre que sepa que fue un animal que se paso, determinar si puede hablar es trivial:</p>
+<p>La idea clave aquí es que a <code class="language-plaintext highlighter-rouge">can_speak</code> no debería importarle con qué tipo de animal está tratando, la clase animal en sí misma debería decirnos si puede hablar. Al introducir una clase base común, <code class="language-plaintext highlighter-rouge">Animal</code>, que define <code class="language-plaintext highlighter-rouge">can_speak</code>, aliviamos la función de su carga de comprobación de tipos. Ahora, siempre que sepa que fue un animal que se paso, determinar si puede hablar es trivial:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">can_speak</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">animal</span><span class="o">.</span><span class="n">can_speak</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Esto funciona porque <code class="highlighter-rouge">Person</code> y <code class="highlighter-rouge">Dog</code> (y cualquier otra clase que creamos para derivar de <code class="highlighter-rouge">Animal</code>) siguen el Principio de Sustitución de Liskov LSP. Esto indica que deberíamos poder usar una clase hija (como <code class="highlighter-rouge">Person</code> o <code class="highlighter-rouge">Dog</code>) donde se espera que una clase padre (<code class="highlighter-rouge">Animal</code>) funcione bien. Esto suena simple, pero es la base de un concepto poderoso que discutiremos en un artículo futuro: interfaces.</p>
+<p>Esto funciona porque <code class="language-plaintext highlighter-rouge">Person</code> y <code class="language-plaintext highlighter-rouge">Dog</code> (y cualquier otra clase que creamos para derivar de <code class="language-plaintext highlighter-rouge">Animal</code>) siguen el Principio de Sustitución de Liskov LSP. Esto indica que deberíamos poder usar una clase hija (como <code class="language-plaintext highlighter-rouge">Person</code> o <code class="language-plaintext highlighter-rouge">Dog</code>) donde se espera que una clase padre (<code class="language-plaintext highlighter-rouge">Animal</code>) funcione bien. Esto suena simple, pero es la base de un concepto poderoso que discutiremos en un artículo futuro: interfaces.</p>
 
 <h4 id="resumen">Resumen</h4>
 

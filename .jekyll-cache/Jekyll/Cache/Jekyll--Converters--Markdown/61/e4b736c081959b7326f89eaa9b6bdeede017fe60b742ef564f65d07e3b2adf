@@ -1,0 +1,131 @@
+I"�)<p>Una funcion es una seccion de codigo reutilizable que se puede llamar en cualquier parte de un programa. Esto elimina la necesidad de escribir el mismo codigo una y otra vez. Ayuda a los programadores a escribir codigos modulares. Las funciones permiten que un programador divida un programa grande en una serie de funciones pequeñas y manejables.</p>
+
+<p>Al igual que cualquier otro lenguaje de programacion avanzado, JavaScript tambien admite todas las funciones necesarias para escribir codigo modular utilizando funciones. Debe haber visto funciones como alert () y write () antes. Usamos estas funciones una y otra vez, pero habian sido escritas en el corazon de JavaScript.</p>
+
+<p>JavaScript nos permite escribir nuestras propias funciones. Esta seccion explica como escribir nuestras propias funciones en JavaScript.</p>
+
+<h3 id="definición-de-la-función">Definición de la función</h3>
+
+<p>Antes de usar una funcion, necesitamos definirla. La forma más comun de definir una funcion en JavaScript es mediante el uso de la palabra clave de <code class="highlighter-rouge">function</code>, seguida de un nombre de funcion, una lista de parametros (que pueden estar vacios) y un bloque de instrucciones rodeado de llaves.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de una instruccion <code class="highlighter-rouge">function</code> basica es la siguiente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">function</span> <span class="nx">functionname</span><span class="p">(</span><span class="nx">parameter</span><span class="o">-</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">statements</span>
+      <span class="p">}</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Prueba el siguiente ejemplo. Define una funcion llamada <code class="highlighter-rouge">sayHello</code> que no toma parámetros</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello there</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="llamado-de-una-funcion">Llamado de una funcion</h3>
+
+<p>Para invocar una funcion en algun lugar en el script, simplemente deber escribir el nombre de esa funcion como se muestra en el siguiente codigo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">Hello there!</span><span class="dl">"</span><span class="p">);</span>
+         <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button to call the function<span class="nt">&lt;/p&gt;</span>      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"sayHello()"</span> <span class="na">value = </span><span class="s">"Say Hello"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Use different text in write method and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="parametros-de-funciones">Parametros de funciones</h3>
+
+<p>Hasta ahora, hemos visto funciones sin parametros. Pero se pueden pasar varios parametros al llamar a una funcion. Estos parametros ​​se introducen dentro de la funcion y cualquier manipulacion se hace sobre esos parametros. Una funcion puede tomar multiples parametros separados por comas.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Prueba el siguiente ejemplo. Hemos modificado la funcion sayHello. Ahora se necesitan dos parametros.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> is </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">age</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> years old.</span><span class="dl">"</span><span class="p">);</span>
+         <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button to call the function<span class="nt">&lt;/p&gt;</span>      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"sayHello('Zara', 7)"</span> <span class="na">value = </span><span class="s">"Say Hello"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Use different parameters inside the function and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="la-sentencia-return">La sentencia <code class="highlighter-rouge">return</code></h3>
+
+<p>Una funcion en JavaScript puede tener una declaracion <code class="highlighter-rouge">return</code> opcional. Es necesaria si desea que la funcion devolva un valor. Esta declaracion debe ser la última declaracion en una funcion.</p>
+
+<p>Por ejemplo, puede pasar dos numeros en una funcion y luego puede esperar que la funcion devuelva su multiplicacion en su programa.</p>
+
+<h4 id="ejemplo-2">Ejemplo</h4>
+
+<p>Prueba el siguiente ejemplo. Define una funcion que toma dos parametros y los concatena antes de devolver la resultante en el programa.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>  
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="kd">function</span> <span class="nx">concatenate</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">last</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">full</span><span class="p">;</span>
+            <span class="nx">full</span> <span class="o">=</span> <span class="nx">first</span> <span class="o">+</span> <span class="nx">last</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nx">full</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="kd">function</span> <span class="nx">secondFunction</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">result</span><span class="p">;</span>
+            <span class="nx">result</span> <span class="o">=</span> <span class="nx">concatenate</span><span class="p">(</span><span class="dl">'</span><span class="s1">Zara</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Ali</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="nx">result</span> <span class="p">);</span>
+         <span class="p">}</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button to call the function<span class="nt">&lt;/p&gt;</span>      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"secondFunction()"</span> <span class="na">value = </span><span class="s">"Call Function"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Use different parameters inside the function and then try...<span class="nt">&lt;/p&gt;</span>  
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Hay mucho que aprender sobre las funciones en JavaScript, sin embargo, hemos cubierto los conceptos mas importantes en este tutorial.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

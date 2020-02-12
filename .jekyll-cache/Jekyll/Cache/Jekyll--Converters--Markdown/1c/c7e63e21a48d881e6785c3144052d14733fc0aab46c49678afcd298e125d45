@@ -1,0 +1,348 @@
+I"-<p>El objeto <code class="highlighter-rouge">String</code> le permite trabajar con una serie de caracteres; envuelve el tipo de datos primitivos de cadena de caracteres en Javascript con varios metodos de ayuda.</p>
+
+<p>Como JavaScript convierte automaticamente entre primitivas de cadena de caracteres y objetos <code class="highlighter-rouge">String</code>, puede llamar a cualquiera de los metodos auxiliares del objeto <code class="highlighter-rouge">String</code> desde una primitiva de cadena de caracteres.</p>
+
+<p>Utilice la siguiente sintaxis para crear un objeto <code class="highlighter-rouge">String</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var val = new String(string);</span><span class="w">
+</span></code></pre></div></div>
+
+<p>El parametro <code class="highlighter-rouge">string</code> es una cadena de caracteres.</p>
+
+<h3 id="propiedades-de-string">Propiedades de <code class="highlighter-rouge">String</code></h3>
+
+<p>Aquí hay una lista de las propiedades del objeto <code class="highlighter-rouge">String</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una referencia a la funcion <code class="highlighter-rouge">String</code> que creó el objeto.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">length</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la longitud de la cadena de caracteres.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">prototype</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>La propiedad <code class="highlighter-rouge">prototype</code> permite agregar propiedades y metodos a un objeto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="metodos-de-string">Metodos de <code class="highlighter-rouge">String</code></h3>
+
+<p>Aquí hay una lista de los metodos del objeto <code class="highlighter-rouge">String</code> y su descripción.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">charAt()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el caracter en el índice especificado.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">charCodeAt()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un numero que indica el valor Unicode del caracter en el índice dado.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">concat()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Combina el texto de dos cadenas de caracteres y devuelve una nueva cadena.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">indexOf )</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el índice dentro del objeto <code class="highlighter-rouge">String</code> de llamada de la primera aparición del valor especificado, o -1 si no se encuentra.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">lastIndexOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el índice dentro del objeto <code class="highlighter-rouge">String</code> de llamada de la ultima aparicion del valor especificado, o -1 si no se encuentra.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">localeCompare()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve un numero que indica si una cadena de referencia aparece antes o despues o si es igual a la cadena dada en orden de clasificacion.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">match()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Se utiliza para hacer coincidir una expresion regular con una cadena.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">replace()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Se utiliza para encontrar una coincidencia entre una expresión regular y una cadena, y para reemplazar la subcadena coincidente con una nueva subcadena.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">search()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Ejecuta la busqueda de una coincidencia entre una expresion regular y una cadena especificada.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">slice()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Extrae una seccion de una cadena y devuelve una nueva cadena.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">split()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Divide un objeto <code class="highlighter-rouge">String</code> en una matriz de cadenas separando la cadena en subcadenas.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">substr()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los caracteres en una cadena que comienza en la ubicacion especificada a traves del numero especificado de caracteres.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code class="highlighter-rouge">substring()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve los caracteres en una cadena entre dos índices en la cadena.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code class="highlighter-rouge">toLocaleLowerCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Los caracteres dentro de una cadena se convierten a minusculas respetando la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code class="highlighter-rouge">toLocaleUpperCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Los caracteres dentro de una cadena se convierten a mayusculas respetando la configuración regional actual.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code class="highlighter-rouge">toLowerCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor de la cadena de llamada convertido a minusculas.</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena que representa el objeto especificado.</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code class="highlighter-rouge">toUpperCase()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor de la cadena de llamada convertido a mayusculas.</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code class="highlighter-rouge">valueOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor primitivo del objeto especificado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="envoltorios--wrappers-de-string-html">Envoltorios / Wrappers de String HTML</h3>
+
+<p>Aquí hay una lista de los metodos que devuelven una copia de la cadena envuelta dentro de una etiqueta HTML apropiada.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Metodo &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">anchor()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea un ancla HTML que se utiliza como un hipertexto objetivo.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">big()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena que se mostrara en una fuente grande como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;big&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">blink()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena para parpadear como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;blink&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">bold()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea una cadena que se mostrara en negrita como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;b&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">fixed()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en una fuente de tono fijo como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;tt&gt;</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">fontcolor()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en el color especificado como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;font color = "color"&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">fontsize()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en el tamaño de fuente especificado como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;font size = "size"&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code class="highlighter-rouge">italics()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena este en cursiva, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;i&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code class="highlighter-rouge">link()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Crea un enlace hipertexto HTML que solicita otra URL.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code class="highlighter-rouge">small()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre en una fuente pequeña, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;small&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code class="highlighter-rouge">strike()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como texto tachado, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;strike&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code class="highlighter-rouge">sub()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como un subíndice, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;sub&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code class="highlighter-rouge">sup()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que una cadena se muestre como un superíndice, como si estuviera en una etiqueta <code class="highlighter-rouge">&lt;sup&gt;</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">String</code>.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

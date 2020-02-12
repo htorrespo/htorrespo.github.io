@@ -1,0 +1,120 @@
+I"2!<p>Existe flexibilidad en cuanto a introducir código JavaScript en cualquier parte de un documento HTML. Sin embargo, las formas preferidas de incluir JavaScript en un archivo HTML son las siguientes:</p>
+
+<ul>
+  <li>
+    <p>Script en la sección <code class="highlighter-rouge">&lt;head&gt; ... &lt;/head&gt;</code>.</p>
+  </li>
+  <li>
+    <p>Guión en la sección <code class="highlighter-rouge">&lt;body&gt; ... &lt;/body&gt;</code>.</p>
+  </li>
+  <li>
+    <p>Guión en las secciones <code class="highlighter-rouge">&lt;body&gt; ... &lt;/body&gt;</code> y <code class="highlighter-rouge">&lt;head&gt; ... &lt;/head&gt;</code>.</p>
+  </li>
+  <li>
+    <p>Haga un script en un archivo externo y luego incluya en la sección <code class="highlighter-rouge">&lt;head&gt; ... &lt;/head&gt;</code>.</p>
+  </li>
+</ul>
+
+<p>En la siguiente sección, veremos cómo podemos introducir JavaScript en un archivo HTML de maneras diferentes.</p>
+
+<h2 id="javascript-en-la-sección-headhead">JavaScript en la sección <code class="highlighter-rouge">&lt;head&gt;...&lt;/head&gt;</code></h2>
+
+<p>Si desea que un script ejecute algún evento, como cuando un usuario hace clic en algún lugar, escriba este script en la sección <code class="highlighter-rouge">&lt;head&gt;</code> de la siguiente manera:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>     
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"sayHello()"</span> <span class="na">value = </span><span class="s">"Say Hello"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>  
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="javascript-en-la-sección-bodybody">JavaScript en la sección <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code></h2>
+
+<p>Si necesita que una secuencia de comandos se ejecute a medida que carga la página para generar contenido, la secuencia de comandos entra en la seccion <code class="highlighter-rouge">&lt;body&gt;</code> del documento. En este caso, no tendrías ninguna función definida usando JavaScript. Echa un vistazo al siguiente código.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      <span class="nt">&lt;p&gt;</span>This is web page body <span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="javascript-en-las-seciones-body-y-head">JavaScript en las seciones <code class="highlighter-rouge">&lt;body&gt;</code> y <code class="highlighter-rouge">&lt;head&gt;</code></h2>
+
+<p>Puede escribir el código JavaScript en la sección <code class="highlighter-rouge">&lt;body&gt;</code> y <code class="highlighter-rouge">&lt;head&gt;</code> de la siguiente manera:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"sayHello()"</span> <span class="na">value = </span><span class="s">"Say Hello"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h2 id="javascript-en-archivo-externo">JavaScript en archivo externo</h2>
+
+<p>A medida que comience a trabajar más extensamente con JavaScript, es probable que encuentre casos en los que está reutilizando código idéntico en varias páginas de un sitio.</p>
+
+<p>No está restringido a mantener un código idéntico en varios archivos HTML. La etiqueta de secuencia de comandos proporciona un mecanismo que le permite almacenar JavaScript en un archivo externo y luego incluirlo en sus archivos HTML.</p>
+
+<p>Este es un ejemplo para mostrar cómo puede incluir un archivo JavaScript externo en su código HTML usando la etiqueta de script y su atributo src.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span> <span class="na">src = </span><span class="s">"filename.js"</span> <span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      .......
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Para usar JavaScript desde un archivo externo, debe escribir todo el código fuente en un archivo de texto simple con la extensión “.js” y luego incluir ese archivo como se muestra arriba.</p>
+
+<p>Por ejemplo, puede mantener el siguiente contenido en el archivo <code class="highlighter-rouge">filename.js</code> y luego puede usar la función <code class="highlighter-rouge">sayHello</code> en su archivo HTML después de incluir el archivo <code class="highlighter-rouge">filename.js</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

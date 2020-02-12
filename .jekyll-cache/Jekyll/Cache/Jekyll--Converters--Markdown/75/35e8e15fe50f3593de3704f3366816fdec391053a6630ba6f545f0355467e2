@@ -1,0 +1,144 @@
+I"�4<p>Al escribir un programa, puede haber una situación en la que necesite adoptar uno de un conjunto determinado de rutas. En tales casos, necesita usar sentencias condicionales que le permitan a su programa tomar decisiones correctas y realizar acciones correctas.</p>
+
+<p>JavaScript admite sentencias condicionales que se utilizan para realizar diferentes acciones basadas en diferentes condiciones. Aquí explicaremos la sentencia <code class="highlighter-rouge">if..else</code>.</p>
+
+<h2 id="sentencia-if--else">Sentencia <code class="highlighter-rouge">if--else</code></h2>
+
+<p>JavaScript admite las siguientes formas de Sentencia <code class="highlighter-rouge">if..else</code>:</p>
+
+<ul>
+  <li>
+    <p>Sentencia <code class="highlighter-rouge">if</code></p>
+  </li>
+  <li>
+    <p>Sentencia <code class="highlighter-rouge">if .. else</code></p>
+  </li>
+  <li>
+    <p>Sentencia <code class="highlighter-rouge">if .. else if</code></p>
+  </li>
+</ul>
+
+<h3 id="sentencia-if">Sentencia <code class="highlighter-rouge">if</code></h3>
+
+<p>La sentencia <code class="highlighter-rouge">if</code> es la sentencia de control fundamental que permite a JavaScript tomar decisiones y ejecutar sentencias condicionalmente.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de una instrucción <code class="highlighter-rouge">if</code> básica es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aquí se evalúa una expresión JavaScript. Si el valor resultante es verdadero, se ejecutan las instrucciones dadas. Si la expresión es falsa, entonces no se ejecutará ninguna instrucción. La mayoría de las veces, utilizará operadores de comparación al tomar decisiones.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para comprender cómo funciona la instrucción <code class="highlighter-rouge">if</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>     
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+         
+            <span class="k">if</span><span class="p">(</span> <span class="nx">age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Qualifies for driving&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="sentencia-if--else-1">Sentencia <code class="highlighter-rouge">if .. else</code></h3>
+
+<p>La Sentencia <code class="highlighter-rouge">if ... else</code> es la siguiente forma de declaración de control que permite que JavaScript ejecute declaraciones de una manera más controlada.</p>
+
+<h4 id="sintaxis-1">Sintaxis</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="nx">is</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aquí se evalúa la expresión de JavaScript. Si el valor resultante es verdadero, se ejecutan las instrucciones dadas en el bloque <code class="highlighter-rouge">if</code>. Si la expresión es falsa, entonces se ejecutan la (s) declaración (es) en el bloque <code class="highlighter-rouge">else</code>.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Pruebe el siguiente código para aprender a implementar una sentencia <code class="highlighter-rouge">if-else</code> en JavaScript</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+         
+            <span class="k">if</span><span class="p">(</span> <span class="nx">age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Qualifies for driving&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Does not qualify for driving&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>     
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="sentencia-if--else-if-">Sentencia <code class="highlighter-rouge">if ... else if ..</code></h3>
+
+<p>La declaración <code class="highlighter-rouge">if ... else if ...</code> es una forma avanzada de <code class="highlighter-rouge">if ... else</code> que permite a JavaScript tomar una decisión correcta en varias condiciones.</p>
+
+<h4 id="sintaxis-2">Sintaxis</h4>
+
+<p>La sintaxis de una sentencia <code class="highlighter-rouge">if-else-if</code> es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">expression</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="mi">1</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">expression</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="mi">2</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">expression</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="mi">3</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">no</span> <span class="nx">expression</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>No hay nada especial en este código. Es solo una serie de sentencias <code class="highlighter-rouge">if</code>, donde cada una de ellas forma parte de la cláusula else de la sentencia anterior. Las sentencias se ejecutan en función de la condición verdadera, si ninguna de las condiciones es verdadera, se ejecuta el bloque else.</p>
+
+<h4 id="ejemplo-2">Ejemplo</h4>
+
+<p>Pruebe el siguiente código para aprender a implementar una declaración <code class="highlighter-rouge">if-else-if</code> en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">book</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">maths</span><span class="dl">"</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span> <span class="nx">book</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">history</span><span class="dl">"</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;History Book&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="nx">book</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">maths</span><span class="dl">"</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Maths Book&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="nx">book</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">economics</span><span class="dl">"</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Economics Book&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;b&gt;Unknown Book&lt;/b&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

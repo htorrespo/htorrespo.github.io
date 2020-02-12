@@ -1,0 +1,128 @@
+I"r<p>Todos los navegadores modernos tienen soporte para JavaScript. Con frecuencia, es posible que necesite habilitar o deshabilitarlo manualmente. Este capítulo explica el procedimiento para habilitar y deshabilitar el soporte de JavaScript en navegadores: Internet Explorer, Firefox, chrome y Opera.</p>
+
+<h2 id="javascript-en-internet-explorer">JavaScript en Internet Explorer</h2>
+
+<p>Aquí algunos pasos para activar o desactivar JavaScript en Internet Explorer:</p>
+
+<ul>
+  <li>
+    <p>Siga Herramientas -&gt; Opciones de Internet en el menú.</p>
+  </li>
+  <li>
+    <p>Seleccione la pestaña Seguridad del cuadro de diálogo.</p>
+  </li>
+  <li>
+    <p>Haga clic en el botón Nivel personalizado.</p>
+  </li>
+  <li>
+    <p>Desplácese hacia abajo hasta que encuentre la opción de secuencias de comandos.</p>
+  </li>
+  <li>
+    <p>Seleccione Habilitar el botón de opción en Active scripting.</p>
+  </li>
+  <li>
+    <p>Finalmente haga clic en OK y salga</p>
+  </li>
+</ul>
+
+<p>Para deshabilitar la compatibilidad con JavaScript en Internet Explorer, debe seleccionar Deshabilitar el botón de radio en Active scripting.</p>
+
+<h2 id="javascript-en-firefox">JavaScript en Firefox</h2>
+
+<p>Estos son los pasos para activar o desactivar JavaScript en Firefox:</p>
+
+<ul>
+  <li>
+    <p>Abra una nueva pestaña -&gt; escriba <code class="highlighter-rouge">about: config</code> en la barra de direcciones.</p>
+  </li>
+  <li>
+    <p>Luego encontrarás el diálogo de advertencia. Seleccione <code class="highlighter-rouge">¡Tendré cuidado, lo prometo!</code></p>
+  </li>
+  <li>
+    <p>Luego encontrará la lista de <code class="highlighter-rouge">opciones de configuración</code> en el navegador.</p>
+  </li>
+  <li>
+    <p>En la barra de búsqueda, escriba <code class="highlighter-rouge">javascript.enabled</code>.</p>
+  </li>
+  <li>
+    <p>Allí encontrará la opción para habilitar o deshabilitar javascript haciendo clic con el botón derecho en el valor de esa opción -&gt; <code class="highlighter-rouge">seleccionar alternar</code>.</p>
+  </li>
+</ul>
+
+<p>Si <code class="highlighter-rouge">javascript.enabled</code> es verdadero; se convierte en falso al hacer clic en <code class="highlighter-rouge">alternar</code>. Si javascript está deshabilitado; se habilita al hacer clic en <code class="highlighter-rouge">alternar</code>.</p>
+
+<h2 id="javascript-en-chrome">JavaScript en Chrome</h2>
+
+<p>Estos son los pasos para activar o desactivar JavaScript en Chrome:</p>
+
+<ul>
+  <li>
+    <p>Haga clic en el menú de Chrome en la esquina superior derecha de su navegador.</p>
+  </li>
+  <li>
+    <p>Seleccione Configuraciones.</p>
+  </li>
+  <li>
+    <p>Haga clic en Mostrar configuración avanzada al final de la página.</p>
+  </li>
+  <li>
+    <p>En la sección Privacidad, haga clic en el botón Configuración de contenido.</p>
+  </li>
+  <li>
+    <p>En la sección “Javascript”, seleccione “No permitir que ningún sitio ejecute JavaScript” o “Permitir que todos los sitios ejecuten JavaScript (recomendado)”.</p>
+  </li>
+</ul>
+
+<h2 id="javascript-en-opera">JavaScript en Opera</h2>
+
+<p>Estos son los pasos para activar o desactivar JavaScript en Opera:</p>
+
+<ul>
+  <li>
+    <p>Siga Herramientas -&gt; Preferencias en el menú.</p>
+  </li>
+  <li>
+    <p>Seleccione la opción Avanzada en el cuadro de diálogo.</p>
+  </li>
+  <li>
+    <p>Seleccione el contenido de los elementos enumerados.</p>
+  </li>
+  <li>
+    <p>Seleccione la casilla de verificación Habilitar JavaScript.</p>
+  </li>
+  <li>
+    <p>Finalmente haga clic en Aceptar y salga.</p>
+  </li>
+</ul>
+
+<p>Para deshabilitar el soporte de JavaScript en su Opera, no debe seleccionar la casilla de verificación Habilitar JavaScript.</p>
+
+<h2 id="advertencia-para-navegadores-sin-javascript">Advertencia para navegadores sin JavaScript</h2>
+
+<p>Si tiene que hacer algo importante usando JavaScript, entonces puede mostrar un mensaje de advertencia al usuario usando etiquetas <code class="highlighter-rouge">&lt;noscript&gt;</code>.</p>
+
+<p>Puede agregar un bloque de noscript inmediatamente después del bloque de script de la siguiente manera:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">)</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      <span class="nt">&lt;noscript&gt;</span>
+         Sorry...JavaScript is needed to go ahead.
+      <span class="nt">&lt;/noscript&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Ahora, si el navegador del usuario no admite JavaScript o JavaScript no está habilitado, el mensaje de <code class="highlighter-rouge">&lt;/noscript&gt;</code> se mostrará en la pantalla.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

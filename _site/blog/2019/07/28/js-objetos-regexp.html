@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Objeto RegExp | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Objeto RegExp" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Crea un objeto RegExp para encontrar texto de acuerdo a un patron.","@type":"BlogPosting","headline":"JavaScript - Objeto RegExp","dateModified":"2019-07-28T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/28/js-objetos-regexp.html","datePublished":"2019-07-28T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/28/js-objetos-regexp.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Crea un objeto RegExp para encontrar texto de acuerdo a un patron.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/28/js-objetos-regexp.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/07/28/js-objetos-regexp.html","headline":"JavaScript - Objeto RegExp","dateModified":"2019-07-28T00:00:00+00:00","datePublished":"2019-07-28T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -144,9 +144,9 @@
         <div class="e-content">
           <p>Una expresion regular es un objeto que describe un patron de caracteres.</p>
 
-<p>La clase <code class="highlighter-rouge">RegExp</code> de JavaScript representa expresiones regulares, y tanto <code class="highlighter-rouge">String</code> como <code class="highlighter-rouge">RegExp</code> definen metodos que usan expresiones regulares para realizar potentes funciones de comparacion de patrones y busqueda y reemplazo en el texto.</p>
+<p>La clase <code class="language-plaintext highlighter-rouge">RegExp</code> de JavaScript representa expresiones regulares, y tanto <code class="language-plaintext highlighter-rouge">String</code> como <code class="language-plaintext highlighter-rouge">RegExp</code> definen metodos que usan expresiones regulares para realizar potentes funciones de comparacion de patrones y busqueda y reemplazo en el texto.</p>
 
-<p>Una expresión regular podría definirse con el constructor <code class="highlighter-rouge">RegExp()</code>, de la siguiente manera:</p>
+<p>Una expresión regular podría definirse con el constructor <code class="language-plaintext highlighter-rouge">RegExp()</code>, de la siguiente manera:</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var pattern = new RegExp(pattern, attributes);</span><span class="w">
 </span><span class="go">or simply
@@ -166,7 +166,7 @@
 
 <h3 id="corchetes">Corchetes</h3>
 
-<p>Los corchetes (<code class="highlighter-rouge">[]</code>) tienen un significado especial cuando se usan en el contexto de expresiones regulares. Se utilizan para encontrar un rango de caracteres.</p>
+<p>Los corchetes (<code class="language-plaintext highlighter-rouge">[]</code>) tienen un significado especial cuando se usan en el contexto de expresiones regulares. Se utilizan para encontrar un rango de caracteres.</p>
 
 <table>
   <thead>
@@ -178,7 +178,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">[...]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[...]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -186,7 +186,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">[^...]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[^...]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -194,7 +194,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">[0-9]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[0-9]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -202,36 +202,36 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">[a-z]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[a-z]</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">a</code> minuscula a una <code class="highlighter-rouge">z</code> minuscula.</td>
+      <td>Coincide con cualquier caracter desde una <code class="language-plaintext highlighter-rouge">a</code> minuscula a una <code class="language-plaintext highlighter-rouge">z</code> minuscula.</td>
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">[A-Z]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[A-Z]</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">A</code> mayuscula a una <code class="highlighter-rouge">Z</code> mayuscula.</td>
+      <td>Coincide con cualquier caracter desde una <code class="language-plaintext highlighter-rouge">A</code> mayuscula a una <code class="language-plaintext highlighter-rouge">Z</code> mayuscula.</td>
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">[a-Z]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[a-Z]</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Coincide con cualquier caracter desde una <code class="highlighter-rouge">a</code> minuscula a  una <code class="highlighter-rouge">z</code> mayuscula.</td>
+      <td>Coincide con cualquier caracter desde una <code class="language-plaintext highlighter-rouge">a</code> minuscula a  una <code class="language-plaintext highlighter-rouge">z</code> mayuscula.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Los rangos mostrados antes son generales; tambien puede usar el rango <code class="highlighter-rouge">[0-3]</code> para hacer coincidir cualquier dígito decimal que oscile entre 0 y 3, o el rango <code class="highlighter-rouge">[b-v]</code> para hacer coincidir cualquier caracter en minuscula que vaya desde b hasta v.</p>
+<p>Los rangos mostrados antes son generales; tambien puede usar el rango <code class="language-plaintext highlighter-rouge">[0-3]</code> para hacer coincidir cualquier dígito decimal que oscile entre 0 y 3, o el rango <code class="language-plaintext highlighter-rouge">[b-v]</code> para hacer coincidir cualquier caracter en minuscula que vaya desde b hasta v.</p>
 
 <h3 id="cuantificadores">Cuantificadores</h3>
 
-<p>La frecuencia o posición de las secuencias de caracteres entre corchetes y los caracteres individuales se pueden denotar con un caracter especial. Cada caracter especial tiene una connotacion específica. Las banderas <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">*</code>,<code class="highlighter-rouge">?</code> Y <code class="highlighter-rouge">$</code> siguen una secuencia de caracteres.</p>
+<p>La frecuencia o posición de las secuencias de caracteres entre corchetes y los caracteres individuales se pueden denotar con un caracter especial. Cada caracter especial tiene una connotacion específica. Las banderas <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">*</code>,<code class="language-plaintext highlighter-rouge">?</code> Y <code class="language-plaintext highlighter-rouge">$</code> siguen una secuencia de caracteres.</p>
 
 <table>
   <thead>
@@ -243,7 +243,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">p+</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -251,7 +251,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">p*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p*</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -259,7 +259,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">p?</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p?</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -267,7 +267,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">p{N}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p{N}</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -275,7 +275,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">p{2,3}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p{2,3}</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -283,7 +283,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">p{2, }</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p{2, }</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -291,7 +291,7 @@
     </tr>
     <tr>
       <td>7</td>
-      <td><code class="highlighter-rouge">p$</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p$</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -299,7 +299,7 @@
     </tr>
     <tr>
       <td>8</td>
-      <td><code class="highlighter-rouge">^p</code></td>
+      <td><code class="language-plaintext highlighter-rouge">^p</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -322,7 +322,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">[^a-zA-Z]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[^a-zA-Z]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -330,7 +330,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">p.p</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p.p</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -338,7 +338,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">^.{2}$</code></td>
+      <td><code class="language-plaintext highlighter-rouge">^.{2}$</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -346,15 +346,15 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">&lt;b&gt;(.*)&lt;/b&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;b&gt;(.*)&lt;/b&gt;</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Coincide con cualquier cadena encerrada entre <code class="highlighter-rouge">&lt;b&gt;</code> y <code class="highlighter-rouge">&lt;/b&gt;</code>.</td>
+      <td>Coincide con cualquier cadena encerrada entre <code class="language-plaintext highlighter-rouge">&lt;b&gt;</code> y <code class="language-plaintext highlighter-rouge">&lt;/b&gt;</code>.</td>
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">p(hp)*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p(hp)*</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -375,7 +375,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">Alphanumeric</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Alphanumeric</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -383,7 +383,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">\0</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\0</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -391,7 +391,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">\t</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\t</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -399,7 +399,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">\n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -407,7 +407,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">\v</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\v</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -415,7 +415,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">\f</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\f</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -423,7 +423,7 @@
     </tr>
     <tr>
       <td>7</td>
-      <td><code class="highlighter-rouge">\r</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\r</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -431,27 +431,27 @@
     </tr>
     <tr>
       <td>8</td>
-      <td><code class="highlighter-rouge">\xnn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\xnn</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>El caracter latino especificado por el numero hexadecimal nn; por ejemplo, <code class="highlighter-rouge">\x0A</code> es lo mismo que <code class="highlighter-rouge">\n</code></td>
+      <td>El caracter latino especificado por el numero hexadecimal nn; por ejemplo, <code class="language-plaintext highlighter-rouge">\x0A</code> es lo mismo que <code class="language-plaintext highlighter-rouge">\n</code></td>
     </tr>
     <tr>
       <td>9</td>
-      <td><code class="highlighter-rouge">\uxxxx</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\uxxxx</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>El caracter Unicode especificado por el numero hexadecimal xxxx; por ejemplo, <code class="highlighter-rouge">\u0009</code> es lo mismo que <code class="highlighter-rouge">\t</code>.</td>
+      <td>El caracter Unicode especificado por el numero hexadecimal xxxx; por ejemplo, <code class="language-plaintext highlighter-rouge">\u0009</code> es lo mismo que <code class="language-plaintext highlighter-rouge">\t</code>.</td>
     </tr>
     <tr>
       <td>10</td>
-      <td><code class="highlighter-rouge">\cX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\cX</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>El caracter de control <code class="highlighter-rouge">^X</code>; por ejemplo, <code class="highlighter-rouge">\cJ</code> es equivalente al caracter de nueva línea <code class="highlighter-rouge">\n</code>.</td>
+      <td>El caracter de control <code class="language-plaintext highlighter-rouge">^X</code>; por ejemplo, <code class="language-plaintext highlighter-rouge">\cJ</code> es equivalente al caracter de nueva línea <code class="language-plaintext highlighter-rouge">\n</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -460,7 +460,7 @@
 
 <p>Un metacaracter es simplemente un caracter alfabetico precedido por una barra invertida que actua para darle a la combinación un significado especial.</p>
 
-<p>Por ejemplo, puede buscar una gran suma de dinero utilizando el metacaracter <code class="highlighter-rouge">\ d</code>: <code class="highlighter-rouge">/ ([\ d] +) 000 /</code>, Aqui <code class="highlighter-rouge">\ d</code> buscara cualquier cadena de caracteres numericos.</p>
+<p>Por ejemplo, puede buscar una gran suma de dinero utilizando el metacaracter <code class="language-plaintext highlighter-rouge">\ d</code>: <code class="language-plaintext highlighter-rouge">/ ([\ d] +) 000 /</code>, Aqui <code class="language-plaintext highlighter-rouge">\ d</code> buscara cualquier cadena de caracteres numericos.</p>
 
 <p>La siguiente tabla enumera un conjunto de metacaracteres que se pueden usar en las expresiones regulares al estilo PERL.</p>
 
@@ -474,7 +474,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">.</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -482,7 +482,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">\s</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\s</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -490,7 +490,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">\S</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\S</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -498,7 +498,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">\d</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\d</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -506,7 +506,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">\D</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\D</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -514,15 +514,15 @@
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">\w</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\w</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Un caracter(a-z, A-Z, 0-9, <code class="highlighter-rouge">_</code>).</td>
+      <td>Un caracter(a-z, A-Z, 0-9, <code class="language-plaintext highlighter-rouge">_</code>).</td>
     </tr>
     <tr>
       <td>7</td>
-      <td><code class="highlighter-rouge">\W</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\W</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -530,7 +530,7 @@
     </tr>
     <tr>
       <td>8</td>
-      <td><code class="highlighter-rouge">[\b]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[\b]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -538,7 +538,7 @@
     </tr>
     <tr>
       <td>9</td>
-      <td><code class="highlighter-rouge">[aeiou]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[aeiou]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -546,7 +546,7 @@
     </tr>
     <tr>
       <td>10</td>
-      <td><code class="highlighter-rouge">[^aeiou]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[^aeiou]</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -554,7 +554,7 @@
     </tr>
     <tr>
       <td>11</td>
-      <td><code class="highlighter-rouge">(foo|bar|baz)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">(foo|bar|baz)</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -577,7 +577,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">i</code></td>
+      <td><code class="language-plaintext highlighter-rouge">i</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -585,15 +585,15 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">m</code></td>
+      <td><code class="language-plaintext highlighter-rouge">m</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Especifica que si la cadena tiene caracteres de nueva línea o de carro de retorno, los operadores <code class="highlighter-rouge">^</code> y <code class="highlighter-rouge">$</code> ahora coincidirán con un límite de nueva línea, en lugar de limite de cadena.</td>
+      <td>Especifica que si la cadena tiene caracteres de nueva línea o de carro de retorno, los operadores <code class="language-plaintext highlighter-rouge">^</code> y <code class="language-plaintext highlighter-rouge">$</code> ahora coincidirán con un límite de nueva línea, en lugar de limite de cadena.</td>
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">g</code></td>
+      <td><code class="language-plaintext highlighter-rouge">g</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -604,7 +604,7 @@
 
 <h3 id="propiedades-regexp">Propiedades RegExp</h3>
 
-<p>Aqui hay una lista de las propiedades asociadas con <code class="highlighter-rouge">RegExp</code> y su descripcion.</p>
+<p>Aqui hay una lista de las propiedades asociadas con <code class="language-plaintext highlighter-rouge">RegExp</code> y su descripcion.</p>
 
 <table>
   <thead>
@@ -616,7 +616,7 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">constructor</code></td>
+      <td><code class="language-plaintext highlighter-rouge">constructor</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -624,7 +624,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">global</code></td>
+      <td><code class="language-plaintext highlighter-rouge">global</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -632,7 +632,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">ignoreCase</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ignoreCase</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -640,7 +640,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">lastIndex</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lastIndex</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -648,7 +648,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">multiline</code></td>
+      <td><code class="language-plaintext highlighter-rouge">multiline</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -656,7 +656,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">source</code></td>
+      <td><code class="language-plaintext highlighter-rouge">source</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -665,9 +665,9 @@
   </tbody>
 </table>
 
-<h3 id="metodos-de-regexp">Metodos de <code class="highlighter-rouge">RegExp</code></h3>
+<h3 id="metodos-de-regexp">Metodos de <code class="language-plaintext highlighter-rouge">RegExp</code></h3>
 
-<p>Aquí hay una lista de las metodos del objeto <code class="highlighter-rouge">RegExp</code>:</p>
+<p>Aquí hay una lista de las metodos del objeto <code class="language-plaintext highlighter-rouge">RegExp</code>:</p>
 
 <table>
   <thead>
@@ -679,23 +679,23 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">exec()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">exec()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Ejecuta la busqueda de una coincidencia en su parametro <code class="highlighter-rouge">String</code>.</td>
+      <td>Ejecuta la busqueda de una coincidencia en su parametro <code class="language-plaintext highlighter-rouge">String</code>.</td>
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">test()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">test()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Prueba de una coincidencia en su parametro <code class="highlighter-rouge">String</code>.</td>
+      <td>Prueba de una coincidencia en su parametro <code class="language-plaintext highlighter-rouge">String</code>.</td>
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">toSource()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toSource()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -703,7 +703,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">toString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toString()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -715,7 +715,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

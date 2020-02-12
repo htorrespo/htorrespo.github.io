@@ -1,0 +1,2 @@
+I"<p>La declaracion de <code class="highlighter-rouge">function</code> no es la unica manera de definir una nueva funcion; puede definir su funcion dinamicamente usando el constructor <code class="highlighter-rouge">Function()</code> con el nuevo operador.</p>
+:ET

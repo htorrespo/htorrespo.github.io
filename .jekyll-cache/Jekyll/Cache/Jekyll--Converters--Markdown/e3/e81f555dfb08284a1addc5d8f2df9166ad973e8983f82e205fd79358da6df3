@@ -1,0 +1,291 @@
+I"/T
+<p>Hay tres tipos de errores en la programacion: (a) Errores de sintaxis, (b) Errores de tiempo de ejecucion y (c) Errores logicos.</p>
+
+<h3 id="errores-de-sintaxis">Errores de sintaxis</h3>
+
+<p>Los errores de sintaxis, tambien llamados errores de analisis, ocurren en tiempo de compilacion en lenguajes de programacion tradicionales y en tiempo de interpretacion en JavaScript.</p>
+
+<p>Por ejemplo, la siguiente linea causa un error de sintaxis porque le falta un parentesis de cierre.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">print</span><span class="p">(;</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Cuando se produce un error de sintaxis en JavaScript, solo el codigo que se encuentra en el hilo donde se produce el error de sintaxis se ve afectado y el resto del codigo en otros hilos se ejecuta asumiendo que nada de ellos depende del codigo que contiene el error.</p>
+
+<h3 id="errores-de-tiempo-de-ejecucion">Errores de tiempo de ejecucion</h3>
+
+<p>Los errores de tiempo de ejecucion, tambien llamados excepciones, ocurren durante la ejecucion (despues de la compilacion / interpretacion).</p>
+
+<p>Por ejemplo, la siguiente linea causa un error de tiempo de ejecucion porque aqui la sintaxis es correcta, pero en tiempo de ejecucion, esta intentando llamar a un metodo que no existe.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">printme</span><span class="p">();</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Las excepciones tambien afectan el hilo en el que ocurren, permitiendo que otros hilos de JavaScript continuen la ejecucion normal.</p>
+
+<h3 id="errores-logicos">Errores logicos</h3>
+
+<p>Los errores logicos pueden ser el tipo de error mas dificil de rastrear. Estos errores no son el resultado de un error de sintaxis o tiempo de ejecucion. En cambio, ocurren cuando comete un error en la logica que impulsa su script y no obtiene el resultado que esperaba.</p>
+
+<p>No puede detectar esos errores, ya que depende de los requisitos de su programa, que tipo de logica desea poner.</p>
+
+<h3 id="la-sentencia-trycatchfinally">La sentencia try…catch…finally</h3>
+
+<p>Las ultimas versiones de JavaScript agregaron capacidades de manejo de excepciones. JavaScript implementa el constructor <code class="highlighter-rouge">try ... catch ... finally</code>, asi como el operador <code class="highlighter-rouge">throw</code> para manejar excepciones.</p>
+
+<p>Puede detectar excepciones generadas por el programador y en tiempo de ejecucion, pero no puede detectar errores de sintaxis de JavaScript.</p>
+
+<p>Aqui esta el bloque la sintaxis <code class="highlighter-rouge">try...catch...finally</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="k">try</span> <span class="p">{</span>
+         <span class="c1">// Code to run</span>
+         <span class="p">[</span><span class="k">break</span><span class="p">;]</span>
+      <span class="p">}</span> 
+      
+      <span class="k">catch</span> <span class="p">(</span> <span class="nx">e</span> <span class="p">)</span> <span class="p">{</span>
+         <span class="c1">// Code to run if an exception occurs</span>
+         <span class="p">[</span><span class="k">break</span><span class="p">;]</span>
+      <span class="p">}</span>
+      
+      <span class="p">[</span> <span class="k">finally</span> <span class="p">{</span>
+         <span class="c1">// Code that is always executed regardless of </span>
+         <span class="c1">// an exception occurring</span>
+      <span class="p">}]</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>El bloque <code class="highlighter-rouge">try</code> debe ir seguido de un bloque <code class="highlighter-rouge">catch</code> o un bloque <code class="highlighter-rouge">finally</code> (o uno de ambos). Cuando ocurre una excepcion en el bloque <code class="highlighter-rouge">try</code>, la excepcion se coloca en <code class="highlighter-rouge">e</code> y se ejecuta el bloque <code class="highlighter-rouge">catch</code>. El bloque opcional <code class="highlighter-rouge">finLLY</code> se ejecuta incondicionalmente despues de <code class="highlighter-rouge">try / catch</code>.</p>
+
+<h4 id="ejemplos">Ejemplos</h4>
+
+<p>Aqui hay un ejemplo en el que estamos tratando de llamar a una funcion no existente que a su vez esta generando una excepcion. Veamos como se comporta sin <code class="highlighter-rouge">try ... catch</code>−</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of variable a is : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span> <span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Ahora intentemos detectar esta excepcion usando <code class="highlighter-rouge">try ... catch</code> y mostrar un mensaje facil de usar. Tambien puede suprimir este mensaje, si desea ocultar este error a un usuario.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+               <span class="k">try</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of variable a is : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span> <span class="p">);</span>
+               <span class="p">}</span> 
+               <span class="k">catch</span> <span class="p">(</span> <span class="nx">e</span> <span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">description</span> <span class="p">);</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Puede usar el bloque <code class="highlighter-rouge">finally</code>  que siempre se ejecutara incondicionalmente despues del <code class="highlighter-rouge">try / catch</code>. Aqui hay un ejemplo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+               
+               <span class="k">try</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Value of variable a is : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span> <span class="p">);</span>
+               <span class="p">}</span>
+               <span class="k">catch</span> <span class="p">(</span> <span class="nx">e</span> <span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">description</span> <span class="p">);</span>
+               <span class="p">}</span>
+               <span class="k">finally</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Finally block will always execute!</span><span class="dl">"</span> <span class="p">);</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="la-sentencia-throw">La sentencia throw</h3>
+
+<p>Puede usar la instruccion <code class="highlighter-rouge">throw</code> para aumentar sus excepciones integradas o excepciones personalizadas. Mas tarde, estas excepciones se pueden capturar y puede tomar una accion adecuada.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>El siguiente ejemplo muestra como usar una instruccion <code class="highlighter-rouge">throw</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">myFunc</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+               <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+               
+               <span class="k">try</span> <span class="p">{</span>
+                  <span class="k">if</span> <span class="p">(</span> <span class="nx">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+                     <span class="k">throw</span><span class="p">(</span> <span class="dl">"</span><span class="s2">Divide by zero error.</span><span class="dl">"</span> <span class="p">);</span> 
+                  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                     <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">;</span>
+                  <span class="p">}</span>
+               <span class="p">}</span>
+               <span class="k">catch</span> <span class="p">(</span> <span class="nx">e</span> <span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span> <span class="p">);</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Puede generar una excepcion en una funcion utilizando una cadena, un entero, un booleano o un objeto y luego puede capturar esa excepcion en la misma funcion que hicimos anteriormente o en otra funcion utilizando un bloque <code class="highlighter-rouge">try ... catch</code>.</p>
+
+<h3 id="el-metodo-onerror">El metodo onerror()</h3>
+
+<p>El controlador de eventos <code class="highlighter-rouge">onerror</code> fue la primera caracteristica para facilitar el manejo de errores en JavaScript. El evento <code class="highlighter-rouge">error</code> se activa en el objeto ventana cada vez que se produce una excepcion en la pagina.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">An error occurred.</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>El controlador de eventos <code class="highlighter-rouge">onerror</code> proporciona tres piezas de informacion para identificar la naturaleza exacta del error:</p>
+
+<ul>
+  <li>
+    <p>Mensaje de error: el mismo mensaje que el navegador mostraria para el error dado</p>
+  </li>
+  <li>
+    <p>URL: el archivo en el que se produjo el error</p>
+  </li>
+  <li>
+    <p>Numero de linea: el numero de linea en la URL dada que causo el error</p>
+  </li>
+</ul>
+
+<p>Aqui esta el ejemplo para mostrar como extraer esta informacion.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">line</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">msg</span> <span class="p">);</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">url : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">url</span> <span class="p">);</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Line number : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">line</span> <span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following to see the result:<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Click Me"</span> <span class="na">onclick = </span><span class="s">"myFunc();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Puede mostrar la informacion de la forma que considere mejor.</p>
+
+<p>Puede usar un metodo <code class="highlighter-rouge">onerror</code>, como se muestra a continuacion, para mostrar un mensaje de error en caso de que haya algun problema al cargar una imagen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"myimage.gif"</span> <span class="na">onerror=</span><span class="s">"alert('An error occurred loading the image.')"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Puede usar <code class="highlighter-rouge">onerror</code> con muchas etiquetas HTML para mostrar mensajes apropiados en caso de errores.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

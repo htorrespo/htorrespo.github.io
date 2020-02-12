@@ -1,0 +1,179 @@
+I"�$
+<ol>
+  <li>Use <code class="highlighter-rouge">var</code> al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de <code class="highlighter-rouge">var</code> delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar <code class="highlighter-rouge">var</code>, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.</li>
+</ol>
+
+<p>También existe la opción de usar <code class="highlighter-rouge">let</code> y <code class="highlighter-rouge">const</code> dependiendo del caso de uso.</p>
+
+<p>La instrucción <code class="highlighter-rouge">let</code> permite crear una variable con el alcance limitado al bloque en el que se utiliza.</p>
+
+<p>Considere el siguiente fragmento de código.</p>
+
+<pre><code class="language-Javascript">function varDeclaration(){
+    let a =10;
+    console.log(a);  // output 10
+    if(true){
+        let a=20;
+        console.log(a); // output 20
+    }
+    console.log(a);  // output 10
+}
+</code></pre>
+
+<p>Es el mismo comportamiento que vemos en la mayoría de los lenguajes.</p>
+
+<pre><code class="language-JavaScript">function varDeclaration(){
+    let a =10;
+    let a =20; //throws syntax error
+    console.log(a);
+}
+</code></pre>
+<p><strong>Error Message: Uncaught SyntaxError: Identifier ‘a’ has already been declared.</strong></p>
+
+<p>Sin embargo, con <code class="highlighter-rouge">var</code>, funciona bien.</p>
+
+<pre><code class="language-Javascript">function varDeclaration(){
+    var a =10;
+    var a =20;
+    console.log(a);  //output 20
+}
+</code></pre>
+
+<p>El alcance se mantendrá bien con una declaración <code class="highlighter-rouge">let</code> y cuando se utiliza una función interna, la declaración <code class="highlighter-rouge">let</code> hace que su código sea limpio y claro.</p>
+
+<p>→ los valores de la sentencia <code class="highlighter-rouge">const</code> pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración <code class="highlighter-rouge">const</code> funciona de manera similar a las declaraciones <code class="highlighter-rouge">let</code>.</p>
+
+<pre><code class="language-JavaScript">function varDeclaration(){
+    const MY_VARIABLE =10;
+    console.log(MY_VARIABLE);  //output 10
+}
+</code></pre>
+
+<p>Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable <code class="highlighter-rouge">const</code>?</p>
+
+<p>Considere el siguiente fragmento de código.</p>
+
+<pre><code class="language-JavaScript">function varDeclaration(){
+    const MY_VARIABLE =10;
+    console.log(MY_VARIABLE);  //output 10
+    MY_VARIABLE =20;           //throws type error
+    console.log(MY_VARIABLE);
+}
+</code></pre>
+
+<p><strong>Error Message : Uncaught TypeError: Assignment to constant variable.</strong></p>
+
+<p>El código arrojará un error cuando intentemos reasignar la variable <code class="highlighter-rouge">const</code> existente.</p>
+
+<ol>
+  <li>Utilice siempre <code class="highlighter-rouge">===</code> como comparador en lugar de <code class="highlighter-rouge">==</code> (estricto igual). Use <code class="highlighter-rouge">===</code> en lugar de <code class="highlighter-rouge">==</code> porque cuando usa <code class="highlighter-rouge">==</code> hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.</li>
+</ol>
+
+<pre><code class="language-JavaScript">3 == ‘3’ // true
+3 === ‘3’ //false
+</code></pre>
+
+<p>Esto sucede porque en <code class="highlighter-rouge">===</code> la comparación tiene lugar entre el valor y el tipo.</p>
+
+<pre><code class="language-JavaScript">[10] == 10   // is true
+[10] === 10  // is false
+'10' == 10   // is true
+'10' === 10  // is false
+[] == 0      // is true
+[] === 0     // is false
+'' == false  // is true
+'' === false // is false
+</code></pre>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">undefined</code>, <code class="highlighter-rouge">null</code>, <code class="highlighter-rouge">0</code>, <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">NaN</code>, (cadena vacía) son todas condiciones falsas.</p>
+  </li>
+  <li>
+    <p>Vaciar una matriz</p>
+  </li>
+</ol>
+
+<pre><code class="language-JavaScript">var sampleArray = [2, 223, 54, 31];
+sampleArray.length = 0; // sampleArray becomes []
+</code></pre>
+
+<ol>
+  <li>Redondeo a N decimales</li>
+</ol>
+
+<pre><code class="language-JavaScript">var n = 2.4134213123;
+n = n.toFixed(4); // computes n = "2.4134"
+</code></pre>
+
+<ol>
+  <li>Verifique que su cálculo produzca un resultado finito.</li>
+</ol>
+
+<pre><code class="language-JavaScript">isFinite(0/0);       // false
+isFinite('foo');     // true
+isFinite('10');      // true
+isFinite(10);        // true
+isFinite(undefined); // false
+isFinite();          // false  
+isFinite(null);      // true
+</code></pre>
+
+<p>Tomemos un ejemplo para comprender el uso de esta función, supongamos que ha escrito una consulta de base de datos sobre una tabla que contiene una gran cantidad de datos y después de la ejecución de la consulta no está seguro de todos los valores de resultado posibles de esa consulta. Los datos de la consulta cambian en algo que usted pone dinámicamente en la consulta. En tal caso, no está seguro acerca de la propiedad finita del resultado y si usa ese resultado directamente, puede darle una condición infinita, lo que puede romper su código.</p>
+
+<p>Por lo tanto, se recomienda usar <code class="highlighter-rouge">isFinite()</code> antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.</p>
+
+<ol>
+  <li>Use una instrucción <code class="highlighter-rouge">switch/case</code> en lugar de una serie de <code class="highlighter-rouge">if/else</code></li>
+</ol>
+
+<p>Usar <code class="highlighter-rouge">switch/case</code> es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.</p>
+
+<ol>
+  <li>Uso de <code class="highlighter-rouge">use strict”</code> dentro de su archivo. La cadena <code class="highlighter-rouge">use strict”</code> evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.</li>
+</ol>
+
+<pre><code class="language-JavaScript">// This is bad, since you do create a global without having anyone to tell you
+(function () {
+   a = 42;
+   console.log(a);
+   // → 42
+})();
+console.log(a);
+// → 42
+</code></pre>
+
+<p><code class="highlighter-rouge">use strict</code> lo mantendrá alejado de cometer el anterior error. Usando <code class="highlighter-rouge">use strict</code>, puede obtener bastantes errores:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="err">“</span><span class="nx">use</span> <span class="nx">strict</span><span class="err">”</span><span class="p">;</span>
+   <span class="nx">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+   <span class="c1">// Error: Uncaught ReferenceError: a is not defined</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>Podría preguntarse por qué no puede poner <code class="highlighter-rouge">use strict</code>fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.</p>
+
+<ol>
+  <li>Use <code class="highlighter-rouge">&amp;&amp;</code> y <code class="highlighter-rouge">||</code> para crear magia</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">“”</span> <span class="o">||</span> <span class="err">“</span><span class="nx">foo</span><span class="err">”</span>
+<span class="c1">// -&gt; “foo”undefined || 42</span>
+<span class="c1">// -&gt; 42function doSomething () {</span>
+   <span class="k">return</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="err">“</span><span class="nx">bar</span><span class="err">”</span> <span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">expr</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">expr</span> <span class="o">&amp;&amp;</span> <span class="nx">doSomething</span><span class="p">();</span>
+<span class="nx">res</span> <span class="o">&amp;&amp;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="c1">// -&gt; { foo: “bar” }</span>
+</code></pre></div></div>
+
+<p>Además, no olvide usar un embellecedor de código al codificar. Utilice JSLint y minificación (JSMin, por ejemplo) antes de lanzarlo. Esto lo ayudará a mantener un estándar de codificación en su proyecto y hacerlo lo más estándar posible.</p>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

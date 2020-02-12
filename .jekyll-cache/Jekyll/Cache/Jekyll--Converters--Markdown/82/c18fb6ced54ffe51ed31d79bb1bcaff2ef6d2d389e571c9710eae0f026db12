@@ -1,0 +1,89 @@
+I"<p>Mientras escribe un programa, puede encontrarse con una situacion en la que necesita realizar una accion una y otra vez. En tales situaciones, necesitaria escribir instrucciones de bucle para reducir el numero de lineas.</p>
+
+<p>JavaScript soporta todos los bucles necesarios para aliviar la presion de la programacion.</p>
+
+<h3 id="sentencia-while">Sentencia <code class="highlighter-rouge">while</code></h3>
+
+<p>El bucle más basico en JavaScript es el bucle <code class="highlighter-rouge">while</code>. El proposito de un bucle <code class="highlighter-rouge">while</code> es ejecutar una instruccion o un bloque de codigo repetidamente siempre que una expresion sea verdadera. Una vez que la expresion se vuelve falsa, el bucle termina.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de una instruccion <code class="highlighter-rouge">while</code> basica es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span> <span class="k">if</span> <span class="nx">expression</span> <span class="nx">is</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para comprender como funciona la instruccion <code class="highlighter-rouge">while</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Starting Loop </span><span class="dl">"</span><span class="p">);</span>
+         
+            <span class="k">while</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Current Count : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">count</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+         
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Loop stopped!</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="sentencia-do--while">Sentencia <code class="highlighter-rouge">do ... while</code></h3>
+
+<p>El bucle <code class="highlighter-rouge">do ... while</code> es similar al bucle <code class="highlighter-rouge">while</code>, excepto que la verificacion de la condicion ocurre al final del bucle. Esto significa que el bucle siempre se ejecutara al menos una vez, incluso si la condicion es falsa.</p>
+
+<h4 id="syntax">Syntax</h4>
+
+<p>La sintaxis para el el bucle <code class="highlighter-rouge">do ... while</code> es la siguiente.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+   <span class="nx">Statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">executed</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Nota: No olvides el punto y coma usado al final del ciclo <code class="highlighter-rouge">do ... while</code></p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para aprender a implementar un bucle <code class="highlighter-rouge">do ... while</code> en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Starting Loop</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="k">do</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Current Count : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">count</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            
+            <span class="k">while</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">Loop stopped!</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

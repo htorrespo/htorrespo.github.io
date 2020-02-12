@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Introducccion a Kriging en R | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Introducccion a Kriging en R" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Este documento pretende ser una introduccion al trabajo con kriging en R.","@type":"BlogPosting","headline":"Introducccion a Kriging en R","dateModified":"2019-06-22T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/22/r-kriging.html","datePublished":"2019-06-22T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/22/r-kriging.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Este documento pretende ser una introduccion al trabajo con kriging en R.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/22/r-kriging.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/06/22/r-kriging.html","headline":"Introducccion a Kriging en R","dateModified":"2019-06-22T00:00:00+00:00","datePublished":"2019-06-22T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -144,7 +144,7 @@
         <div class="e-content">
           <h3 id="paquetes-utilizados">Paquetes Utilizados</h3>
 
-<p>Para trabajar con datos espaciales (y espacio-temporales), usamos el paquete <code class="highlighter-rouge">gstat</code>, que incluye funcionalidad para kriging, entre otras muchas cosas.</p>
+<p>Para trabajar con datos espaciales (y espacio-temporales), usamos el paquete <code class="language-plaintext highlighter-rouge">gstat</code>, que incluye funcionalidad para kriging, entre otras muchas cosas.</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">install.packages("dplyr")
 install.packages("sp")
@@ -165,7 +165,7 @@ library(gridExtra)
 
 <h3 id="conjunto-de-datos">Conjunto de Datos</h3>
 
-<p>Los datos que estamos utilizamos son el conjunto de datos del proyecto meuse, que viene con el paquete <code class="highlighter-rouge">sp</code>.</p>
+<p>Los datos que estamos utilizamos son el conjunto de datos del proyecto meuse, que viene con el paquete <code class="language-plaintext highlighter-rouge">sp</code>.</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span>packages <span class="k">for </span>manipulation &amp; visualization
 <span class="go">suppressPackageStartupMessages({
@@ -227,7 +227,7 @@ meuse@coords
   <li>y proj4string.</li>
 </ul>
 
-<p>Se puede acceder a cada una de estas ranuras directamente mediante el operador <code class="highlighter-rouge">@</code> o mediante las funciones de ayuda que simplifican la sintaxis para acceder a ellas, por ejemplo,</p>
+<p>Se puede acceder a cada una de estas ranuras directamente mediante el operador <code class="language-plaintext highlighter-rouge">@</code> o mediante las funciones de ayuda que simplifican la sintaxis para acceder a ellas, por ejemplo,</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span>access various slots of the SPDF
 <span class="go">bbox(meuse)
@@ -242,7 +242,7 @@ meuse@bbox
 identical( coordinates(meuse), meuse@coords )
 </span></code></pre></div></div>
 
-<p>Algunas veces ciertas funciones (como con <code class="highlighter-rouge">ggplot2</code>) requieren el uso de un data frame y no un SPDF. En tales casos, se pueden forzar manualmente los datos a un data frame para retener la informacion de coordenadas, en lugar de simplemente acceder a la ranura de datos:</p>
+<p>Algunas veces ciertas funciones (como con <code class="language-plaintext highlighter-rouge">ggplot2</code>) requieren el uso de un data frame y no un SPDF. En tales casos, se pueden forzar manualmente los datos a un data frame para retener la informacion de coordenadas, en lugar de simplemente acceder a la ranura de datos:</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">meuse@data %&gt;</span>% glimpse
 <span class="go">
@@ -300,7 +300,7 @@ grid.arrange(plot1, plot2, ncol = 2)
 
 <h3 id="calculos-preliminares">Calculos Preliminares</h3>
 
-<p>Una vez preparado lo anterior, estamos listos para realizar kriging a los datos. Esto se puede hacer con la funcion <code class="highlighter-rouge">gstat:: krige</code>, que generalmente toma cuatro argumentos:</p>
+<p>Una vez preparado lo anterior, estamos listos para realizar kriging a los datos. Esto se puede hacer con la funcion <code class="language-plaintext highlighter-rouge">gstat:: krige</code>, que generalmente toma cuatro argumentos:</p>
 
 <ul>
   <li>
@@ -338,7 +338,7 @@ grid.arrange(plot1, plot2, ncol = 2)
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envienos sus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

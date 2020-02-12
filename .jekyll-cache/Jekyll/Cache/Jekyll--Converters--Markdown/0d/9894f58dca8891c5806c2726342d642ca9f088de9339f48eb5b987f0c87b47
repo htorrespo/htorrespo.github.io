@@ -1,0 +1,43 @@
+I"€<p>Antes de JavaScript 1.2, la definicion de funcion solo estaba permitida en el ambito global, pero JavaScript 1.2 permite que las definiciones de funcion se aniden tambien dentro de otras funciones. Aun hay restriccion en cuanto a que la definicion de funciones no pueden aparecer dentro de bucles o condicionales. Estas restricciones en la definicion de las funciones se aplican solo a declaraciones de funciones con la sentencia <code class="highlighter-rouge">function</code>.</p>
+
+<p>Como veremos mas adelante, las funciones literales (otra caracteristica introducida en JavaScript 1.2) pueden aparecer dentro de cualquier expresion de JavaScript, lo que significa que pueden aparecer dentro de <code class="highlighter-rouge">if</code> y otras declaraciones.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para aprender a implementar funciones anidadas.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">hypotenuse</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+               <span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span> <span class="p">}</span>
+               <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="nx">square</span><span class="p">(</span><span class="nx">b</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">secondFunction</span><span class="p">()</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">result</span><span class="p">;</span>
+               <span class="nx">result</span> <span class="o">=</span> <span class="nx">hypotenuse</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span> <span class="nx">result</span> <span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button to call the function<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"secondFunction()"</span> <span class="na">value = </span><span class="s">"Call Function"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+      <span class="nt">&lt;p&gt;</span>Use different parameters inside the function and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

@@ -1,0 +1,54 @@
+I"g<p>Cada pagina web reside dentro de una ventana del navegador que puede considerarse como un objeto.</p>
+
+<p>Un objeto documento representa al documento HTML que se muestra en esa ventana. El objeto documento tiene varias propiedades que se refieren a otros objetos que permiten el acceso y la modificación del contenido del documento.</p>
+
+<p>La forma en que se accede y modifica el contenido de un documento se denomina Modelo de Objeto Documento, o DOM. Los objetos están organizados en una jerarquía. Esta estructura jerarquica se aplica a la organización de objetos en un documento web.</p>
+
+<ul>
+  <li>
+    <p>Objeto ventana - Inicio de la jerarquia. Es el elemento mas externo de la jerarquía de objetos.</p>
+  </li>
+  <li>
+    <p>Objeto documento: cada documento HTML que se carga en una ventana se convierte en un objeto documento. El documento contiene los contenidos de la pagina.</p>
+  </li>
+  <li>
+    <p>Objeto Formulario: todo lo que se incluye en las etiquetas <code class="highlighter-rouge">&lt;form&gt; ... &lt;/form&gt;</code> corresponde al objeto Formulario.</p>
+  </li>
+  <li>
+    <p>Elementos de control de formulario: el objeto Formulario contiene todos los elementos definidos para ese objeto, como campos de texto, botones, botones de opcion y casillas de verificacion.</p>
+  </li>
+</ul>
+
+<p>Existen varios modelos DOM</p>
+
+<ul>
+  <li>
+    <p>El DOM Lejendario: este es el modelo que se introdujo en las primeras versiones del lenguaje JavaScript. Es compatible con todos los navegadores, pero permite el acceso solo a ciertas partes clave de los documentos, como formularios, elementos de formulario e imagenes.</p>
+  </li>
+  <li>
+    <p>W3C DOM: este modelo de objeto documento permite el acceso y  modificacion de todo el contenido del documento y esta estandarizado por el World Wide Web Consortium (W3C). Este modelo es compatible con casi todos los navegadores modernos.</p>
+  </li>
+  <li>
+    <p>El DOM de IE4: este modelo de objeto documento se introdujo en la Versión 4 del navegador Internet Explorer de Microsoft. IE 5 y las versiones posteriores incluyen soporte para la mayoría de las funciones basicas de W3C DOM.</p>
+  </li>
+</ul>
+
+<h3 id="compatibilidad-dom">Compatibilidad DOM</h3>
+
+<p>Si desea escribir un script con la flexibilidad de usar W3C DOM o IE 4 DOM segun su disponibilidad, entonces puede usar un enfoque de prueba de capacidad que primero verifique la existencia de un metodo o propiedad para determinar si el navegador tiene La capacidad que deseas. Por ejemplo</p>
+
+<pre><code class="language-JavaScript">if (document.getElementById) {
+   // If the W3C method exists, use it
+} else if (document.all) {
+   // If the all[] array exists, use it
+} else {
+   // Otherwise use the legacy DOM
+}
+</code></pre>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

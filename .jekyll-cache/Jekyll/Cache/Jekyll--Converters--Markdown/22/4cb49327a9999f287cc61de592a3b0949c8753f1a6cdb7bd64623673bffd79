@@ -1,0 +1,218 @@
+I"Z(<p>Una de las características fundamentales de un lenguaje de programación son los tipos de datos que admite. Estos es los tipos de valores que se pueden representar y manipular en un lenguaje de programación.</p>
+
+<p>JavaScript permite trabajar con tres tipos de datos primitivos:</p>
+
+<ul>
+  <li>
+    <p>Números, por ejemplo. 123, 120.50 etc.</p>
+  </li>
+  <li>
+    <p>Cadenas de caracteres, p. “Esta cadena de texto” etc.</p>
+  </li>
+  <li>
+    <p>Booleano por ejemplo verdadero o falso.</p>
+  </li>
+</ul>
+
+<p>JavaScript también define dos tipos de datos triviales, null y undefined, cada uno de los cuales define un solo valor. Además de estos tipos de datos primitivos, JavaScript admite un tipo de datos compuesto conocido como objeto. Cubriremos los objetos en detalle en otro capítulo.</p>
+
+<p>Nota: JavaScript no hace una distinción entre valores enteros y valores de punto flotante. Todos los números en JavaScript se representan como valores de punto flotante. JavaScript representa los números en formato de punto flotante de 64 bits definido por el estándar IEEE 754.</p>
+
+<h2 id="variables-en-javascript">Variables en JavaScript</h2>
+
+<p>Como muchos lenguajes de programación, JavaScript tiene variables. Las variables se pueden considerar como contenedores con nombre. Puede colocar datos en estos contenedores y luego referirse a los datos simplemente nombrando el contenedor.</p>
+
+<p>Antes de utilizar una variable en un programa, debe declararla. Las variables se declaran con la palabra clave var de la siguiente manera.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">var</span> <span class="nx">money</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">name</span><span class="p">;</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Puede declarar múltiples variables con la palabra clave <code class="highlighter-rouge">var</code> de la siguiente manera:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">var</span> <span class="nx">money</span><span class="p">,</span> <span class="nx">name</span><span class="p">;</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Almacenar un valor en una variable se llama inicialización de variable. Puede realizar la inicialización de variables en el momento de la creación de la variable o en un momento posterior cuando necesite esa variable.</p>
+
+<p>Por ejemplo, puede crear una variable llamada money y asignarle el valor 2000.50 más adelante. Para otra variable, puede asignar un valor en el momento de la inicialización de la siguiente manera.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Ali</span><span class="dl">"</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">money</span><span class="p">;</span>
+      <span class="nx">money</span> <span class="o">=</span> <span class="mf">2000.50</span><span class="p">;</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Nota: utilice la palabra clave <code class="highlighter-rouge">var</code> para la declaración o inicialización. No debe declarar de nuevo la misma variable dos veces.</p>
+
+<p>JavaScript es un lenguaje no tipado. Esto significa que una variable de JavaScript puede contener un valor de cualquier tipo de datos. A diferencia de muchos otros idiomas, no tiene que decirle a JavaScript durante la declaración de variables qué tipo de valor tendrá la variable. El tipo de valor de una variable puede cambiar durante la ejecución de un programa y JavaScript se encarga de ello automáticamente.</p>
+
+<h2 id="alcance-de-variables-en-javascript">Alcance de Variables en JavaScript</h2>
+
+<p>El alcance de una variable es la región en la que se define. Las variables de JavaScript tienen solo dos ámbitos.</p>
+
+<ul>
+  <li>
+    <p><strong>Variables globales</strong>: una variable global tiene un alcance global, lo que significa que puede definirse en cualquier parte de su código JavaScript.</p>
+  </li>
+  <li>
+    <p><strong>Variables locales</strong>: una variable local será visible solo dentro de una función donde está definida. Los parámetros de función son siempre locales a esa función.</p>
+  </li>
+</ul>
+
+<p>Dentro del cuerpo de una función, una variable local tiene prioridad sobre una variable global con el mismo nombre. Si declara una variable local o un parámetro de función con el mismo nombre que una variable global, se oculta la variable global. Echa un vistazo al siguiente ejemplo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body</span> <span class="na">onload = </span><span class="s">checkscope();</span><span class="nt">&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">global</span><span class="dl">"</span><span class="p">;</span>      <span class="c1">// Declare a global variable</span>
+            <span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">local</span><span class="dl">"</span><span class="p">;</span>    <span class="c1">// Declare a local variable</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>     
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Esto produce el siguiente resultado:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local
+</code></pre></div></div>
+
+<h2 id="nombres-de-variables-en-javascript">Nombres de variables en JavaScript</h2>
+
+<p>Al nombrar variables en JavaScript, tenga en cuenta las siguientes reglas.</p>
+
+<ul>
+  <li>
+    <p>No utilizar ninguna de las palabras clave reservadas de JavaScript como variable. Estas palabras clave se mencionan en la siguiente sección. Por ejemplo, los nombres de variable <code class="highlighter-rouge">break</code> o <code class="highlighter-rouge">boolean</code> no son válidos.</p>
+  </li>
+  <li>
+    <p>Los nombres de variables en JavaScript no deben comenzar con un número (0-9). Deben comenzar con una letra o un carácter de subrayado. Por ejemplo, <code class="highlighter-rouge">123test</code> es un nombre de variable no válido pero <code class="highlighter-rouge">_123test</code> es válido.</p>
+  </li>
+  <li>
+    <p>Los nombres de variables en JavaScript distinguen entre mayúsculas y minúsculas. Por ejemplo, <code class="highlighter-rouge">Nombre</code> y <code class="highlighter-rouge">nombre</code> son  variables diferentes.</p>
+  </li>
+</ul>
+
+<h2 id="palabras-reservadas-en-javascript">Palabras reservadas en JavaScript</h2>
+
+<p>En la siguiente tabla se proporciona una lista de palabras reservadas en JavaScript. No se pueden utilizar en nombres de variables, funciones, métodos, etiquetas de bucle o nombres de objetos de JavaScript.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>abstract</th>
+      <th>else</th>
+      <th>instanceof</th>
+      <th>switch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boolean</td>
+      <td>enum</td>
+      <td>int</td>
+      <td>synchronized</td>
+    </tr>
+    <tr>
+      <td>break</td>
+      <td>export</td>
+      <td>interface</td>
+      <td>this</td>
+    </tr>
+    <tr>
+      <td>byte</td>
+      <td>extends</td>
+      <td>long</td>
+      <td>throw</td>
+    </tr>
+    <tr>
+      <td>case</td>
+      <td>false</td>
+      <td>native</td>
+      <td>throws</td>
+    </tr>
+    <tr>
+      <td>catch</td>
+      <td>final</td>
+      <td>new</td>
+      <td>transient</td>
+    </tr>
+    <tr>
+      <td>char</td>
+      <td>finally</td>
+      <td>null</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td>float</td>
+      <td>package</td>
+      <td>try</td>
+    </tr>
+    <tr>
+      <td>const</td>
+      <td>for</td>
+      <td>private</td>
+      <td>typeof</td>
+    </tr>
+    <tr>
+      <td>continue</td>
+      <td>function</td>
+      <td>protected</td>
+      <td>var</td>
+    </tr>
+    <tr>
+      <td>debugger</td>
+      <td>goto</td>
+      <td>public</td>
+      <td>void</td>
+    </tr>
+    <tr>
+      <td>default</td>
+      <td>if</td>
+      <td>return</td>
+      <td>volatile</td>
+    </tr>
+    <tr>
+      <td>delete</td>
+      <td>implements</td>
+      <td>short</td>
+      <td>while</td>
+    </tr>
+    <tr>
+      <td>do</td>
+      <td>import</td>
+      <td>static</td>
+      <td>with</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>in</td>
+      <td>super</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

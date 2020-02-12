@@ -1,0 +1,120 @@
+I"G"<p>JavaScript se puede implementar utilizando declaraciones JavaScript que se colocan dentro de las etiquetas HTML <code class="highlighter-rouge">&lt;script&gt; ... &lt;/script&gt;</code> en una página web.</p>
+
+<p>Puede poner las etiquetas <code class="highlighter-rouge">&lt;script&gt;</code>, que contienen JavaScript en cualquier lugar dentro de su página web, pero normalmente se recomienda que las mantenga dentro de las etiquetas <code class="highlighter-rouge">&lt;head&gt;</code>.</p>
+
+<p>La etiqueta <code class="highlighter-rouge">&lt;script&gt;</code> alerta al programa del navegador para que comience a interpretar todo el texto entre estas etiquetas como una secuencia de comandos. Una simple sintaxis de JavaScript aparecerá de la siguiente manera.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="err">...</span><span class="nt">&gt;</span>
+   <span class="nx">JavaScript</span> <span class="nx">code</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>La etiqueta script toma dos atributos importantes:</p>
+
+<p><strong>- Language</strong>: este atributo especifica qué lenguaje de secuencias de comandos está utilizando. Típicamente, su valor será javascript. Aunque las versiones recientes de HTML (y XHTML, su sucesor) han eliminado el uso de este atributo.</p>
+
+<p><strong>- Tipo</strong>: este atributo es lo que se recomienda para indicar el lenguaje de scripting en uso y su valor debe establecerse en “<code class="highlighter-rouge">text/javascript</code>”.</p>
+
+<p>Entonces el segmento JavaScript se verá como</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="nx">JavaScript</span> <span class="nx">code</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="primer-código-javascript">Primer código JavaScript</h2>
+
+<p>Tomemos un ejemplo de muestra para imprimir “<code class="highlighter-rouge">Hello World</code>”. Agregamos un comentario HTML opcional que rodea el código JavaScript. Esto es para guardar nuestro código desde un navegador que no es compatible con JavaScript. El comentario termina con un “<code class="highlighter-rouge">// --&gt;</code>”. Aquí “<code class="highlighter-rouge">//</code>” significa un comentario en JavaScript, así que agregamos eso para evitar que un navegador lea el final del comentario HTML como una pieza de código JavaScript. A continuación, llamamos a una función document.write que escribe una cadena de caracteres en nuestro documento HTML.</p>
+
+<p>Esta función se puede utilizar para escribir texto, HTML o ambos. Echa un vistazo al siguiente código.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">)</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>Este código producirá el siguiente resultado:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hola Mundo!
+</code></pre></div></div>
+
+<h2 id="espacio-en-blanco-y-saltos-de-línea">Espacio en blanco y saltos de línea</h2>
+
+<p>JavaScript ignora espacios,  tabs y nuevas líneas que aparecen en programas de JavaScript. Puede usar espacios, tabs y nuevas líneas en su programa, y ​​es libre de formatear y sangrar sus programas de manera clara y coherente que hace que el código sea fácil de leer y entender.</p>
+
+<h2 id="puntos-y-coma-son-opcionales">Puntos y coma son opcionales</h2>
+
+<p>Las declaraciones simples en JavaScript suelen ir seguidas del carácter punto y coma, al igual que en C, C ++ y Java. Sin embargo, JavaScript le permite omitir punto y coma si cada una de sus declaraciones se coloca en una línea separada. Por ejemplo, el siguiente código podría escribirse sin punto y coma.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="nx">var1</span> <span class="o">=</span> <span class="mi">10</span>
+      <span class="nx">var2</span> <span class="o">=</span> <span class="mi">20</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Pero cuando se formatea en una línea de la siguiente manera, debe usar punto y coma:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="nx">var1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">var2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Nota: es una buena práctica de programación usar puntos y coma.</p>
+
+<h2 id="sensible-a-mayusculas-y-minusculas">Sensible a mayusculas y minusculas</h2>
+
+<p>JavaScript es un lenguaje que distingue entre mayúsculas y minúsculas. Esto significa que las palabras clave del lenguaje, las variables, los nombres de las funciones y cualquier otro identificador deben escribirse siempre con mayúsculas y minúsculas.</p>
+
+<p>Así que los identificadores Time y TIME transmitirán diferentes significados en JavaScript.</p>
+
+<p>NOTA: se debe tener cuidado al escribir nombres de variables y funciones en JavaScript.</p>
+
+<h2 id="comentarios-en-javascript">Comentarios en JavaScript</h2>
+
+<p>JavaScript es compatible con los comentarios de estilo C y C ++, por lo tanto,</p>
+
+<ul>
+  <li>
+    <p>Cualquier texto entre un <code class="highlighter-rouge">//</code> y el final de una línea se trata como un comentario y es ignorado por JavaScript.</p>
+  </li>
+  <li>
+    <p>Cualquier texto entre los caracteres <code class="highlighter-rouge">/*</code> y <code class="highlighter-rouge">*/</code> se trata como un comentario. Esto puede abarcar múltiples líneas.</p>
+  </li>
+  <li>
+    <p>JavaScript también reconoce la secuencia de apertura de comentarios HTML &lt;! -. JavaScript trata esto como un comentario de una sola línea, al igual que el comentario <code class="highlighter-rouge">//</code>.</p>
+  </li>
+  <li>
+    <p>La secuencia de cierre de comentarios HTML <code class="highlighter-rouge">-&gt;</code> no es reconocida por JavaScript, por lo que debe escribirse como <code class="highlighter-rouge">// -&gt;</code>.</p>
+  </li>
+</ul>
+
+<h2 id="ejemplo">Ejemplo</h2>
+
+<p>El siguiente ejemplo muestra cómo usar los comentarios en JavaScript.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">language = </span><span class="s">"javascript"</span> <span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="o">&lt;!--</span>
+      <span class="c1">// This is a comment. It is similar to comments in C++</span>
+   
+      <span class="cm">/*
+      * This is a multi-line comment in JavaScript
+      * It is very similar to comments in C Programming
+      */</span>
+   <span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Objeto Date | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Objeto Date" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"El objeto Date Permite trabajar con fechas y horas.","@type":"BlogPosting","headline":"JavaScript - Objeto Date","dateModified":"2019-07-26T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html","datePublished":"2019-07-26T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"El objeto Date Permite trabajar con fechas y horas.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/07/26/js-objetos-date.html","headline":"JavaScript - Objeto Date","dateModified":"2019-07-26T00:00:00+00:00","datePublished":"2019-07-26T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -142,13 +142,13 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>El objeto <code class="highlighter-rouge">Date</code> es un tipo de datos integrado en el lenguaje JavaScript. Los objetos de fecha se crean con la <code class="highlighter-rouge">new Date()</code> como se muestra a continuacion.</p>
+          <p>El objeto <code class="language-plaintext highlighter-rouge">Date</code> es un tipo de datos integrado en el lenguaje JavaScript. Los objetos de fecha se crean con la <code class="language-plaintext highlighter-rouge">new Date()</code> como se muestra a continuacion.</p>
 
-<p>Una vez que se crea un objeto <code class="highlighter-rouge">Date</code>, varios metodos le permiten operar en el. La mayoria de los metodos simplemente le permiten obtener y establecer los campos año, mes, dia, hora, minuto, segundo y milisegundos del objeto, utilizando la hora local o la hora UTC (universal o GMT).</p>
+<p>Una vez que se crea un objeto <code class="language-plaintext highlighter-rouge">Date</code>, varios metodos le permiten operar en el. La mayoria de los metodos simplemente le permiten obtener y establecer los campos año, mes, dia, hora, minuto, segundo y milisegundos del objeto, utilizando la hora local o la hora UTC (universal o GMT).</p>
 
-<p>El estandar ECMAScript requiere que el objeto <code class="highlighter-rouge">Date</code> pueda representar cualquier fecha y hora, con una precision de milisegundos, dentro de los 100 millones de días antes o despues de 1/1/1970. Este es un rango de mas o menos 273,785 años, por lo que JavaScript puede representar la fecha y la hora hasta el año 275755.</p>
+<p>El estandar ECMAScript requiere que el objeto <code class="language-plaintext highlighter-rouge">Date</code> pueda representar cualquier fecha y hora, con una precision de milisegundos, dentro de los 100 millones de días antes o despues de 1/1/1970. Este es un rango de mas o menos 273,785 años, por lo que JavaScript puede representar la fecha y la hora hasta el año 275755.</p>
 
-<p>Puede usar cualquiera de las siguientes sintaxis para crear un objeto Date utilizando el constructor <code class="highlighter-rouge">Date()</code>.</p>
+<p>Puede usar cualquiera de las siguientes sintaxis para crear un objeto Date utilizando el constructor <code class="language-plaintext highlighter-rouge">Date()</code>.</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">new Date( )
 new Date(milliseconds)
@@ -160,17 +160,17 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
 
 <p>A continuacon una descripcion de los parametros:</p>
 
-<p><strong>Sin argumento</strong>: sin argumentos, el constructor <code class="highlighter-rouge">Date()</code> crea un objeto Fecha en la fecha y hora actuales.</p>
+<p><strong>Sin argumento</strong>: sin argumentos, el constructor <code class="language-plaintext highlighter-rouge">Date()</code> crea un objeto Fecha en la fecha y hora actuales.</p>
 
-<p><strong>milliseconds</strong>: cuando se pasa un argumento numerico, se toma la representación numerica interna de la fecha en milisegundos, segun lo devuelto por el método <code class="highlighter-rouge">getTime()</code>. Por ejemplo, pasar el argumento 5000 crea una fecha que representa cinco segundos después de la medianoche de 1/1/70.</p>
+<p><strong>milliseconds</strong>: cuando se pasa un argumento numerico, se toma la representación numerica interna de la fecha en milisegundos, segun lo devuelto por el método <code class="language-plaintext highlighter-rouge">getTime()</code>. Por ejemplo, pasar el argumento 5000 crea una fecha que representa cinco segundos después de la medianoche de 1/1/70.</p>
 
-<p><strong>datestring</strong>: cuando se pasa un argumento de cadena, es una representación de cadena de caracteres de una fecha, en el formato aceptado por el método <code class="highlighter-rouge">Date.parse()</code>.</p>
+<p><strong>datestring</strong>: cuando se pasa un argumento de cadena, es una representación de cadena de caracteres de una fecha, en el formato aceptado por el método <code class="language-plaintext highlighter-rouge">Date.parse()</code>.</p>
 
 <p><strong>7 argumentos</strong>: para utilizar la ultima forma del constructor que se muestra arriba. Ahora una descripción de cada argumento:</p>
 
-<h3 id="propiedades-de-date">Propiedades de <code class="highlighter-rouge">Date</code></h3>
+<h3 id="propiedades-de-date">Propiedades de <code class="language-plaintext highlighter-rouge">Date</code></h3>
 
-<p>Aquí hay una lista de las propiedades del objeto <code class="highlighter-rouge">Array</code>:</p>
+<p>Aquí hay una lista de las propiedades del objeto <code class="language-plaintext highlighter-rouge">Array</code>:</p>
 
 <table>
   <thead>
@@ -182,7 +182,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">constructor</code></td>
+      <td><code class="language-plaintext highlighter-rouge">constructor</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -190,7 +190,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">prototype</code></td>
+      <td><code class="language-plaintext highlighter-rouge">prototype</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -199,11 +199,11 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
   </tbody>
 </table>
 
-<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="highlighter-rouge">Date</code>.</p>
+<p>Mas adelante tendremos algunos ejemplos para ilustrar las propiedades del objeto <code class="language-plaintext highlighter-rouge">Date</code>.</p>
 
-<h3 id="metodos-de-date">Metodos de <code class="highlighter-rouge">Date</code></h3>
+<h3 id="metodos-de-date">Metodos de <code class="language-plaintext highlighter-rouge">Date</code></h3>
 
-<p>Aquí hay una lista de los metodos del objeto <code class="highlighter-rouge">Array</code> y su descripcion.</p>
+<p>Aquí hay una lista de los metodos del objeto <code class="language-plaintext highlighter-rouge">Array</code> y su descripcion.</p>
 
 <table>
   <thead>
@@ -215,7 +215,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">Date()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Date()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -223,7 +223,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">getDate()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getDate()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -231,7 +231,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>3</td>
-      <td><code class="highlighter-rouge">getDay()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getDay()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -239,7 +239,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>4</td>
-      <td><code class="highlighter-rouge">getFullYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getFullYear()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -247,7 +247,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>5</td>
-      <td><code class="highlighter-rouge">getHours()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getHours()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -255,7 +255,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>6</td>
-      <td><code class="highlighter-rouge">getMilliseconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getMilliseconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -263,7 +263,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>7</td>
-      <td><code class="highlighter-rouge">getMinutes()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getMinutes()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -271,7 +271,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>8</td>
-      <td><code class="highlighter-rouge">getMonth()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getMonth()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -279,7 +279,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>9</td>
-      <td><code class="highlighter-rouge">getSeconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getSeconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -287,7 +287,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>10</td>
-      <td><code class="highlighter-rouge">getTime()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getTime()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -295,7 +295,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>11</td>
-      <td><code class="highlighter-rouge">getTimezoneOffset()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getTimezoneOffset()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -303,7 +303,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>12</td>
-      <td><code class="highlighter-rouge">getUTCDate()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCDate()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -311,7 +311,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>13</td>
-      <td><code class="highlighter-rouge">getUTCDay()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCDay()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -319,7 +319,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>14</td>
-      <td><code class="highlighter-rouge">getUTCFullYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCFullYear()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -327,7 +327,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>15</td>
-      <td><code class="highlighter-rouge">getUTCHours()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCHours()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -335,7 +335,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>16</td>
-      <td><code class="highlighter-rouge">getUTCMilliseconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCMilliseconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -343,7 +343,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>17</td>
-      <td><code class="highlighter-rouge">getUTCMinutes()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCMinutes()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -351,7 +351,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>18</td>
-      <td><code class="highlighter-rouge">getUTCMonth()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCMonth()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -359,7 +359,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>19</td>
-      <td><code class="highlighter-rouge">getUTCSeconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getUTCSeconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -367,15 +367,15 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>20</td>
-      <td><code class="highlighter-rouge">getYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">getYear()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>En desuso: devuelve el año en la fecha especificada segun la hora local. Use <code class="highlighter-rouge">getFullYear()</code> en su lugar.</td>
+      <td>En desuso: devuelve el año en la fecha especificada segun la hora local. Use <code class="language-plaintext highlighter-rouge">getFullYear()</code> en su lugar.</td>
     </tr>
     <tr>
       <td>21</td>
-      <td><code class="highlighter-rouge">setDate()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setDate()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -383,7 +383,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>22</td>
-      <td><code class="highlighter-rouge">setFullYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setFullYear()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -391,7 +391,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>23</td>
-      <td><code class="highlighter-rouge">setHours()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setHours()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -399,7 +399,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>24</td>
-      <td><code class="highlighter-rouge">setMilliseconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setMilliseconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -407,7 +407,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>25</td>
-      <td><code class="highlighter-rouge">setMinutes()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setMinutes()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -415,7 +415,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>26</td>
-      <td><code class="highlighter-rouge">setMonth()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setMonth()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -423,7 +423,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>27</td>
-      <td><code class="highlighter-rouge">setSeconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setSeconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -431,15 +431,15 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>28</td>
-      <td><code class="highlighter-rouge">setTime()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setTime()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Establece el objeto <code class="highlighter-rouge">Date</code> a la hora representada por una cantidad de milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.</td>
+      <td>Establece el objeto <code class="language-plaintext highlighter-rouge">Date</code> a la hora representada por una cantidad de milisegundos desde el 1 de enero de 1970, 00:00:00 UTC.</td>
     </tr>
     <tr>
       <td>29</td>
-      <td><code class="highlighter-rouge">setUTCDate()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCDate()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -447,7 +447,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>30</td>
-      <td><code class="highlighter-rouge">setUTCFullYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCFullYear()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -455,7 +455,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>31</td>
-      <td><code class="highlighter-rouge">setUTCHours()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCHours()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -463,7 +463,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>32</td>
-      <td><code class="highlighter-rouge">setUTCMilliseconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCMilliseconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -471,7 +471,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>33</td>
-      <td><code class="highlighter-rouge">setUTCMinutes()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCMinutes()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -479,7 +479,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>34</td>
-      <td><code class="highlighter-rouge">setUTCMonth()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCMonth()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -487,7 +487,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>35</td>
-      <td><code class="highlighter-rouge">setUTCSeconds()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setUTCSeconds()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -495,39 +495,39 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>36</td>
-      <td><code class="highlighter-rouge">setYear()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">setYear()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>En desuso: establece el año para una fecha específica de acuerdo con la hora local. Use <code class="highlighter-rouge">setFullYear()</code> en su lugar.</td>
+      <td>En desuso: establece el año para una fecha específica de acuerdo con la hora local. Use <code class="language-plaintext highlighter-rouge">setFullYear()</code> en su lugar.</td>
     </tr>
     <tr>
       <td>37</td>
-      <td><code class="highlighter-rouge">toDateString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toDateString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve la porcion “date” de  <code class="highlighter-rouge">Date</code> como una cadena de caracteres legible.</td>
+      <td>Devuelve la porcion “date” de  <code class="language-plaintext highlighter-rouge">Date</code> como una cadena de caracteres legible.</td>
     </tr>
     <tr>
       <td>38</td>
-      <td><code class="highlighter-rouge">toGMTString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toGMTString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>En desuso: convierte una fecha en una cadena de caracteres, utilizando las convenciones de GMT de Internet. Utilice <code class="highlighter-rouge">toUTCString()</code> en su lugar.</td>
+      <td>En desuso: convierte una fecha en una cadena de caracteres, utilizando las convenciones de GMT de Internet. Utilice <code class="language-plaintext highlighter-rouge">toUTCString()</code> en su lugar.</td>
     </tr>
     <tr>
       <td>39</td>
-      <td><code class="highlighter-rouge">toLocaleDateString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toLocaleDateString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve la parte “date” de <code class="highlighter-rouge">Date</code> como una cadena de caracteres, usando las convenciones de la configuración regional actual.</td>
+      <td>Devuelve la parte “date” de <code class="language-plaintext highlighter-rouge">Date</code> como una cadena de caracteres, usando las convenciones de la configuración regional actual.</td>
     </tr>
     <tr>
       <td>40</td>
-      <td><code class="highlighter-rouge">toLocaleFormat()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toLocaleFormat()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -535,7 +535,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>41</td>
-      <td><code class="highlighter-rouge">toLocaleString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toLocaleString()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -543,39 +543,39 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>42</td>
-      <td><code class="highlighter-rouge">toLocaleTimeString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toLocaleTimeString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve la parte “time” de <code class="highlighter-rouge">Date</code> como una cadena de caracteres, utilizando las convenciones de la configuración regional actual.</td>
+      <td>Devuelve la parte “time” de <code class="language-plaintext highlighter-rouge">Date</code> como una cadena de caracteres, utilizando las convenciones de la configuración regional actual.</td>
     </tr>
     <tr>
       <td>43</td>
-      <td><code class="highlighter-rouge">toSource()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toSource()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve una cadena de caracteres que representa la fuente para un objeto <code class="highlighter-rouge">Date</code> equivalente; Puedes usar este valor para crear un nuevo objeto.</td>
+      <td>Devuelve una cadena de caracteres que representa la fuente para un objeto <code class="language-plaintext highlighter-rouge">Date</code> equivalente; Puedes usar este valor para crear un nuevo objeto.</td>
     </tr>
     <tr>
       <td>44</td>
-      <td><code class="highlighter-rouge">toString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve una cadena de caracteres que representa el objeto <code class="highlighter-rouge">Date</code>  especificado.</td>
+      <td>Devuelve una cadena de caracteres que representa el objeto <code class="language-plaintext highlighter-rouge">Date</code>  especificado.</td>
     </tr>
     <tr>
       <td>45</td>
-      <td><code class="highlighter-rouge">toTimeString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toTimeString()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve la parte de “time” de  <code class="highlighter-rouge">Date</code> como una cadena legible por el hombre.</td>
+      <td>Devuelve la parte de “time” de  <code class="language-plaintext highlighter-rouge">Date</code> como una cadena legible por el hombre.</td>
     </tr>
     <tr>
       <td>46</td>
-      <td><code class="highlighter-rouge">toUTCString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">toUTCString()</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -583,11 +583,11 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>47</td>
-      <td><code class="highlighter-rouge">valueOf()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">valueOf()</code></td>
     </tr>
     <tr>
       <td> </td>
-      <td>Devuelve el valor primitivo de un objeto <code class="highlighter-rouge">Date</code>.</td>
+      <td>Devuelve el valor primitivo de un objeto <code class="language-plaintext highlighter-rouge">Date</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -596,7 +596,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
 
 <h3 id="métodos-de-fecha-estática">Métodos de fecha estática</h3>
 
-<p>Además de los todos metodos de instancia enumerados anteriormente, el objeto <code class="highlighter-rouge">Date</code> también define dos metodos estaticos. Estos metodos se invocan a traves del propio constructor <code class="highlighter-rouge">Date</code>.</p>
+<p>Además de los todos metodos de instancia enumerados anteriormente, el objeto <code class="language-plaintext highlighter-rouge">Date</code> también define dos metodos estaticos. Estos metodos se invocan a traves del propio constructor <code class="language-plaintext highlighter-rouge">Date</code>.</p>
 
 <table>
   <thead>
@@ -608,7 +608,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
   <tbody>
     <tr>
       <td>1</td>
-      <td><code class="highlighter-rouge">Date.parse( )</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Date.parse( )</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -616,7 +616,7 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
     </tr>
     <tr>
       <td>2</td>
-      <td><code class="highlighter-rouge">Date.UTC( )</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Date.UTC( )</code></td>
     </tr>
     <tr>
       <td> </td>
@@ -625,12 +625,12 @@ new Date(year,month,date[,hour,minute,second,millisecond ])
   </tbody>
 </table>
 
-<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="highlighter-rouge">Date</code>.</p>
+<p>Mas adelante tendremos algunos ejemplos para demostrar el uso de los metodos de <code class="language-plaintext highlighter-rouge">Date</code>.</p>
 
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

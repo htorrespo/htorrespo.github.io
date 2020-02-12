@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Sentencia switch | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Sentencia switch" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"La sentencia switch evalua una expresion, comparando el valor de esa expresion con una instancia case, y ejecuta sentencias asociadas a ese case, así como las sentencias en los case que siguen.","@type":"BlogPosting","headline":"JavaScript - Sentencia switch","dateModified":"2019-06-29T00:00:00+00:00","url":"http://localhost:4000/blog/2019/06/29/js-condicional-switch.html","datePublished":"2019-06-29T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/29/js-condicional-switch.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"La sentencia switch evalua una expresion, comparando el valor de esa expresion con una instancia case, y ejecuta sentencias asociadas a ese case, así como las sentencias en los case que siguen.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/06/29/js-condicional-switch.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/06/29/js-condicional-switch.html","headline":"JavaScript - Sentencia switch","dateModified":"2019-06-29T00:00:00+00:00","datePublished":"2019-06-29T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -142,17 +142,17 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>Puede usar varias instrucciones <code class="highlighter-rouge">if ... else ... if</code>, para realizar bifurcaciones multiples. Sin embargo, esta no es siempre la mejor solucion, especialmente cuando todas las bifurcaciones dependen del valor de una sola variable.</p>
+          <p>Puede usar varias instrucciones <code class="language-plaintext highlighter-rouge">if ... else ... if</code>, para realizar bifurcaciones multiples. Sin embargo, esta no es siempre la mejor solucion, especialmente cuando todas las bifurcaciones dependen del valor de una sola variable.</p>
 
-<p>A partir de JavaScript 1.2, puede usar una sola declaracion que maneje esta situacion, y lo hace con mayor eficiencia en lugar de las ssentencias <code class="highlighter-rouge">if ... else ... if</code></p>
+<p>A partir de JavaScript 1.2, puede usar una sola declaracion que maneje esta situacion, y lo hace con mayor eficiencia en lugar de las ssentencias <code class="language-plaintext highlighter-rouge">if ... else ... if</code></p>
 
-<h3 id="sentencia-switch-case">Sentencia <code class="highlighter-rouge">Switch Case</code></h3>
+<h3 id="sentencia-switch-case">Sentencia <code class="language-plaintext highlighter-rouge">Switch Case</code></h3>
 
-<p>El objetivo de la instruccion <code class="highlighter-rouge">switch</code> es dar una <strong>expresion</strong> para <em>evaluar</em> y diferentes instrucciones para <em>ejecutar</em> en funcion del valor de la <strong>expresion</strong>. El intérprete compara cada caso con el valor de la <strong>expresion</strong> hasta que encuentra una coincidencia. Si nada coincide, se utilizara una condicion por defecto.</p>
+<p>El objetivo de la instruccion <code class="language-plaintext highlighter-rouge">switch</code> es dar una <strong>expresion</strong> para <em>evaluar</em> y diferentes instrucciones para <em>ejecutar</em> en funcion del valor de la <strong>expresion</strong>. El intérprete compara cada caso con el valor de la <strong>expresion</strong> hasta que encuentra una coincidencia. Si nada coincide, se utilizara una condicion por defecto.</p>
 
 <h4 id="sintaxis">Sintaxis</h4>
 
-<p>La sintaxis de una instruccion <code class="highlighter-rouge">switch</code> basica es la siguiente:</p>
+<p>La sintaxis de una instruccion <code class="language-plaintext highlighter-rouge">switch</code> basica es la siguiente:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">case</span> <span class="nx">condition</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
@@ -169,13 +169,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Las declaraciones de ruptura (<code class="highlighter-rouge">break</code>) indican el final de un <code class="highlighter-rouge">case</code> particular. Si se omitieran, el interprete continuaria ejecutando cada sentencia en los siguientes <code class="highlighter-rouge">case</code>.</p>
+<p>Las declaraciones de ruptura (<code class="language-plaintext highlighter-rouge">break</code>) indican el final de un <code class="language-plaintext highlighter-rouge">case</code> particular. Si se omitieran, el interprete continuaria ejecutando cada sentencia en los siguientes <code class="language-plaintext highlighter-rouge">case</code>.</p>
 
-<p>Vamos a explicar la declaracion de ruptura <code class="highlighter-rouge">break</code> posteriormente.</p>
+<p>Vamos a explicar la declaracion de ruptura <code class="language-plaintext highlighter-rouge">break</code> posteriormente.</p>
 
 <h4 id="ejemplo">Ejemplo</h4>
 
-<p>Pruebe el siguiente ejemplo para comprender como funciona la instruccion <code class="highlighter-rouge">switch</code>.</p>
+<p>Pruebe el siguiente ejemplo para comprender como funciona la instruccion <code class="language-plaintext highlighter-rouge">switch</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;body&gt;</span>   
@@ -209,7 +209,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Las declaraciones de ruptura juegan un papel importante en las declaraciones de cambio de <code class="highlighter-rouge">case</code>. Pruebe el siguiente codigo que usa la instruccion <code class="highlighter-rouge">switch-case</code> sin ninguna instruccion <code class="highlighter-rouge">break</code>.</p>
+<p>Las declaraciones de ruptura juegan un papel importante en las declaraciones de cambio de <code class="language-plaintext highlighter-rouge">case</code>. Pruebe el siguiente codigo que usa la instruccion <code class="language-plaintext highlighter-rouge">switch-case</code> sin ninguna instruccion <code class="language-plaintext highlighter-rouge">break</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;body&gt;</span>      
@@ -236,7 +236,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envienos sus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

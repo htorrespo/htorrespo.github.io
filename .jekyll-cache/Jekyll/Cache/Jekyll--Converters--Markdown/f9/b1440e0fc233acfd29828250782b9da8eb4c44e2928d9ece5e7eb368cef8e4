@@ -1,0 +1,63 @@
+I"Ë<p>Puede usar JavaScript para crear un mapa de imagen del lado del cliente. Los mapas de imagenes del lado del cliente estan habilitados por el atributo <code class="highlighter-rouge">usemap</code> para la etiqueta <code class="highlighter-rouge">&lt;img/&gt;</code> y definidos por etiquetas especiales de extension <code class="highlighter-rouge">&lt;map&gt;</code> y <code class="highlighter-rouge">&lt;area&gt;</code>.</p>
+
+<p>La imagen que va a formar el mapa se inserta en la pagina usando el elemento <code class="highlighter-rouge">&lt;img/&gt;</code> de forma normal, excepto que lleva un atributo adicional llamado <code class="highlighter-rouge">usemap</code>. El valor del atributo <code class="highlighter-rouge">usemap</code> es el valor del atributo de nombre en el elemento <code class="highlighter-rouge">&lt;map&gt;</code>, que esta a punto de cumplir, precedido por una libra o un signo hash.</p>
+
+<p>El elemento <code class="highlighter-rouge">&lt;map&gt;</code> en realidad crea el mapa para la imagen y generalmente sigue directamente despues del elemento <code class="highlighter-rouge">&lt;img/&gt;</code>. Actua como un contenedor para los elementos <code class="highlighter-rouge">&lt;area/&gt;</code> que realmente definen los puntos de acceso en los que se puede hacer clic. El elemento <code class="highlighter-rouge">&lt;map&gt;</code> lleva solo un atributo, el atributo <code class="highlighter-rouge">name</code>, que es el nombre que identifica el mapa. Asi es como el elemento <code class="highlighter-rouge">&lt;img/&gt;</code> sabe que elemento <code class="highlighter-rouge">&lt;map&gt;</code> usar.</p>
+
+<p>El elemento <code class="highlighter-rouge">&lt;area&gt;</code> especifica la forma y las coordenadas que definen los limites de cada punto de acceso en el que se puede hacer clic.</p>
+
+<p>El siguiente codigo combina mapas de imagenes y JavaScript para producir un mensaje en un cuadro de texto cuando el mouse se mueve sobre diferentes partes de una imagen.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Using JavaScript Image Map<span class="nt">&lt;/title&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">showTutorial</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">myform</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">name</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">name = </span><span class="s">"myform"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"text"</span> <span class="na">name = </span><span class="s">"stage"</span> <span class="na">size = </span><span class="s">"20"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+      
+      <span class="c">&lt;!-- Create  Mappings --&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src = </span><span class="s">"/images/usemap.gif"</span> <span class="na">alt = </span><span class="s">"HTML Map"</span> <span class="na">border = </span><span class="s">"0"</span> <span class="na">usemap = </span><span class="s">"#tutorials"</span><span class="nt">/&gt;</span>
+      
+      <span class="nt">&lt;map</span> <span class="na">name = </span><span class="s">"tutorials"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;area</span> <span class="na">shape=</span><span class="s">"poly"</span> 
+            <span class="na">coords = </span><span class="s">"74,0,113,29,98,72,52,72,38,27"</span>
+            <span class="na">href = </span><span class="s">"/perl/index.htm"</span> <span class="na">alt = </span><span class="s">"Perl Tutorial"</span>
+            <span class="na">target = </span><span class="s">"_self"</span> 
+            <span class="na">onMouseOver = </span><span class="s">"showTutorial('perl')"</span> 
+            <span class="na">onMouseOut = </span><span class="s">"showTutorial('')"</span><span class="nt">/&gt;</span>
+         
+         <span class="nt">&lt;area</span> <span class="na">shape = </span><span class="s">"rect"</span> 
+            <span class="na">coords = </span><span class="s">"22,83,126,125"</span>
+            <span class="na">href = </span><span class="s">"/html/index.htm"</span> <span class="na">alt = </span><span class="s">"HTML Tutorial"</span> 
+            <span class="na">target = </span><span class="s">"_self"</span> 
+            <span class="na">onMouseOver = </span><span class="s">"showTutorial('html')"</span> 
+            <span class="na">onMouseOut = </span><span class="s">"showTutorial('')"</span><span class="nt">/&gt;</span>
+         
+         <span class="nt">&lt;area</span> <span class="na">shape = </span><span class="s">"circle"</span> 
+            <span class="na">coords = </span><span class="s">"73,168,32"</span>
+            <span class="na">href = </span><span class="s">"/php/index.htm"</span> <span class="na">alt = </span><span class="s">"PHP Tutorial"</span>
+            <span class="na">target = </span><span class="s">"_self"</span> 
+            <span class="na">onMouseOver = </span><span class="s">"showTutorial('php')"</span> 
+            <span class="na">onMouseOut = </span><span class="s">"showTutorial('')"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/map&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

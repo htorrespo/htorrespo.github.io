@@ -1,0 +1,150 @@
+I"+<h3 id="creando-tu-primer-programa-hello-world">Creando tu primer programa Hello World</h3>
+
+<p>Crear su primer programa <code class="highlighter-rouge">hello world</code> es tan simple como ingresar la siguiente linea de codigo:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Usando una declaracion println para imprimir la salida a la consola</span>
+      <span class="n">println</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="declaracion-de-importacion-en-groovy">Declaracion de importacion en Groovy</h3>
+
+<p>La declaracion <code class="highlighter-rouge">import</code> se puede usar para importar la funcionalidad de otras bibliotecas  en su codigo. Esto se hace usando la palabra clave <code class="highlighter-rouge">import</code>.</p>
+
+<p>El siguiente ejemplo muestra como usar importacion simple de la clase <code class="highlighter-rouge">MarkupBuilder</code>, que es probablemente una de las clases mas utilizadas para crear marcado HTML o XML.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">groovy.xml.MarkupBuilder</span> 
+<span class="kt">def</span> <span class="n">xml</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MarkupBuilder</span><span class="o">()</span> 
+</code></pre></div></div>
+
+<p>De forma predeterminada, Groovy incluye las siguientes bibliotecas en su codigo, por lo que no necesita importarlas explicitamente.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.lang.*</span> 
+<span class="kn">import</span> <span class="nn">java.util.*</span> 
+<span class="kn">import</span> <span class="nn">java.io.*</span> 
+<span class="kn">import</span> <span class="nn">java.net.*</span> 
+
+<span class="kn">import</span> <span class="nn">groovy.lang.*</span> 
+<span class="kn">import</span> <span class="nn">groovy.util.*</span> 
+
+<span class="kn">import</span> <span class="nn">java.math.BigInteger</span> 
+<span class="kn">import</span> <span class="nn">java.math.BigDecimal</span>
+</code></pre></div></div>
+
+<h3 id="tokens-en-groovy">Tokens en Groovy</h3>
+
+<p>Un token es una palabra clave, un identificador, una constante, un literal de cadena o un simbolo.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">println</span><span class="o">(</span><span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">”</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>En la linea de codigo anterior, hay dos tokens, el primero es la palabra clave println y el siguiente es el string “Hello World”.</p>
+
+<h3 id="comentarios-en-groovy">Comentarios en Groovy</h3>
+
+<p>Los comentarios se utilizan para documentar codigo. Los comentarios en Groovy pueden ser de una sola linea o de varias lineas.</p>
+
+<p>Los comentarios de una sola linea se identifican utilizando <code class="highlighter-rouge">//</code> en cualquier posicion de la linea. A continuacion se muestra un ejemplo:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Usando una declaracion println para imprimir la salida a la consola</span>
+      <span class="n">println</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Los comentarios multilinea se identifican con <code class="highlighter-rouge">/*</code> al principio y <code class="highlighter-rouge">*/</code> para identificar el final del comentario multilinea.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="cm">/* Este programa es el primer programa
+       Este programa muestra como mostrar hello world */</span>
+      <span class="n">println</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="punto-y-coma">Punto y coma</h3>
+
+<p>Al igual que el lenguaje de programacion Java, se requiere tener punto y coma para distinguir entre declaraciones multiples en Groovy.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Se puede ver el uso de un punto y coma despues de cada declaracion</span>
+      <span class="kt">def</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+      <span class="n">println</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">);</span>  
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>El ejemplo anterior muestra puntos y comas que se utilizan para distinguir entre diferentes lineas de sentencias de codigo.</p>
+
+<h3 id="identificadores">Identificadores</h3>
+
+<p>Los identificadores se utilizan para definir variables, funciones u otras variables definidas por el usuario. Los identificadores comienzan con una letra, un dolar o un guion bajo. No pueden comenzar con un numero. Aqui hay algunos ejemplos de identificadores validos:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">employeename</span> 
+<span class="kt">def</span> <span class="n">student1</span> 
+<span class="kt">def</span> <span class="n">student_name</span>
+</code></pre></div></div>
+
+<p>donde <code class="highlighter-rouge">def</code> es una palabra clave utilizada en Groovy para definir un identificador.</p>
+
+<p>Aqui hay un ejemplo de codigo de como se puede usar un identificador en nuestro programa Hello World.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+   <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Se puede ver el uso de un punto y coma despues de cada declaracion</span>
+      <span class="kt">def</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+      <span class="n">println</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">);</span> 
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>En el ejemplo anterior, la variable x se usa como identificador.</p>
+
+<h3 id="palabras-clave">Palabras clave</h3>
+
+<p>Las palabras clave como su nombre indica son palabras especiales que estan reservadas en el lenguaje de programacion Groovy. La siguiente tabla enumera las palabras clave que se definen en Groovy.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">as      assert     break       case
+catch   class     const        continue
+def     default   do           else
+enum    extends   false        Finally
+for     goto      if           implements
+import  in        instanceof   interface
+new     pull      package      return
+super   switch    this         throw
+throws  trait     true         try
+while 
+</span></code></pre></div></div>
+
+<h3 id="espacios-en-blanco">Espacios en blanco</h3>
+
+<p>Espacio en blanco es el termino utilizado en un lenguaje de programacion como Java y Groovy para describir espacios en blanco, tabs, caracteres de nueva linea y comentarios. El espacio en blanco separa una parte de una declaracion de otra y permite al compilador identificar donde esta un elemento en una declaracion.</p>
+
+<p>Por ejemplo, en el siguiente ejemplo, hay un espacio en blanco entre la palabra clave <code class="highlighter-rouge">def</code> y la variable <code class="highlighter-rouge">x</code>. Esto es para que el compilador sepa que <code class="highlighter-rouge">def</code> es la palabra clave que debe usarse y que <code class="highlighter-rouge">x</code> debe ser el nombre de la variable que debe definirse.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="literales">Literales</h3>
+
+<p>Un literal es una notacion empleada para representar un valor fijo en groovy. El lenguaje groovy tiene anotaciones para enteros, numeros de coma flotante, caracteres y cadenas. Estos son algunos ejemplos de literales en el lenguaje de programacion Groovy:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">12</span> 
+<span class="mf">1.45</span> 
+<span class="err">‘</span><span class="n">a</span><span class="err">’</span> 
+<span class="err">“</span><span class="n">aa</span><span class="err">”</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

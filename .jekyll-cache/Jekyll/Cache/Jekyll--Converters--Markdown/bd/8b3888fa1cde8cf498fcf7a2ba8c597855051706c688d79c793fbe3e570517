@@ -1,0 +1,2 @@
+I"�<p>La validacion de formularios normalmente se realizaba en el servidor, despues de que el cliente ingresa todos los datos requeridos y luego presiono el boton Enviar. Si los datos ingresados ​​por un cliente eran incorrectos o simplemente faltaban, el servidor tendria que enviar todos los datos al cliente y solicitar que el formulario se vuelva a enviar con la informacion correcta. Este fue realmente un proceso largo que solia poner mucha carga en el servidor.</p>
+:ET

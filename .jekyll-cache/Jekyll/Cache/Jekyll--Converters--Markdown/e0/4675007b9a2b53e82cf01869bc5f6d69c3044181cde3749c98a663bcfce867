@@ -1,0 +1,4 @@
+I"Ç<p>El objeto <code class="highlighter-rouge">Number</code> representa una fecha numerica, ya sea numeros enteros o numeros en coma flotante. En general, no tiene que preocuparse por los objetos numericos porque el navegador convierte automaticamente los literales numericos en instancias de la clase <code class="highlighter-rouge">Number</code>.</p>
+
+<p>La sintaxis para crear un objeto <code class="highlighter-rouge">Number</code> es la siguiente:</p>
+:ET

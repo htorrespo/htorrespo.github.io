@@ -1,0 +1,41 @@
+I"r<p>El bucle <code class="highlighter-rouge">for ... in</code> se utiliza para recorrer las propiedades de un objeto. Como no hemos discutido Objetos todavía, puede que no se sienta cómodo con este bucle. Pero una vez que entienda como se comportan los objetos en JavaScript, encontrara este bucle muy util.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de un bucle <code class="highlighter-rouge">for...in</code> es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">variablename</span> <span class="k">in</span> <span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">statement</span> <span class="nx">or</span> <span class="nx">block</span> <span class="nx">to</span> <span class="nx">execute</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>En cada iteración, una propiedad del objeto se asigna a <code class="highlighter-rouge">variablename</code> y este bucle continúa hasta que se agotan todas las propiedades del objeto.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para implementar el bucle <code class="highlighter-rouge">for...in</code>. Imprime el objeto Navigator del navegador web.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">aProperty</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Navigator Object Properties&lt;br /&gt; </span><span class="dl">"</span><span class="p">);</span>        
+            <span class="k">for</span> <span class="p">(</span><span class="nx">aProperty</span> <span class="k">in</span> <span class="nb">navigator</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">aProperty</span><span class="p">);</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">Exiting from the loop!</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different object and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

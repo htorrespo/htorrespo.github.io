@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Mapa de imagenes | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Mapa de imagenes" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"HTML nos permite la opcion de crear diferentes enlaces url dentro de una misma imagen. Es decir, podemos hacer que diferentes partes de una imagen tengan enlaces que nos permitan ir a diferentes destinos","@type":"BlogPosting","headline":"JavaScript - Mapa de imagenes","dateModified":"2019-08-03T00:00:00+00:00","url":"http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html","datePublished":"2019-08-03T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"HTML nos permite la opcion de crear diferentes enlaces url dentro de una misma imagen. Es decir, podemos hacer que diferentes partes de una imagen tengan enlaces que nos permitan ir a diferentes destinos","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/08/03/js-mapa-imagen.html","headline":"JavaScript - Mapa de imagenes","dateModified":"2019-08-03T00:00:00+00:00","datePublished":"2019-08-03T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -142,13 +142,13 @@
 
       <div class="page-content">
         <div class="e-content">
-          <p>Puede usar JavaScript para crear un mapa de imagen del lado del cliente. Los mapas de imagenes del lado del cliente estan habilitados por el atributo <code class="highlighter-rouge">usemap</code> para la etiqueta <code class="highlighter-rouge">&lt;img/&gt;</code> y definidos por etiquetas especiales de extension <code class="highlighter-rouge">&lt;map&gt;</code> y <code class="highlighter-rouge">&lt;area&gt;</code>.</p>
+          <p>Puede usar JavaScript para crear un mapa de imagen del lado del cliente. Los mapas de imagenes del lado del cliente estan habilitados por el atributo <code class="language-plaintext highlighter-rouge">usemap</code> para la etiqueta <code class="language-plaintext highlighter-rouge">&lt;img/&gt;</code> y definidos por etiquetas especiales de extension <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> y <code class="language-plaintext highlighter-rouge">&lt;area&gt;</code>.</p>
 
-<p>La imagen que va a formar el mapa se inserta en la pagina usando el elemento <code class="highlighter-rouge">&lt;img/&gt;</code> de forma normal, excepto que lleva un atributo adicional llamado <code class="highlighter-rouge">usemap</code>. El valor del atributo <code class="highlighter-rouge">usemap</code> es el valor del atributo de nombre en el elemento <code class="highlighter-rouge">&lt;map&gt;</code>, que esta a punto de cumplir, precedido por una libra o un signo hash.</p>
+<p>La imagen que va a formar el mapa se inserta en la pagina usando el elemento <code class="language-plaintext highlighter-rouge">&lt;img/&gt;</code> de forma normal, excepto que lleva un atributo adicional llamado <code class="language-plaintext highlighter-rouge">usemap</code>. El valor del atributo <code class="language-plaintext highlighter-rouge">usemap</code> es el valor del atributo de nombre en el elemento <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code>, que esta a punto de cumplir, precedido por una libra o un signo hash.</p>
 
-<p>El elemento <code class="highlighter-rouge">&lt;map&gt;</code> en realidad crea el mapa para la imagen y generalmente sigue directamente despues del elemento <code class="highlighter-rouge">&lt;img/&gt;</code>. Actua como un contenedor para los elementos <code class="highlighter-rouge">&lt;area/&gt;</code> que realmente definen los puntos de acceso en los que se puede hacer clic. El elemento <code class="highlighter-rouge">&lt;map&gt;</code> lleva solo un atributo, el atributo <code class="highlighter-rouge">name</code>, que es el nombre que identifica el mapa. Asi es como el elemento <code class="highlighter-rouge">&lt;img/&gt;</code> sabe que elemento <code class="highlighter-rouge">&lt;map&gt;</code> usar.</p>
+<p>El elemento <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> en realidad crea el mapa para la imagen y generalmente sigue directamente despues del elemento <code class="language-plaintext highlighter-rouge">&lt;img/&gt;</code>. Actua como un contenedor para los elementos <code class="language-plaintext highlighter-rouge">&lt;area/&gt;</code> que realmente definen los puntos de acceso en los que se puede hacer clic. El elemento <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> lleva solo un atributo, el atributo <code class="language-plaintext highlighter-rouge">name</code>, que es el nombre que identifica el mapa. Asi es como el elemento <code class="language-plaintext highlighter-rouge">&lt;img/&gt;</code> sabe que elemento <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> usar.</p>
 
-<p>El elemento <code class="highlighter-rouge">&lt;area&gt;</code> especifica la forma y las coordenadas que definen los limites de cada punto de acceso en el que se puede hacer clic.</p>
+<p>El elemento <code class="language-plaintext highlighter-rouge">&lt;area&gt;</code> especifica la forma y las coordenadas que definen los limites de cada punto de acceso en el que se puede hacer clic.</p>
 
 <p>El siguiente codigo combina mapas de imagenes y JavaScript para producir un mensaje en un cuadro de texto cuando el mouse se mueve sobre diferentes partes de una imagen.</p>
 
@@ -202,7 +202,7 @@
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

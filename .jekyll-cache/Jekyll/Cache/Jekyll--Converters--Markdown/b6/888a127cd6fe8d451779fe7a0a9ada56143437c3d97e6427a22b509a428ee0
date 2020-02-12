@@ -1,0 +1,97 @@
+I"j,<p>Puede usar varias instrucciones <code class="highlighter-rouge">if ... else ... if</code>, para realizar bifurcaciones multiples. Sin embargo, esta no es siempre la mejor solucion, especialmente cuando todas las bifurcaciones dependen del valor de una sola variable.</p>
+
+<p>A partir de JavaScript 1.2, puede usar una sola declaracion que maneje esta situacion, y lo hace con mayor eficiencia en lugar de las ssentencias <code class="highlighter-rouge">if ... else ... if</code></p>
+
+<h3 id="sentencia-switch-case">Sentencia <code class="highlighter-rouge">Switch Case</code></h3>
+
+<p>El objetivo de la instruccion <code class="highlighter-rouge">switch</code> es dar una <strong>expresion</strong> para <em>evaluar</em> y diferentes instrucciones para <em>ejecutar</em> en funcion del valor de la <strong>expresion</strong>. El intérprete compara cada caso con el valor de la <strong>expresion</strong> hasta que encuentra una coincidencia. Si nada coincide, se utilizara una condicion por defecto.</p>
+
+<h4 id="sintaxis">Sintaxis</h4>
+
+<p>La sintaxis de una instruccion <code class="highlighter-rouge">switch</code> basica es la siguiente:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="nx">condition</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+   <span class="k">break</span><span class="p">;</span>
+   
+   <span class="k">case</span> <span class="nx">condition</span> <span class="mi">2</span><span class="p">:</span> <span class="nx">statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+   <span class="k">break</span><span class="p">;</span>
+   <span class="p">...</span>
+   
+   <span class="k">case</span> <span class="nx">condition</span> <span class="nx">n</span><span class="p">:</span> <span class="nx">statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+   <span class="k">break</span><span class="p">;</span>
+   
+   <span class="nl">default</span><span class="p">:</span> <span class="nx">statement</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Las declaraciones de ruptura (<code class="highlighter-rouge">break</code>) indican el final de un <code class="highlighter-rouge">case</code> particular. Si se omitieran, el interprete continuaria ejecutando cada sentencia en los siguientes <code class="highlighter-rouge">case</code>.</p>
+
+<p>Vamos a explicar la declaracion de ruptura <code class="highlighter-rouge">break</code> posteriormente.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe el siguiente ejemplo para comprender como funciona la instruccion <code class="highlighter-rouge">switch</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">grade</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering switch block&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">grade</span><span class="p">)</span> <span class="p">{</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Good job&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">break</span><span class="p">;</span>
+            
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Pretty good&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">break</span><span class="p">;</span>
+            
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Passed&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">break</span><span class="p">;</span>
+            
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Not so good&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">break</span><span class="p">;</span>
+            
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">F</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">break</span><span class="p">;</span>
+            
+               <span class="nl">default</span><span class="p">:</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown grade&lt;br /&gt;</span><span class="dl">"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting switch block</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Las declaraciones de ruptura juegan un papel importante en las declaraciones de cambio de <code class="highlighter-rouge">case</code>. Pruebe el siguiente codigo que usa la instruccion <code class="highlighter-rouge">switch-case</code> sin ninguna instruccion <code class="highlighter-rouge">break</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">grade</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">;</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entering switch block&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">grade</span><span class="p">)</span> <span class="p">{</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Good job&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Pretty good&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Passed&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Not so good&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="k">case</span> <span class="dl">'</span><span class="s1">F</span><span class="dl">'</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed&lt;br /&gt;</span><span class="dl">"</span><span class="p">);</span>
+               <span class="nl">default</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown grade&lt;br /&gt;</span><span class="dl">"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exiting switch block</span><span class="dl">"</span><span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+      <span class="nt">&lt;p&gt;</span>Set the variable to different value and then try...<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

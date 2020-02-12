@@ -1,0 +1,103 @@
+I"><h3 id="que-es-un-evento">Que es un evento?</h3>
+
+<p>La interaccion de JavaScript con HTML se maneja a traves de eventos que ocurren cuando el usuario o el navegador manipulan una pagina.</p>
+
+<p>Cuando la pagina se carga, se llama un evento. Cuando el usuario hace clic en un boton, ese clic tambien es un evento. Otros ejemplos incluyen eventos como presionar cualquier tecla, cerrar una ventana, cambiar el tamaño de una ventana, etc.</p>
+
+<p>Los desarrolladores pueden usar estos eventos para ejecutar respuestas codificadas en JavaScript, lo que hace que los botones cierren las ventanas, los mensajes se muestren a los usuarios, los datos se validen y practicamente cualquier otro tipo de respuesta imaginable.</p>
+
+<p>Los eventos forman parte del Nivel 3 del Modelo de Objetos de Documento (DOM) y cada elemento HTML contiene un conjunto de eventos que pueden activar el codigo JavaScript.</p>
+
+<h3 id="evento-onclick">Evento <code class="highlighter-rouge">onclick</code></h3>
+
+<p>Este es el tipo de evento utilizado con mas frecuencia que ocurre cuando un usuario hace clic en el boton izquierdo de su mouse. Puede poner su validacion, advertencia, etc., contra este tipo de evento.</p>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Pruebe con el siguiente ejemplo</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">)</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Click the following button and see result<span class="nt">&lt;/p&gt;</span>      
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">onclick = </span><span class="s">"sayHello()"</span> <span class="na">value = </span><span class="s">"Say Hello"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="evento-onsubmit">Evento <code class="highlighter-rouge">onsubmit</code></h3>
+
+<p><code class="highlighter-rouge">onsubmit</code> es un evento que ocurre cuando intenta enviar un formulario. Puede poner la validacion de formulario contra este tipo de evento.</p>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>El siguiente ejemplo muestra como usar <code class="highlighter-rouge">onsubmit</code>. Aqui estamos llamando a una funcion <code class="highlighter-rouge">validate()</code> antes de enviar un formulario de datos al servidor web. Si la funcion <code class="highlighter-rouge">validate()</code> devuelve <code class="highlighter-rouge">true</code>, el formulario se enviara, de lo contrario no enviara los datos.</p>
+
+<p>Prueba el siguiente ejemplo.</p>
+
+<pre><code class="language-`html">&lt;html&gt;
+   &lt;head&gt;   
+      &lt;script type = "text/javascript"&gt;
+         &lt;!--
+            function validation() {
+               all validation goes here
+               .........
+               return either true or false
+            }
+         //--&gt;
+      &lt;/script&gt;      
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;form method = "POST" action = "t.cgi" onsubmit = "return validate()"&gt;
+         .......
+         &lt;input type = "submit" value = "Submit" /&gt;
+      &lt;/form&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="onmouseover-y-onmouseout"><code class="highlighter-rouge">onmouseover</code> y <code class="highlighter-rouge">onmouseout</code></h3>
+
+<p>Estos dos tipos de eventos te ayudaran a crear efectos agradables con imagenes o incluso con texto. El evento <code class="highlighter-rouge">onmouseover</code> se activa cuando coloca el mouse sobre cualquier elemento y el activador <code class="highlighter-rouge">onmouseout</code> cuando mueve el mouse desde ese elemento. Prueba el siguiente ejemplo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>   
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">function</span> <span class="nx">over</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">Mouse Over</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>            
+            <span class="kd">function</span> <span class="nx">out</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span> <span class="p">(</span><span class="dl">"</span><span class="s2">Mouse Out</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>            
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Bring your mouse inside the division to see the result:<span class="nt">&lt;/p&gt;</span>      
+      <span class="nt">&lt;div</span> <span class="na">onmouseover = </span><span class="s">"over()"</span> <span class="na">onmouseout = </span><span class="s">"out()"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;h2&gt;</span> This is inside the division <span class="nt">&lt;/h2&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>         
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

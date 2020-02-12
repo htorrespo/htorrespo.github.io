@@ -1,0 +1,149 @@
+I"�<p>El objeto <code class="highlighter-rouge">Number</code> representa una fecha numerica, ya sea numeros enteros o numeros en coma flotante. En general, no tiene que preocuparse por los objetos numericos porque el navegador convierte automaticamente los literales numericos en instancias de la clase <code class="highlighter-rouge">Number</code>.</p>
+
+<p>La sintaxis para crear un objeto <code class="highlighter-rouge">Number</code> es la siguiente:</p>
+
+<pre><code class="language-JavaScript">var val = new Number(number);
+</code></pre>
+
+<p>Si en lugar de <code class="highlighter-rouge">number</code>, si proporciona un argumento que no sea un numero, el argumento no se puede convertir a un numero, en ese cas devuelve <code class="highlighter-rouge">NaN</code> (No es un numero).</p>
+
+<h3 id="propiedades-de-number">Propiedades de <code class="highlighter-rouge">Number</code></h3>
+
+<p>Aquí hay una lista de cada propiedad y su descripcion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">MAX_VALUE</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El mayor valor posible que puede tener un número en JavaScript. 1.7976931348623157E+308</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">MIN_VALUE</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>El valor mas pequeño posible que puede tener un numero en JavaScript. 5E-324</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">NaN</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Igual a un valor que no es un número.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">NEGATIVE_INFINITY</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un valor que es menor que <code class="highlighter-rouge">MIN_VALUE</code>.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">POSITIVE_INFINITY</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Un valor que es mayor que <code class="highlighter-rouge">MAX_VALUE</code>.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">prototype</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Una propiedad estatica del objeto <code class="highlighter-rouge">Number</code>. Use la propiedad <code class="highlighter-rouge">prototype</code> para asignar nuevas propiedades y metodos al objeto <code class="highlighter-rouge">Number</code> en el documento actual</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">constructor</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la funcion que creo la instancia de este objeto. Por defecto, este es el objeto <code class="highlighter-rouge">Number</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metodos-de-number">Metodos de <code class="highlighter-rouge">Number</code></h3>
+
+<p>El objeto <code class="highlighter-rouge">Number</code> solo contiene los metodos predeterminados que forman parte de la definicion de cada objeto.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">toExponential()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Hace que un numero se muestre en notacion exponencial, incluso si el numero esta en el rango en el que JavaScript normalmente usa la notacion estandar.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">toFixed()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Formatea a un numero especifico de digitos a la derecha del decimal.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">toLocaleString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve una cadena de caracteres del numero actual en un formato que puede variar de acuerdo con la configuracion local del  navegador.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">toPrecision()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Define cuantos dígitos totales (incluidos los dígitos a la izquierda y derecha del decimal) utiliza para mostrar un numero.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">toString()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve la representación de cadena de caracteres del valor del numero.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">valueOf()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Devuelve el valor del numero.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia Tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

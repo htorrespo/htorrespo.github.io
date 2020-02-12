@@ -1,0 +1,171 @@
+I"�(<p>Es importante comprender las diferencias entre los diferentes navegadores para manejar cada uno de la forma en que se espera. Por lo tanto, es importante saber en que navegador se esta ejecutando su pagina web.</p>
+
+<p>Para obtener informacion sobre el navegador en el que se ejecuta actualmente su pagina web, use el objeto incorporado <code class="highlighter-rouge">navegator</code>.</p>
+
+<h3 id="propiedades-del-navegador">Propiedades del navegador</h3>
+
+<p>Existen varias propiedades relacionadas con el navegador que puede usar en su pagina web. La siguiente es una lista de los nombres y descripciones de cada uno.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Propiedad &amp; Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">appCodeName</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene el nombre navegador, Netscape para Netscape y Microsoft Internet Explorer para Internet Explorer.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">appVersion</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena cadena de caracteres que contiene la version del navegador, su idioma y compatibilidad.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">language</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad contiene la abreviatura de dos letras para el idioma que utiliza el navegador. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">mimTypes[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una matriz que contiene todos los tipos MIME admitidos por el cliente. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code class="highlighter-rouge">platform[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene la plataforma para la cual se compilo el navegador.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code class="highlighter-rouge">plugins[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una matriz que contiene todos los complementos que se han instalado en el cliente. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code class="highlighter-rouge">userAgent[]</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Esta propiedad es una cadena de caracteres que contiene el nombre del codigo y la version del navegador. Este valor se envia al servidor de origen para identificar al cliente.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metodos-de-navegador">Metodos de navegador</h3>
+
+<p>Existen varios metodos especificos del navegador. Aqui hay una lista de sus nombres y descripciones.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code class="highlighter-rouge">javaEnabled()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo determina si JavaScript esta habilitado en el cliente. Si JavaScript esta habilitado, este metodo devuelve verdadero; de lo contrario, devuelve falso.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code class="highlighter-rouge">plugings.refresh</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo hace que los complementos recien instalados esten disponibles y llena la matriz de complementos con todos los nuevos nombres de complementos. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code class="highlighter-rouge">preference(name,value)</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo permite que un script firmado obtenga y establezca algunas preferencias de Netscape. Si se omite el segundo parametro, este metodo devolvera el valor de la preferencia especificada; de lo contrario, establece el valor. Solo Netscape.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code class="highlighter-rouge">taintEnabled()</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Este metodo devuelve verdadero si la contaminacion de datos esta habilitada; de lo contrario falso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="deteccion-de-navegador">Deteccion de navegador</h3>
+
+<p>Hay un JavaScript simple que se puede utilizar para averiguar el nombre de un navegador y, en consecuencia, se puede servir una pagina HTML al usuario.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Browser Detection Example<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">userAgent</span>   <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">opera</span>       <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Opera</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">ie</span>          <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">MSIE</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">gecko</span>       <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Gecko</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nb">netscape</span>    <span class="o">=</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mozilla</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">version</span>     <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">;</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="nx">opera</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Opera based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your opera specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">gecko</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mozilla based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your gecko specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">ie</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">IE based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your IE specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">netscape</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Netscape based browser</span><span class="dl">"</span><span class="p">);</span>
+               <span class="c1">// Keep your Netscape specific URL here.</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown browser</span><span class="dl">"</span><span class="p">);</span>
+            <span class="p">}</span>
+            
+            <span class="c1">// You can include version to along with any above condition.</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br /&gt; Browser version info : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">version</span> <span class="p">);</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

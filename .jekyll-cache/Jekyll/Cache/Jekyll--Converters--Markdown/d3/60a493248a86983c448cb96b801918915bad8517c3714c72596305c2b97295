@@ -1,0 +1,227 @@
+I"Ì:<p>Puede usar JavaScript para crear una animacion compleja que tenga, entre otros, los siguientes elementos:</p>
+
+<ul>
+  <li>
+    <p>Fuegos artificiales</p>
+  </li>
+  <li>
+    <p>Efecto de desvanecimiento</p>
+  </li>
+  <li>
+    <p>Roll-in o Roll-out</p>
+  </li>
+  <li>
+    <p>Pagina de entrada o salida de pagina</p>
+  </li>
+  <li>
+    <p>Movimientos de objetos</p>
+  </li>
+</ul>
+
+<p>Este tutorial proporciona una comprension basica de como usar JavaScript para crear una animacion.</p>
+
+<p>JavaScript se puede usar para mover varios elementos DOM (<code class="highlighter-rouge">&lt;img/&gt;</code>, <code class="highlighter-rouge">&lt;div&gt;</code> o cualquier otro elemento HTML) alrededor de la pagina de acuerdo con algun tipo de patron determinado por una ecuacion o funcion logica.</p>
+
+<p>JavaScript proporciona las siguientes funciones para ser utilizadas con frecuencia en programas de animacion.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">setTimeout(function, duration)</code>: esta funcion llama a <code class="highlighter-rouge">function</code> despues de <code class="highlighter-rouge">duration</code> en milisegundos a partir de ahora.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">setInterval(funcion, duracion)</code>: esta funcion llama a <code class="highlighter-rouge">function</code> despues de cada <code class="highlighter-rouge">duration</code> en milisegundos.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">clearTimeout(setTimeout_variable)</code>: esta funcion llama a cualquier temporizador establecido por las funciones <code class="highlighter-rouge">setTimeout()</code>.</p>
+  </li>
+</ul>
+
+<p>JavaScript tambien puede establecer una serie de atributos de un objeto DOM, incluida su posicion en la pantalla. Puede establecer el atributo superior e izquierdo de un objeto para colocarlo en cualquier lugar de la pantalla. Aqui esta su sintaxis.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Set distance from left edge of the screen.
+object.style.left = distance in pixels or points; 
+
+or
+
+// Set distance from top edge of the screen.
+object.style.top = distance in pixels or points;
+</code></pre></div></div>
+
+<h3 id="animacion-manual">Animacion manual</h3>
+
+<p>Implementemos una animacion simple usando propiedades del objeto DOM y  funciones JavaScript de la siguiente manera. La siguiente lista contiene diferentes metodos DOM.</p>
+
+<ul>
+  <li>
+    <p>Estamos utilizando la funcion de JavaScript <code class="highlighter-rouge">getElementById()</code> para obtener un objeto DOM y luego asignarlo a una variable global <code class="highlighter-rouge">imgObj</code>.</p>
+  </li>
+  <li>
+    <p>Hemos definido una funcion de inicializacion <code class="highlighter-rouge">init()</code> para inicializar <code class="highlighter-rouge">imgObj</code> donde hemos establecido sus atributos <code class="highlighter-rouge">position</code> y <code class="highlighter-rouge">left</code>.</p>
+  </li>
+  <li>
+    <p>Estamos llamando a la funcion de inicializacion en el momento de la  carga de la ventana.</p>
+  </li>
+  <li>
+    <p>Finalmente, estamos llamando a la funcion <code class="highlighter-rouge">moveRight()</code> para aumentar la distancia izquierda en 10 pixeles. Tambien puede establecerlo en un valor negativo para moverlo hacia el lado izquierdo.</p>
+  </li>
+</ul>
+
+<h4 id="ejemplo">Ejemplo</h4>
+
+<p>Prueba el siguiente ejemplo.</p>
+
+<pre><code class="language-`html">&lt;html&gt;   
+   &lt;head&gt;
+      &lt;title&gt;JavaScript Animation&lt;/title&gt;      
+      &lt;script type = "text/javascript"&gt;
+         &lt;!--
+            var imgObj = null;
+            
+            function init() {
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+            }
+            
+            window.onload = init;
+         //--&gt;
+      &lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;   
+      &lt;form&gt;
+         &lt;img id = "myImage" src = "/images/html.gif" /&gt;
+         &lt;p&gt;Click button below to move the image to right&lt;/p&gt;
+         &lt;input type = "button" value = "Click Me" onclick = "moveRight();" /&gt;
+      &lt;/form&gt;      
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="animacion-automatizada">Animacion automatizada</h3>
+
+<p>En el ejemplo anterior, vimos como una imagen se mueve hacia la derecha con cada clic. Podemos automatizar este proceso utilizando la funcion de JavaScript <code class="highlighter-rouge">setTimeout()</code> de la siguiente manera:</p>
+
+<p>Aqui hemos agregado mas metodos. Asi que veamos que hay de nuevo aqui:</p>
+
+<ul>
+  <li>
+    <p>La funcion <code class="highlighter-rouge">moveRight()</code> esta llamando a la funcion <code class="highlighter-rouge">setTimeout()</code> para establecer la posicion de <code class="highlighter-rouge">imgObj</code>.</p>
+  </li>
+  <li>
+    <p>Hemos agregado una nueva funcion <code class="highlighter-rouge">stop()</code> para borrar el temporizador establecido por la funcion <code class="highlighter-rouge">setTimeout()</code> y para llevar el objeto en su posicion inicial.</p>
+  </li>
+</ul>
+
+<h4 id="ejemplo-1">Ejemplo</h4>
+
+<p>Pruebe el siguiente codigo de ejemplo.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>JavaScript Animation<span class="nt">&lt;/title&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="kd">var</span> <span class="nx">imgObj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">animate</span> <span class="p">;</span>
+            
+            <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">imgObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">myImage</span><span class="dl">'</span><span class="p">);</span>
+               <span class="nx">imgObj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span><span class="o">=</span> <span class="dl">'</span><span class="s1">relative</span><span class="dl">'</span><span class="p">;</span> 
+               <span class="nx">imgObj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">0px</span><span class="dl">'</span><span class="p">;</span> 
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">moveRight</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">imgObj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">imgObj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">px</span><span class="dl">'</span><span class="p">;</span>
+               <span class="nx">animate</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">moveRight</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>    <span class="c1">// call moveRight in 20msec</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">stop</span><span class="p">()</span> <span class="p">{</span>
+               <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+               <span class="nx">imgObj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">0px</span><span class="dl">'</span><span class="p">;</span> 
+            <span class="p">}</span>
+            
+            <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">init</span><span class="p">;</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>   
+      <span class="nt">&lt;form&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">id = </span><span class="s">"myImage"</span> <span class="na">src = </span><span class="s">"/images/html.gif"</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;p&gt;</span>Click the buttons below to handle animation<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Start"</span> <span class="na">onclick = </span><span class="s">"moveRight();"</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type = </span><span class="s">"button"</span> <span class="na">value = </span><span class="s">"Stop"</span> <span class="na">onclick = </span><span class="s">"stop();"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>      
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="rollover-con-un-evento-de-mouse">Rollover con un evento de mouse</h3>
+
+<p>Aqui hay un ejemplo simple que muestra la renovacion de imagen con un evento de mouse.</p>
+
+<p>Veamos que estamos usando en el siguiente ejemplo:</p>
+
+<ul>
+  <li>
+    <p>En el momento de cargar esta pagina, la instruccion <code class="highlighter-rouge">if</code> verifica la existencia del objeto <code class="highlighter-rouge">image</code>. Si el objeto <code class="highlighter-rouge">image</code> no esta disponible, este bloque no se ejecutara.</p>
+  </li>
+  <li>
+    <p>El constructor <code class="highlighter-rouge">Image()</code> crea y precarga un nuevo objeto <code class="highlighter-rouge">image</code> llamado <code class="highlighter-rouge">image1</code>.</p>
+  </li>
+  <li>
+    <p>A la propiedad src se le asigna el nombre del archivo imagen externo llamado <code class="highlighter-rouge">/images/html.gif</code>.</p>
+  </li>
+  <li>
+    <p>Del mismo modo, hemos creado el objeto <code class="highlighter-rouge">image2</code> y asignado <code class="highlighter-rouge">/images/http.gif</code>.</p>
+  </li>
+  <li>
+    <p>El <code class="highlighter-rouge">#</code> (marca hash) deshabilita el enlace para que el navegador no intente ir a una URL cuando se hace clic. Este enlace es una imagen.</p>
+  </li>
+  <li>
+    <p>El controlador de eventos <code class="highlighter-rouge">onMouseOver</code> se activa cuando el mouse del usuario se mueve hacia el enlace, y el controlador de eventos <code class="highlighter-rouge">onMouseOut</code> se activa cuando el mouse del usuario se aleja del enlace (<code class="highlighter-rouge">image</code>).</p>
+  </li>
+  <li>
+    <p>Cuando el mouse se mueve sobre <code class="highlighter-rouge">image</code>, la imagen HTTP cambia de la primera imagen a la segunda. Cuando el mouse se aleja de la imagen, se muestra la imagen original.</p>
+  </li>
+  <li>
+    <p>Cuando el mouse se aleja del enlace, la imagen inicial <code class="highlighter-rouge">html.gif</code> volvera a aparecer en la pantalla.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   
+   <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Rollover with a Mouse Events<span class="nt">&lt;/title&gt;</span>
+      
+      <span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+         <span class="o">&lt;!--</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">images</span><span class="p">)</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">image1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>     <span class="c1">// Preload an image</span>
+               <span class="nx">image1</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/images/html.gif</span><span class="dl">"</span><span class="p">;</span>
+               <span class="kd">var</span> <span class="nx">image2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>     <span class="c1">// Preload second image</span>
+               <span class="nx">image2</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/images/http.gif</span><span class="dl">"</span><span class="p">;</span>
+            <span class="p">}</span>
+         <span class="c1">//--&gt;</span>
+      <span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Move your mouse over the image to see the result<span class="nt">&lt;/p&gt;</span>
+      
+      <span class="nt">&lt;a</span> <span class="na">href = </span><span class="s">"#"</span> <span class="na">onMouseOver = </span><span class="s">"document.myImage.src = image2.src;"</span>
+         <span class="na">onMouseOut = </span><span class="s">"document.myImage.src = image1.src;"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">name = </span><span class="s">"myImage"</span> <span class="na">src = </span><span class="s">"/images/html.gif"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/a&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET

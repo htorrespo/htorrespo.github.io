@@ -1,0 +1,88 @@
+I"{<p>A continuacion se muestra el origen de la constante $\Delta H@ $ del orificio del sistema medicion del tren de muestreo manual de la Agencia de Proteccion Ambiental  de los Estados Unidos (EPA-USA). Esta es una constante de diseño del instrumento de muestreo, que hace referencia a las condiciones estandarizadas para succionar una muestra de aire a 0.75 dcfm (dry standard cubic feet minute), 68°F y 29.92 in.Hg.</p>
+
+<p>El valor del $\Delta H@$ se determina durante la calibración del orificio del tren de muestreo del Método 5 EPA-USA.</p>
+
+<p>Esta es la ecuación:</p>
+
+<p>\[
+{\large\Delta H @ = \cfrac{0.0319\ \Delta H}{P_b(t_0 + 460)} \Bigg[ \cfrac{(t_w + 460)}{V_w} \Bigg]^2}
+\]</p>
+
+<h3 id="derivacion">Derivacion</h3>
+
+<p>De mecanica de fluidos de Cengel, definamos la ecuacion para determinar el flujo a traves de tuberias.</p>
+
+<p>La tasa de flujo que pasa a traves de un medidor de orificio se determina mediante la siguiente ecuacion:</p>
+
+<p>\[
+{\large Q_m = k_m \sqrt{\cfrac{T_m\ \Delta H}{P_m\ M_m}} }
+\]</p>
+
+<p>Donde:<br />
+\(Q_m\) = Flujo volumetrico (caudal) a traves del medidor de orificio, cfm (cubic feet minute).<br />
+$K_m$ = Constante de calibracion del orificio <script type="math/tex">{[(in. Hg)(lb-mol)]/[(R)(in. H_2O)]}</script><br />
+$T_m$ = Temperatura absoluta en el orificio, °R<br />
+$\Delta H$ = Presion diferencial en el orificio, in.<script type="math/tex">H_2O</script><br />
+$P_m$ = Presion absoluta en el orificio, in.Hg<br />
+$M_m$ = Peso molcular del gas que circula por el orificio, lb/lm-mole<br /></p>
+
+<p>En lugar de utilizar el coeficiente de calibracion del orificio \(K_m\), se deriva el termino \(\Delta H@\) para reflejar las condiciones generales del diseño del tren de muestreo y del orificio de medicion con una constante de calibracion que puede ser relacionada a la tasa de flujo deseada. Por ejemplo el \(\Delta H@\) con 1.84 significa que la presion diferencial en el orificio \(\Delta H\) debería ser 1.84 cuando el gas circula a traves del orificio de medicion. Las condiciones de referencia definidas para el \(\Delta H\) fueron 0.75 dcfm a 68°F y 29.92 in.Hg. Utilizando la segunda ecuacion tenemos:</p>
+
+<script type="math/tex; mode=display">{\large \Delta H @ = \cfrac{Q^2_@\ P_@\ M_@}{K^2_m\ T_@} }</script>
+
+<p>El subindice \(@\) representa condiciones de referencia que estan dadas en 0.75 dcfm a 68°F y 29.92 in.Hg.</p>
+
+<p>Sustituyendo los valores de las condiciones de referencia (exceptuando por <script type="math/tex">M_@</script>) en la ecuacion anterior se obtiene:</p>
+
+<script type="math/tex; mode=display">{\large \Delta H @ = \cfrac{(0.75^2)\ (29.92)\ M_@}{K^2_m\ 528)} = 0.0319\ \cfrac{M_@}{K^2_m} }</script>
+
+<p>Ahora la relacion entre <script type="math/tex">Q_m</script> y la tasa de flujo volumetrico que pasa a traves de un medidor humedo <script type="math/tex">Q_w</script> que se utiliza para calibracion es la siguiente (el subindice “w” se refiere a las condiciones del medidor humedo):</p>
+
+<p>\[
+{\large \cfrac{P_m Q_m}{T_m}=\cfrac{P_w Q_w}{T_w}  }
+\]</p>
+
+<p>Sustituyendo la segunda ecuacion en la anterior y resolviendo para <script type="math/tex">K^2_m</script>:</p>
+
+<p>\[
+{\large \cfrac{P_m K_m}{T_m} \sqrt{\cfrac{T_m \Delta H}{P_m M_m} } =\cfrac{P_w Q_w}{T_w}  }
+\]</p>
+
+<p>\[
+{\large K^2_m = \cfrac{M_m T_m P^2_w Q^2_w}{\Delta H T^2_w P_m} }
+\]</p>
+
+<p>En la calibracion del Metodo 5, la presion diferencial en el orificio y el medidor humedo son iguales a la presion barometrica. De esta manera <script type="math/tex">P_w = P_m = P_b</script>. La ecuacion 6 se simplifica a:</p>
+
+<p>\[
+{\large K^2_m = \cfrac{M_m T_m P_b Q^2_w}{\Delta H T^2_w} }
+\]</p>
+
+<p>Sustituyendo la ecuacion 7 en la ecuacion 4, tenemos:</p>
+
+<p>\[
+{\large \Delta H@ = \cfrac{0.0319 M_@ \Delta H\ T^2_w}{M_m T_m P_b Q^2_w} }
+\]</p>
+
+<p>Por cuanto es fluido que se utiliza para calibrar el orificio, <script type="math/tex">M_@ = M_m</script> es aire. Adicionalmente, <script type="math/tex">Q_w = V_w/ \theta</script>, que es volumen registrado por el medidor humedo divido sobre el tiempo, y <script type="math/tex">T_m</script> es la temperatura medida a la salida del medidor de gas seco, <script type="math/tex">T_m = T_o</script>.  Ademas, <script type="math/tex">T_w = t_w + 460</script>, y <script type="math/tex">T_o = t_o + 460</script>.  Sustituyendo en la ultima ecuacion,</p>
+
+<p>\[
+{\large\Delta H @ = \cfrac{0.0319\ \Delta H}{P_b(t_0 + 460)} \Bigg[ \cfrac{(t_w + 460)}{V_w} \Bigg]^2}
+\]</p>
+
+<p>Donde:<br />
+<script type="math/tex">\Delta H@</script> = <script type="math/tex">\Delta H</script> que entrega 0.75 dcfm de aire a 67°F y 29.92 in.Hg, en in <script type="math/tex">H_2O</script><br />
+<script type="math/tex">0.0319</script> = constante <script type="math/tex">(0.75^2)(29.92)/(68 + 460)</script><br />
+<script type="math/tex">\Delta H</script> = Presion diferencial en el orificio, in. <script type="math/tex">H_2O</script><br />
+<script type="math/tex">t_w</script> = temperatura del medidor humedo, °F<br />
+<script type="math/tex">\theta</script> = tiempo, min<br />
+<script type="math/tex">P_b</script> = Presion barometrica, in.Hg<br />
+<script type="math/tex">t_o</script> = Temperatura a la salida del medidor de gas seco, °F<br />
+<script type="math/tex">V_m</script> = Volumen medido por el medidor humedo, cf (cubic feet).<br /></p>
+
+<hr />
+
+<h3 id="contacto">Contacto</h3>
+
+<p>Envienos un correo a <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></p>
+:ET

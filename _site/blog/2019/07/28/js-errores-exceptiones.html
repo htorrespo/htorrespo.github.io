@@ -17,7 +17,7 @@
     
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>JavaScript - Manejo de Errores y Excepciones | Splendidus</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="JavaScript - Manejo de Errores y Excepciones" />
 <meta name="author" content="Henry Torres" />
 <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
 <meta name="twitter:site" content="@htorrespo" />
 <meta name="twitter:creator" content="@htorrespo" />
 <script type="application/ld+json">
-{"description":"Las excepciones, son imprevistos que ocurren durante la ejecucion de un programa; anormalidades que impiden o alteran el comportamiento o flujo normal de un software.","@type":"BlogPosting","headline":"JavaScript - Manejo de Errores y Excepciones","dateModified":"2019-07-28T00:00:00+00:00","url":"http://localhost:4000/blog/2019/07/28/js-errores-exceptiones.html","datePublished":"2019-07-28T00:00:00+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/28/js-errores-exceptiones.html"},"author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
+{"description":"Las excepciones, son imprevistos que ocurren durante la ejecucion de un programa; anormalidades que impiden o alteran el comportamiento o flujo normal de un software.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2019/07/28/js-errores-exceptiones.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/mandarin.jpg"},"name":"Henry Torres"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2019/07/28/js-errores-exceptiones.html","headline":"JavaScript - Manejo de Errores y Excepciones","dateModified":"2019-07-28T00:00:00+00:00","datePublished":"2019-07-28T00:00:00+00:00","author":{"@type":"Person","name":"Henry Torres"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -183,11 +183,11 @@
 
 <h3 id="la-sentencia-trycatchfinally">La sentencia try…catch…finally</h3>
 
-<p>Las ultimas versiones de JavaScript agregaron capacidades de manejo de excepciones. JavaScript implementa el constructor <code class="highlighter-rouge">try ... catch ... finally</code>, asi como el operador <code class="highlighter-rouge">throw</code> para manejar excepciones.</p>
+<p>Las ultimas versiones de JavaScript agregaron capacidades de manejo de excepciones. JavaScript implementa el constructor <code class="language-plaintext highlighter-rouge">try ... catch ... finally</code>, asi como el operador <code class="language-plaintext highlighter-rouge">throw</code> para manejar excepciones.</p>
 
 <p>Puede detectar excepciones generadas por el programador y en tiempo de ejecucion, pero no puede detectar errores de sintaxis de JavaScript.</p>
 
-<p>Aqui esta el bloque la sintaxis <code class="highlighter-rouge">try...catch...finally</code></p>
+<p>Aqui esta el bloque la sintaxis <code class="language-plaintext highlighter-rouge">try...catch...finally</code></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type = </span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
    <span class="o">&lt;!--</span>
@@ -209,11 +209,11 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
 
-<p>El bloque <code class="highlighter-rouge">try</code> debe ir seguido de un bloque <code class="highlighter-rouge">catch</code> o un bloque <code class="highlighter-rouge">finally</code> (o uno de ambos). Cuando ocurre una excepcion en el bloque <code class="highlighter-rouge">try</code>, la excepcion se coloca en <code class="highlighter-rouge">e</code> y se ejecuta el bloque <code class="highlighter-rouge">catch</code>. El bloque opcional <code class="highlighter-rouge">finLLY</code> se ejecuta incondicionalmente despues de <code class="highlighter-rouge">try / catch</code>.</p>
+<p>El bloque <code class="language-plaintext highlighter-rouge">try</code> debe ir seguido de un bloque <code class="language-plaintext highlighter-rouge">catch</code> o un bloque <code class="language-plaintext highlighter-rouge">finally</code> (o uno de ambos). Cuando ocurre una excepcion en el bloque <code class="language-plaintext highlighter-rouge">try</code>, la excepcion se coloca en <code class="language-plaintext highlighter-rouge">e</code> y se ejecuta el bloque <code class="language-plaintext highlighter-rouge">catch</code>. El bloque opcional <code class="language-plaintext highlighter-rouge">finLLY</code> se ejecuta incondicionalmente despues de <code class="language-plaintext highlighter-rouge">try / catch</code>.</p>
 
 <h4 id="ejemplos">Ejemplos</h4>
 
-<p>Aqui hay un ejemplo en el que estamos tratando de llamar a una funcion no existente que a su vez esta generando una excepcion. Veamos como se comporta sin <code class="highlighter-rouge">try ... catch</code>−</p>
+<p>Aqui hay un ejemplo en el que estamos tratando de llamar a una funcion no existente que a su vez esta generando una excepcion. Veamos como se comporta sin <code class="language-plaintext highlighter-rouge">try ... catch</code>−</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;head&gt;</span>      
@@ -237,7 +237,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Ahora intentemos detectar esta excepcion usando <code class="highlighter-rouge">try ... catch</code> y mostrar un mensaje facil de usar. Tambien puede suprimir este mensaje, si desea ocultar este error a un usuario.</p>
+<p>Ahora intentemos detectar esta excepcion usando <code class="language-plaintext highlighter-rouge">try ... catch</code> y mostrar un mensaje facil de usar. Tambien puede suprimir este mensaje, si desea ocultar este error a un usuario.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;head&gt;</span>
@@ -268,7 +268,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Puede usar el bloque <code class="highlighter-rouge">finally</code>  que siempre se ejecutara incondicionalmente despues del <code class="highlighter-rouge">try / catch</code>. Aqui hay un ejemplo.</p>
+<p>Puede usar el bloque <code class="language-plaintext highlighter-rouge">finally</code>  que siempre se ejecutara incondicionalmente despues del <code class="language-plaintext highlighter-rouge">try / catch</code>. Aqui hay un ejemplo.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;head&gt;</span>
@@ -305,11 +305,11 @@
 
 <h3 id="la-sentencia-throw">La sentencia throw</h3>
 
-<p>Puede usar la instruccion <code class="highlighter-rouge">throw</code> para aumentar sus excepciones integradas o excepciones personalizadas. Mas tarde, estas excepciones se pueden capturar y puede tomar una accion adecuada.</p>
+<p>Puede usar la instruccion <code class="language-plaintext highlighter-rouge">throw</code> para aumentar sus excepciones integradas o excepciones personalizadas. Mas tarde, estas excepciones se pueden capturar y puede tomar una accion adecuada.</p>
 
 <h4 id="ejemplo">Ejemplo</h4>
 
-<p>El siguiente ejemplo muestra como usar una instruccion <code class="highlighter-rouge">throw</code>.</p>
+<p>El siguiente ejemplo muestra como usar una instruccion <code class="language-plaintext highlighter-rouge">throw</code>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;head&gt;</span>
@@ -346,11 +346,11 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>Puede generar una excepcion en una funcion utilizando una cadena, un entero, un booleano o un objeto y luego puede capturar esa excepcion en la misma funcion que hicimos anteriormente o en otra funcion utilizando un bloque <code class="highlighter-rouge">try ... catch</code>.</p>
+<p>Puede generar una excepcion en una funcion utilizando una cadena, un entero, un booleano o un objeto y luego puede capturar esa excepcion en la misma funcion que hicimos anteriormente o en otra funcion utilizando un bloque <code class="language-plaintext highlighter-rouge">try ... catch</code>.</p>
 
 <h3 id="el-metodo-onerror">El metodo onerror()</h3>
 
-<p>El controlador de eventos <code class="highlighter-rouge">onerror</code> fue la primera caracteristica para facilitar el manejo de errores en JavaScript. El evento <code class="highlighter-rouge">error</code> se activa en el objeto ventana cada vez que se produce una excepcion en la pagina.</p>
+<p>El controlador de eventos <code class="language-plaintext highlighter-rouge">onerror</code> fue la primera caracteristica para facilitar el manejo de errores en JavaScript. El evento <code class="language-plaintext highlighter-rouge">error</code> se activa en el objeto ventana cada vez que se produce una excepcion en la pagina.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
    <span class="nt">&lt;head&gt;</span>
@@ -375,7 +375,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>El controlador de eventos <code class="highlighter-rouge">onerror</code> proporciona tres piezas de informacion para identificar la naturaleza exacta del error:</p>
+<p>El controlador de eventos <code class="language-plaintext highlighter-rouge">onerror</code> proporciona tres piezas de informacion para identificar la naturaleza exacta del error:</p>
 
 <ul>
   <li>
@@ -420,17 +420,17 @@
 
 <p>Puede mostrar la informacion de la forma que considere mejor.</p>
 
-<p>Puede usar un metodo <code class="highlighter-rouge">onerror</code>, como se muestra a continuacion, para mostrar un mensaje de error en caso de que haya algun problema al cargar una imagen.</p>
+<p>Puede usar un metodo <code class="language-plaintext highlighter-rouge">onerror</code>, como se muestra a continuacion, para mostrar un mensaje de error en caso de que haya algun problema al cargar una imagen.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"myimage.gif"</span> <span class="na">onerror=</span><span class="s">"alert('An error occurred loading the image.')"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Puede usar <code class="highlighter-rouge">onerror</code> con muchas etiquetas HTML para mostrar mensajes apropiados en caso de errores.</p>
+<p>Puede usar <code class="language-plaintext highlighter-rouge">onerror</code> con muchas etiquetas HTML para mostrar mensajes apropiados en caso de errores.</p>
 
 <h3 id="contacto">Contacto</h3>
 
 <ul>
-  <li>Envia tus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+  <li>Envia tus comentarios al correo <code class="language-plaintext highlighter-rouge">henrytorrespo@yahoo.com</code></li>
 </ul>
 
         </div>

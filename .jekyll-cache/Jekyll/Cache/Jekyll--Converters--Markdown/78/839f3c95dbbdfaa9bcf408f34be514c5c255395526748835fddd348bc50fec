@@ -1,0 +1,199 @@
+I"'<h3 id="paquetes-utilizados">Paquetes Utilizados</h3>
+
+<p>Para trabajar con datos espaciales (y espacio-temporales), usamos el paquete <code class="highlighter-rouge">gstat</code>, que incluye funcionalidad para kriging, entre otras muchas cosas.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">install.packages("dplyr")
+install.packages("sp")
+install.packages("gstat")
+install.packages("ggplot2")
+install.packages("scales")
+install.packages("magrittr")
+install.packages("gridExtra")
+
+library(sp)
+library(dplyr)
+library(gstat)
+library(ggplot2)
+library(scales)
+library(magrittr)
+library(gridExtra)
+</span></code></pre></div></div>
+
+<h3 id="conjunto-de-datos">Conjunto de Datos</h3>
+
+<p>Los datos que estamos utilizamos son el conjunto de datos del proyecto meuse, que viene con el paquete <code class="highlighter-rouge">sp</code>.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span>packages <span class="k">for </span>manipulation &amp; visualization
+<span class="go">suppressPackageStartupMessages({
+</span><span class="gp">  library(dplyr) #</span><span class="w"> </span><span class="k">for</span> <span class="s2">"glimpse"</span>
+<span class="go">  library(ggplot2)
+</span><span class="gp">  library(scales) #</span><span class="w"> </span><span class="k">for</span> <span class="s2">"comma"</span>
+<span class="go">  library(magrittr)
+})
+
+data(meuse)
+</span><span class="gp">glimpse(meuse) #</span><span class="w"> </span>This is like a transposed version of print<span class="o">()</span>: columns run down the page, and data runs across.
+</code></pre></div></div>
+
+<p>Por ejemplo, podemos inspeccionar visualmente como varia el zinc en el dominio de interes asignando el tamaño del punto en forma proporcional a la concentracion:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">meuse %&gt;</span>% as.data.frame %&gt;% 
+<span class="go">  ggplot(aes(x, y)) + geom_point(aes(size=zinc), color="blue", alpha=3/4) + 
+  ggtitle("Zinc Concentration (ppm)") + coord_equal() + theme_bw()
+</span></code></pre></div></div>
+
+<h3 id="implementacion">Implementacion</h3>
+
+<p>En terminos generales, hay algunos pasos a seguir en kriging de un conjunto de datos. Suponiendo que los datos se almacenan en un data frame, entonces uno debe:</p>
+
+<ul>
+  <li>Convertir el data frame en spatial data frame (SPDF).</li>
+  <li>Ajustar un modelo variograma a los datos.</li>
+  <li>Realizar Kriging los datos segun el variograma hallado.</li>
+</ul>
+
+<p>1) Convertir a un SPDF</p>
+
+<p>En este momento, los datos de meuse estan un data frame:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">class(meuse)
+
+str(meuse)
+</span></code></pre></div></div>
+
+<p>Para convertirlo en un SPDF, primero debemos especificar cuales son las columnas contiene las coordenadas de los datos. Esto se realiza utilizando la notacion de formula de R de la siguiente manera:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">coordinates(meuse) &lt;- ~ x + y
+class(meuse)
+
+str(meuse)
+
+meuse@coords
+</span></code></pre></div></div>
+
+<h4 id="comentarios-iniciales">Comentarios Iniciales</h4>
+
+<p>Aqui vemos que suceden un par de cosas. Primero, el data frame se convierte en un SPDF. La clase SPDF esta estructurada de manera que los datos ahora se distinguen claramente de las coordenadas; se representa como un objeto S4, donde sus datos / atributos se almacenan en diferentes “ranuras”. En particular, para los objetos SPDF, hay cinco ranuras diferentes:</p>
+
+<ul>
+  <li>data</li>
+  <li>coords.nrs</li>
+  <li>Coords</li>
+  <li>bbox</li>
+  <li>y proj4string.</li>
+</ul>
+
+<p>Se puede acceder a cada una de estas ranuras directamente mediante el operador <code class="highlighter-rouge">@</code> o mediante las funciones de ayuda que simplifican la sintaxis para acceder a ellas, por ejemplo,</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span>access various slots of the SPDF
+<span class="go">bbox(meuse)
+meuse@bbox
+</span><span class="gp">coordinates(meuse) %&gt;</span>% glimpse
+</code></pre></div></div>
+
+<p>Y, por supuesto, ambas formas de acceder a las ranuras dan los mismos resultados:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">identical( bbox(meuse), meuse@bbox )
+
+identical( coordinates(meuse), meuse@coords )
+</span></code></pre></div></div>
+
+<p>Algunas veces ciertas funciones (como con <code class="highlighter-rouge">ggplot2</code>) requieren el uso de un data frame y no un SPDF. En tales casos, se pueden forzar manualmente los datos a un data frame para retener la informacion de coordenadas, en lugar de simplemente acceder a la ranura de datos:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">meuse@data %&gt;</span>% glimpse
+<span class="go">
+</span><span class="gp">meuse %&gt;</span>% as.data.frame %&gt;% glimpse
+</code></pre></div></div>
+
+<p>Una vez forzados, los datos se pueden canalizar (pipe) a la siguiente funcion que desee utilizar.</p>
+
+<p>2) Elaborando un variograma</p>
+
+<p>Para realizar kriging, primero se debe tener un modelo variograma, desde el cual se pueden interpolar los datos. Hay un par de pasos involucrados:</p>
+
+<ul>
+  <li>
+    <p>Calcular el variograma muestra. Esto se hace con la funcion variograma.</p>
+  </li>
+  <li>
+    <p>Ajustar un modelo al variograma muestra.</p>
+  </li>
+</ul>
+
+<p>Por ejemplo, un variograma podria ajustarse con el siguiente codigo:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">lzn.vgm &lt;- variogram(log(zinc)~1, meuse) #</span><span class="w"> </span>calculates sample variogram values 
+<span class="gp">lzn.fit &lt;- fit.variogram(lzn.vgm, model=vgm(1, "Sph", 900, 1)) #</span><span class="w"> </span>fit model
+</code></pre></div></div>
+
+<p>El variograma muestra y ajuste se pueden graficar en un lienzo a la vez para ver que tan bien fue el ajuste:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">plot(lzn.vgm, lzn.fit) #</span><span class="w"> </span>plot the sample values, along with the fit model
+</code></pre></div></div>
+
+<p>3) Realizando Kriging</p>
+
+<p><strong>Setup</strong></p>
+
+<p>Por definicion, la interpolacion es la estimacion de valores en puntos para los que no tenemos mediciones en funcion de los puntos para los que si tenemos mediciones. Entonces, necesitamos dos dominios espaciales: uno que tenga valores asociados con los puntos y otro para el que deseamos estimaciones. En este ejemplo, los dominios espaciales que utilizamos son los de “meuse” y “meuse.grid”:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span>load spatial domain to interpolate over
+<span class="go">data("meuse.grid")
+
+</span><span class="gp">#</span><span class="w"> </span>to compare, recall the bubble plot above<span class="p">;</span> those points were what there were values <span class="k">for</span><span class="nb">.</span> this is much more sparse
+<span class="gp">plot1 &lt;- meuse %&gt;</span>% as.data.frame %&gt;%
+<span class="go">  ggplot(aes(x, y)) + geom_point(size=1) + coord_equal() + 
+  ggtitle("Points with measurements")
+
+</span><span class="gp">#</span><span class="w"> </span>this is clearly gridded over the region of interest
+<span class="gp">plot2 &lt;- meuse.grid %&gt;</span>% as.data.frame %&gt;%
+<span class="go">  ggplot(aes(x, y)) + geom_point(size=1) + coord_equal() + 
+  ggtitle("Points at which to estimate")
+
+library(gridExtra)
+grid.arrange(plot1, plot2, ncol = 2)
+</span></code></pre></div></div>
+
+<h3 id="calculos-preliminares">Calculos Preliminares</h3>
+
+<p>Una vez preparado lo anterior, estamos listos para realizar kriging a los datos. Esto se puede hacer con la funcion <code class="highlighter-rouge">gstat:: krige</code>, que generalmente toma cuatro argumentos:</p>
+
+<ul>
+  <li>
+    <p>El modelo formula.</p>
+  </li>
+  <li>
+    <p>Un SPDF del dominio espacial que tiene las mediciones.</p>
+  </li>
+  <li>
+    <p>Un SPDF del dominio espacial sobre el cual se aplicara kriging.</p>
+  </li>
+  <li>
+    <p>Un modelo variograma ajustado a los datos.</p>
+  </li>
+</ul>
+
+<p>Tenga en cuenta que los argumentos dos y tres tienen que ser SPDF, es decir, no pueden ser data frame.</p>
+
+<p>Ahora, el paso de kriging se puede realizar en una sola llamada de funcion:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">coordinates(meuse.grid) &lt;- ~ x + y #</span><span class="w"> </span>step 3 above
+<span class="go">lzn.kriged &lt;- krige(log(zinc) ~ 1, meuse, meuse.grid, model=lzn.fit)
+</span></code></pre></div></div>
+<h2 id="utilizando-kriging-ordinario">Utilizando Kriging Ordinario</h2>
+
+<p>Estos resultados podrian visualizarse como un mapa de calor:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">lzn.kriged %&gt;</span>% as.data.frame %&gt;%
+<span class="go">  ggplot(aes(x=x, y=y)) + geom_tile(aes(fill=var1.pred)) + coord_equal() +
+  scale_fill_gradient(low = "yellow", high="red") +
+  scale_x_continuous(labels=comma) + scale_y_continuous(labels=comma) +
+  theme_bw()
+</span></code></pre></div></div>
+
+<h3 id="contacto">Contacto</h3>
+
+<ul>
+  <li>Envienos sus comentarios al correo <code class="highlighter-rouge">henrytorrespo@yahoo.com</code></li>
+</ul>
+:ET
