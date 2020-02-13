@@ -113,9 +113,9 @@ author:
     - title: Instagram
       url: https://instagram.com/htorrespo
       icon: fab fa-instagram
-    - title: GitHub
-      url: https://github.com/htorrespo
-      icon: fab fa-github-square
+    - title: LinkedIn
+      url: https://linkedin.com/in/htorrespo
+      icon: fab fa-linkedin
 
 # Footer Links
 footer_links:
