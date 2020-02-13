@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-13T12:52:28+00:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Splendidus</title><subtitle>Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</subtitle><author><name>Henry Torres</name></author><entry><title type="html">Groovy - Trucos para JavaScript</title><link href="http://localhost:4000/blog/2019/08/21/javascript-tips.html" rel="alternate" type="text/html" title="Groovy - Trucos para JavaScript" /><published>2019-08-21T00:00:00+00:00</published><updated>2019-08-21T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/21/javascript-tips</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/21/javascript-tips.html">&lt;ol&gt;
-  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.&lt;/li&gt;
-&lt;/ol&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-13T20:26:25+00:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Splendidus</title><subtitle>Un sitio para compartir conocimientos sobre programacion y aspectos ambientales.</subtitle><author><name>Henry Torres</name></author><entry><title type="html">Javascript - Trucos para javascript</title><link href="http://localhost:4000/blog/2019/08/21/javascript-tips.html" rel="alternate" type="text/html" title="Javascript - Trucos para javascript" /><published>2019-08-21T00:00:00+00:00</published><updated>2019-08-21T00:00:00+00:00</updated><id>http://localhost:4000/blog/2019/08/21/javascript-tips</id><content type="html" xml:base="http://localhost:4000/blog/2019/08/21/javascript-tips.html">&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.&lt;/p&gt;
 
 &lt;p&gt;También existe la opción de usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; dependiendo del caso de uso.&lt;/p&gt;
 
@@ -8,139 +6,124 @@
 
 &lt;p&gt;Considere el siguiente fragmento de código.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-Javascript&quot;&gt;function varDeclaration(){
-    let a =10;
-    console.log(a);  // output 10
-    if(true){
-        let a=20;
-        console.log(a); // output 20
-    }
-    console.log(a);  // output 10
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;varDeclaration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// output 10&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output 20&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// output 10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Es el mismo comportamiento que vemos en la mayoría de los lenguajes.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
-    let a =10;
-    let a =20; //throws syntax error
-    console.log(a);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;varDeclaration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//throws syntax error&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Error Message: Uncaught SyntaxError: Identifier ‘a’ has already been declared.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Sin embargo, con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;, funciona bien.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-Javascript&quot;&gt;function varDeclaration(){
-    var a =10;
-    var a =20;
-    console.log(a);  //output 20
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;varDeclaration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//output 20&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;El alcance se mantendrá bien con una declaración &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; y cuando se utiliza una función interna, la declaración &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; hace que su código sea limpio y claro.&lt;/p&gt;
 
-&lt;p&gt;→ los valores de la sentencia &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; funciona de manera similar a las declaraciones &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Los valores de la sentencia &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; funciona de manera similar a las declaraciones &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
-    const MY_VARIABLE =10;
-    console.log(MY_VARIABLE);  //output 10
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;varDeclaration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//output 10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt;?&lt;/p&gt;
 
 &lt;p&gt;Considere el siguiente fragmento de código.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function varDeclaration(){
-    const MY_VARIABLE =10;
-    console.log(MY_VARIABLE);  //output 10
-    MY_VARIABLE =20;           //throws type error
-    console.log(MY_VARIABLE);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;varDeclaration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//output 10&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;//throws type error&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MY_VARIABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Error Message : Uncaught TypeError: Assignment to constant variable.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;El código arrojará un error cuando intentemos reasignar la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const&lt;/code&gt; existente.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Utilice siempre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; como comparador en lugar de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; (estricto igual). Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; en lugar de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; porque cuando usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; Utilice siempre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; como comparador en lugar de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; (estricto igual). Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; en lugar de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; porque cuando usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;3 == ‘3’ // true
-3 === ‘3’ //false
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Esto sucede porque en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; la comparación tiene lugar entre el valor y el tipo.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;[10] == 10   // is true
-[10] === 10  // is false
-'10' == 10   // is true
-'10' === 10  // is false
-[] == 0      // is true
-[] === 0     // is false
-'' == false  // is true
-'' === false // is false
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// is true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// is false&lt;/span&gt;
+&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// is true&lt;/span&gt;
+&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// is false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// is true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// is false&lt;/span&gt;
+&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// is true&lt;/span&gt;
+&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// is false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;, (cadena vacía) son todas condiciones falsas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Vaciar una matriz&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;, (cadena vacía) son todas condiciones falsas.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;var sampleArray = [2, 223, 54, 31];
-sampleArray.length = 0; // sampleArray becomes []
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt; Vaciar una matriz&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Redondeo a N decimales&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sampleArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;223&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;31&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sampleArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// sampleArray becomes []&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;var n = 2.4134213123;
-n = n.toFixed(4); // computes n = &quot;2.4134&quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt; Redondeo a N decimales&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Verifique que su cálculo produzca un resultado finito.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.4134213123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toFixed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// computes n = &quot;2.4134&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;isFinite(0/0);       // false
-isFinite('foo');     // true
-isFinite('10');      // true
-isFinite(10);        // true
-isFinite(undefined); // false
-isFinite();          // false  
-isFinite(null);      // true
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt; Verifique que su cálculo produzca un resultado finito.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;isFinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Tomemos un ejemplo para comprender el uso de esta función, supongamos que ha escrito una consulta de base de datos sobre una tabla que contiene una gran cantidad de datos y después de la ejecución de la consulta no está seguro de todos los valores de resultado posibles de esa consulta. Los datos de la consulta cambian en algo que usted pone dinámicamente en la consulta. En tal caso, no está seguro acerca de la propiedad finita del resultado y si usa ese resultado directamente, puede darle una condición infinita, lo que puede romper su código.&lt;/p&gt;
 
 &lt;p&gt;Por lo tanto, se recomienda usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isFinite()&lt;/code&gt; antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Use una instrucción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;switch/case&lt;/code&gt; en lugar de una serie de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if/else&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;7.&lt;/strong&gt; Use una instrucción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;switch/case&lt;/code&gt; en lugar de una serie de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if/else&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;switch/case&lt;/code&gt; es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Uso de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; dentro de su archivo. La cadena &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;8.&lt;/strong&gt; Uso de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; dentro de su archivo. La cadena &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict”&lt;/code&gt; evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;// This is bad, since you do create a global without having anyone to tell you
-(function () {
-   a = 42;
-   console.log(a);
-   // → 42
-})();
-console.log(a);
-// → 42
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// This is bad, since you do create a global without having anyone to tell you&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// → 42&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// → 42&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict&lt;/code&gt; lo mantendrá alejado de cometer el anterior error. Usando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict&lt;/code&gt;, puede obtener bastantes errores:&lt;/p&gt;
 
@@ -153,9 +136,7 @@ console.log(a);
 
 &lt;p&gt;Podría preguntarse por qué no puede poner &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use strict&lt;/code&gt;fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;||&lt;/code&gt; para crear magia&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;9.&lt;/strong&gt; Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;||&lt;/code&gt; para crear magia&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;“”&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; “foo”undefined || 42&lt;/span&gt;

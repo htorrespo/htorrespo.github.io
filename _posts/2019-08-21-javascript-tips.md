@@ -1,6 +1,6 @@
 ﻿---
-title: Groovy - Trucos para JavaScript
-description: Consejos para usar JavaScript de manera limpia
+title: Javascript - Trucos para javascript
+description: Consejos para usar javascript de manera limpia
 categories: Blog
 comments: true
 ---
@@ -9,7 +9,7 @@ comments: true
 https://medium.com/swlh/javascripts-magical-tips-every-developer-should-remember-38c71b1cbfba
 {% endcomment %}
 
-1. Use `var` al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de `var` delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar `var`, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.
+**1.** Use `var` al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de `var` delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar `var`, su alcance será automáticamente global, lo que a veces crea problemas, a menos que sea necesario.
 
 También existe la opción de usar `let` y `const` dependiendo del caso de uso.
 
@@ -17,7 +17,7 @@ La instrucción `let` permite crear una variable con el alcance limitado al bloq
 
 Considere el siguiente fragmento de código.
 
-```Javascript
+```javascript
 function varDeclaration(){
     let a =10;
     console.log(a);  // output 10
@@ -31,7 +31,7 @@ function varDeclaration(){
 
 Es el mismo comportamiento que vemos en la mayoría de los lenguajes.
 
-```JavaScript
+```javascript
 function varDeclaration(){
     let a =10;
     let a =20; //throws syntax error
@@ -42,7 +42,7 @@ function varDeclaration(){
 
 Sin embargo, con `var`, funciona bien.
 
-```Javascript
+```javascript
 function varDeclaration(){
     var a =10;
     var a =20;
@@ -52,9 +52,9 @@ function varDeclaration(){
 
 El alcance se mantendrá bien con una declaración `let` y cuando se utiliza una función interna, la declaración `let` hace que su código sea limpio y claro.
 
-→ los valores de la sentencia `const` pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración `const` funciona de manera similar a las declaraciones `let`.
+Los valores de la sentencia `const` pueden asignarse una vez y no pueden reasignarse. El alcance de la declaración `const` funciona de manera similar a las declaraciones `let`.
 
-```JavaScript
+```javascript
 function varDeclaration(){
     const MY_VARIABLE =10;
     console.log(MY_VARIABLE);  //output 10
@@ -65,7 +65,7 @@ Pregunta: ¿Qué sucederá cuando intentemos reasignar la variable `const`?
 
 Considere el siguiente fragmento de código.
 
-```JavaScript
+```javascript
 function varDeclaration(){
     const MY_VARIABLE =10;
     console.log(MY_VARIABLE);  //output 10
@@ -78,16 +78,16 @@ function varDeclaration(){
 
 El código arrojará un error cuando intentemos reasignar la variable `const` existente.
 
-2. Utilice siempre `===` como comparador en lugar de `==` (estricto igual). Use `===` en lugar de `==` porque cuando usa `==` hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.
+**2.** Utilice siempre `===` como comparador en lugar de `==` (estricto igual). Use `===` en lugar de `==` porque cuando usa `==` hay una conversión automática de tipos involucrada que puede conducir a resultados no deseados.
 
-```JavaScript
+```javascript
 3 == ‘3’ // true
 3 === ‘3’ //false
 ```
 
 Esto sucede porque en `===` la comparación tiene lugar entre el valor y el tipo.
 
-```JavaScript
+```javascript
 [10] == 10   // is true
 [10] === 10  // is false
 '10' == 10   // is true
@@ -98,31 +98,31 @@ Esto sucede porque en `===` la comparación tiene lugar entre el valor y el tipo
 '' === false // is false
 ```
 
-3. `undefined`, `null`, `0`, `false`, `NaN`, (cadena vacía) son todas condiciones falsas.
+**3.** `undefined`, `null`, `0`, `false`, `NaN`, (cadena vacía) son todas condiciones falsas.
 
-4. Vaciar una matriz
+**4.** Vaciar una matriz
 
-```JavaScript
+```javascript
 var sampleArray = [2, 223, 54, 31];
 sampleArray.length = 0; // sampleArray becomes []
 ```
 
-5. Redondeo a N decimales
+**5.** Redondeo a N decimales
 
-```JavaScript
+```javascript
 var n = 2.4134213123;
 n = n.toFixed(4); // computes n = "2.4134"
 ```
 
-6. Verifique que su cálculo produzca un resultado finito.
+**6.** Verifique que su cálculo produzca un resultado finito.
 
-```JavaScript
+```javascript
 isFinite(0/0);       // false
 isFinite('foo');     // true
 isFinite('10');      // true
 isFinite(10);        // true
 isFinite(undefined); // false
-isFinite();          // false  
+isFinite();          // false
 isFinite(null);      // true
 ```
 
@@ -130,13 +130,13 @@ Tomemos un ejemplo para comprender el uso de esta función, supongamos que ha es
 
 Por lo tanto, se recomienda usar `isFinite()` antes de cualquiera de estas operaciones para que los valores infinitos se puedan manejar correctamente.
 
-7. Use una instrucción `switch/case` en lugar de una serie de `if/else`
+**7.** Use una instrucción `switch/case` en lugar de una serie de `if/else`
 
 Usar `switch/case` es más rápido cuando hay más de 2 casos, y es más elegante (código mejor organizado). Evite usarlo cuando tenga más de 10 casos.
 
-8. Uso de `use strict”` dentro de su archivo. La cadena `use strict”` evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.
+**8.** Uso de `use strict”` dentro de su archivo. La cadena `use strict”` evitará que se preocupe por la declaración de una variable que mencioné en el primer punto.
 
-```JavaScript
+```javascript
 // This is bad, since you do create a global without having anyone to tell you
 (function () {
    a = 42;
@@ -159,7 +159,7 @@ console.log(a);
 
 Podría preguntarse por qué no puede poner `use strict`fuera de la función de envoltura. Bueno, puedes, pero se aplicará globalmente. Eso no está mal del todo; pero afectará si tiene código que proviene de otras bibliotecas, o si agrupa todo en un archivo.
 
-9. Use `&&` y `||` para crear magia
+**9.** Use `&&` y `||` para crear magia
 
 ```javascript
 “” || “foo”

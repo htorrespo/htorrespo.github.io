@@ -284,8 +284,8 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/blog/2019/08/16/groovy-sintaxis-basica.html"
       },{
-        "title": "Groovy - Trucos para JavaScript",
-        "excerpt":"Use var al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de var delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar var, su alcance será automáticamente global, lo que a...","categories": ["Blog"],
+        "title": "Javascript - Trucos para javascript",
+        "excerpt":"1. Use var al crear una nueva variable. Siempre que esté creando una nueva variable, tenga en cuenta el uso de var delante del nombre de la variable, a menos que desee crear una variable global. Si crea una variable sin usar var, su alcance será automáticamente global, lo que...","categories": ["Blog"],
         "tags": [],
         "url": "http://localhost:4000/blog/2019/08/21/javascript-tips.html"
       },{
