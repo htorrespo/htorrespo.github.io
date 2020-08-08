@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Generalidades
 description: que es JavaScript, lenguaje cliente, ventajas, limitaciones
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

@@ -1,7 +1,9 @@
 ﻿---
 title: Estudios de emisiones a la atmosfera
 description: Los estudios de evaluacion de emision de contaminantes a la atmosfera permite determinar la carga masica y la concentracion de estas sustancias, empleando tecnicas estandarizadas de muestreo y analisis, para verificar el cumplimiento de normas de emision.
-categories: Blog
+categories: 
+  - Blog
+  - Emisiones
 comments: true
 ---
 

@@ -3,7 +3,7 @@ title: Determinacion de ecuacion isocinetica
 description: Derivacion de ecuacion isocinetica.
 categories: 
   - Blog
-  - emisiones
+  - Emisiones
 comments: true
 ---
 

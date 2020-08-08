@@ -1,7 +1,9 @@
 ﻿---
 title: Peso molecular de una mezcla de gases
 description: Determina las concentraciones de CO2, O2 y peso molecular seco de gases de emisión de un proceso de combustión de combustibles fósiles u otro proceso de oxidación.
-categories: Blog
+categories: 
+  - Blog
+  - Emisiones
 comments: true
 ---
 

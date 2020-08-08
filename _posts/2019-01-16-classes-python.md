@@ -1,7 +1,9 @@
 ﻿---
 title: Clases y objetos en Python
 description: Clases y objetos en Python
-categories: Blog
+categories: 
+  - Blog
+  - Python
 comments: true
 ---
 
