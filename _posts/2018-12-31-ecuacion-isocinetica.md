@@ -1,7 +1,9 @@
 ﻿---
 title: Determinacion de ecuacion isocinetica
 description: Derivacion de ecuacion isocinetica.
-categories: Blog
+categories: 
+  - Blog
+  - emisiones
 comments: true
 ---
 
