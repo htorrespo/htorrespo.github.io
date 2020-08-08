@@ -1,7 +1,10 @@
 ﻿---
 title: Uso de sass en proyectos Jekyll
 description: Jekyll y Sass
-categories: Blog
+categories: 
+  - Blog
+  - HTML
+  - Jekyll
 comments: true
 ---
 

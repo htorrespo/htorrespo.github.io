@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto Number
 description: El objeto `Number` es un objeto envolvente que permite trabajar con valores numericos. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

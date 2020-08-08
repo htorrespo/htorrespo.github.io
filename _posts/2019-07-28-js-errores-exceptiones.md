@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Manejo de Errores y Excepciones
 description: Las excepciones, son imprevistos que ocurren durante la ejecucion de un programa; anormalidades que impiden o alteran el comportamiento o flujo normal de un software.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

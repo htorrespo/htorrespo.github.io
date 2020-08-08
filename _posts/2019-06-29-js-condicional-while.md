@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Sentencia while
 description: Crea un bucle que ejecuta una sentencia especificada mientras cierta condicion se evalúe como verdadera.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

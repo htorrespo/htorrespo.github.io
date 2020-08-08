@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto Math
 description: El objeto `Math` permite trabajar con constantes y funciones matematicas.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

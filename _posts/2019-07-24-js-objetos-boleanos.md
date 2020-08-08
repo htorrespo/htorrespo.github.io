@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto Boolean
 description: El objeto `Number` es un objeto envolvente / Wrapper que permite trabajar con valores numericos. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

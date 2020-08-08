@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Eventos
 description: Los eventos hacen posible que los usuarios transmitan informacion a los programas. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

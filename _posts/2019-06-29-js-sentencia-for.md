@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Sentencia for
 description: Crea un bucle que consiste en tres expresiones opcionales, encerradas en parentesis y separadas por puntos y comas, seguidas de una sentencia ejecutada en un bucle. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

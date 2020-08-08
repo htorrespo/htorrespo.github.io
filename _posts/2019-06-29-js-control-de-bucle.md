@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Control de bucle
 description: 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

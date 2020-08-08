@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Sentencias if..else
 description: Al escribir un programa, puede haber una situación en la que necesite adoptar uno de un conjunto determinado de rutas. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

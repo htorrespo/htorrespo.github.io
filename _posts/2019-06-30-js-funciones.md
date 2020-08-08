@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Funciones
 description: En terminos generales, una funcion es un subprograma 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

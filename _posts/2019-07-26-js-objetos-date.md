@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto Date
 description: El objeto `Date` Permite trabajar con fechas y horas.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

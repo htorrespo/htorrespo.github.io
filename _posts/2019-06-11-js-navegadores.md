@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Navegadores
 description: Internet Explorer, Firefox, chrome y Opera
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

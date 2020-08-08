@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - El constructor Function()
 description: crea funciones anonimas (sin nombre) para evitar el uso de variables globales
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Cuadros de dialogo
 description: Estos cuadros de dialogo se pueden utilizar para activar y alertar, o para obtener confirmacion de cualquier entrada
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

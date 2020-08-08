@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Codigo javaScript en documento HTML
 description: Internet Explorer, Firefox, chrome y Opera
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

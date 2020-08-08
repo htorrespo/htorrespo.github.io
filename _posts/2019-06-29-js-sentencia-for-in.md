@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Sentencia for...in
 description: La sentencia for...in itera sobre todos los elementos de un objeto, en un orden arbitrario. Para cada uno de los elementos, se ejecuta la sentencia especificada.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

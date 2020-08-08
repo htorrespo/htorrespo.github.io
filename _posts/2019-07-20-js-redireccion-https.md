@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Codigos utiles .htaccess para sitios web
 description: Como redireccionar a tus visitantes desde el puerto estandar http hacia el puerto seguro https si dispones de un certificado de seguridad SSL instalado en tu dominio para garantizar que la informacion se transmita de forma segura.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Funciones Anidadas
 description: Las funciones anidadas solo pueden ser llamadas desde el interior de la funcion que las contiene.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

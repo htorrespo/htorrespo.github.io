@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Funciones Literales
 description: una funcion literal es una expresion que produce una funcion que no se ha definido en otro lugar
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

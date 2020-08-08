@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Tipos de Datos
 description: Variables globales y locales, nombre de variables, palabras reservadas 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

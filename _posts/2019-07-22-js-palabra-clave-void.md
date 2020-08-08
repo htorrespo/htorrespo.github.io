@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Palabra clave void
 description: Este operador especifica una expresion para ser evaluada sin devolver un valor.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

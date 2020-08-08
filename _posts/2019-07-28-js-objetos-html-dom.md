@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - HTML DOM
 description: DOM permite a los programadores web acceder y manipular las páginas XHTML como si fueran documentos XML.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Redireccion de paginas
 description: Redireccionar pagina web con javascript
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

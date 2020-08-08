@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Sentencia switch
 description: La sentencia switch evalua una expresion, comparando el valor de esa expresion con una instancia case, y ejecuta sentencias asociadas a ese case, así como las sentencias en los case que siguen. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

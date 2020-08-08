@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Generalidades de los Objetos
 description: JavaScript es un lenguaje de programacion orientada a objetos (OOP).
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

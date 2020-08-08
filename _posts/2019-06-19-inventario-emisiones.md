@@ -1,7 +1,9 @@
 ﻿---
 title: Como elaborar un inventario de emisiones?
 description: En pocas palabras, un inventario de emisiones es una herramienta basica empleada en la gestión de la calidad del aire, que permite identificar y cuantificar los tipos de contaminantes que se descargan en la atmósfera por una operación determinada o un área determinada durante un período de tiempo determinado.
-categories: Blog
+categories: 
+  - Blog
+  - Emisiones
 comments: true
 ---
 

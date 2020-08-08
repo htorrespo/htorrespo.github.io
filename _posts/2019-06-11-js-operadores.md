@@ -1,7 +1,9 @@
 ﻿---
-title: Javascrpt - Tipos de Operadores
+title: Javascript - Tipos de Operadores
 description: Operadores, artimeticos, comparacion, logicos, binarios, asignacion,  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

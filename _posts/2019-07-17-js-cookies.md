@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Cookies
 description: Una cookie es un archivo creado por un sitio web que contiene pequeñas cantidades de datos y que se envian entre un emisor y un receptor.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

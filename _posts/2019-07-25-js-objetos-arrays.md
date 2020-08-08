@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto Array
 description: El objeto `Array` o matriz es un conjunto ordenado de valores al que se refiere con un nombre y un índice.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

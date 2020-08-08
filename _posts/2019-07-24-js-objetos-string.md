@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto String
 description: El objeto `String` es un objeto envolvente / Wrapper que permite trabajar con cadenas de caracteres. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 
