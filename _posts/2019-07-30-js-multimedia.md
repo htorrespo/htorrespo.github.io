@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Multimedia
 description: El objeto navigator de  JavaScript incluye un objeto hijo que se llama complementos. Este objeto es basicamente una matriz, con una entrada para cada complemento instalado en el navegador.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

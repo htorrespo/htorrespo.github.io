@@ -1,7 +1,9 @@
 ﻿---
 title: DOM - Aspectos basicos
 description: El Document Object Model (DOM) es un estandar W3C.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

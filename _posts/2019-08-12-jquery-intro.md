@@ -1,7 +1,9 @@
 ﻿---
 title: JQuery - Generalidades
 description: jQuery simplifica el desplazamiento de documentos HTML, el manejo de eventos, la animacion y las interacciones Ajax para un desarrollo web rapido.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

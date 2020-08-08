@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Objeto RegExp
 description: Crea un objeto `RegExp` para encontrar texto de acuerdo a un patron.  
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

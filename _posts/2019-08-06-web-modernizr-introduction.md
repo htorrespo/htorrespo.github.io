@@ -1,7 +1,9 @@
 ﻿---
 title: Modernizr - Deteccion de compatibilidad de navegadores
 description: Modernizr es una biblioteca de JavaScript que estaiseñada para detectar caracteristicas de HTML5 y CSS3 en varios navegadores, lo que le permite a JavaScript evitar el uso de funciones no implementadas o usar una solucion alternativa como un shim para emularlas
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

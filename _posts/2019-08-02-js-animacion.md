@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Animacion
 description: Existen dos metodos principales para crear animaciones en la web, CSS y JavaScript. Puede usar JavaScript para crear una animacion compleja. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

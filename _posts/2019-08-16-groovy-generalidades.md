@@ -1,7 +1,9 @@
 ﻿---
 title: Groovy - Generalidades
 description: Caracteristicas de Groovy
-categories: Blog
+categories: 
+  - Blog
+  - Groovy
 comments: true
 ---
 

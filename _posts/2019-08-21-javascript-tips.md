@@ -1,7 +1,9 @@
 ﻿---
 title: Javascript - Trucos para javascript
 description: Consejos para usar javascript de manera limpia
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

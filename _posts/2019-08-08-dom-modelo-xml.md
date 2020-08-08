@@ -1,7 +1,9 @@
 ﻿---
 title: DOM - Modelo XML
 description: XML es un lenguaje de marcado similar a HTML. Significa Extensible Markup Language (Lenguaje de Marcado Extensible) y es una especificacion de W3C como lenguaje de marcado de proposito general.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

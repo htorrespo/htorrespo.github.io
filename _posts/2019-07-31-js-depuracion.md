@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Depuracion
 description: La utilizacion de una herramienta de depuracion es esencial para trabajar con JavaScript.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

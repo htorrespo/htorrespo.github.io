@@ -1,7 +1,9 @@
 ﻿---
 title: Groovy - Sintaxis basica
 description: Para comprender la sintaxis basica de Groovy, veamos primero un programa simple de Hello World.
-categories: Blog
+categories: 
+  - Blog
+  - Groovy
 comments: true
 ---
 

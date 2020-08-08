@@ -1,7 +1,9 @@
 ﻿---
 title: Groovy - Introduccion
 description: Audiencia y prerequisitos
-categories: Blog
+categories: 
+  - Blog
+  - Groovy
 comments: true
 ---
 

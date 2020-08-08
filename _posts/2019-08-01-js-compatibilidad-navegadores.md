@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Compatibilidad de Navegadores
 description: Los desarrolladores deben tener claro desde el principio que a pesar de la supuesta compatibilidad entre navegadores, JavaScript es interpretado de modo diferente segun sea el navegador utilizado. 
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

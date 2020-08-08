@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Mapa de imagenes
 description: HTML nos permite la opcion de crear diferentes enlaces url dentro de una misma imagen. Es decir, podemos hacer que diferentes partes de una imagen tengan enlaces que nos permitan ir a diferentes destinos
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

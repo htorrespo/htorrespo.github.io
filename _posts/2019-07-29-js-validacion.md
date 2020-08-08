@@ -1,7 +1,9 @@
 ﻿---
 title: JavaScript - Validacion de formularios
 description: La principal utilidad de JavaScript en el manejo de los formularios es la validacion de los datos introducidos por los usuarios.
-categories: Blog
+categories: 
+  - Blog
+  - Javascript
 comments: true
 ---
 

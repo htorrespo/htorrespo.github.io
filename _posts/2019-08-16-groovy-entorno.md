@@ -1,7 +1,9 @@
 ﻿---
 title: Groovy - Entorno
 description: Instalacion de Groovy y configuracion de variables de entorno
-categories: Blog
+categories: 
+  - Blog
+  - Groovy
 comments: true
 ---
 
