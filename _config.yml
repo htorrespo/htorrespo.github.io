@@ -18,7 +18,7 @@ remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/skins/default.css"
 locale: es-co
 title: "Splendidus"
-description: "Un sitio para compartir conocimientos sobre programacion y aspectos ambientales. Hay algun aspecto que ustede desee conocer?"
+description: "Un sitio para compartir conocimientos sobre programacion y aspectos ambientales. Hay algun aspecto que usted desee conocer?"
 baseurl: #"/example" # the subpath of your site, e.g. "/blog"
 url: https://htorrespo.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 logo: "/images/mandarin.jpg" # path of site logo, e.g. "/assets/images/logo.png"
